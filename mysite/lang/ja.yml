@@ -1,0 +1,71 @@
+---
+ja:
+  BitPay:
+    ButtonAltText: BitPay、ビットコインで支払う簡単な方法。
+    CheckoutLocale: en_US
+    Email: メールアドレス（オプション）
+    Header: ビットコインで寄付する
+    LabelEmail: 'Eメール:'
+    RefundDisclaimer: ビットコインを経由した寄付金は、その性質上通常は匿名です。このため払い戻しや寄付の確認は、支払いプロバイダを通じてわたしたちが受け取った合計額についてのみ、かつあなたがご自分の電子メールアドレスを記載した場合に限り可能です。上記の条件に同意されない場合は、このページで概説されている、他のいずれかの方法での寄付を検討するようにお願いします。
+  Concardis:
+    CancelHeader: キャンセルしました
+    CancelMessage: 残念ながら、支払いはキャンセルされました。 <B>お支払いは完了していません。</ B>もう一度やり直してください。そして問題や質問がある場合は、{infoemail}へいつでもお気軽にお問い合わせください。
+    ProblemHeader: 問題が発生しました…
+    ProblemMessage: '申し訳ありませんが、お支払いは成功しませんでした。これはわたしたちの決済サーバ、またはクレジットカードの問題である可能性があります。<b>お支払いは完了していません。</b>再度試してみてください。そして問題や質問があれば、{infoemail} へいつでもお気軽にお問い合わせください。 '
+    Processing: 支払い処理を行なっています
+    ThankYouHeader: 'あなたの寄付に心から感謝します！ '
+    ThankYouMessage: The Document Foundationは、あなたの親切で寛大な寄付に感謝したいと思います。わたしたちはあなたの寄付を受け取りました！ LibreOfficeを楽しんでください。そしてご支援ありがとうございました！
+    ThanksButHeader: あなたの寄付に心から感謝します！
+    ThanksButMessage1: The Document Foundationは、あなたの親切で寛大な寄付に感謝したいと思います。わたしたちはあなたの寄付を受け取りました！ LibreOfficeを楽しんでください。そしてご支援ありがとうございました！
+    ThanksButMessage2: 寄付はまだ確認できていないことに注意してください。寄付が行われたかどうか記録を確認してください。
+  DonatePage:
+    BUTTON_CARD: クレジットカードで寄付する
+    BUTTON_PAYPAL: PayPalで寄付する
+    CHOICE_DEFAULT: 次の選択肢の中から金額を指定してください
+    CUSTOM_AMOUNT_VALUE: '2500'
+    CUSTOM_CHOICE: 金額を入力して通貨を指定してください<br/>(*印が付いている通貨はPayPalでもご利用いただけます)
+    ContinueLabel: 続行
+    DEFAULT_AMOUNT_EUR05: '500'
+    DEFAULT_AMOUNT_EUR10: '1000'
+    DEFAULT_AMOUNT_EUR20: '2000'
+    DEFAULT_AMOUNT_EUR50: '5000'
+    DEFAULT_CURRENCY: JPY
+    LeadText: LibreOfficeはフリーソフトウェアであり、無料で利用できます。<br/>寄付は純粋に任意で行なっていただいています。こうした寄付はわたしたちの世界的なコミュニティーをサポートします。<br/>このソフトウェアを好んで使っておられるようであれば、寄付をご検討ください。
+    ProceedConcardis: <strong>{amount} {currency}</strong>の寄付の支払いを完了するためConCardisのウェブサイトに転送されます。 <br/>もし自動的に転送されなければ、下の「続行」ボタンをクリックしてください。
+    ProceedPayPal: <strong>{amount} {currency}</strong>の寄付の支払いを完了するためPayPalのウェブサイトに転送されます。 <br/>もし自動的に転送されなければ、下の「続行」ボタンをクリックしてください。
+  Download:
+    ChangeLanguageLinkText: 他の言語が必要ですか?
+    ChangeLanguageLinkTitle: 他の言語を見てみる
+    Helppack: <strong>{language}</strong>のLibreOffice組み込みヘルプ
+    HelppackButtonLabel: オフラインで使えるヘルプ
+    HelppackFallback: LibreOffice組み込みヘルプ<strong>英語（代替）</strong>
+    HelppackLinkTitle: オフラインで使えるヘルプをダウンロードする
+    InfoLinkTitle: チェックサムと追加情報
+    InfoText: 情報
+    Langpack: <strong>{language}</strong>訳インターフェースを入手
+    LangpackButtonLabel: 翻訳されたユーザーインターフェース
+    LangpackLinkTitle: 言語パックをダウンロード
+    MainButtonLabel: ダウンロードバージョン {version}
+    MainInstaller: メインインストーラー
+    MainLinkTitle: '{os}用LibreOffice{version} をダウンロード'
+    OS: オペレーティング・システム
+    OSList: LibreOffice {version}は次のオペレーティング・システム/アーキテクチャーで利用できます。
+    PickLanguage: 言語を選んでください
+    PlatformChange: LibreOffice {version} for {os} が選択されています- <a href='{curr_page}#change'>変更しますか?</a>
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: BitTorrentを使ってダウンロード
+    VersionListReleased: 'LibreOffice は次の<strong>リリースされた</strong> バージョンが利用できます:'
+    VersionListTesting: 'LibreOffice は次の<strong>リリース前の</strong> バージョンを利用できます:'
+    Versions: 利用できるバージョン
+  Homepage:
+    DownloadNow: ダウンロード
+  RSS:
+    ReadMore: さらに読む »
+  Shortcode:
+    NoPortable: ポータブルバージョン({multilingualtype})は現在利用できません
+    NoRC: RCは現在利用できません
+    NoRC_Codeline: '{version} コードラインのRCは現在利用できません '
+    ReleaseNotesLinkText: リリースノート
+  Social:
+    FollowUs: Follow Us
+    LatestTweets: 最新のツイート

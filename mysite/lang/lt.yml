@@ -1,0 +1,6 @@
+---
+lt:
+  BitPay:
+    CheckoutLocale: lt_LT
+    Email: El. pašto adresas (nebūtinas)
+    LabelEmail: 'El. paštas:'

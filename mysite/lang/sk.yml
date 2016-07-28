@@ -1,0 +1,71 @@
+---
+sk:
+  BitPay:
+    ButtonAltText: BitPay, jednoduchý spôsob, ako platiť pomocou bitcoinov
+    CheckoutLocale: en_US
+    Email: Emailová adresa (voliteľná)
+    Header: Podporiť nás môžete aj v Bitcoinoch
+    LabelEmail: 'Email:'
+    RefundDisclaimer: Vzhľadom na svoju povahu sú platby v Bitcoinoch väčšinou, takže vrátenie platby alebo potvrdenie o darovaní je možné len na sumy, ktoré sme dostali od nášho poskytovateľa platobných služieb, a to len v prípade, ak ste uviedli svoju e-mailovú adresu. Ak nesúhlasíte s týmito podmienkami, prosíme vás, aby ste zvážili niektorú z ďalších možností na darcovstvo,  ktoré sú uvedené na tejto stránke.
+  Concardis:
+    CancelHeader: Proces ste zrušili
+    CancelMessage: Bohužiaľ ste zrušili platbu. <b>Platba nebola realizovaná.</b> Prosíme vás, skúste to znova. V prípade problémov alebo otázok nás neváhajte kontaktovať na {infoemail}.
+    ProblemHeader: Vyskytol sa problém...
+    ProblemMessage: 'Bohužiaľ, platba bola neúspešná. Príčinou mohol byť problém s naším platobným serverom alebo s vašou kreditnou kartou. <b>Suma nebola účtovaná. </b> Prosíme vás, skúste to znova. V prípade problémov alebo otázok nás neváhajte kontaktovať na {infoemail}. '
+    Processing: Vašu platbu spracovávame
+    ThankYouHeader: Ďakujeme za podporu!
+    ThankYouMessage: Nadácia Document Foundation vám ďakuje podporu. Vašu platbu sme obdržali. Prajeme vám úspešnú prácu s LibreOffice!
+    ThanksButHeader: Mnohokrát vám ďakujeme za finančnú podporu!
+    ThanksButMessage1: 'Nadácia Document Foundation vám ďakuje podporu. Vašu platbu sme obdržali. Prajeme vám úspešnú prácu s LibreOffice! '
+    ThanksButMessage2: Prijatie vášho finančného daru zatiaľ nevieme potvrdiť. Overte si prosím vo svojich záznamoch, či bola transakcia realizovaná.
+  DonatePage:
+    BUTTON_CARD: Prispieť prostredníctvom kreditnej karty
+    BUTTON_PAYPAL: Prispieť prostredníctvom Pay Pal
+    CHOICE_DEFAULT: Vyberte jednu z predvolených hodnôt
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: alebo zadajte vlastnú čiastku a menu<br/> (cez PayPal sú k dispozícii len položky označené * )
+    ContinueLabel: Pokračovať
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice je slobodný softvér a je k dispozícii zadarmo. <br/>Váš dar, ktorý je celkom dobrovoľný, podporí našu celosvetovú komunitu. <br/> Ak sa vám softvér páči, zvážte prosím finančnú podporu.
+    ProceedConcardis: Spracovanie vášho daru <strong>{amount} {currency}</strong> bude pokračovať na stránke spoločnosti ConCardis, kde sa platba dokončí. <br/> Ak sa presmerovanie neuskutoční automaticky, kliknite prosím na tlačidlo s názvom Pokračovať .
+    ProceedPayPal: Spracovanie vášho daru <strong>{amount} {currency}</strong> bude pokračovať na stránke spoločnosti PayPal, kde sa platba dokončí. <br/> Ak sa presmerovanie neuskutoční automaticky, kliknite prosím na tlačidlo s názvom Pokračovať .
+  Download:
+    ChangeLanguageLinkText: Chcete zmeniť jazyk?
+    ChangeLanguageLinkTitle: Vybrať iný jazyk
+    Helppack: Zabudovaný pomocník LibreOffice v jazyku <strong>{language}</strong>
+    HelppackButtonLabel: Pomocník na použitie bez prístupu k internetu
+    HelppackFallback: Zabudovaný pomocník LibreOffice v <strong>angličtine</strong>
+    HelppackLinkTitle: Stiahnuť obsah Pomocníka na použitie bez prístupu k internetu
+    InfoLinkTitle: Kontrolné súčty a ďalšie informácie
+    InfoText: Informácie
+    Langpack: Stiahnuť preklad používateľského rozhrania LibreOffice v jazyku <strong>{language}</strong>
+    LangpackButtonLabel: Preklad používateľského rozhrania
+    LangpackLinkTitle: Stiahnuť preklad
+    MainButtonLabel: Stiahnuť verziu {version}
+    MainInstaller: Hlavný inštalačný balík
+    MainLinkTitle: Stiahnuť LibreOffice {version} pre {os}
+    OS: Operačné systémy
+    OSList: 'LibreOffice {version} je k dispozícii pre nasledujúce operačné systémy/architektúry:'
+    PickLanguage: Vyberte požadovaný jazyk
+    PlatformChange: 'Vybrané: LibreOffice {version} pre {os} - <a href=''{curr_page}#change''>Zmeniť?</a>'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Stiahnuť pomocou BitTorrent
+    VersionListReleased: 'LibreOffice je dostupný v nasledujúcich <strong>vydaných</strong> verziách:'
+    VersionListTesting: 'LibreOffice je dostupný v nasledujúcich <strong>testovacích</strong> verziách:'
+    Versions: Dostupné verzie
+  Homepage:
+    DownloadNow: Stiahnuť teraz
+  RSS:
+    ReadMore: Prečítajte si viac  »
+  Shortcode:
+    NoPortable: Prenositeľná verzia ({multilingualtype}) nie je v súčasnosti k dispozícii
+    NoRC: 'Testovacia (RC) verzia nie je v súčasnosti k dispozícii '
+    NoRC_Codeline: Testovacia (RC) verzia nie je pre {version} dostupná
+    ReleaseNotesLinkText: Poznámky k vydaniu
+  Social:
+    FollowUs: Sledujte nás
+    LatestTweets: Novinky z Twitteru

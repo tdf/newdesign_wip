@@ -1,0 +1,61 @@
+---
+ca:
+  BitPay:
+    ButtonAltText: BitPay, la manera fàcil de pagar amb bitcoins.
+    CheckoutLocale: en_US
+    Email: Adreça de correu (opcional)
+    Header: Podeu fer donatius amb bitcoins
+    LabelEmail: 'Correu-e:'
+  Concardis:
+    CancelHeader: Heu cancel·lat el procés.
+    ProblemHeader: S'ha produït un problema...
+    Processing: Estem processant el pagament
+    ThankYouHeader: Gràcies pel vostre donatiu!
+    ThanksButHeader: Gràcies pel vostres donatiu!
+  DonatePage:
+    BUTTON_CARD: Donatius amb targeta de crèdit
+    BUTTON_PAYPAL: Donatius via PayPal
+    CHOICE_DEFAULT: Seleccioneu un dels valors predeterminats
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: O introduïu una quantitat personalitzada i una moneda<br/>(només les marcades amb * són disponibles via PayPal)
+    ContinueLabel: Continua
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+  Download:
+    ChangeLanguageLinkText: preferiu una altra llengua?
+    ChangeLanguageLinkTitle: Seleccioneu un altra llengua
+    Helppack: Ajuda integrada del LibreOffice en <strong>{language}</strong>
+    HelppackButtonLabel: Ajuda per a ús fora de línia
+    HelppackFallback: Ajuda integrada del LibreOffice en <strong>anglès</strong>
+    HelppackLinkTitle: Baixa el contingut de l'ajuda per a ús fora de línia
+    InfoLinkTitle: Sumes de verificació i informació addicional
+    InfoText: Informació
+    Langpack: Obteniu la interfície del LibreOffice en <strong>{language}</strong>
+    LangpackButtonLabel: Interfície d'usuari traduïda
+    LangpackLinkTitle: Baixa el paquet de llengua
+    MainButtonLabel: Baixa la versió {version}
+    MainInstaller: Instal·lador principal
+    MainLinkTitle: Baixa el LibreOffice {version} per a {os}
+    OS: Sistemes operatius
+    OSList: 'El LibreOffice {version} es troba disponible per als següents sistemes operatius i arquitectures:'
+    PickLanguage: Seleccioneu la llengua
+    PlatformChange: 'Seleccionat: LibreOffice {version} per a {os}. <a href=''{curr_page}#change''>Voleu canviar-ho?</a>'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Baixa usant el BitTorrent
+    VersionListReleased: 'El LibreOffice es troba disponible en les versions <strong>publicades</strong> següents:'
+    VersionListTesting: 'El LibreOffice es troba disponbile en les versions <strong>prèvies</strong> següents:'
+    Versions: Versions disponibles
+  Homepage:
+    DownloadNow: Baixa ara
+  RSS:
+    ReadMore: més informació »
+  Shortcode:
+    NoRC: No hi ha disponible cap versió candidata
+    NoRC_Codeline: No hi ha disponible cap versió candidata per a la branca de codi {version}
+    ReleaseNotesLinkText: Notes de la versió
+  Social:
+    FollowUs: Seguiu-nos
+    LatestTweets: Piulades recents

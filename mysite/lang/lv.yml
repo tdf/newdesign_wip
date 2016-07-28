@@ -1,0 +1,20 @@
+---
+lv:
+  BitPay:
+    ButtonAltText: BitPay, viegls veids, kā maksāt ar bitcoins.
+    CheckoutLocale: en_US
+    Email: E-pasta adrese (nav obligāta)
+    Header: Jūs varat ziedot, izmantojot Bitcoins
+    LabelEmail: 'E-pasts:'
+  Concardis:
+    CancelHeader: Jūs esat atcēlis procesu
+    ProblemHeader: Radās problēma...
+    Processing: Mēs apstrādājam Jūsu maksājumu
+    ThankYouHeader: Liels paldies par Jūsu ziedojumu!
+    ThankYouMessage: The Document Foundation gribētu jums pateikties par jūsu laipno un dāsno ziedojumu. Mēs esam saņēmuši jūsu maksājumu! Izbaudiet LibreOffice, un liels paldies par jūsu atbalstu!
+    ThanksButMessage1: The Document Foundation gribētu jums pateikties par jūsu laipno un dāsno ziedojumu. Mēs esam saņēmuši jūsu maksājumu! Izbaudiet LibreOffice, un liels paldies par jūsu atbalstu!
+  DonatePage:
+    BUTTON_CARD: Ziedot, izmantojot maksājumu karti
+    BUTTON_PAYPAL: Ziedot, izmantojot PayPal
+    CHOICE_DEFAULT: Izvēlieties kādu no piedāvātajām vērtībām
+    CUSTOM_AMOUNT_VALUE: '25'

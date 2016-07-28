@@ -1,0 +1,1 @@
+<%-- <div id="bughuntbanner" style="text-align:center;"><a href="https://wiki.documentfoundation.org/BugHunting_Session_4.3.0_RC1" title="BugHunting session for 4.3.0 — June 20-22" target="_blank"><img src="$ThemeDir/img/bughunt4301.png" alt="BugHunting Banner" width="378" height="113"></a></div> --%>

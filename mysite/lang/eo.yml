@@ -1,0 +1,76 @@
+---
+eo:
+  BitPay:
+    ButtonAltText: BitPay, facila metodo pagi per bitmono.
+    CheckoutLocale: eo
+    Email: Retadreso (malnepra)
+    Header: Vi povas donaci per bitmono
+    LabelEmail: 'Retpoŝto:'
+    RefundDisclaimer: Pro ilia naturo, donacoj per bitmono kutime estas anonimaj, do konfirmo de repago aŭ donaco nur eblas ĉe la sumo kiun ni ricevis per nia pagprovizisto, kaj nur se vi menciis vian retadreson. Se vi ne konsentas al tiuj kondiĉoj, ni ĝentile petas al vi konsideri iun el la aliaj donacaj ebloj menciitaj en ĉi tiu paĝo.
+  Concardis:
+    CancelHeader: Vi nuligis la procezon
+    CancelMessage: Bedaŭrinde, vi nuligis la pagon. <b>Ni ne pagigis vin.</b> Bonvolu reprovi kaj, en la kazo de problemo aŭ demando, vi estas libera iam kontakti nin ĉe {infoemail}.
+    ProblemHeader: Problemo okazis…
+    ProblemMessage: Bedaŭrinde, la pago ne sukcesis. La kaŭzo povus esti aŭ problemo ĉe nia pagservilo, aŭ pri via kreditkarto. <b>Ni ne pagigis vin.</b> Bonvolu reprovi kaj, en la kazo de problemoj, vi estas libera iam kontakti nin ĉe {infoemail}.
+    Processing: Ni traktas vian pagon
+    ThankYouHeader: Ni multe dankas vin pro via donaco!
+    ThankYouMessage: La fonduso 'Document Foundation' dankas vin pro via afabla kaj malavara donaco. Ni ricevis vian pagon! Ĝuu je LibreOffice, kaj multajn dankojn pro via subteno!
+    ThanksButHeader: Multajn dankojn pro via donaco!
+    ThanksButMessage1: La fonduso 'Document Foundation' dankas vin pro via afabla kaj malavara donaco. Ni ricevis vian pagon! Ĝuu je LibreOffice, kaj multajn dankojn pro via subteno!
+    ThanksButMessage2: Bonvolu noti ke ankoraŭ ne eblis konfirmi vian donacon. Bonvolu kontroli en viaj registraĵoj ĉu la donaco okazis.
+  DonatePage:
+    BUTTON_CARD: Donaci per kreditkarto
+    BUTTON_PAYPAL: Donaci per Paypal
+    CHOICE_DEFAULT: Elektu iun el la aprioraj valoroj
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Aŭ enigu propran monsumon kaj valuton<br/> (nur tiuj markitaj per * ankaŭ eblas per Paypal)
+    ContinueLabel: Daŭrigi
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice estas libera programaro kaj disponeblas senpage. <br/>Via donaco, kiu estas tute volonta, subtenas nian tutmondan komunumon.<br/>Se la programaro plaĉas al vi, bonvolu konsideri donacon.
+    ProceedConcardis: Por trakti vian donacon de <strong>{amount} {currency}</strong>, vi nun iras al la retejo de ConCardis por kompletigi la pagon.<br/>Se vi ne iras tien aŭtomate, bonvolu alklaki la suban butonon 'Daŭrigi'.
+    ProceedPayPal: Por trakti vian donacon de <strong>{amount} {currency}</strong>, vi nun iras al la retejo de Paypal por kompletigi la pagon.<br/>Se vi ne iras tien aŭtomate, bonvolu alklaki la suban butonon 'Daŭrigi'.
+  Download:
+    ChangeLanguageLinkText: bezonas alian lingvon?
+    ChangeLanguageLinkTitle: Elektu alian lingvon
+    Helppack: Enkorpigita helpo de LibreOffice en <strong>{language}</strong>
+    HelppackButtonLabel: Helpo por eksterreta uzado
+    HelppackFallback: Enkorpigita helpo de LibreOffice retrodefaŭlte en <strong>la angla</strong>
+    HelppackLinkTitle: Elŝuti helpenhavon por eksterreta uzado
+    InfoLinkTitle: Kontrolsumoj kaj plua informo
+    InfoText: Informoj
+    Langpack: Akiri je LibreOffice-fasadon tradukitan en  <strong>{language}</strong>
+    LangpackButtonLabel: Tradukita fasado
+    LangpackLinkTitle: Elŝuti la lingvopakon
+    Mac64reqs: 10.8 aŭ pli nova bezonata
+    MainButtonLabel: Elŝuta versio {version}
+    MainInstaller: Ĉefa instalilo
+    MainLinkTitle: Elŝuti je LibreOffice {version} por {os}
+    OS: Mastrumaj sistemoj
+    OSList: 'LibreOffice {version} disponeblas por la jenaj mastrumaj sistemoj/arkitekturoj:'
+    PickLanguage: Bonvole elektu vian lingvon
+    PlatformChange: 'Elektita: LibreOffice {version} por {os} - <a href=''{curr_page}#change''>ŝanĝi?</a>'
+    SDKandSource: SDK kaj fontkodo
+    SDKDownload: Elŝutu je la SDK
+    SourceDownload: Elŝutu la fontkodon
+    TorrentLinkText: Torento
+    TorrentLinkTitle: Elŝuti per BitTorrent
+    VersionListReleased: 'LibreOffice disponeblas en la jenaj <strong>eldonitaj</strong> versioj:'
+    VersionListTesting: 'LibreOffice disponeblas en la jenaj <strong>antaŭeldonaj</strong> versioj:'
+    Versions: Disponeblaj versioj
+    Win64reqs: bezonatas Vista aŭ pli nova
+  Homepage:
+    DownloadNow: Elŝuti nun
+  RSS:
+    ReadMore: legi plu »
+  Shortcode:
+    NoPortable: Neniu portebla versio ({multilingualtype}) estas aktuale havebla
+    NoRC: Neniu RC estas aktuale havebla
+    NoRC_Codeline: Neniu RC estas aktuale havebla por la {version} programaro
+    ReleaseNotesLinkText: Eldonaj notoj
+  Social:
+    FollowUs: Sekvi nin
+    LatestTweets: Lastaj peptoj

@@ -1,0 +1,365 @@
+/**
+ * LibreOffice theme
+ * initially based on SilverStripe Black Candy Theme
+ *
+ * This typography file is included in the WYSIWYG editor and the front end. It provides
+ * a place to add link styles and font styles you would like in the CMS and the Front End.
+ */
+
+/* PARAGRAPHS
+-------------------------------------------- */
+.typography p {
+	margin: 0 0 18px 0;
+}
+
+/* QUOTES
+-------------------------------------------- */
+.typography blockquote {
+	margin: 1em;
+	font-size: 0.8em;
+}
+
+.typography q {
+	display:block;
+	font-size: 0.8em;
+	margin: 1em 1em;
+	padding: 0.5em;
+	border: 1px #ccc solid;
+}
+
+/* LINKS
+-------------------------------------------- */
+
+.typography a {
+	text-decoration: none;
+	color: #0369A3;
+}
+.typography a:hover {
+	text-decoration: underline;
+	color: #0369A3;
+}
+.typography a:visited  {
+	text-decoration: underline;
+	color: #4D4D4D;
+}
+/* LINK ICONS - shows type of file
+------------------------------------ */
+.typography a[href$=".pdf"],
+.typography a[href$=".PDF"],
+.typography a.pdf {
+	padding: 2px;
+	padding-left: 20px;
+	background: url(../images/icons/page_white_acrobat.png) no-repeat left center;
+}
+.typography a[href$=".doc"],
+.typography a[href$=".DOC"],
+.typography a.doc {
+	padding: 2px;
+	padding-left: 20px;
+	background: url(../images/icons/page_word.png) no-repeat left center;
+}
+.typography a[href$=".xls"],
+.typography a[href$=".XLS"],
+.typography a.xls {
+	padding: 2px;
+	padding-left: 20px;
+	background: url(../images/icons/page_excel.png) no-repeat left center;
+}
+.typography a[href$=".gz"],
+.typography a[href$=".GZ"],
+.typography a[href$=".gzip"],
+.typography a[href$=".GZIP"],
+.typography a[href$=".zip"],
+.typography a[href$=".ZIP"],
+.typography a.archive {
+	padding: 2px;
+	padding-left: 20px;
+	background: url(../images/icons/page_white_zip.png) no-repeat left center;
+}
+.typography a[href$=".exe"],
+.typography a[href$=".EXE"],
+.typography a.application {
+	padding: 2px;
+	padding-left: 20px;
+	background: url(../images/icons/application.png) no-repeat left center;
+}
+
+/* LIST STYLES
+-------------------------------------------- */
+.typography dl,
+.typography ul,
+.typography ol {
+	margin: 0 0 18px 24px;
+}
+	.typography li {
+		margin: 5px 10px;
+	}
+		.typography li li {
+		}
+
+/* used by FolderPage */
+.typography li.folder {
+	background: url(../images/icons/folder_open.png) no-repeat left top;
+	margin-left: -12px;
+	padding-left: 22px;
+	list-style-type: none;
+}
+
+/* HEADER STYLES
+-------------------------------------------- */
+.typography h1,
+.typography h2,
+.typography h3 {
+	color: #0369A3;
+	margin: 0 0 18px 0;
+	font-weight: 400;
+}
+
+.typography h1 {
+	font-size: 32px;
+	line-height: 30px;
+}
+.typography h2 {
+	font-size: 2em;
+}
+.typography h3 {
+	font-size: 1.5em;
+}
+.typography h4 {
+	font-size: 16px;
+	color: #222;
+	width: 95%;
+	font-weight: 300;
+	line-height: 18px;
+	border-bottom: 1px solid #ccc;
+	margin: 0 0 16px 0;
+}
+.typography h5 {
+	font-size: 14px;
+	color: #222;
+	font-weight: 700;
+	margin: 0 0 12px 0;
+}
+.typography h6 {
+	font-size: 13px;
+	color: #555;
+	line-height: 1.4em;
+	margin: 0 0 12px 0;
+}
+
+/* PRE STYLES
+-------------------------------------------- */
+.typography pre {
+	font-family:"Courier New",Courier;
+	display:block;
+	font-size:1.2em;
+	margin:2em 5em;
+	padding:0.5em;
+	border:1px #ccc solid;
+	background:#eee;;
+}
+
+/* TABLE STYLING
+-------------------------------------------- */
+.typography table {
+	margin: 0 0 18px 0;
+	border-collapse:collapse;
+}
+	.typography tr {}
+		.typography td {
+			padding:5px;
+		}
+
+/* WYSIWYG EDITOR ALIGNMENT CLASSES
+-------------------------------------------- */
+.typography .left {
+	text-align: left;
+}
+.typography .center {
+	text-align: center;
+}
+.typography .right {
+	text-align: right;
+}
+
+/* IMAGES
+-------------------------------------------- */
+.typography img {
+	border: none;
+}
+	.typography img.right {
+		float: right;
+		margin-left: 20px;
+	}
+	.typography img.left {
+		float: left;
+	}
+	.typography img.leftAlone {
+		float: left;
+		margin-right: 100%;
+	}
+	.typography img.center {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+
+ul.dlp li {
+	position: relative;
+	list-style: none;
+	margin-left: 0px;
+	background: url(../images/li-bullet-single-dark.png) no-repeat;
+	background-position: 4px 3px;
+	padding-left: 30px;
+	display: block;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+.typography kbd {
+	color: #000;
+	font-family: monospace;
+	background: #ddd;
+}
+#supporters td {
+	border-width: 0px;
+	vertical-align:top;
+	padding-bottom: 50px;
+}
+.foundationtable th {
+	font-size: 140%;
+	padding: 6px;
+	vertical-align: middle;
+	background: #eee;
+}
+.foundationtable tbody tr:first-child td  {
+	padding-top: 20px;
+}
+.foundationtable tbody tr td:first-child  {
+	padding-left: 0px;
+	padding-right: 15px;
+}
+p.roles {
+	font-variant: small-caps;
+}
+
+/* STRONG
+-------------------------------------------- */
+.typography strong {
+	color: #0369A3;
+}
+.highlight {
+	background: yellow;
+}
+
+/* for translation status sitemap */
+div.missing {
+	background-color: red;
+}
+div.live {
+	background-color: green;
+}
+div.unpublished {
+	background-color: orange;
+}
+div.changed {
+	background-color: yellow;
+}
+
+/* for horizontally aligned li-children */
+ul.table {
+	display: table;
+}
+ul.table > li {
+	display: table-row;
+}
+ul.table > li > * {
+	display: table-cell;
+	padding-right: 1em;
+}
+
+dl.dlp dt {
+	position: relative;
+	list-style: none;
+	margin-left: 0px;
+	background: url(../images/li-bullet-single-dark.png) no-repeat;
+	background-position: 4px 3px;
+	padding-left: 30px;
+	display: block;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+dl.dlp dd {
+	padding-left: 30px;
+	margin-bottom: 10px;
+}
+
+/* NOT USED */
+/* The "Social media" list on "Contacts" page */
+
+ul.social-icons {
+    list-style: none:
+    margin-left: 0px;
+}
+
+ul.social-icons li {
+    display: inline;
+    margin-right: 5px;
+    line-height: 50px;
+}
+
+ul.social-icons li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul.social-icons li a:hover {
+    color: #ffffff;
+    bottom: 15px;
+    text-decoration: none;
+    transition: all 0.35s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.btn:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.btn:hover, .btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    background-color: #0369A3;
+}

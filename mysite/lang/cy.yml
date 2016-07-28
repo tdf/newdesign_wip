@@ -1,0 +1,76 @@
+---
+cy:
+  BitPay:
+    ButtonAltText: BitPay, y ffordd hawdd i dalu gyda bitcoins.
+    CheckoutLocale: en_US
+    Email: Cyfeiriad e-bost (dewisol)
+    Header: Mae modd cyfrannu drwy Via Bitcoin
+    LabelEmail: 'E-bost:'
+    RefundDisclaimer: Oherwydd eu natur, mae cyfrannu gan ddefnyddio Bitcoins fel arfer yn anhysbys, felly dim ond os ydych yn cynnig eich e-bost y mae modd i ni dderbyn cadarnhad gan ein darparwr taliadau y mae'n bosib gwneud ad-daliadau neu gadarnhau cyfraniad. Os nad ydych yn cytuno i'r amodau hyn, rydym yn awgrymu eich bod yn ystyried un o'r dulliau eraill o gyfrannu sydd ar y dudalen hon.
+  Concardis:
+    CancelHeader: Rydych wedi diddymu'r broses
+    CancelMessage: Yn anffodus, rydych wedi diddymu'r taliad. <b>Nid ydym wedi cymryd arian gennych.</b> Ceisiwch eto ac os oes cwestiwn neu broblem yn codi, cysylltwch â ni ar unrhyw adeg ar {infoemail}.
+    ProblemHeader: Mae rhyw anhawster wedi codi…
+    ProblemMessage: Yn anffodus, nid yw eich taliad wedi bod yn llwyddiannus. Gall hyn fod oherwydd anhawster gyda'n gweinydd talu neu eich cerdyn credyd. <b>Nid ydym wedi cymryd arian gennych.</b> Ceisiwch eto ac os oes yna broblem yn codi, cysylltwch â ni ar unrhyw adeg ar {infoemail}.
+    Processing: Rydym yn prosesu eich taliad
+    ThankYouHeader: Diolch yn fawr am eich cyfraniad!
+    ThankYouMessage: Hoffai'r Document Foundation ddiolch i chi am eich cyfraniad caredig a hael. Rydym wedi derbyn y taliad! Mwynhewch LibreOffice a diolch yn fawr am eich cefnogaeth!
+    ThanksButHeader: Diolch yn fawr iawn am eich cyfraniad!
+    ThanksButMessage1: Hoffai'r Document Foundation ddiolch i chi am eich cyfraniad caredig a hael. Rydym wedi derbyn y taliad! Mwynhewch LibreOffice a diolch yn fawr am eich cefnogaeth!
+    ThanksButMessage2: Sylwch nad oes modd cadarnhau'r cyfraniad eto. Gwiriwch yn eich cofnodion fod y cyfraniad wedi gweithio.
+  DonatePage:
+    BUTTON_CARD: Cyfrannwch drwy Gerdyn Credyd
+    BUTTON_PAYPAL: Cyfrannwch drwy PayPal
+    CHOICE_DEFAULT: Dewiswch un o'r gwerthoedd rhagosodedig
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Neu dewiswch swm rhydd ac arian <br/>(dim ond rheini sy'n cael eu nodi gydag * sydd ar gael drwy PayPal)
+    ContinueLabel: Parhau
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: Mae LibreOffice yn Feddalwedd Rhydd ac mae ar gael am ddim. <br/>Mae eich cyfraniad, sy'n gwbl ddewisol, yn cefnogi ein cymuned fyd eang.<br/>Os ydych yn hoffi'r feddalwedd, ystyriwch gyfrannu.
+    ProceedConcardis: Er mwyn prosesu eich cyfraniad o <strong>{amount} {currency}</strong>, rydych yn cael eich anfon ymlaen at wefan Concardis' er mwyn cwblhau eich taliad.<br/>Os nad ydych wedi eich anfon ymlaen yn awtomatig, cliciwch y botwm Parhau isod.
+    ProceedPayPal: Er mwyn prosesu eich cyfraniad o <strong>{amount} {currency}</strong>, rydych yn cael eich anfon ymlaen at wefan Concardis er mwyn cwblhau eich taliad.<br/>Os nad ydych wedi eich anfon ymlaen yn awtomatig, cliciwch y botwm Parhau isod.
+  Download:
+    ChangeLanguageLinkText: angen iaith arall?
+    ChangeLanguageLinkTitle: Dewis iaith arall
+    Helppack: Cymorth LibreOffice <strong>{language}</strong>
+    HelppackButtonLabel: Cymorth ar gyfer defnydd all-lein
+    HelppackFallback: Cymorth LibreOffice yn <strong>Saesneg wrth gefn</strong>
+    HelppackLinkTitle: Llwythwch helpcontent i lawr ar gyfer defnydd all-lein
+    InfoLinkTitle: Checksum a manylion ychwanegol
+    InfoText: Manylion
+    Langpack: Mae rhyngwgwyneb <strong>{language}</strong> LibreOffice ar gael
+    LangpackButtonLabel: Cyfieithiadau o'r Rhyngwyneb Defnyddiwr
+    LangpackLinkTitle: Llwytho Pecyn Iaith i Lawr
+    Mac64reqs: Mae angen 10.8 neu ddiweddarach
+    MainButtonLabel: Llwytho Fersiwn {version} i Lawr
+    MainInstaller: Prif Osodwr
+    MainLinkTitle: Llwytho LibreOffice {version} i Lawr ar gyfer {os}
+    OS: Systemau Gweithredu
+    OSList: 'Mae LibreOffice {version} ar gael ar gyfer y systemau gweithredu canlynol:'
+    PickLanguage: Dewiswch eich iaith
+    PlatformChange: 'Dewiswyd: LibreOffice {version} for {os} - <a href=''{curr_page}#change''>newid?</a>'
+    SDKandSource: SDK a'r Cod Ffynhonnell
+    SDKDownload: Llwytho'r SDK i lawr
+    SourceDownload: Llwytho'r Cod Ffynhonnell i Lawr
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Llwythwch i lawr gyda BitTorrent
+    VersionListReleased: 'Mae LibreOffice ar gael yn y fersiynau <strong>cyfredol</strong> canlynol :'
+    VersionListTesting: 'Mae LibreOffice ar gael yn y fersiynau <strong>cyn-ryddhau</strong> canlynol:'
+    Versions: Fersiynau Sydd ar Gael
+    Win64reqs: Mae angen Vista neu ddiweddarach
+  Homepage:
+    DownloadNow: Llwythwch i Lawr Nawr
+  RSS:
+    ReadMore: darllen rhagor »
+  Shortcode:
+    NoPortable: Does dim Fersiwn Cludadwy ({multilingualtype}) ar gael ar hyn o bryd
+    NoRC: Does dim RC ar gael ar hyn o bryd
+    NoRC_Codeline: Does dim RC ar gael ar hyn o bryd ar gyfer llinell cod {version}
+    ReleaseNotesLinkText: Nodiadau Ryddhau
+  Social:
+    FollowUs: Dilynwch Ni
+    LatestTweets: Trydar Diweddar

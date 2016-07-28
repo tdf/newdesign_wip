@@ -1,0 +1,43 @@
+---
+fi:
+  Download:
+    ChangeLanguageLinkText: haluatko toisen kielen?
+    ChangeLanguageLinkTitle: Valitse toinen kieli
+    Helppack: LibreOfficen ohjeet kielelle <strong>{language}</strong>
+    HelppackButtonLabel: Käyttöohjeet
+    HelppackFallback: LibreOfficen ohjeet kielelle <strong>englanti (kääntämättömät osuudet)</strong>
+    HelppackLinkTitle: Lataa ohjeet käytettäväksi ilman verkkoyhteyttä
+    InfoLinkTitle: Tarkistussummat ja lisätiedot
+    InfoText: Tietoja
+    Langpack: Lataa LibreOfficen käyttöliittymä kielelle <strong>{language}</strong>
+    LangpackButtonLabel: Käyttöliittymän käännökset
+    LangpackLinkTitle: Lataa kielipaketti
+    Mac64reqs: 10.8 tai uudempi vaaditaan
+    MainButtonLabel: Lataa versio {version}
+    MainInstaller: Asennuspaketti
+    MainLinkTitle: Lataa LibreOffice {version} käyttöjärjestelmälle {os}
+    OS: Käyttöjärjestelmät
+    OSList: 'LibreOffice {version} on saatavilla seuraaville käyttöjärjestelmille/laitteistoille:'
+    PickLanguage: Valitse kieli
+    PlatformChange: 'Valittuna: LibreOffice {version} käyttöjärjestelmälle {os} - <a href=''{curr_page}#change''>vaihda?</a>'
+    SDKandSource: Kehitystyökalut (SDK) ja lähdekoodi
+    SDKDownload: Lataa kehitystyökalut
+    SourceDownload: Lataa lähdekoodi
+    TorrentLinkText: Torrentti
+    TorrentLinkTitle: Lataa BitTorrentilla
+    VersionListReleased: 'LibreOffice on saatavilla seuraavina <strong>julkaistuina</strong> versioina:'
+    VersionListTesting: 'LibreOfficesta on saatavilla seuraavat <strong>testiversiot</strong>:'
+    Versions: Saatavilla olevat versiot
+    Win64reqs: Vista tai uudempi vaaditaan
+  Homepage:
+    DownloadNow: Lataa nyt
+  RSS:
+    ReadMore: lue lisää »
+  Shortcode:
+    NoPortable: Muistitikulle asennettavaa versiota ({multilingualtype}) ei tällä hetkellä ole saatavilla
+    NoRC: Testiversioita ei tällä hetkellä ole saatavilla
+    NoRC_Codeline: Testiversioita ei ole saatavilla {version}-julkaisusarjalle
+    ReleaseNotesLinkText: Julkaisutiedot
+  Social:
+    FollowUs: Seuraa meitä
+    LatestTweets: Viimeisimmät twiitit

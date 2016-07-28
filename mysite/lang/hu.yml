@@ -1,0 +1,11 @@
+---
+hu:
+  BitPay:
+    ButtonAltText: BitPay, a bitcoinnal való fizetés egyszerű módja.
+    CheckoutLocale: en_US
+    Email: E-mail cím (elhagyható)
+    Header: Támogathat Bitcoinnal
+    LabelEmail: 'E-mail:'
+    RefundDisclaimer: Természetükből fakadóan a Bitcoin adományok általában névtelenek, így bármilyen visszatérítés vagy támogatás-ellenőrzés csak a fizetésszolgáltatónktól kapott összeg alapján lehetséges, és csak ha megadja e-mail címét. Ha nem egyezik bele a fenti feltételekbe, akkor fontolja meg az ezen az oldalon vázolt egyéb támogatási lehetőségeket.
+  Concardis:
+    CancelHeader: Megszakította a folyamatot

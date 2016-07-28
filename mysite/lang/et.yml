@@ -1,0 +1,70 @@
+---
+et:
+  BitPay:
+    ButtonAltText: BitPay, lihtne viis bitcoinidega maksta
+    Email: E-post (pole kohustuslik)
+    Header: Annetada saab ka bitcoinidega
+    LabelEmail: 'E-post:'
+    RefundDisclaimer: Bitcoini-annetused on oma loomu tõttu anonüümsed, nii et igasugune annetuse kinnitus või tagastus on võimalik ainult selle summa osas, mille me oma makseteenuse osutajalt saame, ja ainult siis, kui lisad oma e-posti aadressi. Kui sa nende tingimustega ei nõustu, kasuta palun mõnda teist annetamise viisi.
+  Concardis:
+    CancelHeader: Protsess tühistati
+    CancelMessage: 'Tühistasid makse. <b>Raha kaardilt ei võetud.</b> Soovi korral proovi hiljem uuesti ja kui probleem püsib, kirjuta meile aadressil {infoemail}. '
+    ProblemHeader: Ilmnes probleem…
+    ProblemMessage: Kahjuks makse ei õnnestunud. Probleem võib olla meie makseserveris või sinu krediitkaardis. <b>Raha kaardilt ei võetud.</b> Proovi palun hiljem uuesti ja kui probleem püsib, kirjuta meile aadressil {infoemail}.
+    Processing: Makset töödeldakse
+    ThankYouHeader: Suur aitäh annetuse eest!
+    ThankYouMessage: Document Foundation tänab sind annetamise eest. Makse on vastu võetud. Naudi LibreOffice'i kasutamist ja veel kord aitäh toetamast!
+    ThanksButHeader: Suur aitäh annetuse eest!
+    ThanksButMessage1: Document Foundation tänab sind annetamise eest. Naudi LibreOffice'i kasutamist ja veel kord aitäh toetamast!
+    ThanksButMessage2: Pane tähele, et annetust polnud veel võimalik kinnitada. Palun kontrolli oma konto väljavõttelt, kas see toimis.
+  DonatePage:
+    BUTTON_CARD: Annetan krediitkaardiga
+    BUTTON_PAYPAL: Annetan PayPaliga
+    CHOICE_DEFAULT: Vali üks eelmääratud summadest
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Või määra ise sobiv summa ja rahaühik<br/>(PayPaliga saab kasutada vaid neid, mille juures on *)
+    ContinueLabel: Jätka
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice on vaba tarkvara ja tasuta saadaval.<br/>Vabatahtlike annetused toetavad meie ülimaailmset kogukonda.<br/> Kui sulle see tarkvara meeldib, kaalu palun annetamist.
+    ProceedConcardis: Annetuse (<strong>{amount} {currency}</strong>) töötlemiseks ja makse kinnitamiseks suunatakse sind edasi ConCardise veebilehele.<br/>Kui sind automaatselt edasi ei suunata, siis klõpsa allpool nuppu \"Jätka\".
+    ProceedPayPal: Annetuse (<strong>{amount} {currency}</strong>) töötlemiseks ja makse kinnitamiseks suunatakse sind edasi PayPali veebilehele.<br/>Kui sind automaatselt edasi ei suunata, siis klõpsa allpool nuppu \"Jätka\".
+  Download:
+    ChangeLanguageLinkText: Soovid muud keelt?
+    ChangeLanguageLinkTitle: Vali teine keel
+    Helppack: <strong>{language}de</strong> tõlgitud LibreOffice'i abitekst
+    HelppackButtonLabel: Abitekst
+    HelppackFallback: <strong>Ingliskeelne</strong> LibreOffice'i abitekst
+    HelppackLinkTitle: Laadi abitekst võrguühenduseta kasutamiseks alla
+    InfoLinkTitle: Failide kontrollsummad ja lisainfo
+    InfoText: info
+    Langpack: <strong>{language}de</strong> tõlgitud LibreOffice'i kasutajaliides
+    LangpackButtonLabel: Tõlgitud kasutajaliides
+    LangpackLinkTitle: Laadi keelepakett alla
+    MainButtonLabel: Laadi alla versioon {version}
+    MainInstaller: Põhipaigaldus
+    MainLinkTitle: Laadi alla LibreOffice {version} — {os}
+    OS: Operatsioonisüsteemid
+    OSList: 'LibreOffice {version} on saadaval järgmistele opsüsteemidele/platvormidele:'
+    PickLanguage: Keele valimine
+    PlatformChange: 'Valitud: LibreOffice {version} — {os}. <a href=''{curr_page}#change''>Soovid muud?</a>'
+    TorrentLinkText: torrent
+    TorrentLinkTitle: Allalaadimine BitTorrenti abil
+    VersionListReleased: 'LibreOffice''ist on saadaval järgmised versioonid:'
+    VersionListTesting: '<strong>Eelväljalasked</strong>:'
+    Versions: Saadaolevad versioonid
+  Homepage:
+    DownloadNow: Laadi alla
+  RSS:
+    ReadMore: Loe edasi »
+  Shortcode:
+    NoPortable: Praegu pole ühtegi kaasaskantavat ({multilingualtype}) versiooni saadaval
+    NoRC: Praegu pole ühtegi RC-d saadaval
+    NoRC_Codeline: '{version} koodiharust pole hetkel ühtegi väljalaskekandidaati saadaval'
+    ReleaseNotesLinkText: Väljalaskemärkmed
+  Social:
+    FollowUs: Jälgi meid
+    LatestTweets: Uusimad säutsud

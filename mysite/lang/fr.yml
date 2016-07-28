@@ -1,0 +1,76 @@
+---
+fr:
+  BitPay:
+    ButtonAltText: BitPay, le moyen facile de payer avec bitcoins.
+    CheckoutLocale: en_US
+    Email: Adresse e-mail (facultatif)
+    Header: Vous pouvez faire un don via Bitcoins
+    LabelEmail: 'E-mail :'
+    RefundDisclaimer: En raison de leur nature, les dons via Bitcoins sont en général anonymes, tout type de remboursements ou de confirmation de don n'est donc possible que pour la somme reçue de votre fournisseur de paiement et uniquement si vous mentionnez votre adresse mail. Si vous n'acceptez pas les conditions mentionnées ci-dessus, nous vous conseillons de choisir une autre des options de don figurant sur cette page.
+  Concardis:
+    CancelHeader: Vous avez annulé le processus
+    CancelMessage: Malheureusement, vous avez annulé le paiement. <b>Vous n'avez pas été facturé.</b> Veuillez essayer de nouveau et en cas de problème ou de question, n'hésitez pas à nous contacter à {infoemail}.
+    ProblemHeader: Il y a eu un problème...
+    ProblemMessage: Malheureusement, le paiement ne s'est pas effectué. Cela peut être dû à un problème avec notre serveur de paiement ou à votre carte de crédit. <b>Vous n'avez pas été facturé.</b> Veuillez essayer de nouveau plus tard et en cas de problèmes, n'hésitez pas à nous contacter à {infoemail}.
+    Processing: Nous procédons au paiement
+    ThankYouHeader: Merci beaucoup pour votre don !
+    ThankYouMessage: The Document Foundation souhaite vous remercier pour votre don et votre générosité. Nous avons reçu votre paiement ! Nous espérons que vous apprécierez LibreOffice et vous remercions de votre soutien !
+    ThanksButHeader: Merci beaucoup pour votre don !
+    ThanksButMessage1: The Document Foundation souhaite vous remercier pour votre don et votre générosité. Nous avons reçu votre paiement ! Nous espérons que vous apprécierez LibreOffice et vous remercions de votre soutien !
+    ThanksButMessage2: Veuillez noter que votre don n'est pas encore confirmé. Consultez vos enregistrements afin de vérifier que cela a fonctionné.
+  DonatePage:
+    BUTTON_CARD: Donner par carte de crédit
+    BUTTON_PAYPAL: Donner via PayPal
+    CHOICE_DEFAULT: Sélectionnez une valeur par défaut
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Ou saisissez un montant personnalisé et une monnaie<br/>(seules celles marquées d'une * sont également disponibles via PayPal)
+    ContinueLabel: Continuer
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+    LeadText: 'LibreOffice est un logiciel libre et est mis à disposition gratuitement. <br/>Votre don, qui est complètement facultatif, aide notre communauté internationale.<br/> Si vous aimez le logiciel, soutenez-le par un don. '
+    ProceedConcardis: Pour réaliser votre don de <strong>{amount} {currency}</strong>, vous êtes dirigé sur le site ConCardis afin de finaliser votre paiement.<br/>Si vous n'êtes pas redirigé automatiquement, cliquez sur le bouton Continuer ci-dessous.
+    ProceedPayPal: Pour réaliser votre don de <strong>{amount} {currency}</strong>, vous êtes dirigé sur le site Paypal afin de finaliser votre paiement.<br/>Si vous n'êtes pas redirigé automatiquement, cliquez sur le bouton Continuer ci-dessous.
+  Download:
+    ChangeLanguageLinkText: vous souhaitez une autre langue ?
+    ChangeLanguageLinkTitle: Choisir une autre langue
+    Helppack: Aide intégrée de LibreOffice en <strong>{language}</strong>
+    HelppackButtonLabel: Aide pour l'utilisation hors ligne
+    HelppackFallback: Aide LibreOffice intégrée en <strong>Anglais</strong>
+    HelppackLinkTitle: Télécharger l'aide pour une utilisation hors ligne
+    InfoLinkTitle: Sommes de contrôle et informations supplémentaires
+    InfoText: Informations
+    Langpack: Obtenir l'interface LibreOffice traduite en <strong>{language}</strong>
+    LangpackButtonLabel: Interface utilisateur traduite
+    LangpackLinkTitle: Télécharger le pack de langue
+    Mac64reqs: 10.8 ou plus récent requis
+    MainButtonLabel: Télécharger la version {version}
+    MainInstaller: Installeur principal
+    MainLinkTitle: Télécharger LibreOffice {version} pour {os}
+    OS: Systèmes d'exploitation
+    OSList: 'LibreOffice {version} est disponible pour les systèmes d''exploitation/architectures suivants :'
+    PickLanguage: Veuillez sélectionner votre langue
+    PlatformChange: 'Sélectionné : LibreOffice {version} pour {os} - <a href=''{curr_page}#change''>modifier ?</a>'
+    SDKandSource: SDK et code source
+    SDKDownload: Télécharger le SDK
+    SourceDownload: Télécharger le code source
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Télécharger en utilisant BitTorrent
+    VersionListReleased: 'LibreOffice est disponible dans les <strong>versions</strong> suivantes :'
+    VersionListTesting: 'LibreOffice est disponible dans les <strong>pré-versions</strong> suivantes :'
+    Versions: Versions disponibles
+    Win64reqs: Vista ou plus récent requis
+  Homepage:
+    DownloadNow: Télécharger maintenant
+  RSS:
+    ReadMore: en savoir plus »
+  Shortcode:
+    NoPortable: Aucune version Portable ({multilingualtype}) n'est actuellement disponible
+    NoRC: Aucune RC n'est actuellement disponible
+    NoRC_Codeline: Aucune RC n'est actuellement disponible pour la branche {version}
+    ReleaseNotesLinkText: Notes de version
+  Social:
+    FollowUs: Suivez-nous
+    LatestTweets: Derniers Tweets

@@ -1,0 +1,31 @@
+---
+Name: mysite
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+# YAML configuration for SilverStripe
+# See http://doc.silverstripe.org/framework/en/topics/configuration
+# Caution: Indentation through two spaces, not tabs
+SSViewer:
+  theme: 'simple'
+Email:
+  admin_email: 'newdesign staging site <webmaster@documentfoundation.org>'
+# put site into dev mode (might reveal password if stored in php, as snippet with the line with the error is also included in the output)
+Director:
+  environment_type: 'live'
+File:
+  allowed_extensions:
+    - odt
+    - oxt
+
+Subsite:
+  extensions:
+    - SubsitePiwik
+    - SubsiteGoogleSiteVerification
+Page:
+  extensions:
+    - PagePhotoShuffler
+Image:
+  extensions:
+    - ImagePhotoShuffler

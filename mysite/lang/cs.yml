@@ -1,0 +1,31 @@
+---
+cs:
+  BitPay:
+    Email: E-mailová adresa (nepovinná)
+    LabelEmail: 'E-mail:'
+  Concardis:
+    ProblemHeader: Došlo k problému…
+    Processing: Zpracováváme Vaši platbu
+    ThankYouHeader: Velice vám děkujeme za Váš příspěvek!
+    ThankYouMessage: Nadace Document Foundation Vám děkuje za podporu. Vaši platbu jsme obdrželi. Přejeme Vám mnoho úspěchů nejen při práci s LibreOffice!
+    ThanksButHeader: Mnohokrát Vám děkujeme za Váš příspěvek!
+    ThanksButMessage1: Nadace Document Foundation Vám děkuje za podporu. Vaši platbu jsme obdrželi. Přejeme Vám mnoho úspěchů nejen při práci s LibreOffice!
+  DonatePage:
+    BUTTON_CARD: Přispět kreditní kartou
+    BUTTON_PAYPAL: Přispět přes PayPal
+    CHOICE_DEFAULT: Vyberte jednu z výchozích hodnot
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Nebo zadejte vlastní částku a měnu<br/>(pro platbu pomocí PayPal lze použít pouze měny označené *)
+    ContinueLabel: Pokračovat
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+  Download:
+    ChangeLanguageLinkText: Zvolit jiný jazyk
+    ChangeLanguageLinkTitle: Zvolit jiný jazyk
+    HelppackButtonLabel: Nápověda pro offline použití
+    HelppackFallback: Zabudovaná nápověda LibreOffice v <strong>angličtině</strong>
+    TorrentLinkText: Torrent
+    Versions: Dostupné verze

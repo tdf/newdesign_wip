@@ -1,0 +1,76 @@
+---
+sl:
+  BitPay:
+    ButtonAltText: BitPay, enostaven način plačevanja z bitcoini.
+    CheckoutLocale: sl
+    Email: E-poštni naslov (neobvezno)
+    Header: Donirate lahko prek bitcoinov
+    LabelEmail: 'E-poštni naslov:'
+    RefundDisclaimer: Zaradi svoje narave so donacije Bitcoin običajno anonimne, tako da so povračila ali potrditve donacije možne le za vrednost, ki smo jo prejeli s strani našega ponudnika storitev plačil in le če ste omenili svoj e-poštni naslov. Če se s temi pogoji ne strinjate, vas vljudno prosimo, da razmislite o drugih možnostih doniranja, ki so opisane na tej strani.
+  Concardis:
+    CancelHeader: Postopek ste preklicali
+    CancelMessage: Žal plačila niste preklicali.<b>Storitev ni bila zaračunana.</b> Poskusite znova in v primeru težav ali vprašanj kadarkoli prosto stopite v stik na naslovu {infoemail}.
+    ProblemHeader: Prišlo je do težave ...
+    ProblemMessage: Žal plačilo ni uspelo. Razlog je morda težava z našim strežnikom za plačila ali z vašo kreditno kartico. <b>Znesek vam ni bil obračunan.</b> Poskusite znova kasneje, v primeru težav pa kadarkoli stopite z nami v stik prek naslova {infoemail}.
+    Processing: Vaše plačilo je v obdelavi
+    ThankYouHeader: Hvala za vašo donacijo!
+    ThankYouMessage: TDF (The Document Foundation) se vam zahvaljuje za prijazno in velikodušno donacijo. Prejeli smo vaše plačilo! Uživajte v LibreOffice in hvala za vašo podporo!
+    ThanksButHeader: Najlepša hvala za vašo donacijo!
+    ThanksButMessage1: TDF (The Document Foundation) se vam zahvaljuje za prijazno in velikodušno donacijo. Prejeli smo vaše plačilo! Uživajte v LibreOffice in hvala za vašo podporo!
+    ThanksButMessage2: Upoštevajte, da donacije še ni mogoče potrditi. Preverite v svojih podatkih, ali je donacija izpeljana.
+  DonatePage:
+    BUTTON_CARD: Doniraj s kreditno kartico
+    BUTTON_PAYPAL: Doniraj prek PayPala
+    CHOICE_DEFAULT: Izberite eno od privzetih vrednosti
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Ali vnesite znesek in valuto po meri<br/>(le z zvezdico označene so na voljo tudi prek PayPal)
+    ContinueLabel: Nadaljuj
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+    LeadText: LibreOffice je prosto programje in je na voljo brezplačno.<br/>Vaša donacija, ki je povsem neobvezna, je podpora naši skupnosti po celem svetu.<br/>Če vam je programski paket všeč, vas vabimo, da razmislite o donaciji.
+    ProceedConcardis: Za obdelavo vaše donacije <strong>{amount} {currency}</strong> boste zdaj preusmerjeni na spletno mesto ConCardis, kjer lahko zaključite plačilo.<br/>Če se stran ne odpre samodejno, kliknite spodnji gumb Nadaljuj.
+    ProceedPayPal: Za obdelavo vaše donacije <strong>{amount} {currency}</strong> boste zdaj preusmerjeni na spletno mesto PayPal, kjer lahko zaključite plačilo.<br/>Če se stran ne odpre samodejno, kliknite spodnji gumb Nadaljuj.
+  Download:
+    ChangeLanguageLinkText: iščete v drugem jeziku?
+    ChangeLanguageLinkTitle: Izberite drug jezik
+    Helppack: Vgrajena pomoč LibreOffice – <strong>{language}</strong>
+    HelppackButtonLabel: Pomoč za uporabo v nepovezanem načinu
+    HelppackFallback: Vgrajena pomoč LibreOffice – osnovni <strong>angleški jezik</strong>
+    HelppackLinkTitle: Prenesite vsebino vgrajene pomoči
+    InfoLinkTitle: Kontrolne vsote in dodatne informacije
+    InfoText: podrobnosti
+    Langpack: Prenesite v <strong>{language}</strong> jezik preveden vmesnik LibreOffice
+    LangpackButtonLabel: Preveden uporabniški vmesnik
+    LangpackLinkTitle: Prenesi jezikovni paket
+    Mac64reqs: obvezna izdaja 10.8 ali novejša
+    MainButtonLabel: Prenesi različico {version}
+    MainInstaller: Glavni namestitveni program
+    MainLinkTitle: Prenesi LibreOffice {version} za {os}
+    OS: Operacijski sistemi
+    OSList: 'LibreOffice {version} je na voljo za naslednje operacijske sisteme/arhitekture:'
+    PickLanguage: Izberite svoj jezik
+    PlatformChange: 'Izbrano: LibreOffice {version} za {os} – <a href=''{curr_page}#change''>želite spremeniti?</a>'
+    SDKandSource: SDK in izvorna koda
+    SDKDownload: Prenesite SDK
+    SourceDownload: Prenesite izvorno kodo
+    TorrentLinkText: torrent
+    TorrentLinkTitle: Prenesite z uporabo BitTorrenta
+    VersionListReleased: 'LibreOffice je na voljo v naslednjih različicah <strong>izdaj</strong>:'
+    VersionListTesting: 'LibreOffice je na voljo v naslednjih različicah <strong>predizdaj</strong>:'
+    Versions: Različice na voljo
+    Win64reqs: obvezna Vista ali novejši
+  Homepage:
+    DownloadNow: Prenesi zdaj
+  RSS:
+    ReadMore: preberi več »
+  Shortcode:
+    NoPortable: Trenutno prenosna različica ({multilingualtype}) ni na voljo
+    NoRC: Kandidat za izdajo trenutno ni na voljo
+    NoRC_Codeline: V nizu izdaj {version} trenutno kandidat za izdajo ni na voljo
+    ReleaseNotesLinkText: Opombe ob izdaji
+  Social:
+    FollowUs: Sledite nam
+    LatestTweets: Najnovejši čivki

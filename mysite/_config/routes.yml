@@ -1,0 +1,7 @@
+---
+Name: myroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'DonationProceed': 'DonatePage_Controller'

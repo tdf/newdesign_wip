@@ -1,0 +1,76 @@
+---
+tr:
+  BitPay:
+    ButtonAltText: BitPay, bitcoin ödemesi için kolay bir yoldur.
+    CheckoutLocale: tr_TR
+    Email: E-posta adresi (isteğe bağlı)
+    Header: Bitcoin yolu ile bağış yapabilirsiniz.
+    LabelEmail: 'E-posta:'
+    RefundDisclaimer: Doğası gereği Bitcoin ile yapılan bağışlar genellikle anonimdir, bu yüzden herhangi bir geri ödeme veya bağış teyidi sadece ödeme sağlayıcımızdan aldığımız tutar üzerinden ve e-posta adresinizi vermeniz durumunda mümkündür. Eğer yukarıda bahsedilen şartları kabul etmiyorsanız diğer bağış seçeneklerinden birini kullanmanızı rica ederiz.
+  Concardis:
+    CancelHeader: İşlemi iptal ettiniz
+    CancelMessage: Ne yazık ki ödemeyi iptal ettiniz. <b>Hiçbir ücret alınmadı.</b> Lütfen soru veya sorun oluşmuşsa yeniden deneyin, herhangi bir zaman bize {infoemail} adresinden ulaşın.
+    ProblemHeader: Bir sorun var...
+    ProblemMessage: Ne yazık ki, ödeme başarılı olmadı. Bu ödeme sunucumuz veya kredi kartınızla ilgili bir sorundan kaynaklanabilir. <b>Hiçbir ücret alınmadı.</b> Lütfen soru veya sorun oluşmuşsa yeniden deneyin, herhangi bir zaman bize {infoemail} adresinden ulaşın.
+    Processing: Ödemenizi işliyoruz
+    ThankYouHeader: Bağışınız için çok teşekkür ederiz!
+    ThankYouMessage: The Document Foundation nazik ve cömert bağışınızdan dolayı size teşekkür etmek istiyor. Ödemenizi aldık! LibreOffice'in tadını çıkarın ve desteğiniz için çok teşekkür ederiz!
+    ThanksButHeader: Bağışınız için çok teşekkürler!
+    ThanksButMessage1: The Document Foundation nazik ve cömert bağışınızdan dolayı size teşekkür etmek istiyor. Ödemenizi aldık! LibreOffice'in tadını çıkarın ve desteğiniz için çok teşekkür ederiz!
+    ThanksButMessage2: Lütfen bağışın henüz onaylanmadığını unutmayın. Bağışın gerçekleşip gerçekleşmediğini öğrenmek için kayıtlarınıza bakın.
+  DonatePage:
+    BUTTON_CARD: Kredi Kartı yoluyla Bağış
+    BUTTON_PAYPAL: PayPal yoluyla Bağış
+    CHOICE_DEFAULT: Varsayılan değerlerden birini seçin
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Veya özel bir miktar ve para birimi girin<br/>(sadece * ile işaretli olanlar PayPal aracılığıyla kullanılabilir)
+    ContinueLabel: Devam et
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: Amerikan doları
+    LeadText: LibreOffice, Özgür Yazılımdır ve ücretsiz sunulmaktadır.<br/>Tamamıyla isteğe bağlı olan bağışlarınız, dünya çapındaki topluluğumuzu desteklemektedir.<br/>Yazılımı beğendiyseniz, lütfen bağış yapmayı düşünün.
+    ProceedConcardis: <strong>{amount} {currency}</strong> miktarlık bağışınızın işleme alınabilmesi için, ConCardis websitesine yönlendiriliyorsunuz.<br/>Otomatik olarak yönlendirilmediyseniz, lütfen aşağıdaki Continue düğmesine basın.
+    ProceedPayPal: <strong>{amount} {currency}</strong> miktarlık bağışınızın işleme alınabilmesi için, PayPal websitesine yönlendiriliyorsunuz.<br/>Otomatik olarak yönlendirilmediyseniz, lütfen aşağıdaki Devam düğmesine basın.
+  Download:
+    ChangeLanguageLinkText: başka bir dile mi ihtiyacınız var?
+    ChangeLanguageLinkTitle: Diğer dili seçin
+    Helppack: Libreoffice <strong>Türkçe</strong> gömülü yardım
+    HelppackButtonLabel: Çevrimdışı kullanım için yardım
+    HelppackFallback: LibreOffice Dahili yardım <strong>İkincil İngilizce</strong>
+    HelppackLinkTitle: Yardım içeriğini çevrimdışı kullanım için indirin
+    InfoLinkTitle: Kontrol değerleri ve ek bilgiler
+    InfoText: Bilgi
+    Langpack: LibreOffice arayüzünü <strong>{language}</strong> dilinde indirin
+    LangpackButtonLabel: Çevirilmiş Kullanıcı Arayüzü
+    LangpackLinkTitle: Dil Paketini İndir
+    Mac64reqs: 10.8 veya daha yenisi gereklidir
+    MainButtonLabel: '{version} Sürümünü İndir'
+    MainInstaller: Ana Kurucu
+    MainLinkTitle: '{os} için Libreoffice {version} İndir'
+    OS: İşletim Sistemleri
+    OSList: 'LibreOffice {version} aşağıdaki sistemler/mimariler için kullanılabilir durumdadır:'
+    PickLanguage: Lütfen dilinizi seçin
+    PlatformChange: 'Seçili: {os} için LibreOffice {version} - <a href=''{curr_page}#change''>değiştirilsin mi?</a>'
+    SDKandSource: SDK ve Kaynak kodu
+    SDKDownload: SDK'yı indir
+    SourceDownload: Kaynak kodu indir
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Bittorrent kullanarak İndirin
+    VersionListReleased: 'LibreOffice aşağıdaki <strong>yayımlanmış</strong> sürümlerde kullanılabilir:'
+    VersionListTesting: 'LibreOffice aşağıdaki <strong>ön yayındaki</strong> sürümlerde kullanılabilir:'
+    Versions: Kullanılabilir Sürümler
+    Win64reqs: Vista veya daha yenisi gereklidir
+  Homepage:
+    DownloadNow: Şimdi indir
+  RSS:
+    ReadMore: daha fazlasını oku»
+  Shortcode:
+    NoPortable: Şimdilik kullanılabilir Taşınabilir Sürüm ({multilingualtype}) yok
+    NoRC: Kullanılabilir sürüm adayı (RC) mevcut değil
+    NoRC_Codeline: '{version} sürümü için bir sürüm adayı mevcut değil'
+    ReleaseNotesLinkText: Sürüm Notları
+  Social:
+    FollowUs: Bizi Takip Edin
+    LatestTweets: Son Tweetler

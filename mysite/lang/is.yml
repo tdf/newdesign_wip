@@ -1,0 +1,62 @@
+---
+is:
+  BitPay:
+    ButtonAltText: BitPay, auðveld leið til að borga með bitcoin.
+    CheckoutLocale: is_IS
+    Email: Netfang (valkvætt)
+    Header: Þú getur styrkt með Bitcoins
+    LabelEmail: 'Netfang:'
+  Concardis:
+    CancelHeader: Þú hættir við ferlið
+    ProblemHeader: Það hefur komið upp vandamál…
+    Processing: Erum að vinna með greiðsluna þína
+    ThankYouHeader: Takk kærlega fyrir hjálpina!
+    ThanksButHeader: Takk kærlega fyrir hjálpina!
+  DonatePage:
+    BUTTON_CARD: Styrkja með kreditkorti
+    BUTTON_PAYPAL: Styrkja með PayPal
+    CHOICE_DEFAULT: Veldu eitt af sjálfgefnu gildunum
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Eða settu inn upphæð og gjaldmiðil að eigin vali<br/>(einungis þeir sem merktir eru með * eru einnig tiltækir á PayPal)
+    ContinueLabel: Áfram
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+  Download:
+    ChangeLanguageLinkText: Vantar annað tungumál?
+    ChangeLanguageLinkTitle: Veldu annað tungumál
+    Helppack: Innbyggð LibreOffice hjálp á <strong>{language}</strong>
+    HelppackButtonLabel: Hjálparskjöl fyrir ótengda notkun
+    HelppackFallback: Innbyggð LibreOffice hjálp með <strong>ensku til vara</strong>
+    HelppackLinkTitle: Hlaða niður hjálparskjölum fyrir ótengda notkun
+    InfoLinkTitle: Gátsummur og viðbótarupplýsingar
+    InfoText: Upplýsingar
+    Langpack: Ná í LibreOffice viðmótið þýtt á <strong>{language}</strong>
+    LangpackButtonLabel: Þýtt notendaviðmót
+    LangpackLinkTitle: Ná í tungumálapakkann
+    MainButtonLabel: Ná í útgáfu {version}
+    MainInstaller: Aðal-uppsetningarskrá
+    MainLinkTitle: Ná í LibreOffice {version} fyrir {os}
+    OS: Stýrikerfi
+    OSList: 'LibreOffice {version} er tiltækt fyrir eftirfarandi stýrikerfi:'
+    PickLanguage: Veldu tungumálið sem þú vilt nota
+    PlatformChange: 'Valið: LibreOffice {version} fyrir {os} - <a href=''{curr_page}#change''>breyta þessu?</a>'
+    TorrentLinkText: Torrent-skrá
+    TorrentLinkTitle: Sækja með BitTorrent
+    VersionListReleased: 'LibreOffice er tiltækt í eftirfarandi <strong>útgáfum</strong>:'
+    VersionListTesting: 'LibreOffice er tiltækt í eftirfarandi (RC) <strong>forútgáfum</strong>:'
+    Versions: Tiltækar útgáfur
+  Homepage:
+    DownloadNow: Ná í núna
+  RSS:
+    ReadMore: lesa meira »
+  Shortcode:
+    NoPortable: Engin Portable-útgáfa ({multilingualtype}) er tiltæk í augnablikinu
+    NoRC: Engin RC-forútgáfa er tiltæk í augnablikinu
+    NoRC_Codeline: Engin RC-forútgáfa er tiltæk fyrir {version} kóðalínuna
+    ReleaseNotesLinkText: Útgáfuupplýsingar
+  Social:
+    FollowUs: Fylgstu með okkur
+    LatestTweets: Nýjustu örbloggspíp

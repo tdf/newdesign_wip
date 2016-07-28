@@ -1,0 +1,76 @@
+---
+da:
+  BitPay:
+    ButtonAltText: BitPay, den nemme måde at betale med bitcoins.
+    CheckoutLocale: en_US
+    Email: Email-adresse (valgfri)
+    Header: Du kan donere vha. Bitcoins
+    LabelEmail: 'Email:'
+    RefundDisclaimer: Donationer med Bitcoins er af natur anonyme, så enhver form for refundering eller kvittering er kun mulig f.s.v.a. den sum TDF modtager fra vores betalingsudbyder, og kun i det tilfælde at du identificerer dig med din email-adresse. Hvis du ikke er enig i disse betingelser, beder vi dig overveje en af de andre betalingsmetoder på denne side.
+  Concardis:
+    CancelHeader: Du har afbrudt processen
+    CancelMessage: Desværre har du afbrudt betalingen. <b>Du er ikke blevet opkrævet.</b> Prøv venligst igen, og hvis du har problemer eller spørgsmål, er du altid velkommen til at kontakte os på {infoemail}.
+    ProblemHeader: Der er opstået et problem…
+    ProblemMessage: Desværre lykkedes betalingen ikke. Dette kan skyldes enten et problem med vores betalingsserver, eller med dit kreditkort. <b>Du er ikke blevet opkrævet.</b> Forsøg venligst igen, og i tilfælde af problemer eller spørgsmål, er du altid velkommen til at kontakte os på {infoemail}.
+    Processing: Din betaling behandles
+    ThankYouHeader: Mange tak for din donation!
+    ThankYouMessage: The Document Foundation vil gerne takke for din venlige og gavmilde donation. Vi har modtaget din betaling! Nyd LibreOffice, og mange tak for din støtte!
+    ThanksButHeader: Mange tak for din donation!
+    ThanksButMessage1: The Document Foundation vil gerne takke for din venlige og gavmilde donation. Vi har modtaget din betaling! Nyd LibreOffice, og mange tak for din støtte!
+    ThanksButMessage2: Vær opmærksom på, at din donation ikke kunne bekræftes. Kontroller venligst selv din kontoudskrift for at få donationen bekræftet.
+  DonatePage:
+    BUTTON_CARD: Giv et bidrag via kreditkort
+    BUTTON_PAYPAL: Giv et bidrag med PayPal
+    CHOICE_DEFAULT: Vælg en af standardværdierne
+    CUSTOM_AMOUNT_VALUE: '100'
+    CUSTOM_CHOICE: Eller indtast et valgfrit beløb og valuta <br/>(Kun de valutaer som er markeret med * kan også benyttes med PayPal)
+    ContinueLabel: Fortsæt
+    DEFAULT_AMOUNT_EUR05: '20'
+    DEFAULT_AMOUNT_EUR10: '40'
+    DEFAULT_AMOUNT_EUR20: '80'
+    DEFAULT_AMOUNT_EUR50: '200'
+    DEFAULT_CURRENCY: DKK
+    LeadText: LibreOffice er fri software og kan bruges af dig uden omkostninger. <br/>Dit bidrag, som er fuldstændig frivillig, støtter vores verdensomspændende fællesskab.<br/>Hvis du kan lide programmet, beder vi dig overveje at give et bidrag.
+    ProceedConcardis: For at færdiggøre din donation af <strong>{amount} {currency}</strong>, videresender vi dig nu til ConCardis' hjemmeside, hvor du skal afslutte betalingen.<br/>Hvis du ikke automatisk bliver videresendt, beder vi dig klikke på knappen 'Fortsæt' herunder.
+    ProceedPayPal: For at færdiggøre din donation af <strong>{amount} {currency}</strong>, videresender vi dig nu til PayPals hjemmeside, hvor du skal afslutte betalingen.<br/>Hvis du ikke automatisk bliver videresendt, beder vi dig klikke på knappen 'Fortsæt' herunder.
+  Download:
+    ChangeLanguageLinkText: behov for et andet sprog?
+    ChangeLanguageLinkTitle: Vælg et andet sprog
+    Helppack: LibreOffice indbygget hjælp på <strong>{language}</strong>
+    HelppackButtonLabel: Hjælp til offline brug
+    HelppackFallback: LibreOffice indbygget hjælp <strong>(engelsk er standard)</strong>
+    HelppackLinkTitle: Hent hjælpen for offline brug
+    InfoLinkTitle: Checksum og flere informationer
+    InfoText: Info
+    Langpack: Hent LibreOffice brugergrænsefladen oversat til <strong>{language}</strong>
+    LangpackButtonLabel: Oversat brugergrænseflade
+    LangpackLinkTitle: Hent sprogpakken
+    Mac64reqs: 10.8 eller højere er nødvendig
+    MainButtonLabel: Hent version {version}
+    MainInstaller: Hovedinstallation
+    MainLinkTitle: Hent LibreOffice {version} til {os}
+    OS: Operativsystemer
+    OSList: 'LibreOffice {version} er tilgængelig til følgende operativsystemer:'
+    PickLanguage: Vælg venligst dit sprog
+    PlatformChange: 'Valgt: LibreOffice {version} til  {os} - <a href=''{curr_page}#change''>skift?</a>'
+    SDKandSource: SDK og kildekode
+    SDKDownload: Hent SDK'et
+    SourceDownload: Hent kildekoden
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Hent ved hjælp af BitTorrent
+    VersionListReleased: 'LibreOffice er tilgængelig i følgende <strong>frigivne</strong> versioner:'
+    VersionListTesting: 'LibreOffice er tilgængelig i følgende <strong>testversioner</strong>:'
+    Versions: Tilgængelige versioner
+    Win64reqs: Vista eller nyere er nødvendig
+  Homepage:
+    DownloadNow: Hent nu
+  RSS:
+    ReadMore: læs mere »
+  Shortcode:
+    NoPortable: Der er ingen Portable version ({multilingualtype}) tilgængelig
+    NoRC: Der er for tiden ingen RC tilgængelig
+    NoRC_Codeline: Der er ingen RC tilgængelig til {version}
+    ReleaseNotesLinkText: Frigivelsesnoter
+  Social:
+    FollowUs: Følg os
+    LatestTweets: Seneste tweets

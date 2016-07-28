@@ -1,0 +1,71 @@
+---
+gl:
+  BitPay:
+    ButtonAltText: BitPay, o xeito doado de pagar con bitcoins.
+    CheckoutLocale: en_US
+    Email: Enderezo de correo (opcional)
+    Header: Pode doar con Bitcoins
+    LabelEmail: 'Correo:'
+    RefundDisclaimer: Pola súa natureza, as doazóns con bitcoins adoitan ser anónimas, de modo que calquera clase de devolución ou confirmación de doazón soamente resulta posíbel sobre a suma que recibimos do noso provedor de pagamentos, e soamente o relacionado con vostede polo seu enderezo de correo. Se vostede non consente as condicións indicadas, pediríamoslle que considere algunha das outras opcións de doazón.
+  Concardis:
+    CancelHeader: Vostede cancelou o proceso
+    CancelMessage: Por desgraza, vostede cancelou o pagamento. <b>Non se lle cobrou.</b>Ténteo outra vez e no caso de problemas ou preguntas, non teña problema en contactar con nós en {infoemail} a calquera hora.
+    ProblemHeader: Produciuse un problema...
+    ProblemMessage: Por desgraza, o pagamento non se produciu. Pódese deber a un problema co noso servidor de pagamento, ou coa súa tarxeta de crédito.<b>Non se lle cobrou.</b>Ténteo outra vez e, se ten problemas, non dubide en contactar con nós en {infoemail} a calquera hora.
+    Processing: O seu pagamento está en proceso
+    ThankYouHeader: Moitas grazas pola súa doazón!
+    ThankYouMessage: The Document Foundation agradécelle o súa amábel e xenerosa doazón. Recibimos o seu pagamento! Goce de LibreOffice e moitas grazas polo seu apoio!
+    ThanksButHeader: Moitas grazas pola súa doazón!
+    ThanksButMessage1: The Document Foundation agradécelle a súa amábel e xenerosa doazón. Recibimos o seu pagamento! Goce de LibreOffice e moitas grazas polo seu apoio!
+    ThanksButMessage2: Vexa que a doazón aínda non se puido confirmar. Comprobe nos seus asentos cando se levou a efecto.
+  DonatePage:
+    BUTTON_CARD: Doar con tarxeta de crédito
+    BUTTON_PAYPAL: Doar por PayPal
+    CHOICE_DEFAULT: Seleccionar un dos valores predeterminados
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Ou introduza unha contía e moeda personalizada<br/>(soamente aquelas marcadas con *) están tamén dispoñíbeis por PayPal)
+    ContinueLabel: Continuar
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice é software libre e está dispoñíbel sen ningún cuso. <br/>A súa doazón, que é puramente opcional, sostén a nosa comunidade en todo o mundo.<br/>Se lle gusta o software, considere facer unha doazón.
+    ProceedConcardis: Para procesar a súa doazón de <strong>{amount} {currency}</strong>,será dirixido ao sitio web ConCardis para completar o pagamento.<br/> Se non se lle redirixe automaticamente, prema o botón chamado Continuar que aparece.
+    ProceedPayPal: Para procesar a súa doazón de <strong>{amount} {currency}</strong> será dirixido ao sitio web de PayPal para completar o pagamento. Se non se lle redirixe automaticamente, prema o botón chamado Continuar que aparece.
+  Download:
+    ChangeLanguageLinkText: Outro idioma?
+    ChangeLanguageLinkTitle: Seleccionar outro idioma
+    Helppack: Axuda interna de LibreOffice en <strong>{language}</strong>
+    HelppackButtonLabel: Axuda para utilización en desconexión
+    HelppackFallback: Axuda interna de LibreOffice en <strong>inglés a falta doutro</strong>
+    HelppackLinkTitle: Descargar o contido da axuda para a utilización en desconexión
+    InfoLinkTitle: Suma de comprobación e información adicional
+    InfoText: Info
+    Langpack: Ter a interface de LibreOffice traducida a  <strong>{language}</strong>
+    LangpackButtonLabel: Interface de usuario traducida
+    LangpackLinkTitle: Descargar o paquete de idioma
+    MainButtonLabel: Descargar a versión {version}
+    MainInstaller: Instalador principal
+    MainLinkTitle: Descargar LibreOffice {version} para {os}
+    OS: Sistemas operativos
+    OSList: 'LibreOffice {version} está dispoñíbel  para os seguinte sistemas operativos/arquitecturas:'
+    PickLanguage: Seleccione o seu idioma
+    PlatformChange: 'Seleccionado: LibreOffice {version} para {os} - <a href=''{curr_page}#change''>Cambiar?</a>'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Descargar utilizando BitTorrent
+    VersionListReleased: 'LibreOffice está dispoñíbel nas seguintes versións<strong>publicadas</strong>:'
+    VersionListTesting: 'LibreOffice está dispoñíbel nas seguintes versións <strong>previas</strong>:'
+    Versions: Versións dispoñíbeis
+  Homepage:
+    DownloadNow: Descargar agora
+  RSS:
+    ReadMore: ler máis »
+  Shortcode:
+    NoPortable: Non hai dispoñíbel ningunha versión portátil ({multilingualtype})
+    NoRC: Neste momento non hai ningunha versión RC preparada
+    NoRC_Codeline: Non hai ningunha versión RC prepara na ramificación de desenvolvemento {version}
+    ReleaseNotesLinkText: Notas de publicación
+  Social:
+    FollowUs: Síganos
+    LatestTweets: Últimos chíos

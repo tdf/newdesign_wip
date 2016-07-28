@@ -1,0 +1,76 @@
+---
+zh_TW:
+  BitPay:
+    ButtonAltText: BitPay，最簡單的比特幣支付方式。
+    CheckoutLocale: en_US
+    Email: 電子郵件地址 (選填)
+    Header: 您可以使用 Bitcoin 支付
+    LabelEmail: 電子郵件：
+    RefundDisclaimer: 由於比特幣的本質使然，使用 Bitcoin 捐款通常匿名，所以任何退款或捐款的確認方式，僅能根據金流供應商所提供的金額總計來判斷，且只能在您提供電子郵件位址的情況下才可行。若您不同意上述限制，我們歡迎您考慮本頁中所列出的其他捐款方式。
+  Concardis:
+    CancelHeader: 您已取消處理
+    CancelMessage: 很抱歉，您已取消支付。<b>您未被收取任何款項。</b> 請重試一次，若有任何問題或疑問，請不吝隨時透過 {infoemail} 聯絡我們。
+    ProblemHeader: 發生問題…
+    ProblemMessage: 很抱歉，支付並未成功。這可能是因為我們的金流伺服器有問題，或是您的信用卡有問題。<b>您未被收取任何款項。</b>請重試一次，若有任何問題或疑問，請不吝隨時透過 {infoemail} 聯絡我們。
+    Processing: 我們正在處理您的付款交易
+    ThankYouHeader: 非常感謝您的捐助！
+    ThankYouMessage: The Document Foundation 深深感謝您熱心慷慨的捐助。我們已收到您的捐款！盡情享用 LibreOffice，並再次感謝您的支持！
+    ThanksButHeader: 非常感謝您的捐助！
+    ThanksButMessage1: The Document Foundation 深深感謝您熱心慷慨的捐助。我們已收到您的捐款！盡情享用 LibreOffice，並再次感謝您的支持！
+    ThanksButMessage2: 請注意，該項捐款尚未被確認。請檢查您的交易紀錄是否捐款已生效。
+  DonatePage:
+    BUTTON_CARD: 使用信用卡捐款
+    BUTTON_PAYPAL: 使用 PayPal 捐款
+    CHOICE_DEFAULT: 請選取下列預設款項之一
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: 或是輸入自訂金額與貨幣<br/>(PayPal 僅支援標有 * 字號者)
+    ContinueLabel: 繼續
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice 是自由軟體，並且能免費取用。<br/>您的自願捐款將是我們全球性社群的有力支柱。<br/>若您喜歡這套軟體，請考慮給予贊助。
+    ProceedConcardis: 您將被導引至 ConCardis 的網站以完成您的 <strong>{amount} {currency}</strong> 捐款交易操作。<br/>若頁面沒有自動跳轉，請點擊下方的「繼續」按鈕。
+    ProceedPayPal: 您將被導引至 PayPal 的網站以完成您的 <strong>{amount} {currency}</strong> 捐款交易操作。<br/>若頁面沒有自動跳轉，請點擊下方的「繼續」按鈕。
+  Download:
+    ChangeLanguageLinkText: 需要其他語言？
+    ChangeLanguageLinkTitle: 選擇其他語言
+    Helppack: LibreOffice 的 <strong>{language}</strong> 內建說明
+    HelppackButtonLabel: 離線使用的輔助說明
+    HelppackFallback: LibreOffice 的 <strong>英文備用版</strong> 內建說明
+    HelppackLinkTitle: 下載可離線使用的說明內容
+    InfoLinkTitle: 校驗碼與額外資訊
+    InfoText: 資訊
+    Langpack: 取得 LibreOffice 的 <strong>{language}</strong> 介面翻譯
+    LangpackButtonLabel: 已翻譯的使用者介面
+    LangpackLinkTitle: 下載語言包
+    Mac64reqs: 需要 10.8 或後續版本
+    MainButtonLabel: 下載 {version} 版
+    MainInstaller: 主安裝程式
+    MainLinkTitle: 下載適用於 {os} 的 LibreOffice {version}
+    OS: 作業系統
+    OSList: LibreOffice {version} 可用於下列作業系統與架構：
+    PickLanguage: 請選取您的語言
+    PlatformChange: 已選取：LibreOffice {version}，作業系統 {os} - <a href='{curr_page}#change'>要更改嗎？</a>
+    SDKandSource: SDK 與源始碼
+    SDKDownload: 下載 SDK
+    SourceDownload: 下載源始碼
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: 使用 BitTorrent 下載
+    VersionListReleased: LibreOffice 有下列 <strong>已發行</strong> 版本：
+    VersionListTesting: LibreOffice 有下列 <strong>預先發行</strong> 版本：
+    Versions: 可用的版本
+    Win64reqs: Vista 或後續版本
+  Homepage:
+    DownloadNow: 立刻下載
+  RSS:
+    ReadMore: 深入瞭解 »
+  Shortcode:
+    NoPortable: 目前沒有可用的可攜版 ({multilingualtype})。
+    NoRC: 目前沒有可用的 RC 版。
+    NoRC_Codeline: '{version} 代碼線目前沒有可用的 RC 版。'
+    ReleaseNotesLinkText: 發行備註
+  Social:
+    FollowUs: 關注我們
+    LatestTweets: 最新推文

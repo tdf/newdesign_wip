@@ -1,0 +1,76 @@
+---
+nl:
+  BitPay:
+    ButtonAltText: BitPay, de makkelijke manier om met bitcoins te betalen.
+    CheckoutLocale: en_US
+    Email: E-mailadres (optioneel)
+    Header: U kunt via Bitcoins doneren
+    LabelEmail: 'E-mail:'
+    RefundDisclaimer: Door zijn aard zijn Bitcoin donaties meestal anoniem. Enige vorm van terugbetaling of bevestiging van donatie is enkel mogelijk wanneer u uw e-mail adres vermeld en op het bedrag die we ontvangen van onze betalingsprovider. Wanneer u niet instemt met bovengenoemde voorwaarden, vragen wij u vriendelijk om een van de andere donatie-opties op deze pagina te overwegen.
+  Concardis:
+    CancelHeader: U heeft het proces geannuleerd
+    CancelMessage: Helaas heeft u de betaling geannuleerd. <b>U heeft niet betaald. </b>Probeert u het alstublieft opnieuw en bij problemen of vragen kunt u altijd contact met ons opnemen via {infoemail}.
+    ProblemHeader: Er is een probleem ontstaan...
+    ProblemMessage: Helaas is de betaling niet geslaagd. Dit kan veroorzaakt zijn door een probleem met onze betalingsserver of met uw creditcard. <b> U heeft niet betaald.</b> Probeert u het alstublieft opnieuw en bij problemen of vragen kunt u altijd contact met ons opnemen via {infoemail}.
+    Processing: We zijn uw betaling aan het verwerken
+    ThankYouHeader: Hartelijk bedankt voor uw donatie!
+    ThankYouMessage: The Document Foundation wil u bedanken voor uw vriendelijke en gulle donatie. We hebben uw betaling ontvangen! Geniet van LibreOffice en heel erg bedankt voor uw steun!
+    ThanksButHeader: Hartelijk bedankt voor uw donatie!
+    ThanksButMessage1: The Document Foundation wil u bedanken voor uw vriendelijke en gulle donatie. We hebben uw betaling ontvangen! Geniet van LibreOffice en heel erg bedankt voor uw steun!
+    ThanksButMessage2: Let op dat de donaties momenteel nog niet kunnen bevestigd worden. Gelieven uw rekeningoverzicht te raadplegen of de donatie geslaagd is.
+  DonatePage:
+    BUTTON_CARD: Doneer met een Creditcard
+    BUTTON_PAYPAL: Doneer via PayPal
+    CHOICE_DEFAULT: Selecteer één van de standaardwaarden
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Of voer een aangepast bedrag en valuta in<br/> (Alleen de met * gemarkeerde zijn ook beschikbaar via PayPal)
+    ContinueLabel: Verder
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice is Vrije software en wordt gratis ter beschikking gesteld. <br/>Uw donatie die geheel vrijblijvend is, ondersteund onze wereldwijde gemeenschap.<br/>Als u onze software apprecieert, vragen we u graag een donatie te overwegen.
+    ProceedConcardis: Ow uw donatie van <strong>{amount}{currency}</strong> te vervolledigen, wordt u nu doorgestuurd naar de ConCardis website.<br/>Als u niet automatisch doorgestuurd wordt, gelieve op de knop 'Verder Gaan' (onderaan) te drukken.
+    ProceedPayPal: Ow uw donatie van <strong>{amount}{currency}</strong> te vervolledigen, wordt u nu doorgestuurd naar de PayPal website.<br/>Als u niet automatisch doorgestuurd wordt, gelieve op de knop 'Verder Gaan' (onderaan) te drukken.
+  Download:
+    ChangeLanguageLinkText: wilt u een andere taal?
+    ChangeLanguageLinkTitle: Kies een andere taal
+    Helppack: LibreOffice ingebouwde Help in <strong>{language}</strong>
+    HelppackButtonLabel: Help voor offline gebruik
+    HelppackFallback: Ingebouwde Libreoffice help <strong>Engelstalige terugval</strong>
+    HelppackLinkTitle: Offline-help downloaden
+    InfoLinkTitle: Checksums en aanvullende informatie
+    InfoText: Informatie
+    Langpack: LibreOffice-interface vertaald in <strong>{language}</ strong>
+    LangpackButtonLabel: Vertaalde Gebruikersinterface
+    LangpackLinkTitle: Download het taalpakket
+    Mac64reqs: 10.8 of hoger vereist
+    MainButtonLabel: Download Versie {version}
+    MainInstaller: Hoofdinstallatie
+    MainLinkTitle: Download LibreOffice {version} voor {os}
+    OS: Besturingssystemen
+    OSList: 'LibreOffice {version} is beschikbaar voor de volgende besturingssystemen/platvormen:'
+    PickLanguage: Selecteer a.u.b. een taal
+    PlatformChange: 'Geselecteerd: LibreOfice {version} voor {os} - <a href=''{curr_page}#change''>wijzigen?</a>'
+    SDKandSource: SDK en broncode
+    SDKDownload: De SDK downloaden
+    SourceDownload: De broncode downloaden
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Download met gebruik van BitTorrent
+    VersionListReleased: 'LibreOffice is beschikbaar in de volgende <strong>released</strong> versies:'
+    VersionListTesting: 'LibreOffice is beschikbaar in de volgende <strong>prerelease</strong> versies:'
+    Versions: 'Beschikbare versies:'
+    Win64reqs: Vista of nieuwer vereist
+  Homepage:
+    DownloadNow: Download nu
+  RSS:
+    ReadMore: Lees meer »
+  Shortcode:
+    NoPortable: Er is momenteel geen portable versie ({multilingualtype}) beschikbaar
+    NoRC: Er is geen release-kandidaat beschikbaar
+    NoRC_Codeline: Er zijn geen release-kandidaten voor de {version}-codeline beschikbaar
+    ReleaseNotesLinkText: Versie-uitgaven
+  Social:
+    FollowUs: Volg ons
+    LatestTweets: Nieuwste Tweets

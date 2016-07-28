@@ -1,0 +1,46 @@
+---
+he:
+  BitPay:
+    ButtonAltText: BitPay, הדרך הקלה לשלם בביטקוינים.
+    CheckoutLocale: he_IL
+    Email: כתובת דוא״ל (רשות)
+    Header: ניתן לתרום באמצעות ביטקוין
+    LabelEmail: 'דוא״ל:'
+  Concardis:
+    CancelHeader: ביטלת את התהליך
+    ProblemHeader: התרחשה תקלה…
+    ThankYouHeader: תודה רבה לך על תרומתך!
+    ThanksButHeader: תודה רבה לך על תרומתך!
+  DonatePage:
+    BUTTON_CARD: תרומה באמצעות כרטיס אשראי
+    BUTTON_PAYPAL: תרומה באמצעות PayPal
+    CHOICE_DEFAULT: בחירה באחד מערכי בררת המחדל
+    ContinueLabel: המשך
+  Download:
+    ChangeLanguageLinkText: בחירה בשפה אחרת
+    ChangeLanguageLinkTitle: בחירה בשפה אחרת
+    Helppack: עזרה מובנית של LibreOffice ב<strong>{language}</strong>
+    HelppackButtonLabel: עזרה לשימוש בלתי מקוון
+    HelppackLinkTitle: הורדת תוכן עזרה לשימוש בלתי מקוון
+    InfoLinkTitle: סיכומים ומידע נוסף
+    InfoText: מידע
+    MainButtonLabel: הורדת הגרסה {version}
+    MainInstaller: מתקין ראשי
+    MainLinkTitle: הורדת LibreOffice {version} עבור {os}
+    OS: מערכות הפעלה
+    OSList: 'LibreOffice {version} זמין עבור הארכיטקטורות/מערכות ההפעלה הבאות:'
+    PickLanguage: נא לבחור את השפה שלך
+    PlatformChange: 'בחירתך: LibreOffice {version} עבור {os} - <a href=''{curr_page}#change''>להחליף?</a>'
+    TorrentLinkText: טורנט
+    TorrentLinkTitle: להוריד באמצעות BitTorrent
+    Versions: גרסאות זמינות
+  Homepage:
+    DownloadNow: הורדה כעת
+  RSS:
+    ReadMore: מידע נוסף »
+  Shortcode:
+    NoPortable: אין גרסה ניידת זמינה ({multilingualtype})
+    ReleaseNotesLinkText: הערות הפצה
+  Social:
+    FollowUs: לעקוב אחרינו
+    LatestTweets: ציוצים עדכניים

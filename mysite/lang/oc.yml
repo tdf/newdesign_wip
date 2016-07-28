@@ -1,0 +1,71 @@
+---
+oc:
+  BitPay:
+    ButtonAltText: BitPay, lo mejan aisit per pagar amb bitcoins.
+    CheckoutLocale: jorn seguent
+    Email: Adreça electronica (facultatiu)
+    Header: Podètz far un don via Bitcoins
+    LabelEmail: 'Adreça electronica :'
+    RefundDisclaimer: A causa de lor natura, los dons via Bitcoins son en general anonims, tot tipe de remborsaments o de confirmacion de don es donc pas possible que per la soma recebuda de vòstre provesidor de pagament e unicament se mencionatz vòstra adreça de mail. Se acceptatz pas las condicions mencionadas çaisús, vos conselham de causir una autra de las opcions de don que figuran sus aquesta pagina.
+  Concardis:
+    CancelHeader: Avètz anullat lo processus
+    CancelMessage: Malurosament, avètz anullat lo pagament. <b>Sètz pas estat facturat.</b> Tornatz ensajar un còp de mai e en cas de problèma o de question, trantalhetz pas a nos contactar a {infoemail}.
+    ProblemHeader: I a agut un problèma...
+    ProblemMessage: Malurosament, lo pagament s'es pas efectuat. Aquò pòt èsser degut a un problèma amb nòstre servidor de pagament o a vòstra carta de crèdit. <b>Sètz pas estat facturat.</b> Ensajatz tornarmai pus tard e en cas de problèmas, esitetz pas a nos contactar a {infoemail}.
+    Processing: Procedissèm al pagament
+    ThankYouHeader: Grandmercé per vòstre don !
+    ThankYouMessage: The Document Foundation vos vòl mercejar per vòstre don e vòstra generositat. Avèm recebut vòstre pagament ! Esperam que vos agradarà LibreOffice e vos mercejam per vòstre sosten !
+    ThanksButHeader: Grandmercé per vòstre don !
+    ThanksButMessage1: The Document Foundation vos vòl mercejar per vòstre don e vòstra generositat. Avèm recebut vòstre pagament ! Esperam que vos agradarà LibreOffice e vos mercejam per vòstre sosten !
+    ThanksButMessage2: Notatz que vòstre don es pas encara confirmat. Consultatz vòstres enregistrements per tal de verificar qu'aquò a foncionat.
+  DonatePage:
+    BUTTON_CARD: Donar per carta de crèdit
+    BUTTON_PAYPAL: Donar via PayPal
+    CHOICE_DEFAULT: Seleccionatz una valor per defaut
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: O picatz un montant personalizat e una moneda<br/>(solas las que son marcadas d'una * son tanben disponiblas via PayPal)
+    ContinueLabel: Contunhar
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+    LeadText: 'LibreOffice es un logicial liure e es mes a disposicion gratuitament. <br/>Vòstre don, qu''es completament facultatiu, ajuda nòstra comunautat internacionala.<br/> Se vos agrada lo logicial, sostenètz-lo amb un don. '
+    ProceedConcardis: Per realizar vòstre don de <strong>{amount} {currency}</strong>, sètz dirigit sul site ConCardis per tal de finalizar vòstre pagament.<br/>Se sètz pas redirigit automaticament, clicatz sul boton Contunhar çaijós.
+    ProceedPayPal: Per realizar vòstre don de <strong>{amount} {currency}</strong>, sètz dirigit sul site Paypal per tal de finalizar vòstre pagament.<br/>Se sètz pas redirigit automaticament, clicatz sul boton Contunhar çaijós.
+  Download:
+    ChangeLanguageLinkText: volètz una autra lenga ?
+    ChangeLanguageLinkTitle: Causir una autra lenga
+    Helppack: Ajuda integrada de LibreOffice en <strong>{language}</strong>
+    HelppackButtonLabel: Ajuda per l'utilizacion fòra linha
+    HelppackFallback: Ajuda LibreOffice integrada en <strong>Anglés</strong>
+    HelppackLinkTitle: Telecargar l'ajuda per una utilizacion fòra linha
+    InfoLinkTitle: Somas de contraròtle e informacions suplementàrias
+    InfoText: Informacions
+    Langpack: Obténer l'interfàcia LibreOffice tradusida en <strong>{language}</strong>
+    LangpackButtonLabel: Interfàcia d'utilizaire tradusida
+    LangpackLinkTitle: Telecargar lo paquet de lenga
+    MainButtonLabel: Telecargar la version {version}
+    MainInstaller: Installador principal
+    MainLinkTitle: Telecargar LibreOffice {version} per {os}
+    OS: Sistèmas operatius
+    OSList: 'LibreOffice {version} es disponible pels sistèmas operatius/aquitecturas seguents :'
+    PickLanguage: Seleccionatz vòstra lenga
+    PlatformChange: 'Seleccionat : LibreOffice {version} per {os} - <a href=''{curr_page}#change''>modificar ?</a>'
+    TorrentLinkText: 'Seleccionat : LibreOffice {version} per {os} - <a href=''{curr_page}#change''>modificar ?</a>'
+    TorrentLinkTitle: Telecargar en utilizant BitTorrent
+    VersionListReleased: 'LibreOffice es disponible dins las <strong>versions</strong> seguentas :'
+    VersionListTesting: 'LibreOffice es disponible dins las <strong>preversions</strong> seguentas :'
+    Versions: Versions disponiblas
+  Homepage:
+    DownloadNow: Telecargar ara
+  RSS:
+    ReadMore: ne saber mai »
+  Shortcode:
+    NoPortable: Cap de version Portabla ({multilingualtype}) es pas disponibla actualament
+    NoRC: Cap de RC es pas disponible actualament
+    NoRC_Codeline: Cap de RC es pas disponible actualament per la branca {version}
+    ReleaseNotesLinkText: Nòtas de version
+  Social:
+    FollowUs: Seguissètz-nos
+    LatestTweets: Darrièrs Tweets

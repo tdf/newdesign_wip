@@ -1,0 +1,71 @@
+---
+nb:
+  BitPay:
+    ButtonAltText: BitPay, den enkle måten å betale med bitcoins.
+    CheckoutLocale: en_US
+    Email: E-postadresse (valgfritt)
+    Header: Du kan donere med Bitcoins
+    LabelEmail: 'E-post:'
+    RefundDisclaimer: Donasjoner med Bitcoins vanligvis anonyme, så enhver form for refusjon eller kvittering er kun mulig for den summen vi mottar fra vår betalingstilbyder, og kun når du identifiserer deg med din e-postadresse. Hvis du ikke er enig i disse betingelsene, ber vi deg om å vurderer en av de andre betalingsmetodene på denne siden.
+  Concardis:
+    CancelHeader: Du har avbrutt prosessen
+    CancelMessage: Du valgte dessverre å avbryte betalingen. <b>Du har ikke blitt belastet.</b> Vennligst prøv igjen. Kontakt oss på {infoemail} hvis du har problemer eller spørsmål.
+    ProblemHeader: Det har oppstått et problem…
+    ProblemMessage: Betalingen var ikke velykket. Dette kan enten skyldes problemer med vår betalingstjener eller ditt kredittkort. <b> Du har ikke blitt belastet.<b> Vennligst prøv igjen senere. Hvis du fortsatt har problemer, kan du kontakte oss på {infoemail}.
+    Processing: Vi behandler din betaling
+    ThankYouHeader: Takk for at du donerte.
+    ThankYouMessage: The Document Foundation takker for din vennlige og gavmilde donasjon. Vi har mottatt din betaling. Kos deg med LibreOffice, og takk for din støtte.
+    ThanksButHeader: Takk for at du donerte.
+    ThanksButMessage1: The Document Foundation takker for din vennlige og gavmilde donasjon. Vi har mottatt din betaling. Kos deg med LibreOffice, og takk for din støtte.
+    ThanksButMessage2: Vær oppmerksom på at din donasjon ikke kan bekreftes. Vennligst kontroller kontoutskriften for å få en bekreftelse på donasjonen.
+  DonatePage:
+    BUTTON_CARD: Doner med kredittkort
+    BUTTON_PAYPAL: Doner med PayPal
+    CHOICE_DEFAULT: Velg en av standardverdiene
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Eller skriv inn et valgfritt beløp og valuta <br/>(bare valutaer som er merket med * kan også benyttes med PayPal)
+    ContinueLabel: Fortsett
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice er fri programvare og kan brukes uten omkostninger. <br/>Ditt bidrag, som er fullstendig frivillig, støtter vårt verdensomspendende fellesskap.<br/>Hvis du liker programvaren, ber vi deg om å vurdere å gi et bidrag.
+    ProceedConcardis: Du videresendes nå til ConCardis' hjemmeside for å fullføre betalingen av <strong>{amount} {currency}</strong>. <br/>Hvis du ikke blir videresendt automatisk, må du klikke på knappen «Fortsett» under.
+    ProceedPayPal: Du videresendes nå til PayPal' hjemmeside for å fullføre betalingen av <strong>{amount} {currency}</strong>. <br/>Hvis du ikke blir videresendt automatisk, må du klikke på knappen «Fortsett» under.
+  Download:
+    ChangeLanguageLinkText: trenger du et annet språk?
+    ChangeLanguageLinkTitle: Velg et annet språk
+    Helppack: Innebygd hjelp på <strong>{language}</strong>
+    HelppackButtonLabel: Hjelp for frakoblet bruk
+    HelppackFallback: LibreOffice innebygget hjelp <strong>(engelsk er standard)</strong>
+    HelppackLinkTitle: Last ned hjelpefiler for frakoblet bruk
+    InfoLinkTitle: Sjekksummer og mer informasjon
+    InfoText: Informasjon
+    Langpack: Få brukergrensesnittet i LibreOffice på <strong>{language}</strong>
+    LangpackButtonLabel: Oversatt brukergrensesnitt
+    LangpackLinkTitle: Last ned språkpakken
+    MainButtonLabel: Last ned {version}
+    MainInstaller: Hovedinstallasjon
+    MainLinkTitle: Last ned LibreOffice {version} for {os}
+    OS: Operativsystemer
+    OSList: 'LibreOffice {version} er tilgjengelig for de følgende operativsystemene/arkitekturene:'
+    PickLanguage: Velg språket ditt
+    PlatformChange: 'Valgt: LibreOffice {version} for {os} - <a href=''{curr_page}#change''>endre?</a>'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Last ned med BitTorrent
+    VersionListReleased: 'LibreOffice er tilgjengelig i de følgende <strong>utgitte</strong> versjonene:'
+    VersionListTesting: 'LibreOffice er tilgjengelig i følgende <strong>testversjoner</strong>:'
+    Versions: Tilgjengelige versjoner
+  Homepage:
+    DownloadNow: Last ned nå
+  RSS:
+    ReadMore: les mer »
+  Shortcode:
+    NoPortable: Det er ingen Portable-versjon ({multilingualtype}) tilgjengelig
+    NoRC: Ingen lanseringskandidat er tilgjengelig
+    NoRC_Codeline: Ingen lanseringskandidat er tilgjengelig for {version}
+    ReleaseNotesLinkText: Utgivelsesmerknader
+  Social:
+    FollowUs: Følg oss
+    LatestTweets: Nyeste Twitter-meldinger

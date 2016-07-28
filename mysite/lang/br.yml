@@ -1,0 +1,14 @@
+---
+br:
+  BitPay:
+    CheckoutLocale: en_US
+    Email: Chomlec'h postel (diret)
+    LabelEmail: 'Postel :'
+  DonatePage:
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+  Download:
+    InfoText: Titouroù

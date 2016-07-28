@@ -1,0 +1,76 @@
+---
+uk:
+  BitPay:
+    ButtonAltText: BitPay - простий спосіб заплатити Bitcoin.
+    CheckoutLocale: uk_UA
+    Email: Електронна адреса (не обов'язково)
+    Header: Ви можете пожертвувати через Bitcoin
+    LabelEmail: 'Ел. пошта:'
+    RefundDisclaimer: Через свою природу пожертвування через Bitcoins, як правило, анонімні, тому будь-який вид відшкодування або підтвердження пожертви можливий лише на суму, яку ми отримали від нашого постачальника платежів, і тільки за умови надання вами своєї адреси електронної пошти. Якщо ви не згодні з вищезазначеними умовами, то ми просимо Вас розглянути один з інших варіантів пожертви, викладених на цій сторінці.
+  Concardis:
+    CancelHeader: Ви вже скасували процес
+    CancelMessage: На жаль, ви відкликали платіж. <b>У вас ще нічого не стягнуто.</b> Будь ласка, спробуйте ще раз, а в разі виникнення проблем або питань, не соромтеся звертатися до нас на {infoemail} в будь-який час.
+    ProblemHeader: Наявна проблема…
+    ProblemMessage: На жаль, оплата не вдалася. Це може бути через проблеми з нашим сервером оплати або через вашу кредитну картку. <b>У вас нічого не стягнуто.</b> Будь ласка, повторіть спробу пізніше, і в разі виникнення проблем, не соромтеся звертатися до нас на {infoemail} в будь-який час.
+    Processing: Ми обробляємо ваш платіж
+    ThankYouHeader: Щиро дякуємо за вашу допомогу!
+    ThankYouMessage: Document Foundation хотіла б подякувати вам за вашу люб'язну і щедру пожертву. Ми отримали ваш платіж! Насолоджуйтесь LibreOffice і велике спасибі за вашу підтримку!
+    ThanksButHeader: Щиро дякуємо за вашу допомогу!
+    ThanksButMessage1: Document Foundation хотіла б подякувати вам за вашу люб'язну і щедру пожертву. Ми отримали ваш платіж! Насолоджуйтесь LibreOffice і велике спасибі за вашу підтримку!
+    ThanksButMessage2: Будь ласка, зверніть увагу, що пожертвування поки що не може бути підтверджене. Будь ласка, перевірте у ваших записах, чи справді здійснена пожертва.
+  DonatePage:
+    BUTTON_CARD: Пожертва через кредитну картку
+    BUTTON_PAYPAL: Пожертва через PayPal
+    CHOICE_DEFAULT: Виберіть одне з типових значень
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Або введіть власну суму і грошову одиницю <br/>(лише позначені * доступні також через PayPal)
+    ContinueLabel: Продовжити
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice є вільним програмний забезпеченням, яке доступне безкоштовно. <br/>Ваша фінансова допомога є необов'язковою, але вона дозволить підтримати нашу всесвітню спільноту.<br/>Якщо вам подобаються наші програми, то, будь ласка, здійсніть пожертву.
+    ProceedConcardis: Для обробки пожертви на суму <strong>{amount} {currency}</strong> вас спрямовано на веб-сайт ConCardis з метою завершення платежу. <br/>Якщо вас не перенаправлено туди автоматично, то можете натиснути нижче кнопку Продовжити.
+    ProceedPayPal: Для обробки пожертви на суму <strong>{amount} {currency}</strong> вас спрямовано на веб-сайт PayPal з метою завершення платежу. <br/>Якщо вас не перенаправлено туди автоматично, то можете натиснути нижче кнопку Продовжити.
+  Download:
+    ChangeLanguageLinkText: потрібна інша мова?
+    ChangeLanguageLinkTitle: Виберіть іншу мову
+    Helppack: Вбудована довідка LibreOffice на мові <strong>{language}</strong>
+    HelppackButtonLabel: Довідка для використання поза мережею
+    HelppackFallback: Вбудована довідка LibreOffice на <strong>англійській мові як резервній</strong>
+    HelppackLinkTitle: Завантажити довідку для використання поза мережею
+    InfoLinkTitle: Контрольні суми та додаткові відомості
+    InfoText: Інформація
+    Langpack: Отримайте інтерфейс LibreOffice interface на мову <strong>{language}</strong>
+    LangpackButtonLabel: Перекладений інтерфейс користувача
+    LangpackLinkTitle: Завантажити мовний пакет
+    Mac64reqs: Потрібна 10.8 або новіша
+    MainButtonLabel: Завантажити версію {version}
+    MainInstaller: Основний інсталятор
+    MainLinkTitle: Завантажити LibreOffice {version} для {os}
+    OS: Операційні системи
+    OSList: 'LibreOffice {version} iдоступний для таких операційних систем/архітектур:'
+    PickLanguage: Будь ласка, виберіть вашу мову
+    PlatformChange: 'Обрано: LibreOffice {version} для {os} - <a href=''{curr_page}#change''>змінити?</a>'
+    SDKandSource: SDK і сирцевий код
+    SDKDownload: Звантажити SDK
+    SourceDownload: Звантажити сирцевий код
+    TorrentLinkText: Торент
+    TorrentLinkTitle: Завантажити через BitTorrent
+    VersionListReleased: 'Доступні такі <strong>випущені</strong> версії LibreOffice:'
+    VersionListTesting: 'Доступні такі <strong>попередні тестові</strong> версії LibreOffice:'
+    Versions: Доступні версії
+    Win64reqs: Потрібна Vista або новіша
+  Homepage:
+    DownloadNow: Завантажити зараз
+  RSS:
+    ReadMore: читати більше »
+  Shortcode:
+    NoPortable: Портативна версія ({multilingualtype}) наразі недоступна
+    NoRC: Реліз-кандидат наразі недоступний
+    NoRC_Codeline: Реліз-кандидат наразі недоступний для кодового рядка {version}
+    ReleaseNotesLinkText: Зауваги до випуску
+  Social:
+    FollowUs: Слідкуйте за нами
+    LatestTweets: Останні твіти

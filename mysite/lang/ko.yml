@@ -1,0 +1,66 @@
+---
+ko:
+  BitPay:
+    ButtonAltText: 비트페이는 비트코인으로 지불할 수 있는 쉬운방법입니다.
+    CheckoutLocale: en_US
+    Email: 전자우편 주소 (선택사항)
+    Header: 비트코인을 통해서 기부할 수 있습니다.
+    LabelEmail: '전자우편:'
+    RefundDisclaimer: 비트코인(Bitcoins)을 통한 기부는 그 자체 특성으로 인해, 일반적으로 익명으로 이루어집니다. 따라서 기부금의 환불이나 확인은 지불 대행 업체로부터 전달받은 내역과 기부자의 이메일 주소를 대조하여 이루어집니다. 이러한 내용에 동의하지 않으시는 경우, 이 페이지에 나열된 다른 기부 방법을 선택하시기를 권합니다.
+  Concardis:
+    CancelHeader: 진행을 취소하였습니다
+    CancelMessage: 지불을 취소하셨습니다. <b>해당 금액은 청구되지 않을 것입니다.</b> 다시 한번 시도해 보시고, 문제나 질문이 있으면 언제든지 {infoemail} 로 연락주시기 바랍니다.
+    ProblemHeader: 어떤 문제가 있습니다. 그 문제는...
+    ProblemMessage: 지불 절차가 실패하였습니다. 지불 서버에 문제가 발생하였거나, 신용 카드에 문제가 있을 수 있습니다. <b>해당 금액은 청구되지 않을 것입니다.</b> 다시 한번 시도해 보시고, 문제나 질문이 있으면 언제든지 {infoemail} 로 연락주시기 바랍니다.
+    Processing: 귀하의 결제를 처리중입니다
+    ThankYouHeader: 귀하의 기부에대해 진심으로 감사드립니다!
+    ThanksButHeader: 기부해 주셔서 매우 감사합니다!
+  DonatePage:
+    BUTTON_CARD: 신용카드로 기부하기
+    BUTTON_PAYPAL: 페이팔로 기부하기
+    CHOICE_DEFAULT: 기본값들 중에 하나를 선택하세요.
+    CUSTOM_AMOUNT_VALUE: '25'
+    ContinueLabel: 계속
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: 리브레 오피스는 자유 소프트웨어이며, 무료로 사용할 수 있습니다. <br/>원하는 경우 기부를 통해 전세계 커뮤니티를 지원할 수 있습니다.<br/>프로그램이 마음에 드신다면, 기부를 해주세요.
+  Download:
+    ChangeLanguageLinkText: 다른 언어를 원하세요?
+    ChangeLanguageLinkTitle: 다른 언어를 선택하세요.
+    Helppack: 리브레오피스 <strong>{language}</strong> 내장 도움말
+    HelppackButtonLabel: 오프라인 도움말
+    HelppackFallback: 리브레오피스의 <strong>영문(대체)</strong> 내장 도움말
+    HelppackLinkTitle: 오프라인 사용을 위한 도움말 내용 내려받기
+    InfoLinkTitle: 체크섬 및 추가 정보
+    InfoText: 정보
+    Langpack: <strong>{language}</strong>로 번역 리브레 오피스 인터페이스를 가져오기
+    LangpackButtonLabel: 번역된 사용자 인터페이스
+    LangpackLinkTitle: 언어 꾸러미를 내려받기
+    Mac64reqs: 10.8 또는 이후 버전 필요
+    MainButtonLabel: 버전 {version} 을 내려받기
+    MainInstaller: 기본 설치 프로그램
+    MainLinkTitle: '{os} 용 리브레 오피스 {version} 를 내려받기'
+    OS: 운영 체제
+    PickLanguage: 귀하의 언어를 선택하십시오.
+    SDKandSource: SDK와 소스코드
+    SDKDownload: SDK 내려받기
+    SourceDownload: 소스코드 내려받기
+    TorrentLinkText: 토렌트
+    TorrentLinkTitle: 비트 토렌트를 이용하여 내려받기
+    Versions: 이용가능한 버전들
+    Win64reqs: 비스타 또는 이후 버전 필요
+  Homepage:
+    DownloadNow: 지금 내려받기
+  RSS:
+    ReadMore: 더 자세히 »
+  Shortcode:
+    NoPortable: 사용 가능한 포터블 버전 ({multilingualtype}) 이 없습니다.
+    NoRC: 사용 가능한 릴리즈 후보(RC) 버전이 없습니다.
+    NoRC_Codeline: '{version} 코드라인 용으로 사용 가능한 릴리즈 후보(RC) 버전이 없습니다.'
+    ReleaseNotesLinkText: 출시 정보
+  Social:
+    FollowUs: 팔로잉하기
+    LatestTweets: 최근 트윗

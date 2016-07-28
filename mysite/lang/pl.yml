@@ -1,0 +1,76 @@
+---
+pl:
+  BitPay:
+    ButtonAltText: BitPay, prosty sposób płacenia bitcoinami.
+    CheckoutLocale: en_US
+    Email: Adres email (opcjonalnie)
+    Header: Możesz przekazać darowiznę Bitcoinami
+    LabelEmail: 'Email:'
+    RefundDisclaimer: Ze względu na ich charakter, darowizny za pośrednictwem Bitcoin są zwykle anonimowe, więc potwierdzenie refundacji lub darowizny jest możliwe tylko od sumy, jaką otrzymujemy od naszego operatora płatności i podanego adresu e-mail. Jeśli nie zgadzasz się na wyżej wymienione warunki, prosimy wziąć pod uwagę jedną z pozostałych opcji darowizn przedstawionych na tej stronie.
+  Concardis:
+    CancelHeader: Anulowałeś proces
+    CancelMessage: Niestety, anulowałeś płatność. <b>Nie zostałeś obciążony.</b> Proszę spróbować ponownie, a w razie problemów lub pytań możesz skontaktować się z nami w każdej chwili przez {infoemail}.
+    ProblemHeader: Wystąpił problem…
+    ProblemMessage: Niestety, płatność nie została zrealizowana. Być może spowodował to błąd naszego serwera lub błąd związany z kartą kredytową. <b>Nie zostałeś obciążony.</b> Proszę spróbować ponownie, a w razie problemów lub pytań możesz skontaktować się z nami w każdej chwili przez {infoemail}.
+    Processing: Przetwarzamy twoją płatność
+    ThankYouHeader: Dziękujemy za twoją darowiznę!
+    ThankYouMessage: Document Foundation pragnie podziękować za Twoją darowiznę. Otrzymaliśmy płatność! Korzystaj z LibreOffice, jeszcze raz dziękujemy za Twoje wsparcie!
+    ThanksButHeader: Dziękujemy za twoją darowiznę!
+    ThanksButMessage1: Document Foundation pragnie podziękować za Twoją darowiznę. Otrzymaliśmy płatność! Korzystaj z LibreOffice, jeszcze raz dziękujemy za Twoje wsparcie!
+    ThanksButMessage2: Należy pamiętać, że darowizna nie może być jeszcze potwierdzona. Proszę sprawdzić w swoich rekordach czy darowizna została wysłana.
+  DonatePage:
+    BUTTON_CARD: Przekaż darowiznę płacąc kartą kredytową
+    BUTTON_PAYPAL: Przekaż darowiznę przez PayPal
+    CHOICE_DEFAULT: Wybierz jedną z wartości
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Lub wpisz niestandardową kwotę i walutę<br/>(tylko te oznaczone * są dostępne za pośrednictwem PayPal)
+    ContinueLabel: Kontynuuj
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice jest wolnym oprogramowaniem i jest udostępniany za darmo. <br/>Darowizny są czysto dobrowolne, wspierają naszą społeczność na całym świecie. <br/>Jeśli podoba Ci się oprogramowanie, rozważ darowiznę.
+    ProceedConcardis: Aby dokonać wpłaty <strong>{amount} {currency}</strong>, zostaniesz zaraz przeniesiony na stronę ConCardis. <br/>Jeśli tak się nie stanie, kliknij przycisk Kontynuuj poniżej.
+    ProceedPayPal: Aby dokonać wpłaty <strong>{amount} {currency}</strong>, zostaniesz zaraz przeniesiony na stronę PayPal. <br/>Jeśli tak się nie stanie, kliknij przycisk Kontynuuj poniżej.
+  Download:
+    ChangeLanguageLinkText: potrzebujesz innego języka?
+    ChangeLanguageLinkTitle: Wybierz inny język
+    Helppack: Pomoc LibreOffice w <strong>{language}</strong>
+    HelppackButtonLabel: Pomoc do użycia w trybie offline
+    HelppackFallback: Pomoc LibreOffice <strong>Angielski awaryjny</strong>
+    HelppackLinkTitle: Pobierz zawartość pomocy do użytku w trybie offline
+    InfoLinkTitle: Sumy kontrolne i dodatkowe informacje
+    InfoText: Informacje
+    Langpack: Pobierz przetłumaczony interfejs LibreOffice <strong>{language}</strong>
+    LangpackButtonLabel: Przetłumaczony interfejs użytkownika
+    LangpackLinkTitle: Pobierz paczkę językową
+    Mac64reqs: 10.8 lub nowszy wymagany
+    MainButtonLabel: Pobierz wersję {version}
+    MainInstaller: Główny instalator
+    MainLinkTitle: Pobierz LibreOffice {version} dla {os}
+    OS: Systemy operacyjne
+    OSList: 'LibreOffice {version} jest dostępny dla następujących systemów operacyjnych/architektur:'
+    PickLanguage: Proszę wybrać język
+    PlatformChange: 'Wybrano: LibreOffice {version} dla {os} - <a href=''{curr_page}#change''>zmienić?</a>'
+    SDKandSource: SDK i kod źródłowy
+    SDKDownload: Pobierz SDK
+    SourceDownload: Pobierz kod źródłowy
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Pobierz używając BitTorrent
+    VersionListReleased: 'LibreOffice jest dostępny w następującej wersji <strong>wydanej</strong>:'
+    VersionListTesting: 'LibreOffice jest dostępny w następującej wersji <strong>wstępnej</strong>:'
+    Versions: Dostępne wersje
+    Win64reqs: Vista lub nowszy wymagany
+  Homepage:
+    DownloadNow: Pobierz teraz
+  RSS:
+    ReadMore: czytaj więcej »
+  Shortcode:
+    NoPortable: Przenośna wersja ({multilingualtype}) nie jest aktualnie dostępna
+    NoRC: RC nie jest obecnie dostępne
+    NoRC_Codeline: RC nie jest obecnie dostępne dla linii {version}
+    ReleaseNotesLinkText: Informacje o wydaniu
+  Social:
+    FollowUs: Obserwuj nas
+    LatestTweets: Najnowsze tweety
