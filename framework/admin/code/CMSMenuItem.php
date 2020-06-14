@@ -5,43 +5,43 @@
  *
  * Items can be added to the menu through custom {@link LeftAndMainExtension}
  * classes and {@link CMSMenu}.
- * 
+ *
  * @see CMSMenu
  *
  * @package framework
  * @subpackage admin
  */
-class CMSMenuItem extends Object {
+class CMSMenuItem extends SS_Object {
 
 	/**
 	 * The (translated) menu title
 	 * @var string $title
 	 */
 	public $title;
-	
+
 	/**
 	 * Relative URL
 	 * @var string $url
 	 */
 	public $url;
-	
+
 	/**
 	 * Parent controller class name
 	 * @var string $controller
 	 */
 	public $controller;
-	
+
 	/**
 	 * Menu priority (sort order)
 	 * @var integer $priority
 	 */
 	public $priority;
-	
+
 	/**
 	 * Attributes for the link. For instance, custom data attributes or standard
 	 * HTML anchor properties.
 	 *
-	 * @var string
+	 * @var array
 	 */
 	protected $attributes = array();
 
@@ -84,7 +84,7 @@ class CMSMenuItem extends Object {
 		// Remove empty
 		$attrs = array_filter((array)$attrs, function($v) {
 			return ($v || $v === 0 || $v === '0');
-		}); 
+		});
 
 		// Create markkup
 		$parts = array();

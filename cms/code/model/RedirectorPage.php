@@ -41,11 +41,15 @@ class RedirectorPage extends Page {
 	 * Return the the link that should be used for this redirector page, in navigation, etc.
 	 * If the redirectorpage has been appropriately configured, then it will return the redirection
 	 * destination, to prevent unnecessary 30x redirections.  However, if it's misconfigured, then
-	 * it will return a link to itself, which will then display an error message. 
+	 * it will return a link to itself, which will then display an error message.
+	 * @param null $action
+	 * @return null|string
 	 */
-	public function Link() {
-		if($link = $this->redirectionLink()) return $link;
-		else return $this->regularLink();
+	public function Link($action = null) {
+		if ($link = $this->redirectionLink()) {
+			return $link;
+		}
+		return $this->regularLink($action);
 	}
 	
 	/**
@@ -106,9 +110,23 @@ class RedirectorPage extends Page {
 	public function onBeforeWrite() {
 		parent::onBeforeWrite();
 
-		// Prefix the URL with "http://" if no prefix is found
-		if($this->ExternalURL && (strpos($this->ExternalURL, '://') === false)) {
-			$this->ExternalURL = 'http://' . $this->ExternalURL;
+		if ($this->ExternalURL && substr($this->ExternalURL, 0, 2) !== '//') {
+			$urlParts = parse_url($this->ExternalURL);
+			if ($urlParts) {
+				if (empty($urlParts['scheme'])) {
+					// no scheme, assume http
+					$this->ExternalURL = 'http://' . $this->ExternalURL;
+				} elseif (!in_array($urlParts['scheme'], array(
+					'http',
+					'https',
+				))) {
+					// we only allow http(s) urls
+					$this->ExternalURL = '';
+				}
+			} else {
+				// malformed URL to reject
+				$this->ExternalURL = '';
+			}
 		}
 	}
 
@@ -125,17 +143,17 @@ class RedirectorPage extends Page {
 			array(
 				new HeaderField('RedirectorDescHeader',_t('RedirectorPage.HEADER', "This page will redirect users to another page")),
 				new OptionsetField(
-					"RedirectionType", 
-					_t('RedirectorPage.REDIRECTTO', "Redirect to"), 
+					"RedirectionType",
+					_t('RedirectorPage.REDIRECTTO', "Redirect to"),
 					array(
 						"Internal" => _t('RedirectorPage.REDIRECTTOPAGE', "A page on your website"),
 						"External" => _t('RedirectorPage.REDIRECTTOEXTERNAL', "Another website"),
-					), 
+					),
 					"Internal"
 				),
 				new TreeDropdownField(	
-					"LinkToID", 
-					_t('RedirectorPage.YOURPAGE', "Page on your website"), 
+					"LinkToID",
+					_t('RedirectorPage.YOURPAGE', "Page on your website"),
 					"SiteTree"
 				),
 				new TextField("ExternalURL", _t('RedirectorPage.OTHERURL', "Other website URL"))

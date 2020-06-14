@@ -1,12 +1,12 @@
 ---
 it:
   BitPay:
-    ButtonAltText: BitPay, modalità di pagamento usando bitcoin.
+    ButtonAltText: BitPay, il modo più semplice per pagare con Bitcoin e Bitcoin Cash.
     CheckoutLocale: it_IT
     Email: Indirizzo e-mail (opzionale)
-    Header: Donazioni tramite Bitcoin
+    Header: Potete donare tramite Bitcoin e Bitcoin Cash
     LabelEmail: 'E-mail:'
-    RefundDisclaimer: Stante la loro natura, le donazioni tramite Bitcoins sono normalmente anonime, quindi qualsiasi tipo di rimborso o conferma di donazione è possibile solamente relativamente alla somma ricevuta dal nostro prestatore di servizi di pagamento, e solamente nel caso in cui il donatore menzioni il proprio indirizzo e-mail. Se non acconsentite alle summenzionate condizioni, siete pregati di considerare una delle altre opzioni di pagamento.
+    RefundDisclaimer: Per loro natura, le donazioni tramite Bitcoin e Bitcoin Cash sono anonime, quindi qualsiasi tipo di rimborso o di conferma della donazione è possibile solo sulla somma ricevuta dal nostro fornitore di servizi di pagamento, e solo se avete indicato il vostro indirizzo e-mail.
   Concardis:
     CancelHeader: Avete annullato il processo
     CancelMessage: Sfortunatamente, avete annullato il pagamento. <b>Non vi è comunque stata addebitata alcuna somma.</b> Vi preghiamo di riprovare; in caso di dubbi o problemi contattateci pure in qualsiasi momento all'indirizzo {infoemail} .
@@ -18,22 +18,61 @@ it:
     ThanksButHeader: Grazie mille per la vostra donazione!
     ThanksButMessage1: La Document Foundation vi ringrazia per la gentile e generosa donazione. Abbiamo ricevuto il vostro pagamento! Divertitevi con LibreOffice, e grazie per il vostro sostegno!
     ThanksButMessage2: È da notare che la donazione potrebbe non essere ancora confermata. Verificate nei vostri dati se la donazione è avvenuta.
+  DonateDownload:
+    DownloadProblemContact: 'Problemi con il <strong>download</strong> di LibreOffice? Notate che <strong>non forniamo supporto tecnico</strong> per l''installazione o l''utilizzo del software. Se avete bisogno di aiuto, visitate <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Se la vostra domanda riguarda il <strong>download</strong> di LibreOffice dal nostro sito web, fateci sapere: (1) la versione del vostro sistema operativo; (2) il vostro browser web; (3) il messaggio di errore che ricevete. Inviate questi dati (inglese) a <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> e cercheremo di aiutarvi.'
+    Helppack: Aiuto integrato di LibreOffice
+    InfoLinkText: Informazioni
+    InfoLinkTitle: Vedete i checksum e l'elenco dei mirror di download per questo file
+    Invalid: Il download richiesto non è valido. Andate alla nostra <a href='//www.libreoffice.org/download'>pagina di download</a> e scegliete la versione corrente.<br/>Per problemi tecnici con il download, scrivete a <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Tenete presente che <strong>non</strong> forniamo supporto tecnico a questo indirizzo.
+    Langpack: Interfaccia Utente tradotta
+    LinkStartText: Il download <a href='{link}'>{filename} ({size})</a> dovrebbe iniziare a breve. Fate clic sul collegamento se non si avvia.
+    ManualMirror: Potete anche <a href='{link}.mirrorlist'>scegliere manualmente un mirror</a>
+    NeedAnotherLang: Oppure <a href='https://www.libreoffice.org/download/download/?lang=pick'>scegliete un'altra lingua</a>.
+    Outdated: Il download richiesto sembra obsoleto? Andate alla nostra <a href='//www.libreoffice.org/download'>pagina di download</a> e scegliete una versione più recente.<br/>Per problemi tecnici con il download, scrivete a <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Tenete presente che a questo indirizzo <strong>non</strong> viene fornito supporto tecnico.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Scaricate il file con BitTorrent
   DonatePage:
-    BUTTON_CARD: Dona con Carta di Credito
-    BUTTON_PAYPAL: Dona con PayPal
+    BC_EMAIL_DESC: se desiderate una mail di conferma per i pagamenti con carta di credito
+    BC_EMAIL_LABEL: E-mail opzionale
+    BUTTON_CARD: Donazioni con Carta di Credito
+    BUTTON_PAYPAL: Donazioni con PayPal
+    Bank: Potete effettuare una donazione sul nostro conto bancario
+    BankDetails: "<strong>Beneficiario</strong>: {owner}<br/><strong>Causale</strong>: Donazione<br/><strong>Conto</strong>: {accountNumber}<br/><strong>Codice bancario</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Indirizzo del destinatario</strong>: {tdfAddress}<br/><strong>Indirizzo della banca</strong>: {bankAddress}"
+    BankHeader: Trasferimento bancario
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Selezionate uno dei valori predefiniti
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Oppure inserite un importo e una valuta personalizzati<br/>(solo le valute contrassegnate con * sono disponibili anche con PayPal)
+    CardOnly: "(solo carta)"
     ContinueLabel: Continua
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
+    DonateUSHeader: Donazioni dagli USA
+    Flattr: Potete utilizzare <a href='{flattrlink}'>Flattr</a>
+    FlattrHeader: Flattr
+    FooterText: 'Altre modalità di donazione: Bitcoin, Flattr, Bonifico bancario - fate clic sulle caselle sottostanti<br/>Domande riguardo alla vostra donazione? <a href="mailto:info@documentfoundation.org">Inviateci una e-mail</a>'
+    FreqMonthly: Donazione mensile
+    FreqOneshot: Donazione una tantum
+    FreqQuarterly: Donazione trimestrale
+    FreqYearly: Donazione annuale
     LeadText: LibreOffice è un Software libero ed è disponibile gratuitamente. <br/>La vostra donazione, che è esclusivamente opzionale, supporta la nostra comunità mondiale.<br/>Se il software vi piace, vi invitiamo a prendere in considerazione una donazione.
+    OPTIONAL_EMAIL: E-mail opzionale
+    OPTIONAL_EMAIL_DES: se desiderate una mail di conferma per i pagamenti con carta di credito
+    OtherAmount: Altro importo
     ProceedConcardis: Per elaborare la vostra donazione di <strong>{amount} {currency}</strong>, sarete ora reindirizzati al sito web ConCardis per completare il pagamento.<br/>Se il reindirizzamento automatico non funziona, fate clic sul pulsante Continua qui sotto.
     ProceedPayPal: Per elaborare la vostra donazione di <strong>{amount} {currency}</strong>, sarete ora reindirizzati al sito web PayPal per completare il pagamento.<br/>Se il reindirizzamento automatico non funziona, fate clic sul pulsante Continua qui sotto.
+    ReverseLayoutTitle: Sostenete LibreOffice
+    SLIDERLABEL: 'Importo (trascinate il cursore sottostante per modificare): '
+    Spi: LibreOffice è un progetto associato a Software in the Public Interest, Inc. (SPI)
+    SpiDetails: Potete <a href='https://www.spi-inc.org/donations/'>donare dagli USA</a> indicando nella vostra donazione il riferimento "LibreOffice". Notate che le donazioni tramite SPI sono deducibili dalle tasse negli USA.
+    TaxHeader: Deduzioni fiscali
+    TaxHint: <strong>Le donazioni a favore di The Document Foundation sono deducibili dalle tasse in diversi paesi.<br/>Per ulteriori informazioni rivolgetevi all'ufficio delle imposte locale.</strong><br/><strong>Per i residenti in Germania:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Mentre state scaricando, vi preghiamo di considerare l'opportunità di sostenere LibreOffice con una donazione
   Download:
+    Archive: Versioni meno recenti di LibreOffice (che potrebbero non essere supportate) sono disponibili <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>nei nostri archivi</a>
     ChangeLanguageLinkText: Desiderate cambiare lingua?
     ChangeLanguageLinkTitle: Scegliete un'altra lingua
     Helppack: Aiuto integrato di LibreOffice in <strong>{language}</strong>
@@ -45,7 +84,7 @@ it:
     Langpack: Scaricate l'interfaccia di LibreOffice tradotta in <strong>{language}</strong>
     LangpackButtonLabel: Interfaccia Utente tradotta
     LangpackLinkTitle: Scaricate il pacchetto di lingua
-    Mac64reqs: richiesto 10.8 o più recente
+    Mac64reqs: richiesto 10.10 o più recente
     MainButtonLabel: Scaricate la versione {version}
     MainInstaller: Programma di installazione principale
     MainLinkTitle: Scaricate LibreOffice {version} per {os}
@@ -61,7 +100,25 @@ it:
     VersionListReleased: 'LibreOffice è disponibile nelle seguenti versioni <strong>rilasciate</strong>:'
     VersionListTesting: 'LibreOffice è disponibile nelle seguenti versioni candidate al <strong>rilascio</strong> (pre-release):'
     Versions: Versioni disponibili
-    Win64reqs: Richiesto Vista o più recente
+    Win64reqs: Richiesto 7 o più recente
+  DownloadRefresh:
+    BoxHeader: Scaricate LibreOffice
+    ChangeLanguageLinkText: Desiderate cambiare lingua?
+    ChangeLanguageLinkTitle: Scegliete un'altra lingua
+    ChooseOS: 'Scegliete il vostro sistema operativo:'
+    DownloadLinkText: DOWNLOAD
+    FreshText: Se siete appassionati di tecnologia, early adopter o utenti esperti, questa versione è per voi!
+    HelppackButtonLabel: Aiuto per utilizzo offline
+    HelppackLinkTitle: Scaricate il contenuto dell'Aiuto per l'utilizzo fuori linea
+    InfoLinkTitle: Checksum e informazioni aggiuntive
+    InfoText: Informazioni
+    LangpackLinkText: Interfaccia Utente tradotta
+    LangpackLinkTitle: Scaricate il pacchetto della lingua
+    RelnotesLinkText: Note di rilascio per LibreOffice {version}
+    StillText: Se distribuite LibreOffice in ambito aziendale o professionale, scegliete questa versione.</span><span class="dl_description_text" style="font-size:18px;">Per le distribuzioni aziendali, raccomandiamo vivamente <a href="//www.libreoffice.org/get-help/professional-support/">di richiedere l'assistenza di partner certificati</a> che offrono anche versioni di LibreOffice con supporto a lungo termine.
+    SupplementaryDownloads: 'Download aggiuntivi:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Scaricate tramite BitTorrent
   Homepage:
     DownloadNow: Scaricate ora
   RSS:

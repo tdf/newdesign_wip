@@ -1,11 +1,11 @@
 <?php
 /**
  * Class Varchar represents a variable-length string of up to 255 characters, designed to store raw text
- * 
+ *
  * @see HTMLText
  * @see HTMLVarchar
  * @see Text
- * 
+ *
  * @package framework
  * @subpackage model
  */
@@ -15,12 +15,12 @@ class Varchar extends StringField {
 		"Initial" => "Text",
 		"URL" => "Text",
 	);
-	
+
 	protected $size;
-	
+
 	/**
  	 * Construct a new short text field
- 	 * 
+ 	 *
  	 * @param $name string The name of the field
  	 * @param $size int The maximum size of the field, in terms of characters
  	 * @param $options array Optional parameters, e.g. array("nullifyEmpty"=>false).
@@ -31,7 +31,7 @@ class Varchar extends StringField {
 		$this->size = $size ? $size : 50;
 		parent::__construct($name, $options);
 	}
-	
+
 	/**
 	 * Allow the ability to access the size of the field programatically. This
 	 * can be useful if you want to have text fields with a length limit that
@@ -44,41 +44,48 @@ class Varchar extends StringField {
 	public function getSize() {
 		return $this->size;
 	}
-	
+
 	/**
  	 * (non-PHPdoc)
  	 * @see DBField::requireField()
  	 */
 	public function requireField() {
+		$charset = Config::inst()->get('MySQLDatabase', 'charset');
+		$collation = Config::inst()->get('MySQLDatabase', 'collation');
+
 		$parts = array(
 			'datatype'=>'varchar',
 			'precision'=>$this->size,
-			'character set'=>'utf8',
-			'collate'=>'utf8_general_ci',
+			'character set'=> $charset,
+			'collate'=> $collation,
 			'arrayValue'=>$this->arrayValue
 		);
-		
+
 		$values = array(
 			'type' => 'varchar',
 			'parts' => $parts
 		);
-			
-		DB::requireField($this->tableName, $this->name, $values);
+
+		DB::require_field($this->tableName, $this->name, $values);
 	}
-	
+
 	/**
 	 * Return the first letter of the string followed by a .
 	 */
 	public function Initial() {
-		if($this->exists()) return $this->value[0] . '.';
+		if($this->exists()) {
+			$value = $this->RAW();
+			return $value[0] . '.';
+		}
 	}
-	
+
 	/**
 	 * Ensure that the given value is an absolute URL.
 	 */
 	public function URL() {
-		if(preg_match('#^[a-zA-Z]+://#', $this->value)) return $this->value;
-		else return "http://" . $this->value;
+		$value = $this->RAW();
+		if(preg_match('#^[a-zA-Z]+://#', $value)) return $value;
+		else return "http://" . $value;
 	}
 
 	/**
@@ -86,9 +93,9 @@ class Varchar extends StringField {
 	 * @return string
 	 */
 	public function RTF() {
-		return str_replace("\n", '\par ', $this->value);
+		return str_replace("\n", '\par ', $this->RAW());
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see DBField::scaffoldFormField()

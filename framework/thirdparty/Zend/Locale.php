@@ -121,6 +121,7 @@ class Zend_Locale
         // https://github.com/zendframework/zf2/tree/master/resources/cldr/main
         'mi' => true, 'mi_NZ' => true,
         'lc' => true, 'lc_XX' => true,
+        'hsb' => true, 'dsb' => true,
     );
 
     /**

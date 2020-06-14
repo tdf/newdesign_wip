@@ -80,6 +80,7 @@ foreach ($dirsToCheck as $dir) {
 // GLOBALS AND DEFINE SETTING
 
 function stripslashes_recursively(&$array) {
+	trigger_error('stripslashes_recursively is deprecated in 3.2', E_USER_DEPRECATED);
 	foreach($array as $k => $v) {
 		if(is_array($v)) stripslashes_recursively($array[$k]);
 		else $array[$k] = stripslashes($v);
@@ -104,7 +105,10 @@ if(!defined('TRUSTED_PROXY')) {
 			if(SS_TRUSTED_PROXY_IPS === '*') {
 				$trusted = true;
 			} elseif(isset($_SERVER['REMOTE_ADDR'])) {
-				$trusted = in_array($_SERVER['REMOTE_ADDR'], explode(',', SS_TRUSTED_PROXY_IPS));
+				if(!class_exists('SilverStripe\\Control\\Util\\IPUtils')) {
+					require_once 'control/IPUtils.php';
+				};
+				$trusted = SilverStripe\Control\Util\IPUtils::checkIP($_SERVER['REMOTE_ADDR'], explode(',', SS_TRUSTED_PROXY_IPS));
 			}
 		}
 	}
@@ -121,6 +125,7 @@ if(!defined('TRUSTED_PROXY')) {
  */
 if(!isset($_SERVER['HTTP_HOST'])) {
 	// HTTP_HOST, REQUEST_PORT, SCRIPT_NAME, and PHP_SELF
+	global $_FILE_TO_URL_MAPPING;
 	if(isset($_FILE_TO_URL_MAPPING)) {
 		$fullPath = $testPath = realpath($_SERVER['SCRIPT_FILENAME']);
 		while($testPath && $testPath != '/' && !preg_match('/^[A-Z]:\\\\$/', $testPath)) {
@@ -171,7 +176,7 @@ if(!isset($_SERVER['HTTP_HOST'])) {
 		if($_COOKIE) stripslashes_recursively($_COOKIE);
 		// No more magic_quotes!
 		trigger_error('get_magic_quotes_gpc support is being removed from Silverstripe. Please set this to off in ' .
-		' your php.ini and see http://php.net/manual/en/security.magicquotes.php', E_USER_WARNING);
+		' your php.ini and see http://php.net/manual/en/security.magicquotes.php', E_USER_DEPRECATED);
 	}
 
 	/**

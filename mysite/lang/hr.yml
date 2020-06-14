@@ -1,0 +1,92 @@
+---
+hr:
+  BitPay:
+    CheckoutLocale: hr
+    Email: Email adresa (dodatna)
+    LabelEmail: 'Email:'
+  Concardis:
+    CancelHeader: Prekinuli ste proces
+    CancelMessage: Nažalost, prekinuli ste plaćanje.<b> Niste terećeni.</b>Molimo pokušajte ponovno, te uslučaju poteškoća slobodno nas kontaktirajte putem  {infoemail}.
+    ProblemHeader: Došlo je do poteškoće…
+    ProblemMessage: Nažalost, uplata nije uspjela. To može biti zbog problema s našim poslužiteljem za plaćanje ili s vašom kreditnom karticom. <b> Niste terećeni. </b> Pokušajte ponovo kasnije, au slučaju problema slobodno nas kontaktirajte na {infoemail} u bilo kojem trenutku.
+    Processing: Obrađujemo plaćanje
+    ThankYouHeader: Hvala lijepa na Vašoj donaciji!
+    ThankYouMessage: The Document Foundation Vam želi zahvaliti na velikodušnoj donaciji. Zaprimili smo Vašu uplatu. Uživajte u LibreOffice-u, te Vam hvala na podršci!
+    ThanksButHeader: Hvala lijepa na Vašoj donaciji!
+    ThanksButMessage1: The Document Foundation Vam želi zahvaliti na velikodušnoj donaciji. Zaprimili smo Vašu uplatu. Uživajte u LibreOffice-u, te Vam hvala na podršci!
+    ThanksButMessage2: Donacija nije mogla biti potvrđena. Provjerite jesu li donacije radile.
+  DonateDownload:
+    InfoLinkText: Informacije
+    Langpack: Prevedeno korisničko sučelje
+    TorrentLinkText: Torrent
+  DonatePage:
+    BC_EMAIL_DESC: ako želite potvrdu e-pošte za plaćanje kreditnim karticama
+    BC_EMAIL_LABEL: Dodatna e-pošta
+    BUTTON_CARD: Donirajte kreditnom karticom
+    BUTTON_PAYPAL: Donirajte PayPalom
+    CHOICE_DEFAULT: Odaberite jednu od zadanih vrijednosti
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Ili unesite vlasiti iznos i valutu<br/>(PayPal-om su dostupne samo one valute označene *)
+    ContinueLabel: Nastavi
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    LeadText: LibreOffice je besplatan softver i dostupan je besplatno. <br/> Donacija, koja je isključivo opcionalna, podržava našu zajednicu širom svijeta. <br/> Ako vam se sviđa softver, razmotrite davanje donacije.
+    OPTIONAL_EMAIL: Dodatna e-pošta
+    OPTIONAL_EMAIL_DES: ako želite potvrdu e-pošte za plaćanje kreditnim karticama
+    ProceedConcardis: Da biste napravili donaciju <strong>{amount} {currency}</strong>, prosljeđujete se na ConCardis'-ovu web stranicu da biste izvršili uplatu. <br/> Ako prosljeđivanje ne radi automatki, kliknite gumb Nastavak.
+    ProceedPayPal: Da biste napravili donaciju <strong>{amount} {currency}</strong>, prosljeđujete se na PayPal-ovu web stranicu da biste izvršili uplatu. <br/> Ako prosljeđivanje ne radi automatki, kliknite gumb Nastavak.
+  Download:
+    ChangeLanguageLinkText: potreban drugi jezik?
+    ChangeLanguageLinkTitle: Izaberite drugi jezik
+    Helppack: LibreOffice Built in pomoć za <strong>{language}</strong>
+    HelppackButtonLabel: Pomoć za offline rad
+    HelppackFallback: LibreOffice Built in pomoć za <strong>English fallback</strong>
+    HelppackLinkTitle: Preuzmite Pomoć za offline rad
+    InfoLinkTitle: Checksums i dodatne informacije
+    InfoText: Informacije
+    Langpack: Preuzmite LibreOffice sučelje prevedeno na <strong> {language} </strong>
+    LangpackButtonLabel: Prevedeno korisničko sučelje
+    LangpackLinkTitle: Preuzimanje Languagepack-a
+    Mac64reqs: 10.10 ili novije
+    MainButtonLabel: Preuzimanje verzije {version}
+    MainInstaller: Glavni instaler
+    MainLinkTitle: Preuzmite LibreOffice {version} za {os}
+    OS: 'Operativni sustav:'
+    OSList: 'LibreOffice {version} dostupan je za sljedeće operacijske sustave / arhitekture:'
+    PickLanguage: Odaberite jezik
+    PlatformChange: 'Odabrani: LibreOffice {version} za {os} - <a href=''{curr_page}#change''> promjeniti? </a>'
+    SDKandSource: SDK i Sourcecode
+    SDKDownload: Preuzmite SDK-a
+    SourceDownload: Pruzmite Sourcecode
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Preuzmite koristeći BitTorrent
+    VersionListReleased: 'LibreOffice dostupan je u sljedećim izdanim <strong> verzijama </strong>:'
+    VersionListTesting: 'LibreOffice je dostupan u sljedećim <strong> prerealease </strong> verzijama:'
+    Versions: Dostupne verzije
+    Win64reqs: 7 ili noviji potreban
+  DownloadRefresh:
+    ChangeLanguageLinkText: potreban drugi jezik?
+    ChangeLanguageLinkTitle: Izaberite drugi jezik
+    HelppackButtonLabel: Pomoć za offline rad
+    HelppackLinkTitle: Preuzmite Pomoć za offline rad
+    InfoLinkTitle: Checksums i dodatne informacije
+    InfoText: Informacije
+    LangpackLinkText: Prevedeno korisničko sučelje
+    LangpackLinkTitle: Preuzimanje Languagepack-a
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Preuzmite koristeći BitTorrent
+  Homepage:
+    DownloadNow: Preuzmi sada
+  RSS:
+    ReadMore: pročitati više »
+  Shortcode:
+    NoPortable: Portable verzija ({multilingualtype}) nije trenutno dostupna
+    NoRC: RC nije trenutno dostupan
+    NoRC_Codeline: RC nije dostupan za {version} codeline
+    ReleaseNotesLinkText: Bilješke o izdanju
+  Social:
+    FollowUs: Sljedi
+    LatestTweets: Zadnji Tweet-ovi

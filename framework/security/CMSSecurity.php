@@ -2,6 +2,8 @@
 
 /**
  * Provides a security interface functionality within the cms
+ * @package framework
+ * @subpackage security
  */
 class CMSSecurity extends Security {
 
@@ -41,7 +43,10 @@ class CMSSecurity extends Security {
 	}
 
 	public function Link($action = null) {
-		return Controller::join_links(Director::baseURL(), "CMSSecurity", $action);
+		$link = Controller::join_links(Director::baseURL(), "CMSSecurity", $action);
+		// Give extensions the chance to modify by reference
+		$this->extend('updateLink', $link, $action);
+		return $link;
 	}
 
 	/**
@@ -50,7 +55,7 @@ class CMSSecurity extends Security {
 	 * @return Member
 	 */
 	public function getTargetMember() {
-		if($tempid = $this->request->requestVar('tempid')) {
+		if($tempid = $this->getRequest()->requestVar('tempid')) {
 			return Member::member_from_tempid($tempid);
 		}
 	}
@@ -60,8 +65,8 @@ class CMSSecurity extends Security {
 		return $this;
 	}
 
-	protected function getLoginMessage() {
-		return parent::getLoginMessage()
+	protected function getLoginMessage(&$messageType = null) {
+		return parent::getLoginMessage($messageType)
 			?: _t(
 				'CMSSecurity.LoginMessage',
 				'<p>If you have any unsaved work you can return to where you left off by logging back in below.</p>'
@@ -107,8 +112,9 @@ class CMSSecurity extends Security {
 			'Message displayed to user if their session cannot be restored',
 			array('link' => $loginURLATT)
 		);
-		$this->response->setStatusCode(200);
-		$this->response->setBody(<<<PHP
+		$response = $this->getResponse();
+		$response->setStatusCode(200);
+		$response->setBody(<<<PHP
 <!DOCTYPE html>
 <html><body>
 $message
@@ -118,7 +124,8 @@ setTimeout(function(){top.location.href = "$loginURLJS";}, 0);
 </body></html>
 PHP
 		);
-		return $this->response;
+		$this->setResponse($response);
+		return $response;
 	}
 
 	protected function preLogin() {
@@ -126,7 +133,7 @@ PHP
 		if(!$this->getTargetMember()) {
 			return $this->redirectToExternalLogin();
 		}
-		
+
 		return parent::preLogin();
 	}
 
@@ -150,7 +157,7 @@ PHP
 	public static function enabled() {
 		// Disable shortcut
 		if(!static::config()->reauth_enabled) return false;
-		
+
 		// Count all cms-supported methods
 		$authenticators = Authenticator::get_authenticators();
 		foreach($authenticators as $authenticator) {
@@ -168,9 +175,14 @@ PHP
 		user_error('Passed invalid authentication method', E_USER_ERROR);
 	}
 
-	protected function getTemplatesFor($action) {
+	public function getTemplatesFor($action) {
 		return array("CMSSecurity_{$action}", "CMSSecurity")
 			+ parent::getTemplatesFor($action);
+	}
+
+	public function getIncludeTemplate($name) {
+		return array("CMSSecurity_{$name}")
+			+ parent::getIncludeTemplate($name);
 	}
 
 	/**
@@ -204,10 +216,10 @@ PHP
 				'<p>Login success. If you are not automatically redirected '.
 				'<a target="_top" href="{link}">click here</a></p>',
 				'Login message displayed in the cms popup once a user has re-authenticated themselves',
-				array('link' => $backURL)
+				array('link' => Convert::raw2att($backURL))
 			)
 		));
-		
+
 		return $controller->renderWith($this->getTemplatesFor('success'));
 	}
 }

@@ -1,10 +1,10 @@
 <?php
 /**
  * Director is responsible for processing URLs, and providing environment information.
- * 
+ *
  * The most important part of director is {@link Director::direct()}, which is passed a URL and will execute the
  * appropriate controller.
- * 
+ *
  * Director also has a number of static methods that provide information about the environment, such as
  * {@link Director::$environment_type}.
  *
@@ -15,16 +15,16 @@
  * @see Director::$environment_type
  */
 class Director implements TemplateGlobalProvider {
-	
+
 	static private $urlParams;
 
 	static private $rules = array();
-	
+
 	/**
 	 * @var SiteTree
 	 */
 	private static $current_page;
-		
+
 	/**
 	 * @config
 	 * @var string
@@ -36,13 +36,13 @@ class Director implements TemplateGlobalProvider {
 	 * @var array
 	 */
 	private static $dev_servers = array();
-	
+
 	/**
 	 * @config
 	 * @var array
 	 */
 	private static $test_servers = array();
-	
+
 	/**
 	 * Setting this explicitly specifies the protocol (http or https) used, overriding
 	 * the normal behaviour of Director::is_https introspecting it from the request
@@ -51,7 +51,7 @@ class Director implements TemplateGlobalProvider {
 	 * @var string - "http" or "https" to force the protocol, or false-ish to use default introspection from request
 	 */
 	private static $alternate_protocol;
-	
+
 	/**
 	 * @config
 	 * @var string
@@ -66,27 +66,23 @@ class Director implements TemplateGlobalProvider {
 
 	/**
 	 * Add URL matching rules to the Director.
-	 * 
+	 *
 	 * The director is responsible for turning URLs into Controller objects.
-	 * 
-	 * @deprecated 3.2 Use the "Director.rules" config setting instead
+	 *
+	 * @deprecated 4.0 Use the "Director.rules" config setting instead
 	 * @param $priority The priority of the rules; higher values will get your rule checked first.  We recommend
 	 *                  priority 100 for your site's rules.  The built-in rules are priority 10, standard modules are
 	 *                  priority 50.
 	 */
 	public static function addRules($priority, $rules) {
-		if ($priority != 100) {
-			Deprecation::notice('3.0', 'Priority argument is now ignored - use the default of 100. You should really'
-				. ' be setting routes via _config yaml fragments though.', Deprecation::SCOPE_GLOBAL);
-		}
-		Deprecation::notice('3.2', 'Use the "Director.rules" config setting instead');
+		Deprecation::notice('4.0', 'Use the "Director.rules" config setting instead');
 
 		Config::inst()->update('Director', 'rules', $rules);
 	}
 
 	/**
 	 * Process the given URL, creating the appropriate controller and executing it.
-	 * 
+	 *
 	 * Request processing is handled as follows:
 	 *  - Director::direct() creates a new SS_HTTPResponse object and passes this to Director::handleRequest().
 	 *  - Director::handleRequest($request) checks each of the Director rules and identifies a controller to handle
@@ -98,7 +94,7 @@ class Director implements TemplateGlobalProvider {
 	 *
 	 * In addition to request processing, Director will manage the session, and perform the output of the actual
 	 * response to the browser.
-	 * 
+	 *
 	 * @param $url String, the URL the user is visiting, without the querystring.
 	 * @uses handleRequest() rule-lookup logic is handled by this.
 	 * @uses Controller::run() Controller::run() handles the page logic for a Director::direct() call.
@@ -119,14 +115,14 @@ class Director implements TemplateGlobalProvider {
 				}
 			}
 		}
-		
+
 		$req = new SS_HTTPRequest(
 			(isset($_SERVER['X-HTTP-Method-Override']))
-				? $_SERVER['X-HTTP-Method-Override'] 
+				? $_SERVER['X-HTTP-Method-Override']
 				: $_SERVER['REQUEST_METHOD'],
-			$url, 
-			$_GET, 
-			ArrayLib::array_merge_recursive((array)$_POST, (array)$_FILES),
+			$url,
+			$_GET,
+			ArrayLib::array_merge_recursive((array) $_POST, (array) $_FILES),
 			@file_get_contents('php://input')
 		);
 
@@ -144,7 +140,7 @@ class Director implements TemplateGlobalProvider {
 		}
 
 		$output = Injector::inst()->get('RequestProcessor')->preRequest($req, $session, $model);
-		
+
 		if ($output === false) {
 			// @TODO Need to NOT proceed with the request in an elegant manner
 			throw new SS_HTTPResponse_Exception(_t('Director.INVALID_REQUEST', 'Invalid request'), 400);
@@ -162,7 +158,7 @@ class Director implements TemplateGlobalProvider {
 			if(Director::is_cli()) {
 				// on cli, follow SilverStripe redirects automatically
 				return Director::direct(
-					str_replace(Director::absoluteBaseURL(), '', $url), 
+					str_replace(Director::absoluteBaseURL(), '', $url),
 					DataModel::inst()
 				);
 			} else {
@@ -178,12 +174,12 @@ class Director implements TemplateGlobalProvider {
 		} else if($result) {
 			if($result instanceof SS_HTTPResponse) {
 				$response = $result;
-				
+
 			} else {
 				$response = new SS_HTTPResponse();
 				$response->setBody($result);
 			}
-			
+
 			$res = Injector::inst()->get('RequestProcessor')->postRequest($req, $response, $model);
 			if ($res !== false) {
 					$response->output();
@@ -191,18 +187,18 @@ class Director implements TemplateGlobalProvider {
 				// @TODO Proper response here.
 				throw new SS_HTTPResponse_Exception("Invalid response");
 			}
-			
+
 
 			//$controllerObj->getSession()->inst_save();
 		}
 	}
-	
+
 	/**
 	 * Test a URL request, returning a response object.
-	 * 
+	 *
 	 * This method is the counterpart of Director::direct() that is used in functional testing.  It will execute the
 	 * URL given, and return the result as an SS_HTTPResponse object.
-	 * 
+	 *
 	 * @param string $url The URL to visit
 	 * @param array $postVars The $_POST & $_FILES variables
 	 * @param Session $session The {@link Session} object representing the current session.  By passing the same
@@ -211,44 +207,75 @@ class Director implements TemplateGlobalProvider {
 	 *                           GET otherwise. Overwritten by $postVars['_method'] if present.
 	 * @param string $body The HTTP body
 	 * @param array $headers HTTP headers with key-value pairs
-	 * @param array $cookies to populate $_COOKIE
+	 * @param array|Cookie_Backend $cookies to populate $_COOKIE
 	 * @param HTTP_Request $request The {@see HTTP_Request} object generated as a part of this request
 	 * @return SS_HTTPResponse
-	 * 
+	 *
 	 * @uses getControllerForURL() The rule-lookup logic is handled by this.
 	 * @uses Controller::run() Controller::run() handles the page logic for a Director::direct() call.
 	 */
-	public static function test($url, $postVars = null, $session = null, $httpMethod = null, $body = null,
-			$headers = null, $cookies = null, &$request = null) {
+	public static function test($url, $postVars = null, $session = array(), $httpMethod = null, $body = null,
+			$headers = array(), $cookies = array(), &$request = null) {
 
 		Config::nest();
+		Injector::nest();
 
 		// These are needed so that calling Director::test() doesnt muck with whoever is calling it.
 		// Really, it's some inappropriate coupling and should be resolved by making less use of statics
-		$oldStage = Versioned::current_stage();
+		$oldMode = Versioned::get_reading_mode();
 		$getVars = array();
-		
+
 		if(!$httpMethod) $httpMethod = ($postVars || is_array($postVars)) ? "POST" : "GET";
-		
+
 		if(!$session) $session = Injector::inst()->create('Session', array());
+		$cookieJar = $cookies instanceof Cookie_Backend
+			? $cookies
+			: Injector::inst()->createWithArgs('Cookie_Backend', array($cookies ?: array()));
 
 		// Back up the current values of the superglobals
 		$existingRequestVars = isset($_REQUEST) ? $_REQUEST : array();
-		$existingGetVars = isset($_GET) ? $_GET : array(); 
+		$existingGetVars = isset($_GET) ? $_GET : array();
 		$existingPostVars = isset($_POST) ? $_POST : array();
 		$existingSessionVars = isset($_SESSION) ? $_SESSION : array();
 		$existingCookies = isset($_COOKIE) ? $_COOKIE : array();
 		$existingServer	= isset($_SERVER) ? $_SERVER : array();
-		
+
 		$existingRequirementsBackend = Requirements::backend();
 
 		Config::inst()->update('Cookie', 'report_errors', false);
 		Requirements::set_backend(new Requirements_Backend());
 
+		// Set callback to invoke prior to return
+		$onCleanup = function() use(
+			$existingRequestVars, $existingGetVars, $existingPostVars, $existingSessionVars,
+			$existingCookies, $existingServer, $existingRequirementsBackend, $oldMode
+		) {
+			// Restore the superglobals
+			$_REQUEST = $existingRequestVars;
+			$_GET = $existingGetVars;
+			$_POST = $existingPostVars;
+			$_SESSION = $existingSessionVars;
+			$_COOKIE = $existingCookies;
+			$_SERVER = $existingServer;
+
+			Requirements::set_backend($existingRequirementsBackend);
+
+			// These are needed so that calling Director::test() doesnt muck with whoever is calling it.
+			// Really, it's some inappropriate coupling and should be resolved by making less use of statics
+			Versioned::set_reading_mode($oldMode);
+
+			Injector::unnest(); // Restore old CookieJar, etc
+			Config::unnest();
+		};
+
+		if (strpos($url, '#') !== false) {
+			$url = substr($url, 0, strpos($url, '#'));
+		}
+
 		// Handle absolute URLs
 		if (parse_url($url, PHP_URL_HOST)) {
 			$bits = parse_url($url);
-			// If a port is mentioned in the absolute URL, be sure to add that into the 
+			// If a port is mentioned in the absolute URL, be sure to add that into the
 			// HTTP host
 			if(isset($bits['port'])) {
 				$_SERVER['HTTP_HOST'] = $bits['host'].':'.$bits['port'];
@@ -266,30 +293,31 @@ class Director implements TemplateGlobalProvider {
 			list($url, $getVarsEncoded) = explode('?', $url, 2);
 			parse_str($getVarsEncoded, $getVars);
 		}
-		
+
 		// Replace the superglobals with appropriate test values
-		$_REQUEST = ArrayLib::array_merge_recursive((array)$getVars, (array)$postVars); 
-		$_GET = (array)$getVars; 
-		$_POST = (array)$postVars; 
+		$_REQUEST = ArrayLib::array_merge_recursive((array) $getVars, (array) $postVars);
+		$_GET = (array) $getVars;
+		$_POST = (array) $postVars;
 		$_SESSION = $session ? $session->inst_getAll() : array();
-		$_COOKIE = (array) $cookies;
+		$_COOKIE = $cookieJar->getAll(false);
+		Injector::inst()->registerService($cookieJar, 'Cookie_Backend');
 		$_SERVER['REQUEST_URI'] = Director::baseURL() . $urlWithQuerystring;
 
 		$request = new SS_HTTPRequest($httpMethod, $url, $getVars, $postVars, $body);
 		if($headers) foreach($headers as $k => $v) $request->addHeader($k, $v);
-		
-		// Pre-request filtering 
+
+		// Pre-request filtering
 		// @see issue #2517
 		$model = DataModel::inst();
 		$output = Injector::inst()->get('RequestProcessor')->preRequest($request, $session, $model);
 		if ($output === false) {
-			// @TODO Need to NOT proceed with the request in an elegant manner
+			$onCleanup();
 			throw new SS_HTTPResponse_Exception(_t('Director.INVALID_REQUEST', 'Invalid request'), 400);
 		}
-		
+
 		// TODO: Pass in the DataModel
 		$result = Director::handleRequest($request, $session, $model);
-		
+
 		// Ensure that the result is an SS_HTTPResponse object
 		if(is_string($result)) {
 			if(substr($result,0,9) == 'redirect:') {
@@ -300,31 +328,18 @@ class Director implements TemplateGlobalProvider {
 				$result = new SS_HTTPResponse($result);
 			}
 		}
-		
+
 		$output = Injector::inst()->get('RequestProcessor')->postRequest($request, $result, $model);
 		if ($output === false) {
+			$onCleanup();
 			throw new SS_HTTPResponse_Exception("Invalid response");
 		}
-		
-		// Restore the superglobals
-		$_REQUEST = $existingRequestVars; 
-		$_GET = $existingGetVars; 
-		$_POST = $existingPostVars; 
-		$_SESSION = $existingSessionVars;   
-		$_COOKIE = $existingCookies;
-		$_SERVER = $existingServer;
 
-		Requirements::set_backend($existingRequirementsBackend);
-
-		// These are needed so that calling Director::test() doesnt muck with whoever is calling it.
-		// Really, it's some inappropriate coupling and should be resolved by making less use of statics
-		Versioned::reading_stage($oldStage);
-		
-		Config::unnest();
-		
+		// Return valid response
+		$onCleanup();
 		return $result;
 	}
-		
+
 	/**
 	 * Handle an HTTP request, defined with a SS_HTTPRequest object.
 	 *
@@ -371,27 +386,34 @@ class Director implements TemplateGlobalProvider {
 					} catch(SS_HTTPResponse_Exception $responseException) {
 						$result = $responseException->getResponse();
 					}
-					if(!is_object($result) || $result instanceof SS_HTTPResponse) return $result;
+					// Ensure cache headers are added
+					if ($result instanceof SS_HTTPResponse) {
+						HTTP::add_cache_headers($result);
+						return $result;
+					}
+					if(!is_object($result)) {
+						return $result;
+					}
 
 					user_error("Bad result from url " . $request->getURL() . " handled by " .
 						get_class($controllerObj)." controller: ".get_class($result), E_USER_WARNING);
 				}
 			}
 		}
-	
+
 		// No URL rules matched, so return a 404 error.
 		return new SS_HTTPResponse('No URL rule was matched', 404);
 	}
-	
+
 	/**
 	 * Set url parameters (should only be called internally by RequestHandler->handleRequest()).
-	 * 
+	 *
 	 * @param $params array
 	 */
 	public static function setUrlParams($params) {
 		Director::$urlParams = $params;
 	}
-	
+
 	/**
 	 * Return the {@link SiteTree} object that is currently being viewed. If there is no SiteTree object to return,
 	 * then this will return the current controller.
@@ -401,7 +423,7 @@ class Director implements TemplateGlobalProvider {
 	public static function get_current_page() {
 		return self::$current_page ? self::$current_page : Controller::curr();
 	}
-	
+
 	/**
 	 * Set the currently active {@link SiteTree} object that is being used to respond to the request.
 	 *
@@ -414,7 +436,7 @@ class Director implements TemplateGlobalProvider {
 	/**
 	 * Turns the given URL into an absolute URL.
 	 * By default non-site root relative urls will be evaluated relative to the current request.
-	 * 
+	 *
 	 * @param string $url URL To transform to absolute
 	 * @param bool $relativeToSiteBase Flag indicating if non-site root relative urls should be
 	 * evaluated relative to the site BaseURL instead of the current url.
@@ -427,7 +449,7 @@ class Director implements TemplateGlobalProvider {
 		if ($url == '.' || $url == './') {
 			$url = '';
 		}
-		
+
 		if(strpos($url,'/') === false && !$relativeToSiteBase) {
 			//if there's no URL we want to force a trailing slash on the link
 			if (!$url) {
@@ -447,7 +469,7 @@ class Director implements TemplateGlobalProvider {
 
 	/**
 	 * Returns the part of the URL, 'http://www.mysite.com'.
-	 * 
+	 *
 	 * @return boolean|string The domain from the PHP environment. Returns FALSE is this environment variable isn't
 	 *                        set.
 	 */
@@ -468,11 +490,11 @@ class Director implements TemplateGlobalProvider {
 			else if(Director::is_cli()) $errorSuggestion = '  You probably want to define $_FILE_TO_URL_MAPPING in '.
 				'your _ss_environment.php as instructed on the "sake" page of the doc.silverstripe.com wiki';
 			else $errorSuggestion = "";
-			
+
 			user_error("Director::protocolAndHost() lacks sufficient information - HTTP_HOST not set."
 				. $errorSuggestion, E_USER_WARNING);
 			return false;
-			
+
 		}
 	}
 
@@ -529,7 +551,7 @@ class Director implements TemplateGlobalProvider {
 	/**
 	 * Returns the root URL for the site.
 	 *
-	 * It will be automatically calculated unless it is overridden with 
+	 * It will be automatically calculated unless it is overridden with
 	 * {@link setBaseURL()}.
 	 *
 	 * @return string
@@ -541,29 +563,29 @@ class Director implements TemplateGlobalProvider {
 			return $alternate;
 		} else {
 			$base = BASE_URL;
-			
+
 			if($base == '/' || $base == '/.' || $base == '\\') {
 				$baseURL = '/';
 			} else {
 				$baseURL = $base . '/';
 			}
-			
+
 			if(defined('BASE_SCRIPT_URL')) {
 				return $baseURL . BASE_SCRIPT_URL;
 			}
-	
+
 			return $baseURL;
 		}
 	}
-	
+
 	/**
 	 * Sets the root URL for the website.
 	 * If the site isn't accessible from the URL you provide, weird things will happen.
 	 *
-	 * @deprecated 3.2 Use the "Director.alternate_base_url" config setting instead
+	 * @deprecated 4.0 Use the "Director.alternate_base_url" config setting instead
 	 */
 	public static function setBaseURL($baseURL) {
-		Deprecation::notice('3.2', 'Use the "Director.alternate_base_url" config setting instead');
+		Deprecation::notice('4.0', 'Use the "Director.alternate_base_url" config setting instead');
 		Config::inst()->update('Director', 'alternate_base_url', $baseURL);
 	}
 
@@ -580,20 +602,20 @@ class Director implements TemplateGlobalProvider {
 	 * Sets the root folder for the website.
 	 * If the site isn't accessible from the folder you provide, weird things will happen.
 	 *
-	 * @deprecated 3.2 Use the "Director.alternate_base_folder" config setting instead
+	 * @deprecated 4.0 Use the "Director.alternate_base_folder" config setting instead
 	 */
 	public static function setBaseFolder($baseFolder) {
-		Deprecation::notice('3.2', 'Use the "Director.alternate_base_folder" config setting instead');
+		Deprecation::notice('4.0', 'Use the "Director.alternate_base_folder" config setting instead');
 		Config::inst()->update('Director', 'alternate_base_folder', $baseFolder);
 	}
 
 	/**
-	 * Turns an absolute URL or folder into one that's relative to the root of 
-	 * the site. This is useful when turning a URL into a filesystem reference, 
+	 * Turns an absolute URL or folder into one that's relative to the root of
+	 * the site. This is useful when turning a URL into a filesystem reference,
 	 * or vice versa.
-	 * 
+	 *
 	 * @param string $url Accepts both a URL or a filesystem path
-	 * @return string Either a relative URL if the checks succeeded, or the 
+	 * @return string Either a relative URL if the checks succeeded, or the
 	 * original (possibly absolute) URL.
 	 */
 	public static function makeRelative($url) {
@@ -619,12 +641,12 @@ class Director implements TemplateGlobalProvider {
 			// Convert http://www.mydomain.com/mysitedir to ''
 				return "";
 		}
-		
+
 			if(substr($urlWithoutProtocol,0,strlen($baseDomain)) == $baseDomain) {
 				return substr($urlWithoutProtocol,strlen($baseDomain));
 			}
 		}
-		
+
 		// test for base folder, e.g. /var/www
 		$base2 = self::baseFolder();
 		if(substr($url,0,strlen($base2)) == $base2) return substr($url,strlen($base2));
@@ -634,7 +656,7 @@ class Director implements TemplateGlobalProvider {
 		if(substr($url,0,strlen($base3)) == $base3) {
 			return substr($url,strlen($base3));
 		}
-		
+
 		// Test for relative base url, e.g mywebsite/ if the full url is localhost/myswebsite
 		if(substr($url,0,strlen($baseDomain)) == $baseDomain) {
 			return substr($url, strlen($baseDomain));
@@ -643,7 +665,7 @@ class Director implements TemplateGlobalProvider {
 		// Nothing matched, fall back to returning the original URL
 		return $url;
 	}
-	
+
 	/**
 	 * Returns true if a given path is absolute. Works under both *nix and windows
 	 * systems
@@ -655,19 +677,19 @@ class Director implements TemplateGlobalProvider {
 		if($path[0] == '/' || $path[0] == '\\') return true;
 		return preg_match('/^[a-zA-Z]:[\\\\\/]/', $path) == 1;
 	}
-	
+
 	/**
 	 * Checks if a given URL is absolute (e.g. starts with 'http://' etc.).
 	 * URLs beginning with "//" are treated as absolute, as browsers take this to mean
-	 * the same protocol as currently being used. 
-	 * 
+	 * the same protocol as currently being used.
+	 *
 	 * Useful to check before redirecting based on a URL from user submissions
 	 * through $_GET or $_POST, and avoid phishing attacks by redirecting
 	 * to an attackers server.
-	 * 
+	 *
 	 * Note: Can't solely rely on PHP's parse_url() , since it is not intended to work with relative URLs
 	 * or for security purposes. filter_var($url, FILTER_VALIDATE_URL) has similar problems.
-	 * 
+	 *
 	 * @param string $url
 	 * @return boolean
 	 */
@@ -691,31 +713,31 @@ class Director implements TemplateGlobalProvider {
 			|| (
 				// If a colon is found, check if it's part of a valid scheme definition
 				// (meaning its not preceded by a slash).
-				$colonPosition !== FALSE 
+				$colonPosition !== FALSE
 				&& ($slashPosition === FALSE || $colonPosition < $slashPosition)
 			)
 		);
 	}
-	
+
 	/**
 	 * Checks if a given URL is relative by checking {@link is_absolute_url()}.
-	 * 
+	 *
 	 * @param string $url
 	 * @return boolean
 	 */
 	public static function is_relative_url($url) {
 		return (!Director::is_absolute_url($url));
 	}
-	
+
 	/**
 	 * Checks if the given URL is belonging to this "site" (not an external link).
 	 * That's the case if the URL is relative, as defined by {@link is_relative_url()},
 	 * or if the host matches {@link protocolAndHost()}.
-	 * 
+	 *
 	 * Useful to check before redirecting based on a URL from user submissions
 	 * through $_GET or $_POST, and avoid phishing attacks by redirecting
 	 * to an attackers server.
-	 * 
+	 *
 	 * @param string $url
 	 * @return boolean
 	 */
@@ -737,7 +759,7 @@ class Director implements TemplateGlobalProvider {
 	 */
 	public static function extract_request_headers(array $server) {
 		$headers = array();
-	
+
 		foreach($server as $key => $value) {
 			if(substr($key, 0, 5) == 'HTTP_') {
 				$key = substr($key, 5);
@@ -746,23 +768,23 @@ class Director implements TemplateGlobalProvider {
 				$headers[$key] = $value;
 			}
 		}
-	
+
 		if(isset($server['CONTENT_TYPE'])) $headers['Content-Type'] = $server['CONTENT_TYPE'];
 		if(isset($server['CONTENT_LENGTH'])) $headers['Content-Length'] = $server['CONTENT_LENGTH'];
-	
+
 		return $headers;
 	}
 
 	/**
 	 * Given a filesystem reference relative to the site root, return the full file-system path.
-	 * 
+	 *
 	 * @param string $file
 	 * @return string
 	 */
 	public static function getAbsFile($file) {
 		return self::is_absolute($file) ? $file : Director::baseFolder() . '/' . $file;
 	}
-	
+
 	/**
 	 * Returns true if the given file exists.
 	 * @param $file Filename specified relative to the site root
@@ -779,14 +801,14 @@ class Director implements TemplateGlobalProvider {
 	public static function absoluteBaseURL() {
 		return Director::absoluteURL(Director::baseURL());
 	}
-	
+
 	/**
 	 * Returns the Absolute URL of the site root, embedding the current basic-auth credentials into the URL.
 	 */
 	public static function absoluteBaseURLWithAuth() {
 		$s = "";
 		$login = "";
-		
+
 		if(isset($_SERVER['PHP_AUTH_USER'])) $login = "$_SERVER[PHP_AUTH_USER]:$_SERVER[PHP_AUTH_PW]@";
 
 		return Director::protocol() . $login .  $_SERVER['HTTP_HOST'] . Director::baseURL();
@@ -795,9 +817,13 @@ class Director implements TemplateGlobalProvider {
 	/**
 	 * Skip any further processing and immediately respond with a redirect to the passed URL.
 	 *
-	 * @param string $destURL - The URL to redirect to
+	 * @param string $destURL The URL to redirect to
+	 * @return string URL redirected to if on CLI
 	 */
 	protected static function force_redirect($destURL) {
+		if (static::is_cli()) {
+			return $destURL;
+		}
 		$response = new SS_HTTPResponse();
 		$response->redirect($destURL, 301);
 
@@ -810,18 +836,18 @@ class Director implements TemplateGlobalProvider {
 
 	/**
 	 * Force the site to run on SSL.
-	 * 
+	 *
 	 * To use, call from _config.php. For example:
 	 * <code>
 	 * if(Director::isLive()) Director::forceSSL();
 	 * </code>
-	 * 
+	 *
 	 * If you don't want your entire site to be on SSL, you can pass an array of PCRE regular expression
 	 * patterns for matching relative URLs. For example:
 	 * <code>
 	 * if(Director::isLive()) Director::forceSSL(array('/^admin/', '/^Security/'));
 	 * </code>
-	 * 
+	 *
 	 * If you want certain parts of your site protected under a different domain, you can specify
 	 * the domain as an argument:
 	 * <code>
@@ -830,23 +856,20 @@ class Director implements TemplateGlobalProvider {
 	 *
 	 * Note that the session data will be lost when moving from HTTP to HTTPS.
 	 * It is your responsibility to ensure that this won't cause usability problems.
-	 * 
+	 *
 	 * CAUTION: This does not respect the site environment mode. You should check this
 	 * as per the above examples using Director::isLive() or Director::isTest() for example.
-	 * 
+	 *
 	 * @param array $patterns Array of regex patterns to match URLs that should be HTTPS
 	 * @param string $secureDomain Secure domain to redirect to. Defaults to the current domain
 	 * @return boolean|string String of URL when unit tests running, boolean FALSE if patterns don't match request URI
 	 */
 	public static function forceSSL($patterns = null, $secureDomain = null) {
 		if(!isset($_SERVER['REQUEST_URI'])) return false;
-		
+
 		$matched = false;
 
 		if($patterns) {
-			// Calling from the command-line?
-			if(!isset($_SERVER['REQUEST_URI'])) return;
-
 			$relativeURL = self::makeRelative(Director::absoluteURL($_SERVER['REQUEST_URI']));
 
 			// protect portions of the site based on the pattern
@@ -872,12 +895,7 @@ class Director implements TemplateGlobalProvider {
 
 			$destURL = str_replace('http:', 'https:', Director::absoluteURL($url));
 
-			// This coupling to SapphireTest is necessary to test the destination URL and to not interfere with tests
-			if(class_exists('SapphireTest', false) && SapphireTest::is_running_test()) {
-				return $destURL;
-			} else {
-				self::force_redirect($destURL);
-			}
+			return self::force_redirect($destURL);
 		} else {
 			return false;
 		}
@@ -888,7 +906,7 @@ class Director implements TemplateGlobalProvider {
 	 */
 	public static function forceWWW() {
 		if(!Director::isDev() && !Director::isTest() && strpos($_SERVER['HTTP_HOST'], 'www') !== 0) {
-			$destURL = str_replace(Director::protocol(), Director::protocol() . 'www.', 
+			$destURL = str_replace(Director::protocol(), Director::protocol() . 'www.',
 				Director::absoluteURL($_SERVER['REQUEST_URI']));
 
 			self::force_redirect($destURL);
@@ -899,6 +917,9 @@ class Director implements TemplateGlobalProvider {
 	 * Checks if the current HTTP-Request is an "Ajax-Request"
 	 * by checking for a custom header set by jQuery or
 	 * wether a manually set request-parameter 'ajax' is present.
+	 *
+	 * Note that if you plan to use this to alter your HTTP response on a cached page,
+	 * you should add X-Requested-With to the Vary header.
 	 *
 	 * @return boolean
 	 */
@@ -912,10 +933,10 @@ class Director implements TemplateGlobalProvider {
 			);
 		}
 	}
-	
+
 	/**
 	 * Returns true if this script is being run from the command line rather than the webserver.
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public static function is_cli() {
@@ -929,34 +950,34 @@ class Director implements TemplateGlobalProvider {
 	/**
 	 * Set the environment type of the current site.
 	 *
-	 * Typically, a SilverStripe site have a number of environments: 
+	 * Typically, a SilverStripe site have a number of environments:
 	 *  - development environments, such a copy on your local machine.
 	 *  - test sites, such as the one you show the client before going live.
 	 *  - the live site itself.
-	 * 
+	 *
 	 * The behaviour of these environments often varies slightly.  For example, development sites may have errors
 	 * dumped to the screen, and order confirmation emails might be sent to the developer instead of the client.
-	 * 
+	 *
 	 * To help with this, SilverStripe supports the notion of an environment type.  The environment type can be dev,
 	 * test, or live.
-	 * 
-	 * You can set it explicitly with Director::set_environment_tpye().  Or you can use 
+	 *
+	 * You can set it explicitly with Director::set_environment_tpye().  Or you can use
 	 * {@link Director::$dev_servers} and {@link Director::$test_servers} to set it implicitly, based on the
 	 * value of $_SERVER['HTTP_HOST'].  If the HTTP_HOST value is one of the servers listed, then the environment type
 	 * will be test or dev.  Otherwise, the environment type will be live.
 	 *
 	 * Dev mode can also be forced by putting ?isDev=1 in your URL, which will ask you to log in and then push the
 	 * site into dev mode for the remainder of the session. Putting ?isDev=0 onto the URL can turn it back.
-	 * 
+	 *
 	 * Test mode can also be forced by putting ?isTest=1 in your URL, which will ask you to log in and then push the
 	 * site into test mode for the remainder of the session. Putting ?isTest=0 onto the URL can turn it back.
-	 * 
+	 *
 	 * Generally speaking, these methods will be called from your _config.php file.
-	 * 
+	 *
 	 * Once the environment type is set, it can be checked with {@link Director::isDev()}, {@link Director::isTest()},
 	 * and {@link Director::isLive()}.
-	 * 
-	 * @deprecated 3.2 Use the "Director.environment_type" config setting instead
+	 *
+	 * @deprecated 4.0 Use the "Director.environment_type" config setting instead
 	 * @param $et string The environment type: dev, test, or live.
 	 */
 	public static function set_environment_type($et) {
@@ -964,14 +985,14 @@ class Director implements TemplateGlobalProvider {
 			user_error("Director::set_environment_type passed '$et'.  It should be passed dev, test, or live",
 				E_USER_WARNING);
 		} else {
-			Deprecation::notice('3.2', 'Use the "Director.environment_type" config setting instead');
+			Deprecation::notice('4.0', 'Use the "Director.environment_type" config setting instead');
 			Config::inst()->update('Director', 'environment_type', $et);
 		}
 	}
-	
+
 	/**
 	 * Can also be checked with {@link Director::isDev()}, {@link Director::isTest()}, and {@link Director::isLive()}.
-	 * 
+	 *
 	 * @return string 'dev', 'test' or 'live'
 	 */
 	public static function get_environment_type() {
@@ -993,7 +1014,7 @@ class Director implements TemplateGlobalProvider {
 	public static function isLive() {
 		return !(Director::isDev() || Director::isTest());
 	}
-	
+
 	/**
 	 * This function will return true if the site is in a development environment.
 	 * For information about environment types, see {@link Director::set_environment_type()}.
@@ -1001,7 +1022,7 @@ class Director implements TemplateGlobalProvider {
 	public static function isDev() {
 		// Check session
 		if($env = self::session_environment()) return $env === 'dev';
-		
+
 		// Check config
 		if(Config::inst()->get('Director', 'environment_type') === 'dev') return true;
 
@@ -1013,7 +1034,7 @@ class Director implements TemplateGlobalProvider {
 
 		return false;
 	}
-	
+
 	/**
 	 * This function will return true if the site is in a test environment.
 	 * For information about environment types, see {@link Director::set_environment_type()}.
@@ -1021,25 +1042,25 @@ class Director implements TemplateGlobalProvider {
 	public static function isTest() {
 		// In case of isDev and isTest both being set, dev has higher priority
 		if(self::isDev()) return false;
-		
+
 		// Check saved session
 		if($env = self::session_environment()) return $env === 'test';
-		
+
 		// Check config
 		if(Config::inst()->get('Director', 'environment_type') === 'test') return true;
-		
+
 		// Check if we are running on one of the test servers
 		$testServers = (array)Config::inst()->get('Director', 'test_servers');
 		if(isset($_SERVER['HTTP_HOST']) && in_array($_SERVER['HTTP_HOST'], $testServers))  {
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	/**
 	 * Check or update any temporary environment specified in the session
-	 * 
+	 *
 	 * @return string 'test', 'dev', or null
 	 */
 	protected static function session_environment() {

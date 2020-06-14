@@ -1,11 +1,15 @@
 @charset "UTF-8";
-/* CSS Document 
+/* CSS Document
  * Libre Office 2014
  */
 
 /* ==========================================================================
    Principale
    ========================================================================== */
+
+html {
+    scroll-padding-top: 40px;
+}
 
 h1, h2, h3, h4, h5, h6, p, ul, li, table {
   font-family: 'Lato', sans-serif;
@@ -20,6 +24,10 @@ h1 {
   margin: 0;
   text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
+h1.P61 {
+        font-size: 2em;
+        color:black;
+    }      
 
 h2 {
   font-size: 40px;
@@ -277,7 +285,7 @@ a:hover {
 .bs-callout .highlight {
   background-color: #fff;
 }
- 
+
 /* Themes for different contexts */
 .bs-callout-danger {
   background-color: #fcf2f2;
@@ -295,7 +303,7 @@ a:hover {
 /* ==========================================================================
    Navigation styles
    ========================================================================== */
-   
+
 .navbar-inverse {
     background-color: #00A500;
     border-color: transparent;
@@ -494,7 +502,10 @@ color: #31363A;
 
 
 .carousel-caption {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
   position: static;
   margin-top: 26%;
   text-align: left;
@@ -516,25 +527,25 @@ color: #31363A;
 /* ==========================================================================
    Homepage Special
    ========================================================================== */
-   
+
 .homepage p {
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
   color: #626c72;
-} 
+}
 
 /* ==========================================================================
    Content Styles
    ========================================================================== */
-   
+
 .section {
   padding: 30px 0;
 }
 
 #content1 {
   background: #ffffff;
-  margin-top: 90px;
+  margin-top: 120px;
 }
 
 #content2 {
@@ -549,7 +560,7 @@ color: #31363A;
 }
 
 #content1 h3, #content2 h3 {
-  
+
 }
 
 #page-title {
@@ -583,7 +594,7 @@ color: #31363A;
 .latest-twitter {
   position: relative;
   padding: 10px 10px 10px 10px;
-  background: #525961;
+  background: white;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -597,7 +608,7 @@ color: #31363A;
 /* ==========================================================================
    Internal pages Styles
    ========================================================================== */
-   
+
 .page-post {
   padding-bottom: 40px;
 }
@@ -646,7 +657,7 @@ color: #31363A;
         content: "▸";
         margin-right: 0px;
     }
-    
+
 /* ==========================================================================
    Quote Section styles
    ========================================================================== */
@@ -670,7 +681,7 @@ color: #31363A;
 }
 
 /* ==========================================================================
-   Latest News 
+   Latest News
    ========================================================================== */
 #latest-news {
   background: #ffffff;
@@ -768,7 +779,7 @@ ul.os li:first-child:before {
 
 
 /* ==========================================================================
-   Bottom and Footer 
+   Bottom and Footer
    ========================================================================== */
 #bottom {
   background: #31363A;
@@ -848,7 +859,7 @@ ul.social-icons li a:hover {
 
 .discover {
 }
- 
+
 .discover_img {
  max-width:230px;
  border: solid 2px #00A500;
@@ -861,7 +872,7 @@ ul.social-icons li a:hover {
 /* ==========================================================================
    Community
    ========================================================================== */
-   
+
 #community {
   background-color: #ebebeb;
 }
@@ -915,7 +926,7 @@ ul.social-icons li a:hover {
 
 
 .border {
- border: 1px solid #f0f0f0; 
+ border: 1px solid #f0f0f0;
 }
 
 .community:hover i {
@@ -941,7 +952,7 @@ ul.social-icons li a:hover {
    ========================================================================== */
 
 /* Landscape phones and down */
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
 
 h1 {
   font-size: 40px;
@@ -999,7 +1010,7 @@ p.lead, p.lead_libre {
 .text-left{text-align:center}
 	
 /* Landscape phone to portrait tablet */
-@media (min-width: 481px) and (max-width: 767px) { 
+@media (min-width: 481px) and (max-width: 767px) {
 
 h1 {
   font-size: 40px;
@@ -1238,16 +1249,26 @@ p.lead, p.lead_libre {
   font-size: 18px;
 }
 
+div#lo61banner a {
+  width: 881px;
+  height: 225px;
+  background-image: url(/themes/libreofficenew/img/lo61_reddit.png);
+}
 
 }
-    
-     
+
+
 
 
 /* Large screens ----------- */
 @media (min-width: 1200px) and (max-width: 3000px) {
+div#lo61banner a {
+  width: 881px;
+  height: 225px;
+  background-image: url(/themes/libreofficenew/img/lo61_reddit.png);
+}
 
-}   
+}
 
 
 form#Form_DonationProceed .SelectionGroup li li input {
@@ -1358,3 +1379,74 @@ div.field + .recaptcha { margin-top: 1em; margin-bottom: 0.5em;}
     filter:         blur(2px) grayscale(90%);
 }
 ul.spaced li { margin-bottom: 1em; }
+
+div#bdaybanner a, div.col-sm-8 div#bdaybanner a {
+    display: inline-block;
+    margin-bottom: 2em;
+    width: 400px;
+    height: 100px;
+    background-image: url(/themes/libreofficenew/img/birthday_banner_small.png);
+}
+div#lo6banner a, div.col-sm-8 div#lo6banner a {
+    display: inline-block;
+    margin-bottom: 2em;
+    width: 570px;
+    height: 59px;
+        background-repeat: no-repeat;
+        background-size:contain;
+    background-image: url(/assets/Uploads/lo62-website-banner.png);
+}
+div#lo61banner a {
+    display: inline-block;
+    margin-bottom: 1.5em;
+}
+@media (min-width: 992px) {
+    div.col-sm-12 div#bdaybanner a, section#highlights div#bdaybanner a {
+        width: 800px;
+        height: 200px;
+        background-image: url(/themes/libreofficenew/img/birthday_banner_large.png);
+    }
+    div#lo6banner a {
+        width: 754px;
+        height:78px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(/assets/Uploads/lo62-website-banner.png);
+    }
+    div#lo61banner a {
+        width: 881px;                                                                                                                       height: 225px;                                                                                                                      background-image: url(/themes/libreofficenew/img/lo61_reddit.png);
+    }
+}
+div#bhsbanner a, div.col-sm-8 div#bhsbanner a {
+    display: inline-block;
+    margin-bottom: 2em;
+    width: 400px;
+    height: 100px;
+    background-image: url(/themes/libreofficenew/img/bhs_banner_small.png);
+}
+@media (min-width: 1200px) {
+    div#bhsbanner a {
+        width: 800px;
+        height: 200px;
+        background-image: url(/themes/libreofficenew/img/bhs_banner_large.png);
+    }
+    div#lo6banner a {
+        width: 920px;
+        height:95px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(/assets/Uploads/lo62-website-banner.png);
+    }
+    div#lo61banner a {
+        width: 881px;
+        height: 225px;
+        background-image: url(/themes/libreofficenew/img/lo61_reddit.png);
+    }
+}
+@media (min-width: 992px) {
+    div.col-sm-12 div#bhsbanner a, section#highlights div#bhsbanner a {
+        width: 800px;
+        height: 200px;
+        background-image: url(/themes/libreofficenew/img/bhs_banner_large.png);
+    }
+}

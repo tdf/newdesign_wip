@@ -1,12 +1,12 @@
 ---
 id:
   BitPay:
-    ButtonAltText: BitPay, cara mudah untuk membayar dengan bitcoin.
+    ButtonAltText: BitPay, cara mudah membayar dengan Bitcoin dan Bitcoin tunai.
     CheckoutLocale: en_US
     Email: Alamat surel (opsional)
-    Header: Anda dapat menyumbang melalui Bitcoin
+    Header: Anda dapat menyumbang melalui Bitcoin dan Bitcoin Cash
     LabelEmail: 'Surel:'
-    RefundDisclaimer: Karena sifat alaminya, donasi via Bitcoin biasanya anonim, sehingga sebarang pengembalian atau konfirmasi donasi hanya mungkin pada sejumlah yang kami terima dari penyedia pembayaran kami, dan hanya bila Anda menyebutkan alamat surel. Bila Anda tak setuju dengan kondisi yang tersebut, kami persilakan Anda untuk mempertimbangkan opsi donasi lain yang disinggung di halaman ini.
+    RefundDisclaimer: Karena sifat alami mereka, donasi melalui Bitcoin dan Bitcoin Cash adalah anonim, sehingga sebarang pengembalian atau konfirmasi donasi hanya mungkin pada jumlah yang kami terima dari penyedia pembayaran kami, dan hanya bila Anda menyebut alamat surel Anda.
   Concardis:
     CancelHeader: Anda telah membatalkan proses
     CancelMessage: Sayang sekali, Anda membatalkan pembayaran. <b>Anda belum kenai tagihan.</b> Harap coba lagi, dan bila ada masalah atau pertanyaan, jangan ragu untuk mengontak kami melalui {infoemail} kapanpun.
@@ -18,22 +18,61 @@ id:
     ThanksButHeader: Terima kasih banyak untuk donasi Anda!
     ThanksButMessage1: Document Foundation mengucapkan terima kasih atas donasi Anda yang murah hati. Kami telah menerima pembayaran Anda! Nikmati LibreOffice, dan terima kasih banyak untuk dukungan Anda!
     ThanksButMessage2: Mohon dicatat bahwa donasi belum dapat dikonfirmasi. Harap periksa dalam rekaman Anda apakan donasi terjadi.
+  DonateDownload:
+    DownloadProblemContact: 'Kesulitan <strong>mengunduh</strong> LibreOffice? Perhatikan bahwa kami <strong>tidak menyediakan dukungan teknis</strong> untuk memasang atau memakai perangkat lunak. Bila Anda perlu bantuan, harap kunjungi <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Tapi bila pertanyaan Anda adalah tentang <strong>mengunduh</strong> LibreOffice dari situs web kami, beritahu kami: (1) Versi sistem operasi Anda; (2) Peramban web Anda; (3) Pesan kesalahan yang Anda lihat. Kirim ini ke <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> dan kami akan mencoba membantu.'
+    Helppack: Bantuan bawaan LibreOffice
+    InfoLinkText: Info
+    InfoLinkTitle: Lihat checksum dan daftar cermin unduhan bagi berkas ini
+    Invalid: Unduhan yang diminta tampaknya tidak valid. Harap pergi ke <a href='//www.libreoffice.org/download'>halaman unduh kami</a> dan pilih suatu versi terkini.<br/>Untuk masalah teknis dengan pengunduhan itu sendiri, harap tulis ke <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Harap diketahui bahwa kami <strong>tidak</strong> menyediakan dukungan teknis pada alamat ini.
+    Langpack: Antar Muka Pengguna Yang Diterjemahkan
+    LinkStartText: Unduhan Anda<a href='{link}'>{filename} ({size})</a> mestinya segera dimulai. Harap klik tautan bila itu tidak mulai juga.
+    ManualMirror: Anda juba bisa <a href='{link}.mirrorlist'>memilih sebuah cermin secara manual</a>
+    NeedAnotherLang: Atau <a href='https://www.libreoffice.org/download/download/?lang=pick'>pilih bahasa lain</a>.
+    Outdated: Unduhan yang diminta tampaknya kedaluwarsa? Harap pergi ke <a href='//www.libreoffice.org/download'>halaman unduh kami</a> dan pilih suatu versi terkini.<br/>Untuk masalah teknis dengan pengunduhan itu sendiri, harap tulis ke <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Harap diketahui bahwa kami <strong>tidak</strong> menyediakan dukungan teknis pada alamat ini.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Unduh berkas memakai BitTorrent
   DonatePage:
+    BC_EMAIL_DESC: jika Anda ingin menerima pesan konfirmasi bagi pembayaran kartu kredit
+    BC_EMAIL_LABEL: surel lainnya
     BUTTON_CARD: Donasi via Kartu Kredit
     BUTTON_PAYPAL: Donasi via PayPal
+    Bank: Anda dapat mengirim donasi ke akun bank kami
+    BankDetails: "<strong>Pemilik</strong>: {owner}<br/><strong>Tujuan</strong>: Donasi<br/><strong>Akun</strong>: {accountNumber}<br/><strong>Kode Bank</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Alamat penerima</strong>: {tdfAddress}<br/><strong>Alamat bank</strong>: {bankAddress}"
+    BankHeader: Transfer bank
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Pilih satu nilai baku
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Atau masukkan suatu nilai dan mata uang<br/>(hanya yang bertanda * tersedia melalui PayPal)
+    CardOnly: "(hanya kartu)"
     ContinueLabel: Lanjutkan
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
+    DonateUSHeader: Menyumbang dari AS
+    Flattr: Anda bisa mem-<a href='{flattrlink}'>Flattr</a> kami
+    FlattrHeader: Flattr
+    FooterText: 'Cara lain memberi: Bitcoin, Flatter, transfer bank - klik kotak di bawah<br/>Pertanyaan tentang donasi Anda? <a href="mailto:info@documentfoundation.org">Kirim surel ke kami</a>'
+    FreqMonthly: Donasi bulanan
+    FreqOneshot: Donasi sekali saja
+    FreqQuarterly: Donasi per kuartal
+    FreqYearly: Donasi tahunan
     LeadText: LibreOffice adalah Perangkat Lunak Bebas dan disediakan gratis.<br/>Donasi Anda, yang sepenuhnya opsional, mendukung komunitas kami di seluruh dunia.<br/>Bila Anda menyukai perangkat lunak ini, mohon pertimbangkan untuk menyumbang.
+    OPTIONAL_EMAIL: surel opsional
+    OPTIONAL_EMAIL_DES: jika Anda ingin menerima surat konfirmasi bagi pembayaran kartu kredit
+    OtherAmount: Besaran Lain
     ProceedConcardis: Untuk memroses donasi Anda <strong>{amount} {currency}</strong>, Anda kini dialihkan ke situs web ConCardis untuk melengkapi pembayaran.<br/>Bila Anda tak secara otomatis dialihkan, harap klik tombol Lanjutkan di bawah.
     ProceedPayPal: Untuk memroses donasi Anda <strong>{amount} {currency}</strong>, Anda kini dialihkan ke situs web PayPal untuk melengkapi pembayaran.<br/>Bila Anda tak secara otomatis dialihkan, harap klik tombol Lanjutkan di bawah.
+    ReverseLayoutTitle: Dukung LibreOffice
+    SLIDERLABEL: 'Banyaknya (seret penggeser di bawah untuk mengubah):'
+    Spi: LibreOffice adalah sebuah proyek terkait SPI
+    SpiDetails: Anda dapat <a href='https://www.spi-inc.org/donations/'>menyumbang dari AS</a> dengan menyebutkan "LibreOffice" dengan donasi Anda. Perhatikan bahwa donasi melalui SPI dapat dikurangkan dari pajak AS.
+    TaxHeader: Pengurangan pajak
+    TaxHint: <strong>Donasi ke The Document Foundation dapat menjadi pengurang pajak di beberapa negara.<br/>Silakan konsultasi ke kantor pajak lokal Anda untuk rinciannya.</strong><br/><strong>Untuk penduduk Jerman:</strong><em>"{germanLegalText}"</em>
+    WhileYouDownload: Sambil Anda mengunduh, harap pertimbangkan untuk mendukung LibreOffice dengan donasi
   Download:
+    Archive: Versi LibreOffice yang lebih lama (mungkin tidak didukung!) tersedia <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>di dalam arsip</a>
     ChangeLanguageLinkText: perlu bahasa lain?
     ChangeLanguageLinkTitle: Pilih bahasa lain
     Helppack: Bantuan bawaan LibreOffice dalam bahasa <strong>{language}</strong>
@@ -45,7 +84,7 @@ id:
     Langpack: Dapatkan antarmuka LibreOffice yang diterjemahkan ke dalam bahasa <strong>{language}</strong>
     LangpackButtonLabel: Antar Muka Pengguna Yang Diterjemahkan
     LangpackLinkTitle: Unduh Pak Bahasa
-    Mac64reqs: 10.8 atau yang lebih baru diperlukan
+    Mac64reqs: 10.10 atau yang lebih baru diperlukan
     MainButtonLabel: Unduh Versi {version}
     MainInstaller: Pemasang Utama
     MainLinkTitle: Unduh LibreOffice {version} bagi {os}
@@ -61,7 +100,25 @@ id:
     VersionListReleased: 'LibreOffice tersedia dalam versi <strong>rilis</strong> berikut:'
     VersionListTesting: 'LibreOffice tersedia dalam versi <strong>prarilis</strong> berikut:'
     Versions: Versi Yang Tersedia
-    Win64reqs: Vista atau yang lebih baru diperlukan
+    Win64reqs: 7 atau yang lebih baru diperlukan
+  DownloadRefresh:
+    BoxHeader: Unduh LibreOffice
+    ChangeLanguageLinkText: perlu bahasa lain?
+    ChangeLanguageLinkTitle: Pilih bahasa lain
+    ChooseOS: 'Pilih sistem operasi Anda:'
+    DownloadLinkText: UNDUH
+    FreshText: Bila Anda antusias pada teknologi, pengguna dini, atau pengguna mahir, versi ini adalah untuk Anda!
+    HelppackButtonLabel: Bantuan untuk penggunaan luring
+    HelppackLinkTitle: Unduh helpcontent untuk penggunaan luring
+    InfoLinkTitle: Checksum dan info tambahan
+    InfoText: Info
+    LangpackLinkText: Antar Muka Pengguna Yang Diterjemahkan
+    LangpackLinkTitle: Unduh Pak Bahasa
+    RelnotesLinkText: Catatan rilis LibreOffice {version}
+    StillText: Bila Anda menggelar LibreOffice dalam suatu enterprise atau lingkungan korporasi atau seorang pengguna yang konservatif, harap pilih versi ini.</span><span class="dl_description_text" style="font-size:18px;">Untuk penggelaran bisnis, kami sangat menganjurkan <a href="//www.libreoffice.org/get-help/professional-support/">dukungan dari partner yang tersertifikasi</a> yang juga menawarkan versi-versi LibreOffice dengan dukungan jangka panjang.
+    SupplementaryDownloads: 'Unduhan Pelengkap:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Unduh memakai BitTorrent
   Homepage:
     DownloadNow: Unduh Sekarang
   RSS:

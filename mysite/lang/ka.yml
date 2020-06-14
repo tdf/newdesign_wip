@@ -1,0 +1,66 @@
+---
+ka:
+  BitPay:
+    CheckoutLocale: en_US
+    Email: მეილის მისამართი(არასავალდებულო)
+    LabelEmail: 'მეილი:'
+  Concardis:
+    CancelHeader: თქვენ გააუქმეთ პროცესი.
+    ProblemHeader: დაფიქსირდა პრობლემა
+    Processing: თქვენი შემოწირულობა პროცესშია
+    ThankYouHeader: გიხდით უღრმეს მადლობას თქვენი შემოწირულობისთვის!
+    ThanksButHeader: გიხდით უღრმეს მადლობას თქვენი შემოწირულობისთვის!
+  DonateDownload:
+    InfoLinkText: ინფორმაცია
+    Langpack: გადათარგმნეთ სამომხმარებლო ინტერფეისი
+    TorrentLinkText: Torrent
+  DonatePage:
+    BC_EMAIL_DESC: თუ თქვენ გინდათ დამადასტურებელი მეილი თქვენი საბარათო გადახდისთვის.
+    BC_EMAIL_LABEL: არასავალდებულო მეილი
+    BUTTON_CARD: გაიღეთ შემოწირულობა ბარათის საშუალებით
+    BUTTON_PAYPAL: გაიღეთ დახმარება PayPal-ის საშუალებით
+    CHOICE_DEFAULT: აირჩიეთ ერთ-ერთი  ნაგულისხმები მნიშვნელობებიდან
+    CUSTOM_AMOUNT_VALUE: '25'
+    ContinueLabel: გაგრძელება
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+    OPTIONAL_EMAIL: არასავალდებულო მეილი
+    OPTIONAL_EMAIL_DES: თუ თქვენ გინდათ დამადასტურებელი მეილი თქვენი საბარათო გადახდისთვის.
+  Download:
+    ChangeLanguageLinkText: გნებავთ სხვა ენა?
+    ChangeLanguageLinkTitle: აირჩიეთ სხვა ენა
+    InfoText: ინფორმაცია
+    LangpackButtonLabel: გადათარგმნეთ სამომხმარებლო ინტერფეისი
+    LangpackLinkTitle: გადმოწერეთ ენის პაკეტი
+    MainButtonLabel: გადმოწერეთ ვერსია {version}
+    MainInstaller: მთავარი საინსტალაციო
+    MainLinkTitle: 'გადმოწერეთ LibreOffice {version}  {os} - თვის '
+    OS: ოპერაციული სისტემა
+    OSList: LibreOffice {version} არის ხელმისაწვდომი შემდეგი ოპერაციული სისტემებისთვის.
+    PickLanguage: გთხოვთ აირჩიოთ სასურველი ენა
+    PlatformChange: არჩეული :LibreOffice {version} {os}-თვის - <a href='{curr_page}#change'>change?</a>
+    SDKandSource: SDK და ღია კოდი
+    SDKDownload: გადმოწერეთ SDK
+    SourceDownload: გადმოწერეთ ღია კოდი
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: BitTorrent-ით გადმოწერა
+    VersionListReleased: 'LibreOffice ხელმისაწვდომია შემდგომ <strong>ვერსიებში</strong> '
+    VersionListTesting: 'LibreOffice ხელმისაწვდომია შემდგომ <strong>ვერსიებში</strong> '
+    Versions: ხელმისაწვდომი ვერსიები
+  DownloadRefresh:
+    ChangeLanguageLinkText: გნებავთ სხვა ენა?
+    ChangeLanguageLinkTitle: აირჩიეთ სხვა ენა
+    InfoText: ინფორმაცია
+    LangpackLinkText: გადათარგმნეთ სამომხმარებლო ინტერფეისი
+    LangpackLinkTitle: გადმოწერეთ ენის პაკეტი
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: BitTorrent-ით გადმოწერა
+  Homepage:
+    DownloadNow: გადმოწერეთ ახლავე
+  RSS:
+    ReadMore: წაიკითხეთ მეტი »
+  Social:
+    LatestTweets: 'უახლესი ტვიტები '

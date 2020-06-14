@@ -1,11 +1,133 @@
 ---
 hu:
   BitPay:
-    ButtonAltText: BitPay, a bitcoinnal való fizetés egyszerű módja.
+    ButtonAltText: BitPay, a Bitcoinnal és Bitcoin cash-sel fizetés egyszerű módja.
     CheckoutLocale: en_US
     Email: E-mail cím (elhagyható)
-    Header: Támogathat Bitcoinnal
+    Header: Bitcoin és Bitcoin Cash segítségével adományozhat.
     LabelEmail: 'E-mail:'
-    RefundDisclaimer: Természetükből fakadóan a Bitcoin adományok általában névtelenek, így bármilyen visszatérítés vagy támogatás-ellenőrzés csak a fizetésszolgáltatónktól kapott összeg alapján lehetséges, és csak ha megadja e-mail címét. Ha nem egyezik bele a fenti feltételekbe, akkor fontolja meg az ezen az oldalon vázolt egyéb támogatási lehetőségeket.
+    RefundDisclaimer: A természetükből fakadón a Bitcoin és Bitcoin Cash segítségével küldött adományok névtelenek, így a visszatérítés és az adomány megerősítése csak a fizetési szolgáltatótól kapott összeg erejéig lehetséges, és akkor is csak akkor, ha megadta az e-mail címét.
   Concardis:
     CancelHeader: Megszakította a folyamatot
+    CancelMessage: Sajnos megszakította a fizetést. <b>Nem terheltük meg a számláját.</b> Próbálja újra, és ha problémája vagy kérdése van, keressen minket a {infoemail} címen.
+    ProblemHeader: Hiba történt…
+    ProblemMessage: Sajnos a fizetés nem sikerült. Ez a fizetéskiszolgálónk vagy a bankkártyájának hibája is lehet. <b>Nem terheltük meg a számláját.</b> Próbálja újra, és ha problémája vagy kérdése van, keressen minket a {infoemail} címen.
+    Processing: Fizetése feldolgozás alatt van
+    ThankYouHeader: Köszönjük adományát!
+    ThankYouMessage: A The Document Foundation szeretné megköszönni nagyvonalú adományát. A fizetés megtörtént. Élvezze a LibreOffice használatát, és köszönjük támogatását!
+    ThanksButHeader: Köszönjük adományát!
+    ThanksButMessage1: A The Document Foundation szeretné megköszönni nagyvonalú adományát. A fizetés megtörtént. Élvezze a LibreOffice használatát, és köszönjük támogatását!
+    ThanksButMessage2: Adományát még nem lehet megerősíteni. Ellenőrizze saját bankjánál, hogy az adományt elküldték-e.
+  DonateDownload:
+    DownloadProblemContact: 'Problémába ütközött a LibreOffice <strong>letöltésekor</strong>? Vegye figyelembe, hogy <strong>nem biztosítunk műszaki támogatást</strong> a szoftver telepítéséhez és használatához. Ha segítségre van szüksége, akkor keresse fel az <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a> oldalt.<br /><br />De ha a kérdése a LibreOffice weboldalról történő <strong>letöltésével</strong> kapcsolatos, akkor tudassa velünk: (1) Az operációs rendszere verzióját; (2) A webböngészőjét; (3) A látott hibaüzeneteket. Küldje el ezeket a <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> címre, és megpróbálunk segíteni.'
+    Helppack: LibreOffice beépített súgó
+    InfoLinkText: Információ
+    InfoLinkTitle: A fájl letöltése helyeinek és ellenőrzőösszegeinek megtekintése
+    Invalid: A kért letöltés érvénytelennek tűnik. Keresse fel a <a href='//www.libreoffice.org/download'>letöltési oldalunkat</a> és válasszon egy jelenlegi verziót.<br/>Magával a letöltéssel kapcsolatos műszaki problémákkal írjon a <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a> címre. Vegye figyelembe, hogy <strong>nem</strong> biztosítunk műszaki támogatást ezen a címen.
+    Langpack: Lefordított felhasználói felület
+    LinkStartText: A <a href='{link}'>{filename} ({size})</a> letöltése hamarosan elindul. Kattintson a hivatkozásra, ha mégsem indul el.
+    ManualMirror: "<a href='{link}.mirrorlist'>Kézzel is választhat egy tükröt</a>"
+    NeedAnotherLang: Vagy <a href='https://www.libreoffice.org/download/download/?lang=pick'>válasszon egy másik nyelvet</a>.
+    Outdated: A kért letöltés elavultnak tűnik? Keresse fel a <a href='//www.libreoffice.org/download'>letöltési oldalunkat</a> és válasszon egy jelenlegi verziót.<br/>Magával a letöltéssel kapcsolatos műszaki problémákkal írjon a <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a> címre. Vegye figyelembe, hogy <strong>nem</strong> biztosítunk műszaki támogatást ezen a címen.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: A fájl letöltése BitTorrent segítségével
+  DonatePage:
+    BC_EMAIL_DESC: ha szeretne megerősítő e-mailt a bankkártyás fizetésekről
+    BC_EMAIL_LABEL: elhagyható e-mail
+    BUTTON_CARD: Adományozás bankkártyával
+    BUTTON_PAYPAL: Adományozás PayPal-lel
+    Bank: Adományát átutalhatja a bankszámlaszámunkra
+    BankDetails: "<strong>Tulajdonos</strong>: {owner}<br/><strong>Cél</strong>: Adomány<br/><strong>Számlaszám</strong>: {accountNumber}<br/><strong>Banki kód</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Fogadó számlaszáma</strong>: {tdfAddress}<br/><strong>Bank címe</strong>: {bankAddress}"
+    BankHeader: Banki átutalás
+    BitcoinHeader: Bitcoin / Bitcoin Cash
+    CHOICE_DEFAULT: Válasszon egy alapértelmezett értéket
+    CUSTOM_AMOUNT_VALUE: '5000'
+    CUSTOM_CHOICE: Vagy adjon meg egyedi összeget és pénznemet<br/>(csak a * jelölésűek érhetők el PayPalen is)
+    CardOnly: "(csak kártya)"
+    ContinueLabel: Folytatás
+    DEFAULT_AMOUNT_EUR05: '1500'
+    DEFAULT_AMOUNT_EUR10: '3000'
+    DEFAULT_AMOUNT_EUR20: '6000'
+    DEFAULT_AMOUNT_EUR50: '15000'
+    DEFAULT_CURRENCY: HUF
+    DonateUSHeader: Adományozás az USA-ból
+    Flattr: Adományozhat a <a href='{flattrlink}'>Flattr</a> segítségével
+    FlattrHeader: Flattr
+    FooterText: 'Más adakozási módok: Bitcoin, Flattr, banki átutalás – kattintson a lenti dobozokra<br/>Kérdése van az adományozásról? <a href="mailto:info@documentfoundation.org">Írjon nekünk egy e-mailt</a>'
+    FreqMonthly: Havi adományozás
+    FreqOneshot: Egyszeri adományozás
+    FreqQuarterly: Negyedévenkénti adományozás
+    FreqYearly: Évi adományozás
+    LeadText: A LibreOffice szabad szoftver, és ingyenesen elérhető.<br/>Adománya, amely teljesen önkéntes, támogatja világszintű közösségünket.<br/>Ha tetszik a szoftver, fontolja meg a támogatást.
+    OPTIONAL_EMAIL: elhagyható e-mail
+    OPTIONAL_EMAIL_DES: ha szeretne megerősítő e-mailt a bankkártyás fizetésekről
+    OtherAmount: Más összeg
+    ProceedConcardis: "<strong>{amount} {currency}</strong> adománya feldolgozásához most átirányítjuk a ConCardis weboldalára, a fizetés befejezéséhez.<br/>Ha az automatikus átirányítás nem történik meg, akkor kattintson a lenti „Folytatás” gombra."
+    ProceedPayPal: "<strong>{amount} {currency}</strong> adománya feldolgozásához most átirányítjuk a PayPal weboldalára, a fizetés befejezéséhez.<br/>Ha az automatikus átirányítás nem történik meg, akkor kattintson a lenti „Folytatás” gombra."
+    ReverseLayoutTitle: Támogassa a LibreOffice-t
+    SLIDERLABEL: 'Összes (húzza a csúszkát a módosításhoz):'
+    Spi: A LibreOffice egy az SPI-vel társult projekt
+    SpiDetails: Adományozhat az <a href='https://www.spi-inc.org/donations/'>Egyesült Államokból</a> a „LibreOffice” megemlítésével az adományában. Vegye figyelembe, hogy az SPI-n keresztül küldött adományok levonhatóak az USA-beli adókból.
+    TaxHeader: Adójóváírások
+    TaxHint: <strong>A The Document Foundation számára küldött adományok levonhatóak az adóból számos országban.<br/>Részletekért keresse meg a helyi adóhivatalt.</strong><br/><strong>Német állampolgároknak:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Amíg letölti, fontolja meg a LibreOffice adományozással történő támogatását.
+  Download:
+    Archive: A LibreOffice régebbi verzióit (melyek már lehet, hogy nem támogatottak!) elérhetőek <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>az archívumban</a>
+    ChangeLanguageLinkText: más nyelvet szeretne látni?
+    ChangeLanguageLinkTitle: Másik nyelv választása
+    Helppack: LibreOffice beépített súgó <strong>{language}</strong> nyelven
+    HelppackButtonLabel: Súgó kapcsolat nélküli használathoz
+    HelppackFallback: LibreOffice beépített súgó <strong>angol</strong> nyelven
+    HelppackLinkTitle: Súgótartalom letöltése kapcsolat nélküli használathoz
+    InfoLinkTitle: Ellenőrzőösszegek és további információk
+    InfoText: Információk
+    Langpack: LibreOffice felület <strong>{language}</strong> nyelvre fordítva
+    LangpackButtonLabel: Lefordított felhasználói felület
+    LangpackLinkTitle: A nyelvi csomag letöltése
+    Mac64reqs: 10.10 vagy újabb szükséges
+    MainButtonLabel: "{version} verzió letöltése"
+    MainInstaller: Fő telepítő
+    MainLinkTitle: 'LibreOffice {version} letöltése erre: {os}'
+    OS: Operációs rendszerek
+    OSList: 'A LibreOffice {version} a következő operációs rendszerekre és architektúrákra érhető el:'
+    PickLanguage: Válassza ki a nyelvet
+    PlatformChange: 'Kiválasztva: LibreOffice {version} erre: {os} - <a href=''{curr_page}#change''>módosítja?</a>'
+    SDKandSource: SDK és forráskód
+    SDKDownload: Az SDK letöltése
+    SourceDownload: A forráskód letöltése
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Letöltés BitTorrent használatával
+    VersionListReleased: 'A LibreOffice a következő <strong>kiadott</strong> változatokban érhető el:'
+    VersionListTesting: 'A LibreOffice a következő <strong>előzetesen kiadott</strong> változatokban érhető el:'
+    Versions: Elérhető változatok
+    Win64reqs: 7 vagy újabb szükséges
+  DownloadRefresh:
+    BoxHeader: A LibreOffice letöltése
+    ChangeLanguageLinkText: más nyelvet szeretne látni?
+    ChangeLanguageLinkTitle: Másik nyelv választása
+    ChooseOS: 'Válassza ki az operációs rendszerét:'
+    DownloadLinkText: LETÖLTÉS
+    FreshText: Ha Ön technológiarajongó, korai áttérő vagy hozzáértő felhasználó, akkor ez a verzió Önnek szól!
+    HelppackButtonLabel: Súgó kapcsolat nélküli használathoz
+    HelppackLinkTitle: Súgótartalom letöltése kapcsolat nélküli használathoz
+    InfoLinkTitle: Ellenőrzőösszegek és további információk
+    InfoText: Információ
+    LangpackLinkText: Lefordított felhasználói felület
+    LangpackLinkTitle: A nyelvi csomag letöltése
+    RelnotesLinkText: LibreOffice {version} kiadási megjegyzések
+    StillText: Ha Ön egy vállalatnál vagy céges környezetben telepíti a LibreOffice-t, vagy Ön egy konzervatív felhasználó, akkor válassza ezt a verziót.</span><span class="dl_description_text" style="font-size:18px;">Üzleti telepítéseknél erősen ajánljuk a <a href="//www.libreoffice.org/get-help/professional-support/">tanúsított partnereink támogatását</a>, akik hosszú távon támogatott LibreOffice verziókat is kínálnak.
+    SupplementaryDownloads: 'Kiegészítő letöltések:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Letöltés BitTorrent használatával
+  Homepage:
+    DownloadNow: Letöltés most
+  RSS:
+    ReadMore: további tudnivalók »
+  Shortcode:
+    NoPortable: Jelenleg nem érhető el hordozható változat ({multilingualtype})
+    NoRC: Jelenleg nem érhető el RC változat
+    NoRC_Codeline: Jelenleg nem érhető el RC változat a(z) {version} kódsorozathoz
+    ReleaseNotesLinkText: Kiadási megjegyzések
+  Social:
+    FollowUs: Kövessen minket
+    LatestTweets: Legutóbbi tweetek

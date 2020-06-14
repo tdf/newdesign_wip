@@ -41,6 +41,17 @@ class Debug {
 	private static $friendly_error_header = 'There has been an error';
 
 	/**
+	 * Set to true to enable friendly errors to set a http response code corresponding to the error.
+	 * If left false then error pages will be served as HTTP 200.
+	 *
+	 * Will be removed in 4.0, and fixed to on.
+	 *
+	 * @config
+	 * @var bool
+	 */
+	private static $friendly_error_httpcode = false;
+
+	/**
 	 * @config
 	 * @var string The body of the message shown to users on the live site when a fatal error occurs.
 	 */
@@ -78,11 +89,12 @@ class Debug {
 	 */
 	public static function caller() {
 		$bt = debug_backtrace();
-		$caller = $bt[2];
+		$caller = isset($bt[2]) ? $bt[2] : array();
 		$caller['line'] = $bt[1]['line'];
 		$caller['file'] = $bt[1]['file'];
 		if(!isset($caller['class'])) $caller['class'] = '';
 		if(!isset($caller['type'])) $caller['type'] = '';
+		if(!isset($caller['function'])) $caller['function'] = '';
 		return $caller;
 	}
 
@@ -125,12 +137,7 @@ class Debug {
 			}
 
 			if($hasDebugMethod) {
-				$debug = $val->debug();
-				// Conditional not necessary after 3.2. See https://github.com/silverstripe/silverstripe-framework/pull/4034
-				if ($debug instanceof ViewableData_Debugger) {
-					$debug = $debug->forTemplate();
-				}
-				return $debug;
+				return $val->debug();
 			}
 		}
 
@@ -323,29 +330,28 @@ class Debug {
 	 * @return string HTML error message for non-ajax requests, plaintext for ajax-request.
 	 */
 	public static function friendlyError($statusCode=500, $friendlyErrorMessage=null, $friendlyErrorDetail=null) {
+		// Ensure the error message complies with the HTTP 1.1 spec
 		if(!$friendlyErrorMessage) {
 			$friendlyErrorMessage = Config::inst()->get('Debug', 'friendly_error_header');
 		}
+		$friendlyErrorMessage = strip_tags(str_replace(array("\n", "\r"), '', $friendlyErrorMessage));
 
 		if(!$friendlyErrorDetail) {
 			$friendlyErrorDetail = Config::inst()->get('Debug', 'friendly_error_detail');
 		}
 
 		if(!headers_sent()) {
-			$currController = Controller::has_curr() ? Controller::curr() : null;
-			// Ensure the error message complies with the HTTP 1.1 spec
-			$msg = strip_tags(str_replace(array("\n", "\r"), '', $friendlyErrorMessage));
-			if($currController) {
-				$response = $currController->getResponse();
-				$response->setStatusCode($statusCode, $msg);
-			} else {
-				header($_SERVER['SERVER_PROTOCOL'] . " $statusCode $msg");
+			// Allow toggle between legacy behaviour and correctly setting HTTP response code
+			// In 4.0 this should be fixed to always set this response code.
+			if(Config::inst()->get('Debug', 'friendly_error_httpcode') || !Controller::has_curr()) {
+				header($_SERVER['SERVER_PROTOCOL'] . " $statusCode $friendlyErrorMessage");
 			}
 		}
 
 		if(Director::is_ajax()) {
 			echo $friendlyErrorMessage;
 		} else {
+			if(!headers_sent()) header('Content-Type: text/html');
 			if(class_exists('ErrorPage')){
 				$errorFilePath = ErrorPage::get_filepath_for_errorcode(
 					$statusCode,
@@ -353,7 +359,6 @@ class Debug {
 				);
 				if(file_exists($errorFilePath)) {
 					$content = file_get_contents($errorFilePath);
-					if(!headers_sent()) header('Content-Type: text/html');
 					// $BaseURL is left dynamic in error-###.html, so that multi-domain sites don't get broken
 					echo str_replace('$BaseURL', Director::absoluteBaseURL(), $content);
 				}
@@ -435,6 +440,7 @@ class Debug {
 		}
 		$reporter->writeTrace(($errcontext ? $errcontext : debug_backtrace()));
 		$reporter->writeFooter();
+		return false;
 	}
 
 	/**
@@ -476,24 +482,22 @@ class Debug {
 			// being called again.
 			// This basically calls Permission::checkMember($_SESSION['loggedInAs'], 'ADMIN');
 
+			// @TODO - Rewrite safely using DataList::filter
 			$memberID = $_SESSION['loggedInAs'];
-
-			$groups = DB::query("SELECT \"GroupID\" from \"Group_Members\" WHERE \"MemberID\" = " . $memberID);
-			$groupCSV = implode($groups->column(), ',');
-
-			$permission = DB::query("
-				SELECT \"ID\"
-				FROM \"Permission\"
-				WHERE (
-					\"Code\" = 'ADMIN'
-					AND \"Type\" = " . Permission::GRANT_PERMISSION . "
-					AND \"GroupID\" IN ($groupCSV)
+			$permission = DB::prepared_query('
+				SELECT "ID" FROM "Permission"
+				INNER JOIN "Group_Members" ON "Permission"."GroupID" = "Group_Members"."GroupID"
+				WHERE "Permission"."Code" = ?
+				AND "Permission"."Type" = ?
+				AND "Group_Members"."MemberID" = ?',
+				array(
+					'ADMIN', // Code
+					Permission::GRANT_PERMISSION, // Type
+					$memberID // MemberID
 				)
-			")->value();
+			)->value();
 
-			if($permission) {
-				return;
-			}
+			if($permission) return;
 		}
 
 		// This basically does the same as
@@ -537,8 +541,9 @@ function exceptionHandler($exception) {
 
 /**
  * Generic callback to catch standard PHP runtime errors thrown by the interpreter
- * or manually triggered with the user_error function.
- * Caution: The error levels default to E_ALL is the site is in dev-mode (set in main.php).
+ * or manually triggered with the user_error function. Any unknown error codes are treated as
+ * fatal errors.
+ * Caution: The error levels default to E_ALL if the site is in dev-mode (set in main.php).
  *
  * @ignore
  * @param int $errno
@@ -548,22 +553,24 @@ function exceptionHandler($exception) {
  */
 function errorHandler($errno, $errstr, $errfile, $errline) {
 	switch($errno) {
-		case E_ERROR:
-		case E_CORE_ERROR:
-		case E_USER_ERROR:
-			Debug::fatalHandler($errno, $errstr, $errfile, $errline, debug_backtrace());
-			exit(1);
-
-		case E_WARNING:
-		case E_CORE_WARNING:
-		case E_USER_WARNING:
-			return Debug::warningHandler($errno, $errstr, $errfile, $errline, debug_backtrace());
-
 		case E_NOTICE:
 		case E_USER_NOTICE:
 		case E_DEPRECATED:
 		case E_USER_DEPRECATED:
 		case E_STRICT:
 			return Debug::noticeHandler($errno, $errstr, $errfile, $errline, debug_backtrace());
+
+		case E_WARNING:
+		case E_CORE_WARNING:
+		case E_USER_WARNING:
+		case E_RECOVERABLE_ERROR:
+			return Debug::warningHandler($errno, $errstr, $errfile, $errline, debug_backtrace());
+
+		case E_ERROR:
+		case E_CORE_ERROR:
+		case E_USER_ERROR:
+		default:
+			Debug::fatalHandler($errno, $errstr, $errfile, $errline, debug_backtrace());
+			exit(1);
 	}
 }

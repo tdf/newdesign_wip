@@ -1,8 +1,8 @@
 (function($) {
 	/**
 	 * File: CMSPageHistoryController.js
-	 * 
-	 * Handles related interactions between the version selection form on the 
+	 *
+	 * Handles related interactions between the version selection form on the
 	 * left hand side of the panel and the version displaying on the right
 	 * hand side.
 	 */
@@ -32,7 +32,7 @@
 			 * display based on whether we have two or 1 option selected
 			 *
 			 * Todo:
-			 *		Handle coupling to admin url 
+			 *		Handle coupling to admin url
 			 */
 			onsubmit: function(e, d) {
 				e.preventDefault();
@@ -116,12 +116,12 @@
 			 * Selects or deselects the row (if in compare mode). Will trigger
 			 * an update of the edit form if either selected (in single mode)
 			 * or if this is the second row selected (in compare mode)
-			 */ 
+			 */
 			onclick: function(e) {
 				var compare, selected;
 				
 				// compare mode
-				compare = this.parents("form").find(':input[name=CompareMode]').attr("checked"),
+				compare = this.parents("form").find(':input[name=CompareMode]').attr("checked");
 				selected = this.siblings(".active");
 				
 				if(compare && this.hasClass('active')) {
@@ -132,7 +132,7 @@
 				else if(compare) {
 					// check if we have already selected more than two.
 					if(selected.length > 1) {
-						return alert(ss.i18n._t('ONLYSELECTTWO', 'Can only compare two versions at at time.'));
+						return alert(ss.i18n._t('ONLYSELECTTWO', 'You can only compare two versions at this time.'));
 					}
 				
 					this._select();
@@ -153,13 +153,19 @@
 			},
 			
 			/**
-			 * Function: _unselect() 
+			 * Function: _unselect()
 			 *
-			 * Unselects the row from the form selection. 
+			 * Unselects the row from the form selection.
+			 *
+			 * Using regular js to update the class rather than this.removeClass('active')
+			 * because the latter causes the browser to continuously call
+			 * element.compareDocumentPosition, causing the browser to hang for long
+			 * periods of time, especially on pages with lots of versions (e.g. 100+)
 			 */
 			_unselect: function() {
-				this.removeClass('active');
-				this.find(":input[type=checkbox]").attr("checked", false);
+				var tr = this.get(0);
+				tr.className = $.trim(tr.className.replace(/\bactive\b/, ''));
+				this.find(":input[type=checkbox][checked]").attr("checked", false);
 			},
 			
 			/**
@@ -172,6 +178,6 @@
 				this.find(":input[type=checkbox]").attr("checked", true);
 			}
 			
-		})
+		});
 	});
 })(jQuery);

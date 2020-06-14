@@ -1,11 +1,10 @@
 ---
 et:
   BitPay:
-    ButtonAltText: BitPay, lihtne viis bitcoinidega maksta
+    CheckoutLocale: en_US
     Email: E-post (pole kohustuslik)
-    Header: Annetada saab ka bitcoinidega
+    Header: Annetada saab ka Bitcoini ja Bitcoin Cashi kaudu
     LabelEmail: 'E-post:'
-    RefundDisclaimer: Bitcoini-annetused on oma loomu tõttu anonüümsed, nii et igasugune annetuse kinnitus või tagastus on võimalik ainult selle summa osas, mille me oma makseteenuse osutajalt saame, ja ainult siis, kui lisad oma e-posti aadressi. Kui sa nende tingimustega ei nõustu, kasuta palun mõnda teist annetamise viisi.
   Concardis:
     CancelHeader: Protsess tühistati
     CancelMessage: 'Tühistasid makse. <b>Raha kaardilt ei võetud.</b> Soovi korral proovi hiljem uuesti ja kui probleem püsib, kirjuta meile aadressil {infoemail}. '
@@ -17,33 +16,69 @@ et:
     ThanksButHeader: Suur aitäh annetuse eest!
     ThanksButMessage1: Document Foundation tänab sind annetamise eest. Naudi LibreOffice'i kasutamist ja veel kord aitäh toetamast!
     ThanksButMessage2: Pane tähele, et annetust polnud veel võimalik kinnitada. Palun kontrolli oma konto väljavõttelt, kas see toimis.
+  DonateDownload:
+    DownloadProblemContact: Probleemid LibreOffice'i <strong>allalaadimisega</strong>? Pane tähele, et me <strong>ei paku tehnilist tuge</strong> paigaldamise või kasutamise jaoks. Kui vajad abi, külasta palun saiti <a href='https://ask.libreoffice.org/'>Ask LibreOffice</a>.<br /><br />Ent kui küsimus käib LibreOffice'i <strong>allalaadimise</strong> kohta meie veebilehelt, siis palun pane (inglise keeles) kirja (1) oma operatsioonisüsteemi versioon, (2) oma veebilehitseja, (3) saadud veateade või -teated ning saada need aadressil <a href='mailto:download@libreoffice.org'>download@libreoffice.org</a> ning me püüame aidata.
+    Helppack: LibreOffice'i abimaterjal
+    InfoLinkText: info
+    InfoLinkTitle: Kuva faili kontrollsummad ja peegelserverid
+    Invalid: Allalaadimiseks küsitud faili ei tundu olemas olevat. Palun mine <a href='//www.libreoffice.org/download'>allalaadimislehele</a> ja vali mõni kaasaegne versioon.<br/>Allalaadimisega ilmnenud tehniliste probleemide korral kirjuta palun aadressil <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Pane tähele, et sellelt aadressilt <strong>ei saa</strong> tehnilist tuge muudes küsimustes.
+    Langpack: Tõlgitud kasutajaliides
+    LinkStartText: Allalaadimine (<a href='{link}'>{filename}, {size}</a>) peaks kohe algama. Kui seda millegipärast ei juhtu, klõpsa linki.
+    ManualMirror: Võid ka <a href='{link}.mirrorlist'>käsitsi peegelserveri</a>
+    NeedAnotherLang: või <a href='https://www.libreoffice.org/download/download/?lang=pick'>mõne teise keele</a> valida.
+    TorrentLinkText: torrent
+    TorrentLinkTitle: Laadi fail alla BitTorrenti kaudu
   DonatePage:
+    BC_EMAIL_DESC: kui soovid krediitkaardimaksetele kinnituskirja
+    BC_EMAIL_LABEL: E-post (valikuline)
     BUTTON_CARD: Annetan krediitkaardiga
     BUTTON_PAYPAL: Annetan PayPaliga
+    Bank: Annetusi saab teha ka meie pangakontole
+    BankDetails: "<strong>Konto omanik</strong>: {owner}<br/><strong>Selgitus</strong>: Donation<br/><strong>Konto nr</strong>: {accountNumber}<br/><strong>Panga kood</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Saaja aadress</strong>: {tdfAddress}<br/><strong>Panga aadress</strong>: {bankAddress}"
+    BankHeader: Pangaülekanne
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Vali üks eelmääratud summadest
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Või määra ise sobiv summa ja rahaühik<br/>(PayPaliga saab kasutada vaid neid, mille juures on *)
+    CardOnly: "(ainult kaardiga)"
     ContinueLabel: Jätka
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
-    DEFAULT_CURRENCY: USD
+    DEFAULT_CURRENCY: EUR
+    DonateUSHeader: Annetamine USA-st
+    Flattr: Meid saab toetada <a href='{flattrlink}'>Flattr'is</a>
+    FlattrHeader: Flattr
+    FooterText: 'Muud annetusviisid: Bitcoin, Flattr, pangaülekanne – klõpsa allolevaid kastikesi.<br/>Küsimus annetuse kohta? <a href="mailto:info@documentfoundation.org">Saada meile kiri</a>.'
+    FreqMonthly: Igakuine annetus
+    FreqOneshot: Ühekordne annetus
+    FreqQuarterly: Annetus kord kvartalis
+    FreqYearly: Iga-aastane annetus
     LeadText: LibreOffice on vaba tarkvara ja tasuta saadaval.<br/>Vabatahtlike annetused toetavad meie ülimaailmset kogukonda.<br/> Kui sulle see tarkvara meeldib, kaalu palun annetamist.
-    ProceedConcardis: Annetuse (<strong>{amount} {currency}</strong>) töötlemiseks ja makse kinnitamiseks suunatakse sind edasi ConCardise veebilehele.<br/>Kui sind automaatselt edasi ei suunata, siis klõpsa allpool nuppu \"Jätka\".
-    ProceedPayPal: Annetuse (<strong>{amount} {currency}</strong>) töötlemiseks ja makse kinnitamiseks suunatakse sind edasi PayPali veebilehele.<br/>Kui sind automaatselt edasi ei suunata, siis klõpsa allpool nuppu \"Jätka\".
+    OPTIONAL_EMAIL: E-post (pole kohustuslik)
+    OPTIONAL_EMAIL_DES: kui soovid krediitkaardimaksetele kinnituskirja
+    OtherAmount: Muu summa
+    ProceedConcardis: Annetuse (<strong>{amount} {currency}</strong>) töötlemiseks ja makse kinnitamiseks suunatakse sind edasi ConCardise veebilehele.<br/>Kui sind automaatselt edasi ei suunata, siis klõpsa allpool nuppu "Jätka".
+    ProceedPayPal: Annetuse (<strong>{amount} {currency}</strong>) töötlemiseks ja makse kinnitamiseks suunatakse sind edasi PayPali veebilehele.<br/>Kui sind automaatselt edasi ei suunata, siis klõpsa allpool nuppu "Jätka".
+    ReverseLayoutTitle: LibreOffice'i toetamine
+    TaxHeader: Maksutagastused
+    TaxHint: <strong>The Document Foundationile tehtud annetused on mitmes riigis maksuvabad.<br/>Palun küsi üksikasju oma elukohariigi maksuameti käest.</strong><br/><strong>Saksamaa elanikele:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Seni, kui allalaadimine käib, kaalu palun LibreOffice'i toetamist annetusega
   Download:
+    Archive: LibreOffice'i vanemad versioonid (mida võibolla enam ei toetata!) on saadaval <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>arhiivis</a>.
     ChangeLanguageLinkText: Soovid muud keelt?
     ChangeLanguageLinkTitle: Vali teine keel
-    Helppack: <strong>{language}de</strong> tõlgitud LibreOffice'i abitekst
+    Helppack: "<strong>{language}de</strong> tõlgitud LibreOffice'i abitekst"
     HelppackButtonLabel: Abitekst
-    HelppackFallback: <strong>Ingliskeelne</strong> LibreOffice'i abitekst
+    HelppackFallback: "<strong>Ingliskeelne</strong> LibreOffice'i abitekst"
     HelppackLinkTitle: Laadi abitekst võrguühenduseta kasutamiseks alla
     InfoLinkTitle: Failide kontrollsummad ja lisainfo
     InfoText: info
-    Langpack: <strong>{language}de</strong> tõlgitud LibreOffice'i kasutajaliides
+    Langpack: "<strong>{language}de</strong> tõlgitud LibreOffice'i kasutajaliides"
     LangpackButtonLabel: Tõlgitud kasutajaliides
     LangpackLinkTitle: Laadi keelepakett alla
+    Mac64reqs: eeldab 10.10 või uuemat versiooni
     MainButtonLabel: Laadi alla versioon {version}
     MainInstaller: Põhipaigaldus
     MainLinkTitle: Laadi alla LibreOffice {version} — {os}
@@ -51,11 +86,33 @@ et:
     OSList: 'LibreOffice {version} on saadaval järgmistele opsüsteemidele/platvormidele:'
     PickLanguage: Keele valimine
     PlatformChange: 'Valitud: LibreOffice {version} — {os}. <a href=''{curr_page}#change''>Soovid muud?</a>'
+    SDKandSource: SDK ja lähtekood
+    SDKDownload: Laadi alla SDK
+    SourceDownload: Laadi alla lähtekood
     TorrentLinkText: torrent
     TorrentLinkTitle: Allalaadimine BitTorrenti abil
     VersionListReleased: 'LibreOffice''ist on saadaval järgmised versioonid:'
-    VersionListTesting: '<strong>Eelväljalasked</strong>:'
+    VersionListTesting: "<strong>Eelväljalasked</strong>:"
     Versions: Saadaolevad versioonid
+    Win64reqs: eedab 7t või uuemat versiooni
+  DownloadRefresh:
+    BoxHeader: LibreOffice'i allalaadimine
+    ChangeLanguageLinkText: Soovid muud keelt?
+    ChangeLanguageLinkTitle: Vali teine keel
+    ChooseOS: 'Vali oma operatsioonisüsteem:'
+    DownloadLinkText: LAADI ALLA
+    FreshText: Kui oled tehnoloogiaentusiast või nn <emph>poweruser</emph>, siis see versioon on sinule!
+    HelppackButtonLabel: Abitekst võrguühenduseta kasutamiseks
+    HelppackLinkTitle: Laadi alla abitekst võrguühenduseta kasutamiseks
+    InfoLinkTitle: Failide kontrollsummad ja lisainfo
+    InfoText: info
+    LangpackLinkText: Tõlgitud kasutajaliides
+    LangpackLinkTitle: Laadi alla keelepakett
+    RelnotesLinkText: LibreOffice {version} väljalaskemärkmed
+    StillText: Kui paigaldad LibreOffice'it asutuse või ettevõtte arvutitele või oled konservatiivne kasutaja, vali palun see versioon.</span><span class="dl_description_text" style="font-size:18px;">Äriettevõtetel soovitame soojalt osta <a href="//www.libreoffice.org/get-help/professional-support/">tugiteenust meie sertifitseeritud partneritelt</a>, kes ühtlasi pakuvad LibreOffice'i pikaaegse toega versioone.
+    SupplementaryDownloads: Täiendavad allalaadimised
+    TorrentLinkText: torrent
+    TorrentLinkTitle: Laadi alla BitTorrenti kaudu
   Homepage:
     DownloadNow: Laadi alla
   RSS:
@@ -63,7 +120,7 @@ et:
   Shortcode:
     NoPortable: Praegu pole ühtegi kaasaskantavat ({multilingualtype}) versiooni saadaval
     NoRC: Praegu pole ühtegi RC-d saadaval
-    NoRC_Codeline: '{version} koodiharust pole hetkel ühtegi väljalaskekandidaati saadaval'
+    NoRC_Codeline: "{version} koodiharust pole hetkel ühtegi väljalaskekandidaati saadaval"
     ReleaseNotesLinkText: Väljalaskemärkmed
   Social:
     FollowUs: Jälgi meid

@@ -54,7 +54,7 @@ class BasicAuth {
                  * Enable HTTP Basic authentication workaround for PHP running in CGI mode with Apache
                  * Depending on server configuration the auth header may be in HTTP_AUTHORIZATION or
                  * REDIRECT_HTTP_AUTHORIZATION
-                 * 
+                 *
                  * The follow rewrite rule must be in the sites .htaccess file to enable this workaround
                  * RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
                  */
@@ -125,9 +125,10 @@ class BasicAuth {
 	 * define('SS_USE_BASIC_AUTH', true);
 	 *
 	 * @param boolean $protect Set this to false to disable protection.
-	 * @param String $code {@link Permission} code that is required from the user.
+	 * @param string $code {@link Permission} code that is required from the user.
 	 *  Defaults to "ADMIN". Set to NULL to just require a valid login, regardless
 	 *  of the permission codes a user has.
+	 * @param string $message
 	 */
 	public static function protect_entire_site($protect = true, $code = 'ADMIN', $message = null) {
 		Config::inst()->update('BasicAuth', 'entire_site_protected', $protect);

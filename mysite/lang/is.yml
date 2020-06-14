@@ -1,30 +1,78 @@
 ---
 is:
   BitPay:
-    ButtonAltText: BitPay, auðveld leið til að borga með bitcoin.
+    ButtonAltText: BitPay, auðveld leið til að borga með Bitcoin og Bitcoin Cash.
     CheckoutLocale: is_IS
     Email: Netfang (valkvætt)
-    Header: Þú getur styrkt með Bitcoins
+    Header: Þú getur styrkt með Bitcoin og Bitcoin Cash
     LabelEmail: 'Netfang:'
+    RefundDisclaimer: Styrkir sem greiddir eru með Bitcoin og Bitcoin Cash eru eðli málsins samkvæmt nafnlausir, þannig að hverskyns endurgreiðslur, kvittanir eða staðfestingar eru einungis mögulegar út frá nákvæmri upphæð sem okkur hefur borist frá greiðslumiðluninni okkar og þá að gefnu því að þú gefir upp tölvupóstfangið þitt.
   Concardis:
     CancelHeader: Þú hættir við ferlið
+    CancelMessage: Því miður hættirðu við greiðsluna. <b>Engin greiðsla hefur átt sér stað.</b> Endilega prófaðu aftur, og ef upp koma vandamál eða spurningar, ekki hika við að hafa samband við okkur á {infoemail} hvenær sem er.
     ProblemHeader: Það hefur komið upp vandamál…
+    ProblemMessage: Því miður gekk greiðslan ekki í gegn. Ástæðan gæti verið vandamál með greiðslumiðlunina okkar, nú eða vandamál með greiðslukortið þitt. <b>Engin greiðsla hefur átt sér stað.</b> Endilega prófaðu aftur, og ef upp koma vandamál eða spurningar, ekki hika við að hafa samband við okkur á {infoemail} hvenær sem er.
     Processing: Erum að vinna með greiðsluna þína
     ThankYouHeader: Takk kærlega fyrir hjálpina!
+    ThankYouMessage: Document Foundation vill þakka þér fyrir örlætið og vel útilátinn styrk. Við höfum tekið á móti greiðslunni frá þér! Njóttu þess að nota LibreOffice, og við þökkum þér kærlega fyrir auðsýndan stuðning!
     ThanksButHeader: Takk kærlega fyrir hjálpina!
+    ThanksButMessage1: Document Foundation vill þakka þér fyrir örlætið og vel útilátinn styrk. Við höfum tekið á móti greiðslunni frá þér! Njóttu þess að nota LibreOffice, og við þökkum þér kærlega fyrir auðsýndan stuðning!
+    ThanksButMessage2: Athugaðu að ekki hefur enn verið hægt að staðfesta greiðsluna. Athugaðu í færslunum þínum hvort greiðsla hafi farið fram.
+  DonateDownload:
+    DownloadProblemContact: 'Áttu í vandræðum með að <strong>sækja</strong> LibreOffice? Athugaðu að við útvegum ekki <strong>beina tæknilega aðstoð</strong> við að setja upp eða nota hugbúnaðinn. Ef þú þarfnast hjálpar, ættirðu að heimsækja <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />En ef spurningar vakna um <strong>niðurhal</strong> LibreOffice af vefnum okkar, láttu okkur þá vita um: (1) Útgáfu stýrikerfisins þíns; (2) Hvaða vafra þú notar; (3) Þau villuboð sem þú sérð. Sendu þessar upplýsingar á <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> og við munum reyna að aðstoða þig.'
+    Helppack: Innbyggð LibreOffice hjálp
+    InfoLinkText: Upplýsingar
+    InfoLinkTitle: Skoðaðu gátsummu og lista yfir niðurhalsspegla skrárinnar
+    Invalid: Umbeðin skrá sem átti að sækja lítur út fyrir að vera ógild. Farðu á <a href='//www.libreoffice.org/download'>niðurhalssíðuna okkar</a> og veldu einhverja útgáfu þar.<br/>Vegna tæknilegra vandamála varðandi sjálft niðurhalið ættirðu að skrifa póst til <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Hafðu í huga að við <strong>veitum ekki</strong> tæknilega aðstoð á þessu netfangi.
+    Langpack: Þýtt notendaviðmót
+    LinkStartText: Niðurhalið þitt, <a href='{link}'>{filename} ({size})</a>  ætti að hefjast innan skamms. Smelltu á tengilinn ef það ræsist ekki sjálfkrafa.
+    ManualMirror: Þú getur einnig <a href='{link}.mirrorlist'>valið skráaspegil handvirkt</a>
+    NeedAnotherLang: Eða <a href='https://www.libreoffice.org/download/download/?lang=pick'>veldu annað tungumál</a>.
+    Outdated: Umbeðin skrá sem átti að sækja lítur út fyrir að vera úreld? Farðu á <a href='//www.libreoffice.org/download'>niðurhalssíðuna okkar</a> og veldu einhverja útgáfu þar.<br/>Vegna tæknilegra vandamála varðandi sjálft niðurhalið ættirðu að skrifa póst til <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Hafðu í huga að við <strong>veitum ekki</strong> tæknilega aðstoð á þessu netfangi.
+    TorrentLinkText: Torrent-skrá
+    TorrentLinkTitle: Sækja skrána með BitTorrent
   DonatePage:
+    BC_EMAIL_DESC: ef þú vilt fá tölvupóst með staðfestingu á kreditkortagreiðslum
+    BC_EMAIL_LABEL: Valfrjálst tölvupóstfang
     BUTTON_CARD: Styrkja með kreditkorti
     BUTTON_PAYPAL: Styrkja með PayPal
+    Bank: Þú getur líka millifært styrkupphæð á bankareikning okkar
+    BankDetails: "<strong>Eigandi</strong>: {owner}<br/><strong>Tilgangur</strong>: Styrkur<br/><strong>Reikningsnúmer</strong>: {accountNumber}<br/><strong>Bankakóði</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Heimilisfang viðtakanda</strong>: {tdfAddress}<br/><strong>Heimilisfang banka</strong>: {bankAddress}"
+    BankHeader: Bankamillifærsla
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Veldu eitt af sjálfgefnu gildunum
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Eða settu inn upphæð og gjaldmiðil að eigin vali<br/>(einungis þeir sem merktir eru með * eru einnig tiltækir á PayPal)
+    CardOnly: "(einungis greiðslukort)"
     ContinueLabel: Áfram
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: EUR
+    DonateUSHeader: Styrkveiting frá BNA
+    Flattr: Þú getur gefið okkur <a href='{flattrlink}'>Flattr</a>
+    FlattrHeader: Flattr
+    FooterText: 'Aðrar leiðir til að greiða: Bitcoin, Flattr, bankamillifærsla - smelltu á reitina hér fyrir neðan<br/>Spurningar varðandi styrki frá þér? <a href="mailto:info@documentfoundation.org">Sendu okkur tölvupóst</a>'
+    FreqMonthly: Mánaðarlegur styrkur
+    FreqOneshot: Eins-skiptis styrkur
+    FreqQuarterly: Ársfjórðungslegur styrkur
+    FreqYearly: Árlegur styrkur
+    LeadText: LibreOffice er frjáls hugbúnaður og er öllum til taks án greiðslu. <br/>Styrkir frá þér, sem eru algerlega valfrjálsir, styðja við samfélagið okkar um víða veröld.<br/>Ef þér líkar við hugbúnaðinn, ættirðu endilega að íhuga að styrkja okkur.
+    OPTIONAL_EMAIL: Valfrjálst tölvupóstfang
+    OPTIONAL_EMAIL_DES: ef þú vilt fá tölvupóst með staðfestingu á kreditkortagreiðslum
+    OtherAmount: Önnur upphæð
+    ProceedConcardis: Til að vinna greiðslu þína upp á <strong>{amount} {currency}</strong>, verður þér endurbeint á vefsvæði ConCardis' til að ljúka greiðslunni.<br/>Ef síðan endurbeinir ekki sjálfkrafa, skaltu smella á 'Halda áfram' hnappinn hér fyrir neðan.
+    ProceedPayPal: Til að vinna greiðslu þína upp á <strong>{amount} {currency}</strong>, verður þér endurbeint á vefsvæði PayPal til að ljúka greiðslunni.<br/>Ef síðan endurbeinir ekki sjálfkrafa, skaltu smella á 'Halda áfram' hnappinn hér fyrir neðan.
+    ReverseLayoutTitle: Sýndu LibreOffice stuðning í verki
+    SLIDERLABEL: 'Upphæð (dragðu til sleðann hér fyrir neðan til að breyta): '
+    Spi: LibreOffice verkefnið er aðili að SPI
+    SpiDetails: Þú getur <a href='https://www.spi-inc.org/donations/'>styrkt okkur frá Bandaríkjunum</a> með því að minnast á "LibreOffice" í styrknum. Athugaðu að styrki í gegnum SPI er hægt að draga frá sköttum í BNA.
+    TaxHeader: Skattafrádráttur
+    TaxHint: <strong>Gjafir til The Document Foundation veita skattaafslátt í ýmsum löndum.<br/>Til að fá ítarlegri upplýsingar ætti að hafa samband við viðkomandi skattayfirvöld.</strong><br/><strong>Fyrir þá sem eru með lögheimili í Þýskalandi:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Á meðan niðurhalinu stendur, íhugaðu að styrkja LibreOffice með einhverri upphæð
   Download:
+    Archive: Eldri útgáfur af LibreOffice (eru hugsanlega án stuðnings!) eru tiltækar <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>í safninu okkar</a>
     ChangeLanguageLinkText: Vantar annað tungumál?
     ChangeLanguageLinkTitle: Veldu annað tungumál
     Helppack: Innbyggð LibreOffice hjálp á <strong>{language}</strong>
@@ -36,6 +84,7 @@ is:
     Langpack: Ná í LibreOffice viðmótið þýtt á <strong>{language}</strong>
     LangpackButtonLabel: Þýtt notendaviðmót
     LangpackLinkTitle: Ná í tungumálapakkann
+    Mac64reqs: Krefst 10.10 eða nýrra
     MainButtonLabel: Ná í útgáfu {version}
     MainInstaller: Aðal-uppsetningarskrá
     MainLinkTitle: Ná í LibreOffice {version} fyrir {os}
@@ -43,11 +92,33 @@ is:
     OSList: 'LibreOffice {version} er tiltækt fyrir eftirfarandi stýrikerfi:'
     PickLanguage: Veldu tungumálið sem þú vilt nota
     PlatformChange: 'Valið: LibreOffice {version} fyrir {os} - <a href=''{curr_page}#change''>breyta þessu?</a>'
+    SDKandSource: SDK og grunnkóði
+    SDKDownload: Sækja SDK
+    SourceDownload: Sækja grunnkóðann
     TorrentLinkText: Torrent-skrá
     TorrentLinkTitle: Sækja með BitTorrent
     VersionListReleased: 'LibreOffice er tiltækt í eftirfarandi <strong>útgáfum</strong>:'
     VersionListTesting: 'LibreOffice er tiltækt í eftirfarandi (RC) <strong>forútgáfum</strong>:'
     Versions: Tiltækar útgáfur
+    Win64reqs: Krefst 7 eða nýrra
+  DownloadRefresh:
+    BoxHeader: Ná í LibreOffice
+    ChangeLanguageLinkText: vantar annað tungumál?
+    ChangeLanguageLinkTitle: Veldu annað tungumál
+    ChooseOS: 'Veldu stýrikerfið þitt:'
+    DownloadLinkText: SÆKJA
+    FreshText: Ef þú ert tækniáhugamaður, frumkvöðull  eða sérfræðingur, þá er þessi útgáfa fyrir þig!
+    HelppackButtonLabel: Hjálparskjöl fyrir ónettengda notkun
+    HelppackLinkTitle: Hlaða niður hjálparskjölum fyrir ótengda notkun
+    InfoLinkTitle: Gátsummur og viðbótarupplýsingar
+    InfoText: Upplýsingar
+    LangpackLinkText: Þýtt notendaviðmót
+    LangpackLinkTitle: Ná í tungumálapakkann
+    RelnotesLinkText: Útgáfuupplýsingar LibreOffice {version}
+    StillText: Ef þú ert að dreifa LibreOffice í stofnana- eða fyrirtækjaumhverfi eða ert notandi sem ekki þarf allra nýjustu eiginleikana, veldu þá þessa útgáfu.</span><span class="dl_description_text" style="font-size:18px;">Í fyrirtækjaumhverfi mælum við með <a href="//www.libreoffice.org/get-help/professional-support/">stuðningi frá vottuðum samstarfsaðilum</a> sem einnig bjóða upp á sérstuddar langtímaútgáfur af LibreOffice.
+    SupplementaryDownloads: 'Viðbótarniðurhöl:'
+    TorrentLinkText: Torrent-skrá
+    TorrentLinkTitle: Sækja með BitTorrent
   Homepage:
     DownloadNow: Ná í núna
   RSS:

@@ -4,12 +4,11 @@ sv:
     ButtonAltText: BitPay, det enkla sättet att betala med bitcoins.
     CheckoutLocale: en_US
     Email: E-postadress (valfritt)
-    Header: Du kan donera via Bitcoins
+    Header: Du kan donera via Bitcoin och Bitcoin Cash
     LabelEmail: 'E-post:'
-    RefundDisclaimer: På grund av sin natur, donationer via Bitcoins är oftast anonyma, så är kan vi endast ge ut återbetalning eller donationsbekräftelse på den summa som vi får in från vår betalningsleverantör och endast i det fall du angivit din e-postadress. Om du inte samtycker till villkoren ovan, ber vi dig att överväga en av de andra donationsalternativ som beskrivs på denna sida.
   Concardis:
     CancelHeader: Du har avbrutit processen
-    CancelMessage: Tyvärr avbröt du betalningen. <b>Du har inte debiterats.</ b> Försök igen, och i händelse av problem eller frågor är du välkommen att kontakta oss på {infoemail}.
+    CancelMessage: Tyvärr avbröt du betalningen. <b>Du har inte debiterats.</b> Försök igen, och i händelse av problem eller frågor är du välkommen att kontakta oss på {infoemail}.
     ProblemHeader: Det har uppstått ett problem…
     ProblemMessage: Tyvärr lyckades inte betalningen. Detta kan bero på problem med vår betalningsserver eller med dit kreditkort. <b>Du har inte debiterats.</b> Vänligen försök igen senare och om problemen kvarstår är du välkommen att kontakta oss på {infoemail}.
     Processing: Vi hanterar din betalning
@@ -18,12 +17,23 @@ sv:
     ThanksButHeader: Tack så mycket för er donation!
     ThanksButMessage1: The Document Foundation vill tacka dig för din vänliga och generösa donation. Vi har mottagit din donation! Vi hoppas LibreOffice kommer till god användning. Tack så mycket för ert stöd!
     ThanksButMessage2: Observera att donationen ännu inte kunnat bekräftas. Kontrollera dina kontouppgifter för att se om donationen har genomförts.
+  DonateDownload:
+    Helppack: Inbyggd hjälp i LibreOffice
+    InfoLinkText: Information
+    Langpack: Översatt användargränssnitt
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Hämta filen med BitTorrent
   DonatePage:
+    BC_EMAIL_DESC: om du önskar bekräftelse av kreditkortsbetalningar via e-post
+    BC_EMAIL_LABEL: valfri e-post
     BUTTON_CARD: Donera via kreditkort
     BUTTON_PAYPAL: Donera via PayPal
+    Bank: Du kan överföra en donation till vårt bankkonto
+    BitcoinHeader: Bitcoint / Bitcoin Cash
     CHOICE_DEFAULT: Välj ett av de föreslagna värdena
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Eller ange ett eget belopp och valuta<br/>(endast de som markerats med * är tillgängliga via PayPal)
+    CardOnly: "(endast kortbetalning)"
     ContinueLabel: Fortsätt
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
@@ -31,8 +41,11 @@ sv:
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
     LeadText: LibreOffice är fri programvara och görs tillgänglig utan kostnad.<br/>Din donation, som är helt valfri, stöder vår världsomspännande gemenskap.<br/>Om du tycker om programvaran, vänligen överväg en donation.
+    OPTIONAL_EMAIL: valfri e-post
+    OPTIONAL_EMAIL_DES: om du önskar bekräftelse av kreditkortsbetalningar via e-post
     ProceedConcardis: För att hantera din donation på <strong>{amount} {currency}</strong> så skickas du vidare till ConCardis' hemsida för att slutföra betalningen.<br/>Om du inte skickas vidare automatiskt, klicka på knappen Fortsätt som du hittar nedan.
     ProceedPayPal: För att hantera din donation på <strong>{amount} {currency}</strong> så skickas du vidare till PayPal's hemsida för att slutföra betalningen.<br/>Om du inte skickas vidare automatiskt, klicka på knappen Fortsätt som du hittar nedan.
+    ReverseLayoutTitle: Stöd LibreOffice
   Download:
     ChangeLanguageLinkText: behöver du ett annat språk?
     ChangeLanguageLinkTitle: Välj ett annat språk
@@ -45,6 +58,7 @@ sv:
     Langpack: Hämta LibreOffice användargränssnitt på <strong>{language}</strong>
     LangpackButtonLabel: Översatt användargränssnitt
     LangpackLinkTitle: Ladda ner språkpaketet
+    Mac64reqs: 10.10 eller nyare krävs
     MainButtonLabel: Ladda ner version {version}
     MainInstaller: Huvudinstallation
     MainLinkTitle: Ladda ner LibreOffice {version} för {os}
@@ -52,11 +66,27 @@ sv:
     OSList: 'LibreOffice {version} är tillgängligt för följande operativsystem/arkitekturer:'
     PickLanguage: Välj ditt språk
     PlatformChange: 'Valt: LibreOffice {version} för {os} - <a href=''{curr_page}#change''>ändra?</a>'
+    SDKandSource: SDK och källkod
+    SDKDownload: Ladda ner SDK
+    SourceDownload: Ladda ner källkod
     TorrentLinkText: Torrent
     TorrentLinkTitle: Ladda ner via BitTorrent
     VersionListReleased: 'LibreOffice finns tillgänglig i följande <strong>utgivna</strong> versioner:'
     VersionListTesting: 'LibreOffice är tillgängligt i följande <strong>förhandsutgåvor</strong>:'
     Versions: Tillgängliga versioner
+    Win64reqs: 7 eller nyare krävs
+  DownloadRefresh:
+    ChangeLanguageLinkText: behöver du ett annat språk?
+    ChangeLanguageLinkTitle: Välj ett annat språk
+    ChooseOS: 'Välj ditt operativsystem:'
+    HelppackButtonLabel: Hjälp som inte kräver internetuppkoppling
+    HelppackLinkTitle: Hämta hjälpinnehåll för användning utan internetuppkoppling
+    InfoLinkTitle: Checksummor och ytterligare information
+    InfoText: Information
+    LangpackLinkText: Översatt användargränssnitt
+    LangpackLinkTitle: Ladda ner språkpaketet
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Ladda ner via BitTorrent
   Homepage:
     DownloadNow: Hämta nu
   RSS:

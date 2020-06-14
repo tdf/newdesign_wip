@@ -1,31 +1,133 @@
 ---
 cs:
   BitPay:
+    ButtonAltText: BitPay, jednoduchý způsob, jak platit pomocí Bitcoinu a Bitcoin cash.
+    CheckoutLocale: cs_CZ
     Email: E-mailová adresa (nepovinná)
+    Header: Můžete darovat prostřednictvím Bitcoin a Bitcoin Cash
     LabelEmail: 'E-mail:'
+    RefundDisclaimer: Kvůli své povaze jsou dary přes Bitcoin a Bitcoin Cash anonymní, takže jakákoli refundace nebo potvrzení o dárcovství je možné pouze na částku, kterou obdržíme od našeho poskytovatele plateb, a pouze pokud jste uvedli svou e-mailovou adresu.
   Concardis:
-    ProblemHeader: Došlo k problému…
+    CancelHeader: Proces jste zrušili
+    CancelMessage: Platbu jste bohužel zrušili. <b>Nedošlo k žádné finanční transakci.</b> Zkuste to prosím znovu. V případě problémů nebo dotazů nás neváhejte kdykoliv kontaktovat na {infoemail}.
+    ProblemHeader: Nastal problém…
+    ProblemMessage: Provést platbu se bohužel nezdařilo. Příčinou mohl být problém s naším platebním serverem, nebo s vaší platební kartou. <b>Nedošlo k žádné finanční transakci.</b> Zkuste to prosím znovu. V případě problémů nebo dotazů nás neváhejte kdykoliv kontaktovat na {infoemail}.
     Processing: Zpracováváme Vaši platbu
-    ThankYouHeader: Velice vám děkujeme za Váš příspěvek!
+    ThankYouHeader: Moc Vám děkujeme za příspěvek!
     ThankYouMessage: Nadace Document Foundation Vám děkuje za podporu. Vaši platbu jsme obdrželi. Přejeme Vám mnoho úspěchů nejen při práci s LibreOffice!
-    ThanksButHeader: Mnohokrát Vám děkujeme za Váš příspěvek!
+    ThanksButHeader: Moc Vám děkujeme za příspěvek!
     ThanksButMessage1: Nadace Document Foundation Vám děkuje za podporu. Vaši platbu jsme obdrželi. Přejeme Vám mnoho úspěchů nejen při práci s LibreOffice!
+    ThanksButMessage2: Zatím nemůžeme potvrdit, že byl Váš příspěvek přijat. Ověřte si prosím ve svých záznamech, zda k transakci skutečně došlo.
+  DonateDownload:
+    DownloadProblemContact: 'Máte problémy se <strong>stažením</strong> LibreOffice? Upozorňujeme, že <strong> neposkytujeme technickou podporu</strong> pro instalaci nebo používání softwaru. Pokud potřebujete pomoc, navštivte stránku <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Pokud se však vaše otázka týká<strong>stahování</strong> LibreOffice z našich webových stránek, dejte nám vědět: (1) Verzi vašeho operačního systému; (2) Váš webový prohlížeč; (3) Chybovou zprávu, kterou vidíte. Pošlete je na adresu <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> a pokusíme se pomoci.'
+    Helppack: Instalační balíček nápovědy
+    InfoLinkText: Informace
+    InfoLinkTitle: Zobrazit pro tento soubor kontrolní součty a seznam zrcadlových serverů
+    Invalid: Požadavek na stažení je neplatný. Přejděte prosím na <a href='//www.libreoffice.org/download'>stránku pro stažení</a> a vyberte aktuální verzi.<br/>V případě technických problémů se stahováním, prosím pište na adresu <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>.  Upozorňujeme, že na této adrese <strong>neposkytujeme</strong> technickou podporu.
+    Langpack: Přeložené uživatelské prostředí
+    LinkStartText: Stahování <a href='{link}'>{filename} ({size})</a> by mělo brzy začít. Pokud se nespustí, klikněte prosím na odkaz.
+    ManualMirror: Můžete také <a href='{link}.mirrorlist'>ručně vybrat zrcadlo</a>
+    NeedAnotherLang: Nebo <a href='https://www.libreoffice.org/download/download/?lang=pick'>vyberte jiný jazyk</a>.
+    Outdated: Požadované stažení se zdá být zastaralé? Přejděte prosím na <a href='//www.libreoffice.org/download'>stránku pro stahování</a> a vyberte aktuální verzi.<br/>V případě technických problémů se stahováním, prosím pište na adresu <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Upozorňujeme, že na této adrese <strong>neposkytujeme</strong> technickou podporu.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Stáhnout soubory prostřednictvím BitTorrent
   DonatePage:
+    BC_EMAIL_DESC: pokud si přejete potvrzující e-mail pro platbu kreditní kartou
+    BC_EMAIL_LABEL: volitelná e-mailová adresa
     BUTTON_CARD: Přispět kreditní kartou
     BUTTON_PAYPAL: Přispět přes PayPal
+    Bank: Dar můžete převést na náš bankovní účet
+    BankDetails: "<strong>Vlastník</strong>: {owner}<br/><strong>Účel</strong>: Dar<br/><strong>Účet</strong>: {accountNumber}<br/><strong>Kód banky</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Adresa příjemce</strong>: {tdfAddress}<br/><strong>Adresa banky</strong>: {bankAddress}"
+    BankHeader: Bankovní převod
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Vyberte jednu z výchozích hodnot
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Nebo zadejte vlastní částku a měnu<br/>(pro platbu pomocí PayPal lze použít pouze měny označené *)
+    CardOnly: "(pouze kartou)"
     ContinueLabel: Pokračovat
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
+    DonateUSHeader: Darování z USA
+    Flattr: Můžete nás podpořit přes <a href='{flattrlink}'>Flattr</a>
+    FlattrHeader: Flattr
+    FooterText: 'Další způsoby: Bitcoin, Flattr, bankovním převodem - klikněte na níže uvedená pole<br/>Otázky týkající se vašeho daru? <a href="mailto:info@documentfoundation.org">Pošlete nám e-mail</a>'
+    FreqMonthly: Měsíční dary
+    FreqOneshot: Jednorázový dar
+    FreqQuarterly: Čtvrtletní dar
+    FreqYearly: Roční dar
+    LeadText: LibreOffice je svobodný software a je dostupný zcela zdarma.<br/>Váš finanční příspěvek je čistě dobrovolný, podpoří však naši celosvětovou komunitou.<br/>Zvažte jej, pokud se vám náš software líbí.
+    OPTIONAL_EMAIL: volitelná e-mailová adresa
+    OPTIONAL_EMAIL_DES: pokud si přejete potvrzující e-mail pro platbu kreditní kartou
+    OtherAmount: Jiná částka
+    ProceedConcardis: Kvůli zpracování vašeho příspěvku ve výši <strong>{amount} {currency}</strong> nyní budete přesměrování na webové stránky společnosti ConCardis, kde se platba dokončí.<br/>Nebudete-li přesměrováni automaticky, klepněte prosím na tlačítko s názvem Pokračovat.
+    ProceedPayPal: " Kvůli zpracování vašeho příspěvku ve výši <strong>{amount} {currency}</strong> nyní budete přesměrování na webové stránky společnosti PayPal, kde se platba dokončí.<br/>Nebudete-li přesměrováni automaticky, klepněte prosím na tlačítko s názvem Pokračovat. "
+    ReverseLayoutTitle: Podpořte LibreOffice
+    SLIDERLABEL: 'Částka (pro změnu použijte posuvník níže):'
+    Spi: LibreOffice je podporovaným projektem organizace SPI
+    SpiDetails: <a href='https://www.spi-inc.org/donations/'>V USA můžete darovat</a> tak, že zmíníte "LibreOffice" ve vašem daru . Dary prostřednictvím SPI mohou být odečteny z daní v USA.
+    TaxHeader: Daňové odpočty
+    TaxHint: <strong>Dary pro The Document Foundation jsou daňově uznatelné v několika zemích.<br/>Podrobnější informace získáte od místního daňového úřadu.</strong><br/><strong>Pro obyvatele Německa:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Během stahování zvažte, prosím, podporu LibreOffice zasláním daru
   Download:
-    ChangeLanguageLinkText: Zvolit jiný jazyk
-    ChangeLanguageLinkTitle: Zvolit jiný jazyk
-    HelppackButtonLabel: Nápověda pro offline použití
-    HelppackFallback: Zabudovaná nápověda LibreOffice v <strong>angličtině</strong>
+    Archive: Starší verze programu LibreOffice (nemusí být podporovány!) Jsou k dispozici <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>v archivu </a>
+    ChangeLanguageLinkText: potřebujete jiný jazyk?
+    ChangeLanguageLinkTitle: Vybrat jiný jazyk
+    Helppack: Vestavěná nápověda LibreOffice v jazyce <strong>{language}</strong>
+    HelppackButtonLabel: Nápověda pro použití offline
+    HelppackFallback: Vestavěná nápověda LibreOffice v <strong>angličtině</strong>
+    HelppackLinkTitle: Stáhnout nápovědu pro použití offline
+    InfoLinkTitle: Kontrolní součty a další informace
+    InfoText: Informace
+    Langpack: Stáhněte uživatelské rozhraní LibreOffice přeložené do jazyka <strong>{language}</strong>
+    LangpackButtonLabel: Přeložené uživatelské prostředí
+    LangpackLinkTitle: Stáhnout jazykový balíček
+    Mac64reqs: vyžadována verze 10.10 nebo novější
+    MainButtonLabel: Stáhnout verzi {version}
+    MainInstaller: Hlavní instalátor
+    MainLinkTitle: Stáhnout LibreOffice {version} pro {os}
+    OS: Operační systémy
+    OSList: 'LibreOffice {version} je k dispozici pro následující operační systémy/architektury:'
+    PickLanguage: Vyberte požadovaný jazyk
+    PlatformChange: 'Vybráno: LibreOffice {version} pro {os} - <a href=''{curr_page}#change''>změnit?</a>'
+    SDKandSource: SDK a zdrojový kód
+    SDKDownload: Stáhnout SDK
+    SourceDownload: Stáhnout zdrojový kód
     TorrentLinkText: Torrent
+    TorrentLinkTitle: Stáhnout pomocí BitTorrentu
+    VersionListReleased: 'LibreOffice je dostupný v následujících <strong>vydaných</strong> verzích:'
+    VersionListTesting: 'LibreOffice je dostupný v následujících <strong>testovacích</strong> verzích:'
     Versions: Dostupné verze
+    Win64reqs: vyžadována verze 7 nebo novější
+  DownloadRefresh:
+    BoxHeader: Stáhnout LibreOffice
+    ChangeLanguageLinkText: potřebujete jiný jazyk?
+    ChangeLanguageLinkTitle: Vybrat jiný jazyk
+    ChooseOS: 'Vyberte svůj operační systém:'
+    DownloadLinkText: STAŽENÍ
+    FreshText: Pokud jste technologičtí nadšenci, rádi zkoušíte nové věci nebo jste zkušení uživatelé, tato verze je pro vás!
+    HelppackButtonLabel: Nápověda pro použití offline
+    HelppackLinkTitle: Stáhnout nápovědu pro použití offline
+    InfoLinkTitle: Kontrolní součty a další informace
+    InfoText: Informace
+    LangpackLinkText: Přeložené uživatelské prostředí
+    LangpackLinkTitle: Stáhnout jazykový balíček
+    RelnotesLinkText: LibreOffice {version} poznámky k vydání
+    StillText: Zvolte tuto verzi pokud nasazujete LibreOffice do podnikového prostředí nebo jste konzervativní uživatel.</span><span class="dl_description_text" style="font-size:18px;">Pro podnikové nasazení důrazně doporučujeme <a href="//www.libreoffice.org/get-help/professional-support/">podporu od certifikovaných partnerů</a>, kteří také nabízejí dlouhodobě podporované verze programu LibreOffice .
+    SupplementaryDownloads: 'Doplňkové stažení:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Stáhnout pomocí BitTorrentu
+  Homepage:
+    DownloadNow: Stáhnout nyní
+  RSS:
+    ReadMore: zjistěte více »
+  Shortcode:
+    NoPortable: Přenositelná verze ({multilingualtype}) není v současné době k dispozici
+    NoRC: RC verze není v současné době k dispozici
+    NoRC_Codeline: RC verze není pro řadu {version} k dispozici
+    ReleaseNotesLinkText: Poznámky k vydání
+  Social:
+    FollowUs: Sledujte nás
+    LatestTweets: Nejnovější tweety

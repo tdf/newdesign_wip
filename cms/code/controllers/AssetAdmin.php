@@ -2,20 +2,20 @@
 /**
  * AssetAdmin is the 'file store' section of the CMS.
  * It provides an interface for manipulating the File and Folder objects in the system.
- * 
+ *
  * @package cms
  * @subpackage assets
  */
 class AssetAdmin extends LeftAndMain implements PermissionProvider{
 
 	private static $url_segment = 'assets';
-	
+
 	private static $url_rule = '/$Action/$ID';
-	
+
 	private static $menu_title = 'Files';
 
 	private static $tree_class = 'Folder';
-	
+
 	/**
 	 * Amount of results showing on a single page.
 	 *
@@ -23,14 +23,14 @@ class AssetAdmin extends LeftAndMain implements PermissionProvider{
 	 * @var int
 	 */
 	private static $page_length = 15;
-	
+
 	/**
 	 * @config
 	 * @see Upload->allowedMaxFileSize
 	 * @var int
 	 */
 	private static $allowed_max_file_size;
-	
+
 	private static $allowed_actions = array(
 		'addfolder',
 		'delete',
@@ -45,20 +45,30 @@ class AssetAdmin extends LeftAndMain implements PermissionProvider{
 		'doSync',
 		'filter',
 	);
-	
+
 	/**
-	 * Return fake-ID "root" if no ID is found (needed to upload files into the root-folder)
+	 * Return fake-ID 0 (root) if no ID is found (needed to upload files into the root-folder)
 	 */
 	public function currentPageID() {
-		if(is_numeric($this->request->requestVar('ID')))	{
-			return $this->request->requestVar('ID');
-		} elseif (is_numeric($this->urlParams['ID'])) {
-			return $this->urlParams['ID'];
-		} elseif(Session::get("{$this->class}.currentPage")) {
-			return Session::get("{$this->class}.currentPage");
-		} else {
-			return 0;
+		$id = 0;
+		$request = $this->getRequest();
+		if(is_numeric($request->requestVar('ID')))	{
+			$id = $request->requestVar('ID');
+		} elseif (is_numeric($request->param('ID'))) {
+			$id = $request->param('ID');
 		}
+
+		// Detect current folder in gridfield item edit view
+		if ($id && $id > 0) {
+			if (!Folder::get()->filter('ID', $id)->exists()) {
+				$file = File::get()->byID($id);
+				$id = ($file) ? $file->ParentID : 0;
+			}
+		}
+
+		$id = (int)$id;
+		$this->setCurrentPageID($id);
+		return $id;
 	}
 
 	/**
@@ -66,7 +76,7 @@ class AssetAdmin extends LeftAndMain implements PermissionProvider{
 	 */
 	public function init() {
 		parent::init();
-		
+
 		// Create base folder if it doesnt exist already
 		if(!file_exists(ASSETS_PATH)) Filesystem::makeFolder(ASSETS_PATH);
 
@@ -84,7 +94,7 @@ class AssetAdmin extends LeftAndMain implements PermissionProvider{
 			};
 JS
 		);
-		
+
 		CMSBatchActionHandler::register('delete', 'AssetAdmin_DeleteBatchAction', 'Folder');
 	}
 
@@ -92,7 +102,7 @@ JS
 	 * Returns the files and subfolders contained in the currently selected folder,
 	 * defaulting to the root node. Doubles as search results, if any search parameters
 	 * are set through {@link SearchForm()}.
-	 * 
+	 *
 	 * @return SS_List
 	 */
 	public function getList() {
@@ -100,15 +110,15 @@ JS
 		$context = $this->getSearchContext();
 		// Overwrite name filter to search both Name and Title attributes
 		$context->removeFilterByName('Name');
-		$params = $this->request->requestVar('q');
+		$params = $this->getRequest()->requestVar('q');
 		$list = $context->getResults($params);
 
 		// Don't filter list when a detail view is requested,
 		// to avoid edge cases where the filtered list wouldn't contain the requested
 		// record due to faulty session state (current folder not always encoded in URL, see #7408).
 		if(!$folder->ID
-			&& $this->request->requestVar('ID') === null
-			&& ($this->request->param('ID') == 'field')
+			&& $this->getRequest()->requestVar('ID') === null
+			&& ($this->getRequest()->param('ID') == 'field')
 		) {
 			return $list;
 		}
@@ -122,7 +132,7 @@ JS
 			));
 		}
 
-		// Always show folders at the top		
+		// Always show folders at the top
 		$list = $list->sort('(CASE WHEN "File"."ClassName" = \'Folder\' THEN 0 ELSE 1 END), "Name"');
 
 		// If a search is conducted, check for the "current folder" limitation.
@@ -138,7 +148,7 @@ JS
 			$exts = File::config()->app_categories[$params['AppCategory']];
 			$list = $list->filter('Name:PartialMatch', $exts);
 		}
-		
+
 		// Date filter
 		if(!empty($params['CreatedFrom'])) {
 			$fromDate = new DateField(null, null, $params['CreatedFrom']);
@@ -153,10 +163,11 @@ JS
 	}
 
 	public function getEditForm($id = null, $fields = null) {
+
 		$form = parent::getEditForm($id, $fields);
-		$folder = ($id && is_numeric($id)) ? DataObject::get_by_id('Folder', $id, false) : $this->currentPage();
+		$folder = $this->currentPage();
 		$fields = $form->Fields();
-		$title = ($folder && $folder->exists()) ? $folder->Title : _t('AssetAdmin.FILES', 'Files');
+		$title = ($folder && $folder->isInDB()) ? $folder->Title : _t('AssetAdmin.FILES', 'Files');
 		$fields->push(new HiddenField('ID', false, $folder ? $folder->ID : null));
 
 		// File listing
@@ -176,28 +187,27 @@ JS
 		$columns = $gridField->getConfig()->getComponentByType('GridFieldDataColumns');
 		$columns->setDisplayFields(array(
 			'StripThumbnail' => '',
-			// 'Parent.FileName' => 'Folder',
-			'Title' => _t('File.Name'),
+			'Title' => _t('File.Title', 'Title'),
 			'Created' => _t('AssetAdmin.CREATED', 'Date'),
 			'Size' => _t('AssetAdmin.SIZE', 'Size'),
 		));
 		$columns->setFieldCasting(array(
-			'Created' => 'Date->Nice'
+			'Created' => 'SS_Datetime->Nice'
 		));
 		$gridField->setAttribute(
-			'data-url-folder-template', 
+			'data-url-folder-template',
 			Controller::join_links($this->Link('show'), '%s')
 		);
 
 		if($folder->canCreate()) {
 			$uploadBtn = new LiteralField(
-				'UploadButton', 
+				'UploadButton',
 				sprintf(
-					'<a class="ss-ui-button ss-ui-action-constructive cms-panel-link" data-pjax-target="Content" data-icon="drive-upload" href="%s">%s</a>',
+					'<a class="ss-ui-button font-icon-upload cms-panel-link" data-pjax-target="Content" data-icon="drive-upload" href="%s">%s</a>',
 					Controller::join_links(singleton('CMSFileAddController')->Link(), '?ID=' . $folder->ID),
 					_t('Folder.UploadFilesButton', 'Upload')
 				)
-			);	
+			);
 		} else {
 			$uploadBtn = null;
 		}
@@ -205,9 +215,9 @@ JS
 		if(!$folder->hasMethod('canAddChildren') || ($folder->hasMethod('canAddChildren') && $folder->canAddChildren())) {
 			// TODO Will most likely be replaced by GridField logic
 			$addFolderBtn = new LiteralField(
-				'AddFolderButton', 
+				'AddFolderButton',
 				sprintf(
-					'<a class="ss-ui-button ss-ui-action-constructive cms-add-folder-link" data-icon="add" data-url="%s" href="%s">%s</a>',
+					'<a class="ss-ui-button font-icon-plus-circled cms-add-folder-link" data-icon="add" data-url="%s" href="%s">%s</a>',
 					Controller::join_links($this->Link('AddForm'), '?' . http_build_query(array(
 						'action_doAdd' => 1,
 						'ParentID' => $folder->ID,
@@ -225,7 +235,7 @@ JS
 			$syncButton = new LiteralField(
 				'SyncButton',
 				sprintf(
-					'<a class="ss-ui-button ss-ui-action ui-button-text-icon-primary ss-ui-button-ajax" data-icon="arrow-circle-double" title="%s" href="%s">%s</a>',
+					'<a class="ss-ui-button ss-ui-action ui-button-text-icon-primary ss-ui-button-ajax font-icon-sync" data-icon="arrow-circle-double" title="%s" href="%s">%s</a>',
 					_t('AssetAdmin.FILESYSTEMSYNCTITLE', 'Update the CMS database entries of files on the filesystem. Useful when new files have been uploaded outside of the CMS, e.g. through FTP.'),
 					$this->Link('doSync'),
 					_t('AssetAdmin.FILESYSTEMSYNC','Sync files')
@@ -234,18 +244,18 @@ JS
 		} else {
 			$syncButton = null;
 		}
-		
+
 		// Move existing fields to a "details" tab, unless they've already been tabbed out through extensions.
 		// Required to keep Folder->getCMSFields() simple and reuseable,
 		// without any dependencies into AssetAdmin (e.g. useful for "add folder" views).
 		if(!$fields->hasTabset()) {
-			$tabs = new TabSet('Root', 
+			$tabs = new TabSet('Root',
 				$tabList = new Tab('ListView', _t('AssetAdmin.ListView', 'List View')),
 				$tabTree = new Tab('TreeView', _t('AssetAdmin.TreeView', 'Tree View'))
 			);
 			$tabList->addExtraClass("content-listview cms-tabset-icon list");
 			$tabTree->addExtraClass("content-treeview cms-tabset-icon tree");
-			if($fields->Count() && $folder->exists()) {
+			if($fields->Count() && $folder && $folder->isInDB()) {
 				$tabs->push($tabDetails = new Tab('DetailsView', _t('AssetAdmin.DetailsView', 'Details')));
 				$tabDetails->addExtraClass("content-galleryview cms-tabset-icon edit");
 				foreach($fields as $field) {
@@ -270,7 +280,7 @@ JS
 			)->addExtraClass('cms-content-toolbar field'),
 			$gridField
 		));
-		
+
 		$treeField = new LiteralField('Tree', '');
 		// Tree view
 		$fields->addFieldsToTab('Root.TreeView', array(
@@ -279,10 +289,10 @@ JS
 			new LiteralField(
 				'Tree',
 				FormField::create_tag(
-					'div', 
+					'div',
 					array(
-						'class' => 'cms-tree', 
-						'data-url-tree' => $this->Link('getsubtree'), 
+						'class' => 'cms-tree',
+						'data-url-tree' => $this->Link('getsubtree'),
 						'data-url-savetreenode' => $this->Link('savetreenode')
 					),
 					$this->SiteTreeAsUL()
@@ -298,17 +308,17 @@ JS
 		$actions->removeByName('action_delete');
 		if(($saveBtn || $deleteBtn) && $fields->fieldByName('Root.DetailsView')) {
 			$fields->addFieldToTab(
-				'Root.DetailsView', 
+				'Root.DetailsView',
 				CompositeField::create($saveBtn,$deleteBtn)->addExtraClass('Actions')
 			);
 		}
-		
+
 
 
 		$fields->setForm($form);
 		$form->setTemplate($this->getTemplatesWithSuffix('_EditForm'));
 		// TODO Can't merge $FormAttributes in template at the moment
-		$form->addExtraClass('cms-edit-form cms-panel-padded center ' . $this->BaseCSSClasses());
+		$form->addExtraClass('cms-edit-form ' . $this->BaseCSSClasses());
 		$form->setAttribute('data-pjax-fragment', 'CurrentForm');
 		$form->Fields()->findOrMakeTab('Root')->setTemplate('CMSTabSet');
 
@@ -334,16 +344,16 @@ JS
 
 	public function delete($data, $form) {
 		$className = $this->stat('tree_class');
-		
-		$record = DataObject::get_by_id($className, Convert::raw2sql($data['ID']));
-		if($record && !$record->canDelete()) return Security::permissionFailure();
-		if(!$record || !$record->ID) throw new HTTPResponse_Exception("Bad record ID #" . (int)$data['ID'], 404);
-		$parentID = $record->ParentID;
-		$record->delete();
-		$this->setCurrentPageID(null);
 
-		$this->response->addHeader('X-Status', rawurlencode(_t('LeftAndMain.DELETED', 'Deleted.')));
-		$this->response->addHeader('X-Pjax', 'Content');
+		$record = DataObject::get_by_id($className, $data['ID']);
+		if($record && !$record->canDelete()) return Security::permissionFailure();
+		if(!$record || !$record->ID) throw new SS_HTTPResponse_Exception("Bad record ID #" . (int)$data['ID'], 404);
+		$parentID = $record->ParentID;
+		$this->setCurrentPageID($parentID);
+		$record->delete();
+
+		$this->getResponse()->addHeader('X-Status', rawurlencode(_t('LeftAndMain.DELETED', 'Deleted.')));
+		$this->getResponse()->addHeader('X-Pjax', 'Content');
 		return $this->redirect(Controller::join_links($this->Link('show'), $parentID ? $parentID : 0));
 	}
 
@@ -354,27 +364,23 @@ JS
 	 */
 	public function getSearchContext() {
 		$context = singleton('File')->getDefaultSearchContext();
-		
+
 		// Namespace fields, for easier detection if a search is present
 		foreach($context->getFields() as $field) $field->setName(sprintf('q[%s]', $field->getName()));
 		foreach($context->getFilters() as $filter) $filter->setFullName(sprintf('q[%s]', $filter->getFullName()));
 
 		// Customize fields
-		$context->addField(
-			new HeaderField('q[Date]', _t('CMSSearch.FILTERDATEHEADING', 'Date'), 4)
+		$dateHeader = HeaderField::create('q[Date]', _t('CMSSearch.FILTERDATEHEADING', 'Date'), 4);
+		$dateFrom = DateField::create('q[CreatedFrom]', _t('CMSSearch.FILTERDATEFROM', 'From'))
+		->setConfig('showcalendar', true);
+		$dateTo = DateField::create('q[CreatedTo]',_t('CMSSearch.FILTERDATETO', 'To'))
+		->setConfig('showcalendar', true);
+		$dateGroup = FieldGroup::create(
+			$dateHeader,
+			$dateFrom,
+			$dateTo
 		);
-		$context->addField(
-			DateField::create(
-				'q[CreatedFrom]', 
-				_t('CMSSearch.FILTERDATEFROM', 'From')
-			)->setConfig('showcalendar', true)
-		);
-		$context->addField(
-			DateField::create(
-				'q[CreatedTo]',
-				_t('CMSSearch.FILTERDATETO', 'To')
-			)->setConfig('showcalendar', true)
-		);
+		$context->addField($dateGroup);
 		$appCategories = array(
 			'image' => _t('AssetAdmin.AppCategoryImage', 'Image'),
 			'audio' => _t('AssetAdmin.AppCategoryAudio', 'Audio'),
@@ -400,7 +406,7 @@ JS
 
 		return $context;
 	}
-	
+
 	/**
 	 * Returns a form for filtering of files and assets gridfield.
 	 * Result filtering takes place in {@link getList()}.
@@ -416,28 +422,28 @@ JS
 		$actions = new FieldList(
 			FormAction::create('doSearch',  _t('CMSMain_left_ss.APPLY_FILTER', 'Apply Filter'))
 				->addExtraClass('ss-ui-action-constructive'),
-			Object::create('ResetFormAction', 'clear', _t('CMSMain_left_ss.RESET', 'Reset'))
+			SS_Object::create('ResetFormAction', 'clear', _t('CMSMain_left_ss.RESET', 'Reset'))
 		);
-		
+
 		$form = new Form($this, 'filter', $fields, $actions);
 		$form->setFormMethod('GET');
 		$form->setFormAction(Controller::join_links($this->Link('show'), $folder->ID));
 		$form->addExtraClass('cms-search-form');
-		$form->loadDataFrom($this->request->getVars());
+		$form->loadDataFrom($this->getRequest()->getVars());
 		$form->disableSecurityToken();
 		// This have to match data-name attribute on the gridfield so that the javascript selectors work
 		$form->setAttribute('data-gridfield', 'File');
 		return $form;
 	}
-	
+
 	public function AddForm() {
 		$folder = singleton('Folder');
-		$form = CMSForm::create( 
+		$form = CMSForm::create(
 			$this,
 			'AddForm',
 			new FieldList(
 				new TextField("Name", _t('File.Name')),
-				new HiddenField('ParentID', false, $this->request->getVar('ParentID'))
+				new HiddenField('ParentID', false, $this->getRequest()->getVar('ParentID'))
 			),
 			new FieldList(
 				FormAction::create('doAdd', _t('AssetAdmin_left_ss.GO','Go'))
@@ -449,31 +455,31 @@ JS
 		$form->setTemplate($this->getTemplatesWithSuffix('_EditForm'));
 		// TODO Can't merge $FormAttributes in template at the moment
 		$form->addExtraClass('add-form cms-add-form cms-edit-form cms-panel-padded center ' . $this->BaseCSSClasses());
-		
+
 		return $form;
 	}
-	
+
 	/**
 	 * Add a new group and return its details suitable for ajax.
-	 * 
+	 *
 	 * @todo Move logic into Folder class, and use LeftAndMain->doAdd() default implementation.
 	 */
 	public function doAdd($data, $form) {
 		$class = $this->stat('tree_class');
-		
+
 		// check create permissions
 		if(!singleton($class)->canCreate()) return Security::permissionFailure($this);
 
 		// check addchildren permissions
 		if(
-			singleton($class)->hasExtension('Hierarchy') 
+			singleton($class)->hasExtension('Hierarchy')
 			&& isset($data['ParentID'])
 			&& is_numeric($data['ParentID'])
 			&& $data['ParentID']
 		) {
 			$parentRecord = DataObject::get_by_id($class, $data['ParentID']);
 			if(
-				$parentRecord->hasMethod('canAddChildren') 
+				$parentRecord->hasMethod('canAddChildren')
 				&& !$parentRecord->canAddChildren()
 			) return Security::permissionFailure($this);
 		} else {
@@ -483,8 +489,8 @@ JS
 		$parent = (isset($data['ParentID']) && is_numeric($data['ParentID'])) ? (int)$data['ParentID'] : 0;
 		$name = (isset($data['Name'])) ? basename($data['Name']) : _t('AssetAdmin.NEWFOLDER',"NewFolder");
 		if(!$parentRecord || !$parentRecord->ID) $parent = 0;
-		
-		// Get the folder to be created		
+
+		// Get the folder to be created
 		if($parentRecord && $parentRecord->ID) $filename = $parentRecord->FullPath . $name;
 		else $filename = ASSETS_PATH . '/' . $name;
 
@@ -492,22 +498,22 @@ JS
 		if(!file_exists(ASSETS_PATH)) {
 			mkdir(ASSETS_PATH);
 		}
-		
+
 		$record = new Folder();
 		$record->ParentID = $parent;
 		$record->Name = $record->Title = basename($filename);
 
-		// Ensure uniqueness		
+		// Ensure uniqueness
 		$i = 2;
 		$baseFilename = substr($record->Filename, 0, -1) . '-';
 		while(file_exists($record->FullPath)) {
 			$record->Filename = $baseFilename . $i . '/';
 			$i++;
 		}
-		
+
 		$record->Name = $record->Title = basename($record->Filename);
 		$record->write();
-		
+
 		mkdir($record->FullPath);
 		chmod($record->FullPath, Filesystem::config()->file_create_mask);
 
@@ -523,26 +529,27 @@ JS
 	 */
 	public function currentPage() {
 		$id = $this->currentPageID();
-		if($id && is_numeric($id) && $id > 0) {
-			$folder = DataObject::get_by_id('Folder', $id);
-			if($folder && $folder->exists()) {
+		if ($id > 0) {
+			$folder = Folder::get()->byID($id);
+			if ($folder && $folder->isInDB()) {
 				return $folder;
 			}
 		}
+		// Fallback to root
 		$this->setCurrentPageID(null);
 		return new Folder();
 	}
-	
+
 	public function getSiteTreeFor($className, $rootID = null, $childrenMethod = null, $numChildrenMethod = null, $filterFunction = null, $minNodeCount = 30) {
 		if (!$childrenMethod) $childrenMethod = 'ChildFolders';
 		if (!$numChildrenMethod) $numChildrenMethod = 'numChildFolders';
 		return parent::getSiteTreeFor($className, $rootID, $childrenMethod, $numChildrenMethod, $filterFunction, $minNodeCount);
 	}
-	
+
 	public function getCMSTreeTitle() {
 		return Director::absoluteBaseURL() . "assets";
 	}
-	
+
 	public function SiteTreeAsUL() {
 		return $this->getSiteTreeFor($this->stat('tree_class'), null, 'ChildFolders', 'numChildFolders');
 	}
@@ -557,17 +564,17 @@ JS
 	 */
 	public function doSync() {
 		$message = Filesystem::sync();
-		$this->response->addHeader('X-Status', rawurlencode($message));
-		
+		$this->getResponse()->addHeader('X-Status', rawurlencode($message));
+
 		return;
 	}
-	
+
 	/**
-     * #################################
-     *        Garbage collection.
-     * #################################
-    */
-	
+	 * #################################
+	 *        Garbage collection.
+	 * #################################
+	 */
+
 	/**
 	 * Removes all unused thumbnails from the file store
 	 * and returns the status of the process to the user.
@@ -575,42 +582,42 @@ JS
 	public function deleteunusedthumbnails($request) {
 		// Protect against CSRF on destructive action
 		if(!SecurityToken::inst()->checkRequest($request)) return $this->httpError(400);
-		
+
 		$count = 0;
 		$thumbnails = $this->getUnusedThumbnails();
-		
+
 		if($thumbnails) {
 			foreach($thumbnails as $thumbnail) {
 				unlink(ASSETS_PATH . "/" . $thumbnail);
 				$count++;
 			}
 		}
-		
+
 		$message = _t(
-			'AssetAdmin.THUMBSDELETED', 
-			'{count} unused thumbnails have been deleted', 
+			'AssetAdmin.THUMBSDELETED',
+			'{count} unused thumbnails have been deleted',
 			array('count' => $count)
 		);
-		$this->response->addHeader('X-Status', rawurlencode($message));
+		$this->getResponse()->addHeader('X-Status', rawurlencode($message));
 		return;
 	}
-	
+
 	/**
 	 * Creates array containg all unused thumbnails.
-	 * 
+	 *
 	 * Array is created in three steps:
 	 *     1. Scan assets folder and retrieve all thumbnails
 	 *     2. Scan all HTMLField in system and retrieve thumbnails from them.
 	 *     3. Count difference between two sets (array_diff)
 	 *
-	 * @return array 
+	 * @return array
 	 */
 	private function getUnusedThumbnails() {
 		$allThumbnails = array();
 		$usedThumbnails = array();
 		$dirIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(ASSETS_PATH));
 		$classes = ClassInfo::subclassesFor('SiteTree');
-		
+
 		if($dirIterator) {
 			foreach($dirIterator as $file) {
 				if($file->isFile()) {
@@ -624,26 +631,26 @@ JS
 				}
 			}
 		}
-		
+
 		if($classes) {
 			foreach($classes as $className) {
 				$SNG_class = singleton($className);
 				$objects = DataObject::get($className);
-				
+
 				if($objects !== NULL) {
 					foreach($objects as $object) {
 						foreach($SNG_class->db() as $fieldName => $fieldType) {
 							if($fieldType == 'HTMLText') {
 								$url1 = HTTP::findByTagAndAttribute($object->$fieldName,array('img' => 'src'));
-								
+
 								if($url1 != NULL) {
 									$usedThumbnails[] = substr($url1[0], strpos($url1[0], '/assets/') + 8);
 								}
-								
+
 								if($object->latestPublished > 0) {
 									$object = Versioned::get_latest_version($className, $object->ID);
 									$url2 = HTTP::findByTagAndAttribute($object->$fieldName, array('img' => 'src'));
-									
+
 									if($url2 != NULL) {
 										$usedThumbnails[] = substr($url2[0], strpos($url2[0], '/assets/') + 8);
 									}
@@ -654,7 +661,7 @@ JS
 				}
 			}
 		}
-		
+
 		return array_diff($allThumbnails, $usedThumbnails);
 	}
 
@@ -670,16 +677,16 @@ JS
 		$items[0]->Link = Controller::join_links(singleton('AssetAdmin')->Link('show'), 0);
 
 		// If a search is in progress, don't show the path
-		if($this->request->requestVar('q')) {
+		if($this->getRequest()->requestVar('q')) {
 			$items = $items->limit(1);
 			$items->push(new ArrayData(array(
 				'Title' => _t('LeftAndMain.SearchResults', 'Search Results'),
-				'Link' => Controller::join_links($this->Link(), '?' . http_build_query(array('q' => $this->request->requestVar('q'))))
+				'Link' => Controller::join_links($this->Link(), '?' . http_build_query(array('q' => $this->getRequest()->requestVar('q'))))
 			)));
 		}
 
 		// If we're adding a folder, note that in breadcrumbs as well
-		if($this->request->param('Action') == 'addfolder') {
+		if($this->getRequest()->param('Action') == 'addfolder') {
 			$items->push(new ArrayData(array(
 				'Title' => _t('Folder.AddFolderButton', 'Add folder'),
 				'Link' => false
@@ -698,12 +705,12 @@ JS
 			)
 		);
 	}
-	
+
 }
 /**
  * Delete multiple {@link Folder} records (and the associated filesystem nodes).
  * Usually used through the {@link AssetAdmin} interface.
- * 
+ *
  * @package cms
  * @subpackage batchactions
  */
@@ -718,10 +725,10 @@ class AssetAdmin_DeleteBatchAction extends CMSBatchAction {
 			'modified'=>array(),
 			'deleted'=>array()
 		);
-		
+
 		foreach($records as $record) {
 			$id = $record->ID;
-			
+
 			// Perform the action
 			if($record->canDelete()) $record->delete();
 

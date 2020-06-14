@@ -1,10 +1,8 @@
 ---
 lv:
   BitPay:
-    ButtonAltText: BitPay, viegls veids, kā maksāt ar bitcoins.
     CheckoutLocale: en_US
     Email: E-pasta adrese (nav obligāta)
-    Header: Jūs varat ziedot, izmantojot Bitcoins
     LabelEmail: 'E-pasts:'
   Concardis:
     CancelHeader: Jūs esat atcēlis procesu
@@ -12,9 +10,30 @@ lv:
     Processing: Mēs apstrādājam Jūsu maksājumu
     ThankYouHeader: Liels paldies par Jūsu ziedojumu!
     ThankYouMessage: The Document Foundation gribētu jums pateikties par jūsu laipno un dāsno ziedojumu. Mēs esam saņēmuši jūsu maksājumu! Izbaudiet LibreOffice, un liels paldies par jūsu atbalstu!
+    ThanksButHeader: Liels paldies par Jūsu ziedojumu!
     ThanksButMessage1: The Document Foundation gribētu jums pateikties par jūsu laipno un dāsno ziedojumu. Mēs esam saņēmuši jūsu maksājumu! Izbaudiet LibreOffice, un liels paldies par jūsu atbalstu!
   DonatePage:
     BUTTON_CARD: Ziedot, izmantojot maksājumu karti
-    BUTTON_PAYPAL: Ziedot, izmantojot PayPal
+    BUTTON_PAYPAL: Ziedot izmantojot PayPal
     CHOICE_DEFAULT: Izvēlieties kādu no piedāvātajām vērtībām
     CUSTOM_AMOUNT_VALUE: '25'
+    ContinueLabel: Turpināt
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: USD
+  Download:
+    ChangeLanguageLinkText: nepieciešama cita valoda?
+    ChangeLanguageLinkTitle: Izvēlieties citu valodu
+    Helppack: LibreOffice iebūvētā palīdzība <strong>{language}</strong> valodā
+    HelppackButtonLabel: Palīdzība lietošanai bezsaistē
+    OS: Operētājsistēmas
+    PickLanguage: Lūdzu izvēlieties savu valodu
+    Versions: Pieejamās versijas
+  DownloadRefresh:
+    ChangeLanguageLinkText: nepieciešama cita valoda?
+    ChangeLanguageLinkTitle: Izvēlieties citu valodu
+    HelppackButtonLabel: Palīdzība lietošanai bezsaistē
+  Social:
+    FollowUs: Sekojiet mums

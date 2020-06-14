@@ -1,11 +1,13 @@
 ---
 gd:
   BitPay:
-    ButtonAltText: BitPay, an dòigh fhurasta airson rud a phàigheadh slighe bitcoins.
     CheckoutLocale: gd_GB
     Email: Seòladh puist-d (roghainneil)
-    Header: '''S urrainn dhut tabhartas a thoirt slighe bitcoins'
     LabelEmail: 'Post-d:'
+  DonateDownload:
+    InfoLinkText: Fiosrachadh
+    Langpack: Eadar-aghaidh eadar-theangaichte
+    TorrentLinkText: Torrent
   DonatePage:
     BUTTON_CARD: Thoir tabhartas slighe cairt-chreidis
     BUTTON_PAYPAL: Thoir tabhartas slighe PayPal
@@ -41,6 +43,17 @@ gd:
     VersionListReleased: 'Tha na tionndaidhean <strong>sgaoilidh</strong> de LibreOffice ri fhaighinn:'
     VersionListTesting: 'Tha na tionndaidhean <strong>ro-sgaoilidh</strong> de LibreOffice ri fhaighinn:'
     Versions: Tionndaidhean a tha ri làimh
+  DownloadRefresh:
+    ChangeLanguageLinkText: A bheil thu 'ga iarraidh ann an cànan eile?
+    ChangeLanguageLinkTitle: Tagh cànan eile
+    HelppackButtonLabel: Greim air cobhair far loidhne
+    HelppackLinkTitle: Luchdaich a-nuas a' chobhair ach an urrainn dhut a chleachdadh far loidhne
+    InfoLinkTitle: Checksums is fiosrachadh a bharrachd
+    InfoText: Fiosrachadh
+    LangpackLinkText: Eadar-aghaidh eadar-theangaichte
+    LangpackLinkTitle: Luchdaich a-nuas a' phacaid cànain
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Luchdaich a-nuas le BitTorrent
   Homepage:
     DownloadNow: Luchdaich a-nuas an-dràsta
   RSS:

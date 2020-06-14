@@ -4,23 +4,23 @@
  * @subpackage dev
  */
 class TaskRunner extends Controller {
-	
+
 	private static $url_handlers = array(
 		'' => 'index',
 		'$TaskName' => 'runTask'
 	);
-	
+
 	private static $allowed_actions = array(
 		'index',
 		'runTask',
 	);
-	
+
 	public function init() {
 		parent::init();
 
 		$isRunningTests = (class_exists('SapphireTest', false) && SapphireTest::is_running_test());
 		$canAccess = (
-			Director::isDev() 
+			Director::isDev()
 			// We need to ensure that DevelopmentAdminTest can simulate permission failures when running
 			// "dev/tasks" from CLI.
 			|| (Director::is_cli() && !$isRunningTests)
@@ -28,7 +28,7 @@ class TaskRunner extends Controller {
 		);
 		if(!$canAccess) return Security::permissionFailure($this);
 	}
-	
+
 	public function index() {
 		$tasks = $this->getTasks();
 
@@ -38,7 +38,7 @@ class TaskRunner extends Controller {
 			$renderer->writeHeader();
 			$renderer->writeInfo("SilverStripe Development Tools: Tasks", Director::absoluteBaseURL());
 			$base = Director::absoluteBaseURL();
-			
+
 			echo "<div class=\"options\">";
 			echo "<ul>";
 			foreach($tasks as $task) {
@@ -58,7 +58,11 @@ class TaskRunner extends Controller {
 			}
 		}
 	}
-	
+
+	/**
+	 * Runs a BuildTask
+	 * @param SS_HTTPRequest $request
+	 */
 	public function runTask($request) {
 		$name = $request->param('TaskName');
 		$tasks = $this->getTasks();
@@ -73,7 +77,7 @@ class TaskRunner extends Controller {
 
 		foreach ($tasks as $task) {
 			if ($task['segment'] == $name) {
-				$inst = Injector::inst()->create($task['class']);
+				$inst = Injector::inst()->create($task['class']); /** @var BuildTask $inst */
 				$title(sprintf('Running Task %s', $inst->getTitle()));
 
 				if (!$inst->isEnabled()) {
@@ -94,26 +98,43 @@ class TaskRunner extends Controller {
 	 */
 	protected function getTasks() {
 		$availableTasks = array();
-		
+
 		$taskClasses = ClassInfo::subclassesFor('BuildTask');
 		// remove the base class
 		array_shift($taskClasses);
-		
-		if($taskClasses) foreach($taskClasses as $class) {
-			if(!singleton($class)->isEnabled()) continue;
-			$desc = (Director::is_cli()) 
-				? Convert::html2raw(singleton($class)->getDescription()) 
-				: singleton($class)->getDescription();
-				
+
+		foreach($taskClasses as $class) {
+			if (!$this->taskEnabled($class)) continue;
+			$singleton = singleton($class);
+
+			$desc = (Director::is_cli())
+				? Convert::html2raw($singleton->getDescription())
+				: $singleton->getDescription();
+
 			$availableTasks[] = array(
 				'class' => $class,
 				'title' => singleton($class)->getTitle(),
-				'segment' => str_replace('\\', '-', $class),
+				'segment' => $singleton->config()->segment ?: str_replace('\\', '-', $class),
 				'description' => $desc,
 			);
 		}
-		
+
 		return $availableTasks;
+	}
+
+	/**
+	 * @param string $class
+	 * @return boolean
+	 */
+	protected function taskEnabled($class) {
+		$reflectionClass = new ReflectionClass($class);
+		if ($reflectionClass->isAbstract()) {
+			return false;
+		} else if (!singleton($class)->isEnabled()) {
+			return false;
+		}
+
+		return true;
 	}
 
 }

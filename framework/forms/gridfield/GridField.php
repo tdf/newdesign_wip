@@ -17,6 +17,7 @@
  *
  * @package forms
  * @subpackage fields-gridfield
+ * @property GridState_Data $State The gridstate of this object
  */
 class GridField extends FormField {
 	/**
@@ -103,8 +104,6 @@ class GridField extends FormField {
 		}
 
 		$this->setConfig($config);
-
-		$this->config->addComponent(new GridState_Component());
 		$this->state = new GridState($this);
 
 		$this->addExtraClass('ss-gridfield');
@@ -148,7 +147,7 @@ class GridField extends FormField {
 			return $this->modelClassName;
 		}
 
-		if($this->list && method_exists($this->list, 'dataClass')) {
+		if($this->list && $this->list->hasMethod('dataClass')) {
 			$class = $this->list->dataClass();
 
 			if($class) {
@@ -175,6 +174,10 @@ class GridField extends FormField {
 	 */
 	public function setConfig(GridFieldConfig $config) {
 		$this->config = $config;
+
+		if (!$this->config->getComponentByType('GridState_Component')) {
+			$this->config->addComponent(new GridState_Component());
+		}
 
 		return $this;
 	}
@@ -278,7 +281,7 @@ class GridField extends FormField {
 	 *
 	 * @param array $properties
 	 *
-	 * @return string
+	 * @return HTMLText
 	 */
 	public function FieldHolder($properties = array()) {
 		Requirements::css(THIRDPARTY_DIR . '/jquery-ui-themes/smoothness/jquery-ui.css');
@@ -334,26 +337,34 @@ class GridField extends FormField {
 			'before' => true,
 			'after' => true,
 		);
+		$fragmentDeferred = array();
 
-		reset($content);
+		// TODO: Break the below into separate reducer methods
 
-		while(list($contentKey, $contentValue) = each($content)) {
-			if(preg_match_all('/\$DefineFragment\(([a-z0-9\-_]+)\)/i', $contentValue, $matches)) {
-				foreach($matches[1] as $match) {
+		// Continue looping if any placeholders exist
+		while (array_filter($content, function ($value) {
+			return preg_match('/\$DefineFragment\(([a-z0-9\-_]+)\)/i', $value);
+		})) {
+			foreach ($content as $contentKey => $contentValue) {
+				// Skip if this specific content has no placeholders
+				if (!preg_match_all('/\$DefineFragment\(([a-z0-9\-_]+)\)/i', $contentValue, $matches)) {
+					continue;
+				}
+				foreach ($matches[1] as $match) {
 					$fragmentName = strtolower($match);
 					$fragmentDefined[$fragmentName] = true;
 
 					$fragment = '';
 
-					if(isset($content[$fragmentName])) {
+					if (isset($content[$fragmentName])) {
 						$fragment = $content[$fragmentName];
 					}
 
 					// If the fragment still has a fragment definition in it, when we should defer
 					// this item until later.
 
-					if(preg_match('/\$DefineFragment\(([a-z0-9\-_]+)\)/i', $fragment, $matches)) {
-						if(isset($fragmentDeferred[$contentKey]) && $fragmentDeferred[$contentKey] > 5) {
+					if (preg_match('/\$DefineFragment\(([a-z0-9\-_]+)\)/i', $fragment, $matches)) {
+						if (isset($fragmentDeferred[$contentKey]) && $fragmentDeferred[$contentKey] > 5) {
 							throw new LogicException(sprintf(
 								'GridField HTML fragment "%s" and "%s" appear to have a circular dependency.',
 								$fragmentName,
@@ -365,7 +376,7 @@ class GridField extends FormField {
 
 						$content[$contentKey] = $contentValue;
 
-						if(!isset($fragmentDeferred[$contentKey])) {
+						if (!isset($fragmentDeferred[$contentKey])) {
 							$fragmentDeferred[$contentKey] = 0;
 						}
 
@@ -382,6 +393,7 @@ class GridField extends FormField {
 				}
 			}
 		}
+
 
 		// Check for any undefined fragments, and if so throw an exception.
 		// While we're at it, trim whitespace off the elements.
@@ -500,11 +512,14 @@ class GridField extends FormField {
 			$header . "\n" . $footer . "\n" . $body
 		);
 
-		return FormField::create_tag(
+		$field = DBField::create_field('HTMLText', FormField::create_tag(
 			'fieldset',
 			$fieldsetAttributes,
 			$content['before'] . $table . $content['after']
-		);
+		));
+		$field->setOptions(array('shortcodes' => false));
+
+		return $field;
 	}
 
 	/**
@@ -582,15 +597,18 @@ class GridField extends FormField {
 			$classes[] = 'odd';
 		}
 
+		$this->extend('updateNewRowClasses', $classes, $total, $index, $record);
+
 		return $classes;
 	}
 
 	/**
 	 * @param array $properties
 	 *
-	 * @return string
+	 * @return HTMLText
 	 */
 	public function Field($properties = array()) {
+		$this->extend('onBeforeRender', $this);
 		return $this->FieldHolder($properties);
 	}
 
@@ -938,10 +956,10 @@ class GridField extends FormField {
 			);
 		}
 
-		$this->request = $request;
+		$this->setRequest($request);
 		$this->setDataModel($model);
 
-		$fieldData = $this->request->requestVar($this->getName());
+		$fieldData = $this->getRequest()->requestVar($this->getName());
 
 		if($fieldData && isset($fieldData['GridState'])) {
 			$this->getState(false)->setValue($fieldData['GridState']);
@@ -1142,12 +1160,14 @@ class GridField_FormAction extends FormAction {
 	 * @return array
 	 */
 	public function getAttributes() {
+		// Store state in session, and pass ID to client side.
 		$state = array(
 			'grid' => $this->getNameFromParent(),
 			'actionName' => $this->actionName,
 			'args' => $this->args,
 		);
 
+		// Ensure $id doesn't contain only numeric characters
 		$id = 'gf_' . substr(md5(serialize($state)), 0, 8);
 		Session::set($id, $state);
 		$actionData['StateID'] = $id;
@@ -1155,7 +1175,9 @@ class GridField_FormAction extends FormAction {
 		return array_merge(
 			parent::getAttributes(),
 			array(
-				'name' => 'action_gridFieldAlterAction?' . http_build_query($actionData),
+				// Note:  This field needs to be less than 65 chars, otherwise Suhosin security patch
+				// will strip it from the requests
+				'name' => 'action_gridFieldAlterAction' . '?' . http_build_query($actionData),
 				'data-url' => $this->gridField->Link(),
 			)
 		);

@@ -4,11 +4,89 @@ br:
     CheckoutLocale: en_US
     Email: Chomlec'h postel (diret)
     LabelEmail: 'Postel :'
+  Concardis:
+    CancelHeader: Nullet ho peus an araezad
+    CancelMessage: Nullet ho peus ar paeamant, siwazh. <b>N'oc'h ket bet fakturennet.</b> Klaskit adarre diwezhatoc'h, ma tegouezh deoc'h kaout ur gudenn pe ur goulenn, na chomit ket etre daou soñj ha kit e darempred gant {infoemail}.
+    ProblemHeader: Ur gudenn 'zo bet...
+    ProblemMessage: Siwazh, n'eus ket bet graet berzh ar paeamant. Posupl eo e vefe abalamour d'ur gudenn gant hon dafariad paeamant pe ho kartenn-gred. <b>N'och ket bet fakturennet.</b> Klaskit adarre diwezhatoc'h mar plij, ha ma c'hoarvezfe deoc'h kaout ur gudenn, kit e darempred gant {infoemail} seul wech ma c'hoarvez deoc'h.
+    Processing: O keweriañ o paeamant emaomp
+    ThankYouHeader: Trugarez vras evit ho road arc'hant!
+    ThankYouMessage: The Document Foundation a fell dezhi trugarekaat ac'hanoc'h a greiz kalon evit ho roadenn arc'hant ha ho prokusted! Spi hon eus e vo kavet mat ganeoc'h LibreOffice ha trugarez vras evit ho skoazell!
+    ThanksButHeader: Trugarez vras evit bezañ bet roet arc'hant!
+    ThanksButMessage1: The Document Foundation a fell dezhi trugarekaat ac'hanoc'h a greiz kalon evit ho roadenn arc'hant ha ho prokusted. Resevet hon eus ho paeamant! Spi hon eus e vo kavet mat ganeoc'h LibreOffice ha trugarez vras evit ho skoazell!
+    ThanksButMessage2: Notennit eta mar plij ne c'hall ket bezañ kadarnaet ho roadenn arc'hant. Kit da welet hoc'h enrolladennoù da welet ma 'z eo bet en-dro.
+  DonateDownload:
+    InfoLinkText: Titouroù
+    Langpack: Ketal an arveriad troet
+    TorrentLinkText: Torrent
   DonatePage:
+    BC_EMAIL_DESC: ma fellfe deoc'h kaout ul lizher kadarnadur evit ur paeamant gant ur gartenn-gred
+    BC_EMAIL_LABEL: Postel diret
+    BUTTON_CARD: Reiñ dre ar gartenn gred
+    BUTTON_PAYPAL: Reiñ dre bPaypal
+    CHOICE_DEFAULT: Diuzañ unan eus ar gwerzhioù dre ziouer
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Pe bizskrivit ur sammad personelaet <br/> (ar re verket gant * zo hegerz dre bPaypal ivez)
+    ContinueLabel: Kenderc'hel
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: EUR
+    LeadText: LibreOffice a zo ur meziant dieub hag a zo hegerz en un doare digoust. <br/>Ho roadenn, a zo diret-kren, a sikour hor gumuniezh etrevroadel.<br/> Ma plij deoc'h ar meziant, skoazellit anezhañ eta gant ur roadenn arc'hant.
+    OPTIONAL_EMAIL: Postel diret
+    OPTIONAL_EMAIL_DES: ma fellfe deoc'h kaout ul lizher kadarnadur evit ur paeamant gant ur gartenn-gred
+    ProceedConcardis: Evit kas da benn ho roadenn arc'hant <strong>{amount} {currency}</strong>, adheñchet emaoc'h bremañ war al lec'hienn ConCardis a-benn klokaat ho paeamant.<br/>Ma n'emaoc'h ket adheñchet en un doare emgefreek, klikit eta war an afell Kenderc'hel amañ dindan.
+    ProceedPayPal: Evit kas da benn ho roadenn arc'hant <strong>{amount} {currency}</strong>, adheñchet emaoc'h bremañ war al lec'hienn PayPal a-benn klokaat ho paeamant.<br/>Ma n'emaoc'h ket adheñchet en un doare emgefreek, klikit eta war an afell Kenderc'hel amañ dindan.
   Download:
+    ChangeLanguageLinkText: ur yezh all a fell deoc'h?
+    ChangeLanguageLinkTitle: Diuzit ur yezh all
+    Helppack: Skoazell LibreOffice ebarzhet e <strong>{language}</strong>
+    HelppackButtonLabel: Skoazell evit un implij maez-linenn
+    HelppackFallback: Skoazell LibreOffice ebarzhet e <strong>Saozneg</strong>
+    HelppackLinkTitle: Pellgargit ar skoazell evit un implij maez-linennel
+    InfoLinkTitle: Sammad gwiriañ ha titouroù ouzhpenn
     InfoText: Titouroù
+    Langpack: Kaout ketal LibreOffice troet e <strong>{language}</strong>
+    LangpackButtonLabel: Ketal an arveriad troet
+    LangpackLinkTitle: Pellgargañ ar pakad-yezhel
+    Mac64reqs: 10.10 pe nevesoc'h rekis
+    MainButtonLabel: Pellgargañ an handelv {version}
+    MainInstaller: Stalier pennañ
+    MainLinkTitle: Pellgargit LibreOffice {version} evit {os}
+    OS: Reizhiadoù korvoiñ
+    OSList: 'Hegerz emañ an handelv {version} eus LibreOffice evit ar reizhiadoù korvoiñ/savouriezh da-heul:'
+    PickLanguage: Diuzit ho yezh, mar plij
+    PlatformChange: 'Dibabet: LibreOffice {version} evit {os} - <a href=''{curr_page}#change''>kemmañ?</a>'
+    SDKandSource: SDK ha boneg tarzh
+    SDKDownload: Pellgargañ an SDK
+    SourceDownload: Pellgargañ ar boneg tarzh
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Pellgargañ en ur ober gant BitTorrent
+    VersionListReleased: 'LibreOffice a zo hegerz en <strong>handelv</strong>-mañ da-heul:'
+    VersionListTesting: 'LibreOffice a zo hegerz en <strong>rak-handelvoù</strong>-mañ da-heul:'
+    Versions: Handelvoù hegerz
+    Win64reqs: 7 pe nevesoc'h rekis
+  DownloadRefresh:
+    ChangeLanguageLinkText: ur yezh all a fell deoc'h?
+    ChangeLanguageLinkTitle: Diuzit ur yezh all
+    HelppackButtonLabel: Skoazell evit un implij maez-linenn
+    HelppackLinkTitle: Pellgargit ar skoazell evit un implij maez-linennel
+    InfoLinkTitle: Sammad gwiriañ ha titouroù ouzhpenn
+    InfoText: Titouroù
+    LangpackLinkText: Ketal an arveriad troet
+    LangpackLinkTitle: Pellgargañ ar pakad-yezhel
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Pellgargañ en ur ober gant BitTorrent
+  Homepage:
+    DownloadNow: Pellgargañ diouzhtu
+  RSS:
+    ReadMore: lenn muioc'h »
+  Shortcode:
+    NoPortable: Handelv Hezoug ebet ({multilingualtype}) hegerz evit poent
+    NoRC: RC ebet hegerz evit poent
+    NoRC_Codeline: RC ebet hegerz evit poent evit ar skourr {version}
+    ReleaseNotesLinkText: Notennoù an handelv
+  Social:
+    FollowUs: Heulhit ac'hanomp war
+    LatestTweets: Tweetoù Diwezhañ

@@ -1,30 +1,78 @@
 ---
 ca:
   BitPay:
-    ButtonAltText: BitPay, la manera fàcil de pagar amb bitcoins.
-    CheckoutLocale: en_US
-    Email: Adreça de correu (opcional)
-    Header: Podeu fer donatius amb bitcoins
-    LabelEmail: 'Correu-e:'
+    ButtonAltText: BitPay, la manera fàcil de pagar amb Bitcoin i Bitcoin Cash.
+    CheckoutLocale: ca
+    Email: Adreça electrònica (opcional)
+    Header: Podeu fer donatius via Bitcoin i Bitcoin Cash
+    LabelEmail: 'Adreça electrònica:'
+    RefundDisclaimer: Per la seva natura, els donatius via Bitcoin i Bitcoin Cash són anònims. Per tant, qualsevol tipus de reemborsament o confirmació de pagament només és possible amb la quantitat que rebem del nostre proveïdor de serveis de pagament, i només si heu inclòs la vostra adreça electrònica.
   Concardis:
-    CancelHeader: Heu cancel·lat el procés.
+    CancelHeader: Heu cancel·lat el procés
+    CancelMessage: Malauradament, heu cancel·lat el pagament. <b>No se us facturarà cap càrrec.</b> Torneu a provar-ho i, si teniu qualsevol problema o dubte, no dubteu en escriure'ns a {infoemail}.
     ProblemHeader: S'ha produït un problema...
+    ProblemMessage: Malauradament, el pagament no s'ha realitzat correctament. Això pot ser a causa d'un problema amb el nostre servidor de pagaments, o amb la vostra targeta de crèdit. <b>No se us facturarà cap càrrec.</b> Torneu a provar-ho més tard i, si teniu qualsevol problema, no dubteu en escriure'ns a {infoemail}.
     Processing: Estem processant el pagament
-    ThankYouHeader: Gràcies pel vostre donatiu!
-    ThanksButHeader: Gràcies pel vostres donatiu!
+    ThankYouHeader: Gràcies per fer un donatiu!
+    ThankYouMessage: En nom de The Document Foundation us agraïm la vostra generosa contribució. Hem rebut el vostre pagament! Gaudiu del LibreOffice i moltes gràcies pel vostre suport!
+    ThanksButHeader: Moltes gràcies pel vostre donatiu!
+    ThanksButMessage1: En nom de The Document Foundation us agraïm la vostra generosa contribució. Hem rebut el vostre pagament! Gaudiu del LibreOffice i moltes gràcies pel vostre suport!
+    ThanksButMessage2: Tingueu en compte que el donatiu encara no s'ha confirmat. Comproveu als vostres registres que el donatiu s'ha realitzat correctament.
+  DonateDownload:
+    DownloadProblemContact: 'Teniu problemes <strong>baixant</strong> el LibreOffice? Tingueu present que <strong>no oferim assistència tècnica</strong> per a la instal·lació o us del programari. Si us cal ajuda, visiteu el <a href=''https://www.softcatala.org/forum/''>Fòrum de Softcatalà</a> (en català) o <a href=''https://ask.libreoffice.org/''>Ask LibreOffice (en anglès)</a>.<br /><br />Però si la qüestió és sobre <strong>baixar</strong>el LibreOffice des del nostre lloc web, feu-nos saber: (1) El vostre sistema operatiu; (2) El vostre navegador web; (3) Els missatges d''error que obteniu. Envieu-ho (en anglès) a <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> i intentarem d''ajudar-vos.'
+    Helppack: Ajuda incorporada del LibreOffice
+    InfoLinkText: Informació
+    InfoLinkTitle: Mostra les sumes de verificació i la llista dels miralls per al fitxer
+    Invalid: Sembla que la baixada que heu sol·licitat no és vàlida. Aneu a la <a href='//www.libreoffice.org/download'>pàgina de baixades</a> i trieu una versió actual.<br/>Per a problemes tècnics amb la baixada, escriviu (en anglès) a <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Tingueu present que <strong>no oferim</strong> assistència tècnica en aquesta adreça.
+    Langpack: Interfície d'usuari traduïda
+    LinkStartText: La baixada <a href='{link}'>{filename} ({size})</a> hauria de començar aviat. Si no és el cas, feu clic en l'enllaç.
+    ManualMirror: També podeu <a href='{link}.mirrorlist'>triar un mirall manualment</a>
+    NeedAnotherLang: O <a href='https://www.libreoffice.org/download/download/?lang=pick'>triar una altra llengua</a>.
+    Outdated: Sembla que la baixada que heu sol·licitat és obsoleta. Aneu a la <a href='//www.libreoffice.org/download'>pàgina de baixades</a> i trieu una versió actual.<br/>Per a problemes tècnics amb la baixada, escriviu (en anglès) a <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Tingueu present que <strong>no oferim</strong> assistència tècnica en aquesta adreça.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Baixa el fitxer usant el BitTorrent
   DonatePage:
+    BC_EMAIL_DESC: si voleu rebre un correu de confirmació dels pagaments amb targeta
+    BC_EMAIL_LABEL: Adreça de correu electrònic (opcional)
     BUTTON_CARD: Donatius amb targeta de crèdit
-    BUTTON_PAYPAL: Donatius via PayPal
+    BUTTON_PAYPAL: Donatius amb PayPal
+    Bank: Podeu transferir un donatiu al nostre compte bancari
+    BankDetails: "<strong>Titular</strong>: {owner}<br/><strong>Concepte</strong>: Donatiu<br/><strong>Compte</strong>: {accountNumber}<br/><strong>Codi bancari</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Adreça del destinatari</strong>: {tdfAddress}<br/><strong>Adreça de l'entitat bancària</strong>: {bankAddress}"
+    BankHeader: Transferència bancària
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Seleccioneu un dels valors predeterminats
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: O introduïu una quantitat personalitzada i una moneda<br/>(només les marcades amb * són disponibles via PayPal)
+    CardOnly: "(només targeta)"
     ContinueLabel: Continua
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: EUR
+    DonateUSHeader: Donatius des dels EUA
+    Flattr: Podeu fer donatius amb <a href='{flattrlink}'>Flattr</a>
+    FlattrHeader: Flattr
+    FooterText: 'Altres formes de fer donatius: Bitcoin, Flattr, transferència bancària. Feu clic als quadres de sota<br/>Teniu preguntes sobre els donatius? <a href="mailto:info@documentfoundation.org">Envieu-nos un correu (en anglès)</a>'
+    FreqMonthly: Donatiu mensual
+    FreqOneshot: Donatiu únic
+    FreqQuarterly: Donatiu trimestral
+    FreqYearly: Donatius anual
+    LeadText: El LibreOffice és programari lliure i és disponible gratuïtament.<br/>El vostre donatiu, que és completament opcional, ajuda la nostra comunitat internacional.<br/>Si us agrada el nostre programari, considereu fer un donatiu.
+    OPTIONAL_EMAIL: adreça electrònica (opcional)
+    OPTIONAL_EMAIL_DES: si voleu rebre un correu de confirmació dels pagaments amb targeta
+    OtherAmount: Una altra quantitat
+    ProceedConcardis: Per a processar el vostre donatiu de <strong>{amount} {currency}</strong>, us redirigirem al lloc web ConCardis i podreu completar el pagament.<br/>Si no sou redirigit automàticament, feu clic en el botó «Continua» inferior.
+    ProceedPayPal: Per a processar el vostre donatiu de <strong>{amount} {currency}</strong>, us redirigirem al lloc web PayPal i podreu completar el pagament.<br/>Si no sou redirigit automàticament, feu clic en el botó «Continua» inferior.
+    ReverseLayoutTitle: Ajuda al LibreOffice
+    SLIDERLABEL: 'Quantitat (arrossegueu el lliscant per a canviar-la):'
+    Spi: El LibreOffice és un projecte associat a SPI
+    SpiDetails: Podeu <a href='https://www.spi-inc.org/donations/'>fer donatius en els EUA</a> mencionant «LibreOffice» en el vostre donatiu. Tingueu present que els donatius a través de SPI són fiscalment deduïbles en els EUA.
+    TaxHeader: Deduccions fiscals
+    TaxHint: "<strong>Els donatius a The Document Foundation es poden deduir fiscalment en diferents països.<br/>Consulteu la vostra agència tributaria per a més informació.</strong><br/><strong>Per a residents en Alemanya:</strong><em>«{germanLegalText}»</em>"
+    WhileYouDownload: Durant la baixada, considereu de donar suport al LibreOffice amb un donatiu
   Download:
+    Archive: Teniu disponibles versions antigues del LibreOffice (potser sense assistència tècnica) a <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>l'arxiu</a>
     ChangeLanguageLinkText: preferiu una altra llengua?
     ChangeLanguageLinkTitle: Seleccioneu un altra llengua
     Helppack: Ajuda integrada del LibreOffice en <strong>{language}</strong>
@@ -36,23 +84,47 @@ ca:
     Langpack: Obteniu la interfície del LibreOffice en <strong>{language}</strong>
     LangpackButtonLabel: Interfície d'usuari traduïda
     LangpackLinkTitle: Baixa el paquet de llengua
+    Mac64reqs: Requereix 10.10 o posterior
     MainButtonLabel: Baixa la versió {version}
     MainInstaller: Instal·lador principal
     MainLinkTitle: Baixa el LibreOffice {version} per a {os}
     OS: Sistemes operatius
     OSList: 'El LibreOffice {version} es troba disponible per als següents sistemes operatius i arquitectures:'
     PickLanguage: Seleccioneu la llengua
-    PlatformChange: 'Seleccionat: LibreOffice {version} per a {os}. <a href=''{curr_page}#change''>Voleu canviar-ho?</a>'
+    PlatformChange: 'Seleccionat: LibreOffice {version} per a {os} - <a href=''{curr_page}#change''>Voleu canviar-ho?</a>'
+    SDKandSource: SDK i codi font
+    SDKDownload: Baixa l'SDK
+    SourceDownload: Baixa el codi font
     TorrentLinkText: Torrent
     TorrentLinkTitle: Baixa usant el BitTorrent
     VersionListReleased: 'El LibreOffice es troba disponible en les versions <strong>publicades</strong> següents:'
-    VersionListTesting: 'El LibreOffice es troba disponbile en les versions <strong>prèvies</strong> següents:'
+    VersionListTesting: 'El LibreOffice es troba disponible en les versions <strong>prèvies</strong> següents:'
     Versions: Versions disponibles
+    Win64reqs: Requereix 7 o posterior
+  DownloadRefresh:
+    BoxHeader: Baixa el LibreOffice
+    ChangeLanguageLinkText: preferiu una altra llengua?
+    ChangeLanguageLinkTitle: Seleccioneu una altra llengua
+    ChooseOS: 'Trieu el sistema operatiu:'
+    DownloadLinkText: BAIXA’L
+    FreshText: Si sou un entusiasta de la tecnologia, un adoptant precoç o usuari avançat, aquesta és la vostra versió!
+    HelppackButtonLabel: Ajuda per a ús fora de línia
+    HelppackLinkTitle: Baixa el contingut de l'ajuda per a ús fora de línia
+    InfoLinkTitle: Sumes de verificació i informació addicional
+    InfoText: Informació
+    LangpackLinkText: Interfície d'usuari traduïda
+    LangpackLinkTitle: Baixa el paquet de llengua
+    RelnotesLinkText: Notes de la versió del LibreOffice {version}
+    StillText: Si desplegueu el LibreOffice en un entorn empresarial o corporatiu o sou un usuari conservador, trieu aquesta versió.</span><span class="dl_description_text" style="font-size:18px;">Per a desplegaments empresarials, us recomanem <a href="//www.libreoffice.org/get-help/professional-support/">assistència tècnica de col·laboradors certificats</a> que també ofereixen versions del LibreOffice amb assistència tècnica a llarg termini.
+    SupplementaryDownloads: 'Baixades addicionals:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Baixa usant el BitTorrent
   Homepage:
-    DownloadNow: Baixa ara
+    DownloadNow: Baixa-ho ara
   RSS:
     ReadMore: més informació »
   Shortcode:
+    NoPortable: En aquest moment no hi ha disponible cap versió portable ({multilingualtype})
     NoRC: No hi ha disponible cap versió candidata
     NoRC_Codeline: No hi ha disponible cap versió candidata per a la branca de codi {version}
     ReleaseNotesLinkText: Notes de la versió

@@ -1,12 +1,9 @@
 ---
 oc:
   BitPay:
-    ButtonAltText: BitPay, lo mejan aisit per pagar amb bitcoins.
     CheckoutLocale: jorn seguent
     Email: Adreça electronica (facultatiu)
-    Header: Podètz far un don via Bitcoins
     LabelEmail: 'Adreça electronica :'
-    RefundDisclaimer: A causa de lor natura, los dons via Bitcoins son en general anonims, tot tipe de remborsaments o de confirmacion de don es donc pas possible que per la soma recebuda de vòstre provesidor de pagament e unicament se mencionatz vòstra adreça de mail. Se acceptatz pas las condicions mencionadas çaisús, vos conselham de causir una autra de las opcions de don que figuran sus aquesta pagina.
   Concardis:
     CancelHeader: Avètz anullat lo processus
     CancelMessage: Malurosament, avètz anullat lo pagament. <b>Sètz pas estat facturat.</b> Tornatz ensajar un còp de mai e en cas de problèma o de question, trantalhetz pas a nos contactar a {infoemail}.
@@ -18,7 +15,13 @@ oc:
     ThanksButHeader: Grandmercé per vòstre don !
     ThanksButMessage1: The Document Foundation vos vòl mercejar per vòstre don e vòstra generositat. Avèm recebut vòstre pagament ! Esperam que vos agradarà LibreOffice e vos mercejam per vòstre sosten !
     ThanksButMessage2: Notatz que vòstre don es pas encara confirmat. Consultatz vòstres enregistrements per tal de verificar qu'aquò a foncionat.
+  DonateDownload:
+    InfoLinkText: Informacions
+    Langpack: Interfàcia d'utilizaire traduita
+    TorrentLinkText: Torrent
   DonatePage:
+    BC_EMAIL_DESC: se volètz un corrièr de confirmacion per un pagament per carta de crèdit
+    BC_EMAIL_LABEL: Adreça de corrièl (facultatiu)
     BUTTON_CARD: Donar per carta de crèdit
     BUTTON_PAYPAL: Donar via PayPal
     CHOICE_DEFAULT: Seleccionatz una valor per defaut
@@ -31,6 +34,8 @@ oc:
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: EUR
     LeadText: 'LibreOffice es un logicial liure e es mes a disposicion gratuitament. <br/>Vòstre don, qu''es completament facultatiu, ajuda nòstra comunautat internacionala.<br/> Se vos agrada lo logicial, sostenètz-lo amb un don. '
+    OPTIONAL_EMAIL: Adreça de corrièl (facultatiu)
+    OPTIONAL_EMAIL_DES: se volètz un corrièr de confirmacion per un pagament per carta de crèdit
     ProceedConcardis: Per realizar vòstre don de <strong>{amount} {currency}</strong>, sètz dirigit sul site ConCardis per tal de finalizar vòstre pagament.<br/>Se sètz pas redirigit automaticament, clicatz sul boton Contunhar çaijós.
     ProceedPayPal: Per realizar vòstre don de <strong>{amount} {currency}</strong>, sètz dirigit sul site Paypal per tal de finalizar vòstre pagament.<br/>Se sètz pas redirigit automaticament, clicatz sul boton Contunhar çaijós.
   Download:
@@ -45,6 +50,7 @@ oc:
     Langpack: Obténer l'interfàcia LibreOffice tradusida en <strong>{language}</strong>
     LangpackButtonLabel: Interfàcia d'utilizaire tradusida
     LangpackLinkTitle: Telecargar lo paquet de lenga
+    Mac64reqs: 10.10 o mai recent requesit
     MainButtonLabel: Telecargar la version {version}
     MainInstaller: Installador principal
     MainLinkTitle: Telecargar LibreOffice {version} per {os}
@@ -52,11 +58,26 @@ oc:
     OSList: 'LibreOffice {version} es disponible pels sistèmas operatius/aquitecturas seguents :'
     PickLanguage: Seleccionatz vòstra lenga
     PlatformChange: 'Seleccionat : LibreOffice {version} per {os} - <a href=''{curr_page}#change''>modificar ?</a>'
+    SDKandSource: SDK e còdi font
+    SDKDownload: Telecargar lo SDK
+    SourceDownload: Telecargar lo còdi font
     TorrentLinkText: 'Seleccionat : LibreOffice {version} per {os} - <a href=''{curr_page}#change''>modificar ?</a>'
     TorrentLinkTitle: Telecargar en utilizant BitTorrent
     VersionListReleased: 'LibreOffice es disponible dins las <strong>versions</strong> seguentas :'
     VersionListTesting: 'LibreOffice es disponible dins las <strong>preversions</strong> seguentas :'
     Versions: Versions disponiblas
+    Win64reqs: 7 o mai recent requesit
+  DownloadRefresh:
+    ChangeLanguageLinkText: volètz una autra lenga ?
+    ChangeLanguageLinkTitle: Causir una autra lenga
+    HelppackButtonLabel: Ajuda per l'utilizacion fòra linha
+    HelppackLinkTitle: Telecargar l'ajuda per una utilizacion fòra linha
+    InfoLinkTitle: Somas de contròtle e informacions suplementàrias
+    InfoText: Informacions
+    LangpackLinkText: Interfàcia d'utilizaire traduita
+    LangpackLinkTitle: Telecargar lo paquet de lenga
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Telecargar en utilizant BitTorrent
   Homepage:
     DownloadNow: Telecargar ara
   RSS:

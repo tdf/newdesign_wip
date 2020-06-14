@@ -7,7 +7,7 @@ class UpdateDownloadsTask extends CliController {
 		self::parseDownloads();
 	}
 	private static function parseDownloads() {
-		exec("rsync -r --exclude \*.asc rsync://rsync.documentfoundation.org/tdf-pub/ > ".TEMP_FOLDER."/rsynclist.lst");
+		exec("rsync -r --exclude \*.asc rsync://rsync.documentfoundation.org/tdf-pub/ | sed -e 's/_testing_/testing/' > ".TEMP_FOLDER."/rsynclist.lst");
 		$array = file(TEMP_FOLDER."/rsynclist.lst",FILE_IGNORE_NEW_LINES);
 		if (!$array) { Debug::message("Failed to read rsynclist!"); return False; }
 		print " flushing tables…";
@@ -19,8 +19,8 @@ class UpdateDownloadsTask extends CliController {
 
 		$maindl = null;
 		$i=0;
+		$skiplist = array();
 		foreach ($array as $line) {
-			if ($line[0]=="d") continue; // ignore directories
 			if (++$i % 10 == 0) print "#";
 			//-rw-r--r--    12063639 2010/11/11 13:31:05 libreoffice/src/libreoffice-build-3.2.99.3.tar.gz
 			$columns = preg_split("/ +/", $line);
@@ -31,6 +31,18 @@ class UpdateDownloadsTask extends CliController {
 			$pathcomponents = explode("/", $path);
 			$type = count($pathcomponents) > 1 ? $pathcomponents[1] : "";
 			$version = count($pathcomponents) > 2 ? $pathcomponents[2] : "";
+			if ($line[0]=="d") {
+				//drwxr-x---             46 2016/08/01 20:31:50 libreoffice/stable/5.1.5
+				if ($line[9]=="-" && $type !== '' && $version !== '') {
+					//others might not traverse, so is a staged directory
+					print "adding $type/$version is in skiplist\n";
+					$skiplist[] = "$type/$version";
+				}
+				continue; // ignore directories
+			} elseif (in_array("$type/$version", $skiplist)) {
+				print "s";
+				continue;
+			}
 			$filename = $pathcomponents[count($pathcomponents) - 1];
 
 			if ($type == "box") {

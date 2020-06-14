@@ -1,0 +1,92 @@
+---
+vec:
+  BitPay:
+    CheckoutLocale: it_VEC
+    Email: Indiriso email (opsionałe)
+    LabelEmail: 'Email:'
+  Concardis:
+    CancelHeader: A te ghe anułà el proseso
+    CancelMessage: Purmasa, A te ghe anułà el pagamento. <b>A no te ze stà adebità nesuna sóma.</b> A te preghemo de reprovar; in cazo de dubi o de problemi, séntate łìbaro de contatarne in calsìasi momento a l'indiriso {infoemail} .
+    ProblemHeader: A se ga verifegà un problema...
+    ProblemMessage: Purmasa, el pagamento no'l ze mìa ndà a bon fine. Cuesto podarìa èsar dovùo a un problema de'l server o a un problema co ła to carta de crèdito. <b>In tuti i modi, A no te ze mìa stà adebità nesuna sóma.</b> Par piaser, prova da novo pì tardi; in cazo de problemi séntate łìbaro de contatarne in calsìasi momento a l'indiriso {infoemail} .
+    Processing: Semo drio prosesar el to pagamento
+    ThankYouHeader: Grasie de cor par ła to donasion!
+    ThankYouMessage: The Document Foundation ła te rengrasia par ła zentiłe e zeneroza donasion. A ghemo resevùo el to pagamento! Devèrtate co LibreOffice, e grasie par el to sostenjo.
+    ThanksButHeader: Grasie de cor par ła to donasion!
+    ThanksButMessage1: The Document Foundation ła te rengrasia par ła zentiłe e zeneroza donasion. A ghemo resevùo el to pagamento! Devèrtate co LibreOffice, e grasie par el to sostenjo.
+    ThanksButMessage2: Nota che ła donasion ła podarìa èsar ancora da confermar. Verìfega inte i to dati se ła donasion ła ze sta fata.
+  DonateDownload:
+    InfoLinkText: Informasion
+    Langpack: Interfasa utente traduzesta
+    TorrentLinkText: Torrent
+  DonatePage:
+    BC_EMAIL_DESC: se A te vol na mail de conferma par el pagamento co carta de crèdito
+    BC_EMAIL_LABEL: E-mail opsionałe
+    BUTTON_CARD: Dóna co ła carta de crèdito
+    BUTTON_PAYPAL: Dóna co PayPal
+    CHOICE_DEFAULT: Sełesiona uno de i vałori predefinìi
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Opur meti rento un vałor parsonałizà e na moneda<br/>(soło cuełe senjà co un * łe ze desponìbiłi via PayPal)
+    ContinueLabel: Continua
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+    LeadText: LibreOffice el ze un Software łìbaro e el ze meso a despozision gratuitamente. <br/>Ła to donasion, che ła ze escluzivamente opsionałe, ła suporta ła nostra comunidà mondiałe.<br/>Se el software el te piaze, A te invitemo a considarar na donasion.
+    OPTIONAL_EMAIL: E-mail opsionałe
+    OPTIONAL_EMAIL_DES: se A te vol na mail de conferma par el pagamento co carta de crèdito
+    ProceedConcardis: Par prosesar ła to donasion de <strong>{amount} {currency}</strong>, deso a te venjaré reindirisà a'l sito web ConCardis par conpletar el pagamento.<br/>Se el reindirisamento automàtego no'l funsiona, faghe click so'l boton Continua soto cuà.
+    ProceedPayPal: Par prosesar ła to donasion de <strong>{amount} {currency}</strong>, deso a te venjaré reindirisà a'l sito web PayPal par conpletar el pagamento.<br/>Se el reindirisamento automàtego no'l funsiona, faghe click so'l boton Continua soto cuà.
+  Download:
+    ChangeLanguageLinkText: Gheto de bezonjo de canbiar łengua?
+    ChangeLanguageLinkTitle: Sernisi n'altra łengua
+    Helppack: Juto integrà de LibreOffice in <strong>{language}</strong>
+    HelppackButtonLabel: Juto par el dòparo offline
+    HelppackFallback: Juto integrà de LibreOffice in <strong>Ingleze</strong>
+    HelppackLinkTitle: Descarga el contenjudo de'l juto par el dòparo fora łinea
+    InfoLinkTitle: Checksum e informasion adisionałi
+    InfoText: Informasion
+    Langpack: Descarga l'interfasa de LibreOffice traduzesta in <strong>{language}</strong>
+    LangpackButtonLabel: Interfasa utente traduzesta
+    LangpackLinkTitle: Descarga el pacheto de łengua
+    Mac64reqs: rechiesto 10.10 o pì resente
+    MainButtonLabel: Descarga ła varsion {version}
+    MainInstaller: Instałador prinsipałe
+    MainLinkTitle: Descarga LibreOffice {version} par {os}
+    OS: Sistemi operativi
+    OSList: 'LibreOffice {version} el ze desponìbiłe par i sistemi operativi/architeture seguenti:'
+    PickLanguage: Sełesiona ła łengua
+    PlatformChange: 'Sełesion: LibreOffice {version} par {os} - <a href=''{curr_page}#change''>vuto canbiar?</a>'
+    SDKandSource: SDK e còdezi sorjente
+    SDKDownload: Descarga l'SDK
+    SourceDownload: Descarga el còdeze sorjente
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Descarga doparando BitTorrent
+    VersionListReleased: 'LibreOffice el ze desponìbiłe inte łe varsion <strong>rełasàe</strong> seguenti:'
+    VersionListTesting: 'LibreOffice el ze desponìbiłe inte łe varsion candidàe a''l <strong>rełasio</strong> (pre-release) seguenti:'
+    Versions: Varsion desponìbiłi
+    Win64reqs: Rechiesto 7 o pì resente
+  DownloadRefresh:
+    ChangeLanguageLinkText: Gheto de bezonjo de canbiar łengua?
+    ChangeLanguageLinkTitle: Sernisi n'altra łengua
+    HelppackButtonLabel: Juto par el dòparo offline
+    HelppackLinkTitle: Descarga el contenjudo de'l juto par el dòparo fora łinea
+    InfoLinkTitle: Checksum e informasion adisionałi
+    InfoText: Informasion
+    LangpackLinkText: Interfasa utente traduzesta
+    LangpackLinkTitle: Descarga el pacheto de łengua
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Descarga doparando BitTorrent
+  Homepage:
+    DownloadNow: Descarga deso
+  RSS:
+    ReadMore: lezi de pì »
+  Shortcode:
+    NoPortable: In 'sto momento A no ze mìa desponìbiłe na varsion portàbiłe ({multilingualtype})
+    NoRC: In 'sto momento A no ze desponìbiłe nesuna RC
+    NoRC_Codeline: In 'sto momento A no ze desponìbiłe nesuna RC par ła codeline {version}
+    ReleaseNotesLinkText: Note de rełasio
+  Social:
+    FollowUs: Viene drio so
+    LatestTweets: Ùltemi tweet

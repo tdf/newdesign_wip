@@ -33,7 +33,7 @@ class SS_FileFinder {
 	 * @var array
 	 */
 	protected static $vcs_dirs = array(
-		'.git', '.svn', '.hg', '.bzr'
+		'.git', '.svn', '.hg', '.bzr', 'node_modules',
 	);
 
 	/**
@@ -70,7 +70,7 @@ class SS_FileFinder {
 
 		// We build our options array ourselves, because possibly no class or config manifest exists at this point
 		do {
-			$this->options = array_merge(Object::static_lookup($class, 'default_options'), $this->options);
+			$this->options = array_merge(SS_Object::static_lookup($class, 'default_options'), $this->options);
 		}
 		while ($class = get_parent_class($class));
 	}

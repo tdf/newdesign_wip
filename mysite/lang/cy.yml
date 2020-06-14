@@ -1,12 +1,12 @@
 ---
 cy:
   BitPay:
-    ButtonAltText: BitPay, y ffordd hawdd i dalu gyda bitcoins.
+    ButtonAltText: BitPay, y ffordd hawdd i dalu gyda Bitcoin ac arian Bitcoin.
     CheckoutLocale: en_US
     Email: Cyfeiriad e-bost (dewisol)
-    Header: Mae modd cyfrannu drwy Via Bitcoin
+    Header: Gallwch gyfrannu drwy Bitcoin a Bitcoin Cach
     LabelEmail: 'E-bost:'
-    RefundDisclaimer: Oherwydd eu natur, mae cyfrannu gan ddefnyddio Bitcoins fel arfer yn anhysbys, felly dim ond os ydych yn cynnig eich e-bost y mae modd i ni dderbyn cadarnhad gan ein darparwr taliadau y mae'n bosib gwneud ad-daliadau neu gadarnhau cyfraniad. Os nad ydych yn cytuno i'r amodau hyn, rydym yn awgrymu eich bod yn ystyried un o'r dulliau eraill o gyfrannu sydd ar y dudalen hon.
+    RefundDisclaimer: Oherwydd eu natur, mae rhoddion drwy Bitcoin a Bitcoin Cach yn ddienw, felly mae unrhyw fath o ad-daliad neu gadarnhau'r cyfraniad yn bosib dim ond ar sail y swm rydym yn ei dderbyn gan ein darparwyr taliadau ac os fyddwch wedi nodi eich cyfeiriad e-bost.
   Concardis:
     CancelHeader: Rydych wedi diddymu'r broses
     CancelMessage: Yn anffodus, rydych wedi diddymu'r taliad. <b>Nid ydym wedi cymryd arian gennych.</b> Ceisiwch eto ac os oes cwestiwn neu broblem yn codi, cysylltwch â ni ar unrhyw adeg ar {infoemail}.
@@ -18,22 +18,61 @@ cy:
     ThanksButHeader: Diolch yn fawr iawn am eich cyfraniad!
     ThanksButMessage1: Hoffai'r Document Foundation ddiolch i chi am eich cyfraniad caredig a hael. Rydym wedi derbyn y taliad! Mwynhewch LibreOffice a diolch yn fawr am eich cefnogaeth!
     ThanksButMessage2: Sylwch nad oes modd cadarnhau'r cyfraniad eto. Gwiriwch yn eich cofnodion fod y cyfraniad wedi gweithio.
+  DonateDownload:
+    DownloadProblemContact: 'Cael anhawster <strong>llwytho i lawr</strong> LibreOffice? Sylwch <strong>nad ydym yn darparu cefnogaeth dechnegol</strong> ar gyfer gosod na defnyddio''r feddalwedd. Os oes angen cymorth arnoch, ewch i wefan Saesneg <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Ond os yw eich cwestiwn ynglŷn â <strong>llwytho i lawr</strong> LibreOffice o''n gwefan, gadewch i ni wybod, yn Saesneg: (1) Fersiwn eich system weithredu; (2) Eich porwr gwe; (3) Neges(euon) gwall rydych yn eu gweld. Anfonwch rhain at <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> a byddwn yn ceisio eich helpu.'
+    Helppack: Cymorth mewnol LibreOffice
+    InfoLinkText: Manylion
+    InfoLinkTitle: Edrychwch ar y checksum a rhestr drychau llwytho i lawr y ffeil hon
+    Invalid: Mae'r cais llwytho i ;lawr i weld yn ddilys. Ewch i <a href='//www.libreoffice.org/download'>ein tudalen llwytho i lawr</a> a dewis fersiwn cyfredol.<br/>Am anawsterau technegol gyda'r llwyth ei hun, ysgrifennwch, yn Saesneg at <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Cofiwch <strong>nad</strong> ydym yn darparu cefnogaeth dechnegol yn y cyfeiriad hwn.
+    Langpack: Cyfieithiadau o'r Rhyngwyneb Defnyddiwr
+    LinkStartText: Dylai'r ffeil <a href='{link}'>{filename} ({size})</a> gychwyn cyn bo hir. Cliciwch y ddolen os nad yw'n cychwyn.
+    ManualMirror: Gallwch hefyd<a href='{link}.mirrorlist'>ddewis drych â llaw</a>
+    NeedAnotherLang: Neu <a href='https://www.libreoffice.org/download/download/?lang=pick'>ddewis iaith arall</a>.
+    Outdated: Mae'r cais llwytho i lawr i weld yn hen. Ewch i <a href='//www.libreoffice.org/download'>ein tudalen llwytho i lawr</a> a dewis fersiwn cyfredol.<br/>Am anawsterau technegol gyda'r llwyth ei hun, ysgrifennwch, yn Saesneg at <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Cofiwch <strong>nad</strong> ydym yn darparu cefnogaeth dechnegol yn y cyfeiriad hwn.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Llwytho'r ffeil i lawr gan ddefnyddio BitTorrent
   DonatePage:
+    BC_EMAIL_DESC: os hoffech chi gael e-bost i gadarnhau taliad cerdyn credyd
+    BC_EMAIL_LABEL: E-bost dewisol
     BUTTON_CARD: Cyfrannwch drwy Gerdyn Credyd
     BUTTON_PAYPAL: Cyfrannwch drwy PayPal
+    Bank: Gallwch drosglwyddo cyfraniad i'n cyfrif banc
+    BankDetails: "<strong>Perchennog</strong>: {owner}<br/><strong>Pwrpas</strong>: Cyfraniad<br/><strong>Cyfrif</strong>: {accountNumber}<br/><strong>Cod Banc</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Cyfeiriad y derbynnydd</strong>: {tdfAddress}<br/><strong>Cyfeiriad y banc</strong>: {bankAddress}"
+    BankHeader: Trosglwyddiad banc
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Dewiswch un o'r gwerthoedd rhagosodedig
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Neu dewiswch swm rhydd ac arian <br/>(dim ond rheini sy'n cael eu nodi gydag * sydd ar gael drwy PayPal)
+    CardOnly: "(cerdyn yn unig)"
     ContinueLabel: Parhau
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
+    DonateUSHeader: Cyfrannu o'r UDA
+    Flattr: Gallwch ddefnyddio <a href='{flattrlink}'>Flattr</a> hefyd
+    FlattrHeader: Flattr
+    FooterText: 'Ffyrdd eraill i gyfrannu: Bitcoin, Flattr, trosglwyddiad banc - cliciwch y blychau isod<br/>Cwestiynau am eich cyfraniad? <a href="mailto:info@documentfoundation.org">Anfon e-bost</a>'
+    FreqMonthly: Cyfraniad misol
+    FreqOneshot: Cyfrannu un waith
+    FreqQuarterly: Cyfraniad chwarterol
+    FreqYearly: Cyfraniad blynyddol
     LeadText: Mae LibreOffice yn Feddalwedd Rhydd ac mae ar gael am ddim. <br/>Mae eich cyfraniad, sy'n gwbl ddewisol, yn cefnogi ein cymuned fyd eang.<br/>Os ydych yn hoffi'r feddalwedd, ystyriwch gyfrannu.
+    OPTIONAL_EMAIL: E-bost dewisol
+    OPTIONAL_EMAIL_DES: os hoffech chi gael e-bost i gadarnhau taliad cerdyn credyd
+    OtherAmount: Symiau Eraill
     ProceedConcardis: Er mwyn prosesu eich cyfraniad o <strong>{amount} {currency}</strong>, rydych yn cael eich anfon ymlaen at wefan Concardis' er mwyn cwblhau eich taliad.<br/>Os nad ydych wedi eich anfon ymlaen yn awtomatig, cliciwch y botwm Parhau isod.
     ProceedPayPal: Er mwyn prosesu eich cyfraniad o <strong>{amount} {currency}</strong>, rydych yn cael eich anfon ymlaen at wefan Concardis er mwyn cwblhau eich taliad.<br/>Os nad ydych wedi eich anfon ymlaen yn awtomatig, cliciwch y botwm Parhau isod.
+    ReverseLayoutTitle: Cefnogi LibreOffice
+    SLIDERLABEL: Swm (llusgwch y llithrydd isod i'w newid)
+    Spi: Mae LibreOffice yn broject cysylltiedig â SPL
+    SpiDetails: Gallwch<a href='https://www.spi-inc.org/donations/'>gyfrannu o'r UDA</a> drwy enwi "LibreOffice" gyda'ch cyfraniad. Sylwch bod modd tynnu cyfraniadau drwy SPI o drethi'r UDA.
+    TaxHeader: Lleihau trethi
+    TaxHint: <strong>Mae modd didynnu trethu cyfraniadau i'r Document Foundation mewn nifer o wledydd.<br/>Cewch fanylion gan eich swyddfa dreth lleol.</strong><br/><strong>Ar gyfer trigolion yr Almaen:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Wrth i chi lwytho i lawr, ystyriech gefnogi LibreOffice drwy rhodd
   Download:
+    Archive: Mae fersiynau hŷn o LibreOffice (efallai heb eu cefnogi!) ar gael <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>yn yr archif</a>
     ChangeLanguageLinkText: angen iaith arall?
     ChangeLanguageLinkTitle: Dewis iaith arall
     Helppack: Cymorth LibreOffice <strong>{language}</strong>
@@ -45,7 +84,7 @@ cy:
     Langpack: Mae rhyngwgwyneb <strong>{language}</strong> LibreOffice ar gael
     LangpackButtonLabel: Cyfieithiadau o'r Rhyngwyneb Defnyddiwr
     LangpackLinkTitle: Llwytho Pecyn Iaith i Lawr
-    Mac64reqs: Mae angen 10.8 neu ddiweddarach
+    Mac64reqs: Mae angen 10.10 neu ddiweddarach
     MainButtonLabel: Llwytho Fersiwn {version} i Lawr
     MainInstaller: Prif Osodwr
     MainLinkTitle: Llwytho LibreOffice {version} i Lawr ar gyfer {os}
@@ -58,10 +97,28 @@ cy:
     SourceDownload: Llwytho'r Cod Ffynhonnell i Lawr
     TorrentLinkText: Torrent
     TorrentLinkTitle: Llwythwch i lawr gyda BitTorrent
-    VersionListReleased: 'Mae LibreOffice ar gael yn y fersiynau <strong>cyfredol</strong> canlynol :'
+    VersionListReleased: 'Mae LibreOffice ar gael yn y fersiynau <strong>cyfredol</strong> canlynol:'
     VersionListTesting: 'Mae LibreOffice ar gael yn y fersiynau <strong>cyn-ryddhau</strong> canlynol:'
     Versions: Fersiynau Sydd ar Gael
-    Win64reqs: Mae angen Vista neu ddiweddarach
+    Win64reqs: Mae angen 7 neu ddiweddarach
+  DownloadRefresh:
+    BoxHeader: Llwytho LibreOffice i lawr
+    ChangeLanguageLinkText: angen iaith arall?
+    ChangeLanguageLinkTitle: Dewis iaith arall
+    ChooseOS: Dewis eich system weithredu
+    DownloadLinkText: LLWYTHO I LAWR
+    FreshText: Os ydych yn frwdfrydig am dechnoleg, defnyddiwr cynnar, dyma'r fersiwn i chi
+    HelppackButtonLabel: Cymorth ar gyfer defnydd all-lein
+    HelppackLinkTitle: Llwythwch helpcontent i lawr ar gyfer defnydd all-lein
+    InfoLinkTitle: Checksum a manylion ychwanegol
+    InfoText: Manylion
+    LangpackLinkText: Cyfieithiadau o'r Rhyngwyneb Defnyddiwr
+    LangpackLinkTitle: Llwytho Pecyn Iaith i Lawr
+    RelnotesLinkText: Nodiadau ryddhau LibreOffice {version}
+    StillText: Os ydych yn trefnu LibreOffice mewn amgylchedd menter neu gorfforaeth neu yn ddefnyddiwr ceidwadol, defnyddiwch y fersiwn yma.</span><span class="dl_description_text" style="font-size:18px;">Ar gyfer trefniadau busnes, rydym yn argymell yn gryf <a href="//www.libreoffice.org/get-help/professional-support/">cefnogaeth gan bartneriaid cofrestredig</a> sydd hefyd yn cynnig fersiynau cefnogaeth tymor hir o LibreOffice.
+    SupplementaryDownloads: Llwythi Ychwanegol
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Llwythwch i lawr gyda BitTorrent
   Homepage:
     DownloadNow: Llwythwch i Lawr Nawr
   RSS:

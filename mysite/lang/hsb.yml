@@ -1,0 +1,133 @@
+---
+hsb:
+  BitPay:
+    ButtonAltText: BitPay, jednora móžnosć z Bitcoinami a Bitcoin Cash płaćić.
+    CheckoutLocale: hsb
+    Email: E-mejlowa adresa (na přeće)
+    Header: Móžeće přez Bitcoin a Bitcoin Cash płaćić
+    LabelEmail: 'E-mejlowa adresa:'
+    RefundDisclaimer: Po swojim razu su dary přez Bitcoin a Bitcoin Cash anonymne, tohodla su wróćopłaćenja a darjenske wobkrućenja jenož móžne za sumu, kotruž smy wot našeho płaćenskeho poskićowarja dóstali a jenož, hdyž sće swoju e-mejlowu adresu podał.
+  Concardis:
+    CancelHeader: Sće proces přetorhnył
+    CancelMessage: Bohužel sće płaćenje přetorhnył. <b>Wam njeje so ničo wobličiło.</b> Prošu spytajće hišće raz, a jeli problemy abo prašenja maće, stajće so prosće kóždy čas přez {infoemail} z nami do zwiska.
+    ProblemHeader: Problem je nastał…
+    ProblemMessage: Bohužel płaćenje njeje so poradźiło. To móhło so pak přez problem z našim płaćenskim serwerom pak z wašej kreditnej kartu zawinować. <b>Wam njeje so ničo wobličiło.</b> Prošu spytajće pozdźišo hišće raz a při problemach móžeće so rady kóždy čas přez {infoemail} z nami do zwiska stajić.
+    Processing: Waše płaćenje so předźěłuje
+    ThankYouHeader: Wulki dźak za waš dar!
+    ThankYouMessage: Załožba The Document foundation so wam za waš přećelny a šćedriwy dar dźakuje. Smy waše zapłaćenje dóstali! Wužiwajće LibreOffice a wulki dźak za wašu podpěru!
+    ThanksButHeader: Wulki dźak za waš dar!
+    ThanksButMessage1: Załožba The Document foundation so wam za waš přećelny a šćedriwy dar. Smy waš zapłaćenje dóstali! Wužiwajće LibreOffice a wulki dźak za wašu podpěru!
+    ThanksButMessage2: Prošu dźiwajće na to, zo dar hišće njeda so wobkrućić. Prošu přepruwujće w swojich podłožkach, hač darjenje je so poradźiło.
+  DonateDownload:
+    DownloadProblemContact: 'Maće problemy ze <strong>sćehnjenjom</strong> LibreOffice? Dźiwajće na to, zo <strong>žanu technisku podpěru</strong> za instalowanje abo wužiwanje softwary njeskićimy. Jeli pomoc trjebaće, wopytajće prošu <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Ale waše prašenje <strong>sćehnjenje</strong> LibreOffice wot našeho websydła nastupa, zdźělće nam slědowace informacije: (1) Wersija wašeho dźěłoweho systema; (2) Waš webwobhladowak; (3) Zmylkowe zdźělenki, kotrež widźiće. Posćelće tute informacije na <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> a spytamy wam pomhać.'
+    Helppack: Zatwarjena pomoc LibreOffice
+    InfoLinkText: Info
+    InfoLinkTitle: Wobhladajće sej kontrolowe sumy a lisćinu sćehnjenskich špihelow za tutu dataju
+    Invalid: Zda so, zo požadane sćehnjenje je njepłaćiwe. Prošu dźiće k <a href='//www.libreoffice.org/download'>našej sćehnjenskej stronje</a> a wubjerće aktualnu wersiju.<br/>Za techniske problemy ze sćehnjenjom samym, pisajće prošu <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Wzmiće na wědomje, zo pod tutej adresu technisku podpěru <strong>nje</strong>poskićujemy.
+    Langpack: Přełoženy wužiwarski powjerch
+    LinkStartText: Waše sćehnjenje <a href='{link}'>{filename} ({size})</a> měło so bórze započeć. Prošu klikńće na wotkaz, jeli so njestartuje.
+    ManualMirror: Móžeće tež <a href='{link}.mirrorlist'>špihelowy serwer manuelnje wubrać</a>
+    NeedAnotherLang: Abo <a href='https://www.libreoffice.org/download/download/?lang=pick'>druhu rěč wubrać</a>.
+    Outdated: Zda so, zo požadane sćehnjenje je zestarjene. Prošu dźiće k <a href='//www.libreoffice.org/download'>našej sćehnjenskej stronje</a> a wubjerće aktualnu wersiju.<br/>Za techniske problemy ze sćehnjenjom samym, pisajće prošu <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Wzmiće na wědomje, zo pod tutej adresu technisku podpěru <strong>nje</strong>poskićujemy.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Dataju z pomocu BitTorrent sćahnyć
+  DonatePage:
+    BC_EMAIL_DESC: jeli chceće wobkrućensku mejlku za płaćenja z kreditnej kartu
+    BC_EMAIL_LABEL: opcionalna e-mejlowa adresa
+    BUTTON_CARD: Z kreditnej kartu darić
+    BUTTON_PAYPAL: Přez PayPal darić
+    Bank: Móžeće dar na naše bankowe konto přepokazać
+    BankDetails: "<strong>Mějićel</strong>: {owner}<br/><strong>Zaměr</strong>: Dar<br/><strong>Kontowe čisło</strong>: {accountNumber}<br/><strong>Bankowy kod</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Adresa přijimarja</strong>: {tdfAddress}<br/><strong>Adresa banki</strong>: {bankAddress}"
+    BankHeader: Bankowe přepokazanje
+    BitcoinHeader: Bitcoin / Bitcoin Cash
+    CHOICE_DEFAULT: Wubjerće jednu ze standardnych hódnotow
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Abo zapodajće swójsku sumu a měnu<br/>(jenož te, kotrež su markowane z * su přez PayPal k dispoziciji)
+    CardOnly: "(jenož z kartu)"
+    ContinueLabel: Pokročować
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+    DonateUSHeader: Darjenje z USA
+    Flattr: Móžeće nas přez <a href='{flattrlink}'>Flattr</a> podpěrać
+    FlattrHeader: Flattr
+    FooterText: 'Druhe móžnosće za darjenje: Bitcoin, Flattr, bankowe přepokazanje - klikńće na pola deleka<br/>Prašenja nastupajo waš dar? <a href="mailto:info@documentfoundation.org">Posćelće nam e-mejlku</a>'
+    FreqMonthly: Měsačny dar
+    FreqOneshot: Jóńkróćny dar
+    FreqQuarterly: Štwórćlětny dar
+    FreqYearly: Lětny dar
+    LeadText: LibreOffice je swobodna software a staja so zdarma k dispoziciji.<br/>Waš dar, kotryž je dobrowólny, naše swětodaloke zhromadźenstwo podpěruje.<br/>Jeli so wam softwara spodoba, rozwažće dar.
+    OPTIONAL_EMAIL: opcionalna e-mejlowa adresa
+    OPTIONAL_EMAIL_DES: jeli chceće wobkrućensku mejlku za płaćenja z kreditnej kartu
+    OtherAmount: Druha suma
+    ProceedConcardis: Zo by so waš dar <strong>{amount} {currency}</strong> předźěłował, sposrědkujeće so k websydłu ConcCardis, zo byšće zapłaćenje dokónčił.<br/>Jeli so awtomatisce njesposrědkujeće, klikńće na tłóčatko Překročować deleka.
+    ProceedPayPal: Zo by so waš dar <strong>{amount} {currency}</strong> předźěłował, sposrědkujeće so k websydłu PayPal, zo byšće zapłaćenje dokónčił.<br/>Jeli so awtomatisce njesposrědkujeće, klikńće na tłóčatko Překročować deleka.
+    ReverseLayoutTitle: Podpěrajće LibreOffice
+    SLIDERLABEL: 'Suma (ćehńće zasuwak, zo byšće hódnotu změnił): '
+    Spi: LibreOffice je projekt podpěrowany wot SPI
+    SpiDetails: Naspomńće "LibreOffice" z wašim darom, zo byšće móhł <a href='https://www.spi-inc.org/donations/'>z USA darić</a>. Dźiwajće na to, zo dary přez SPI dadźa so w USA wot dawka wotćahnyć.
+    TaxHeader: Danjowe wotćahi
+    TaxHint: <strong>Dary za załožbu The Document Foundation dadźa so we wjacorych krajach wot dawka wotćahnyć.<br/>Prošu wobroćće so na financny zarjad za podrobnosće.</strong><br/><strong>Za Němsku płaći:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Rozwažujće prošu, hač LibreOffice z darom podpěrujeće, mjeztym zo program sćahujeće
+  Download:
+    Archive: Starše wersije LibreOffice (snano so njepodpěruja) su <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>w archiwje</a> k dispoziciji
+    ChangeLanguageLinkText: trjebaće druhu rěč?
+    ChangeLanguageLinkTitle: Wubjerće druhu rěč
+    Helppack: Zatwarjena pomoc LibreOffice w rěči <strong>{language}</strong>
+    HelppackButtonLabel: Pomoc za wužiwanje offline
+    HelppackFallback: Zatwarjena pomoc w <strong>jendźelšćinje</strong>
+    HelppackLinkTitle: Pomoc za wužiwanje offline sćahnyć
+    InfoLinkTitle: Kontrolne sumy a přidatne informacije
+    InfoText: Info
+    Langpack: Wobstarajće sej přełoženy wužiwarski powjerch w rěči <strong>{language}</strong>
+    LangpackButtonLabel: Přełoženy wužiwarski powjerch
+    LangpackLinkTitle: Rěčny pakćik sćahnyć
+    Mac64reqs: 10.10 abo nowši trěbny
+    MainButtonLabel: Wersiju {version} sćahnyć
+    MainInstaller: Hłowny instalaciski program
+    MainLinkTitle: LibreOffice {version} za {os} sćahnyć
+    OS: Dźěłowe systemy
+    OSList: 'LibreOffice {version} je za slědowace dźěłowe systemy/architektury k dispoziciji:'
+    PickLanguage: Prošu wubjerće swoju rěč
+    PlatformChange: 'Wubrane: LibreOffice {version} za {os} - <a href=''{curr_page}#change''>změnić?</a>'
+    SDKandSource: SDK a žórłowy kod
+    SDKDownload: SDK sćahnyć
+    SourceDownload: Žórłowy kod sćahnyć
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Z pomocu BitTorrent sćahnyć
+    VersionListReleased: 'LibreOffice je w slědowacych <strong>wozjewjenych</strong> wersijach k dispoziciji:'
+    VersionListTesting: 'LibreOffice je w slědowacych <strong>předwersijach</strong> k dispoziciji:'
+    Versions: K dispozicji stejace wersije
+    Win64reqs: 7 abo nowši trěbny
+  DownloadRefresh:
+    BoxHeader: LibreOffice sćahnyć
+    ChangeLanguageLinkText: trjebaće druhu rěč?
+    ChangeLanguageLinkTitle: Wubjerće druhu rěč
+    ChooseOS: 'Wubjerće swój dźěłowy system:'
+    DownloadLinkText: SĆAHNYĆ
+    FreshText: Jeli sće entuziast techniki, zažny wužiwar abo nazhonjeny wužiwar, je tuta wersija něšto za was!
+    HelppackButtonLabel: Pomoc za wužiwanje offline
+    HelppackLinkTitle: Pomoc za wužiwanje offline sćahnyć
+    InfoLinkTitle: Kontrolne sumy a přidatne informacije
+    InfoText: Info
+    LangpackLinkText: Přełoženy wužiwarski powjerch
+    LangpackLinkTitle: Rěčny pakćik sćahnyć
+    RelnotesLinkText: LibreOffice {version} wersijowe pokazki
+    StillText: Jeli LibreOffice we wokolinje předewzaća wužiwaće abo sće konserwatiwny wužiwar, wubjerće prošu tutu wersiju.</span><span class="dl_description_text" style="font-size:18px;">Za wobchodniske wužiwanje wuraznje <a href="//www.libreoffice.org/get-help/professional-support/">podpěru wot certifikowanych partnerow</a> doporučemy, kotřiž tež wersije z dołhodobnej podpěru LibreOffice poskićuja.
+    SupplementaryDownloads: 'Přidatne sćehnjenja:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Z pomocu BitTorrent sćahnyć
+  Homepage:
+    DownloadNow: Nětko sćahnyć
+  RSS:
+    ReadMore: Čitajće wjace »
+  Shortcode:
+    NoPortable: Portabelna wersija ({multilingualtype} tuchwilu k dispoziciji njeje
+    NoRC: Předwersija tuchwilu k dispoziciji njeje
+    NoRC_Codeline: Předwersija za kodowu liniju {version} k dispoziciji njeje
+    ReleaseNotesLinkText: Wersijowe informacije
+  Social:
+    FollowUs: Slědujće nam
+    LatestTweets: Najnowše tweety

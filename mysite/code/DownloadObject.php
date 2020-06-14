@@ -15,15 +15,15 @@ class DownloadObject extends DataObject {
 		'Fullpath' => 'Varchar(256)', /* redundant, but as the scheme differs between type... */
 		'Filename' => 'Varchar(100)', /* redundant, but as the scheme differs between type... */
 		'InstallType' => 'Varchar(20)', /* Full, Helppack, Languagepack, SDK */
-		'Lang' => 'Varchar(20)', /* multi/all_lang (win), en-US,...pt-BR,... */ 
+		'Lang' => 'Varchar(20)', /* multi/all_lang (win), en-US,...pt-BR,... */
 		);
 
-	// used by Download page type 
+	// used by Download page type
 	public static $typenames = array (
 		"win-x86"      => "Windows",
-		"win-x86_64"   => "Windows x86_64 (Vista or newer required)",
+		"win-x86_64"   => "Windows x86_64 (Windows 7 or newer required)",
 		"mac-x86"      => "Mac OS X (Intel)",
-		"mac-x86_64"   => "Mac OS X x86_64 (10.8 or newer required)",
+		"mac-x86_64"   => "Mac OS X x86_64 (10.10 or newer required)",
 		"mac-ppc"      => "Mac OS X (PPC)",
 		"deb-x86"      => "Linux - deb (x86)",
 		"deb-x86_64"   => "Linux - deb (x86_64)",
@@ -37,17 +37,30 @@ class DownloadObject extends DataObject {
 	public function NicePlatform() {
         switch($this->Platform."/".$this->Arch) {
             case "win/x86"    : return "Windows"; break;
-            case "win/x86_64" : return "Windows x86_64 ("._t('Download.Win64reqs', 'Vista or newer required').")"; break;
+            case "win/x86_64" : return "Windows x86_64 ("._t('Download.Win64reqs', 'Windows 7 or newer required').")"; break;
             case "deb/x86"    : return "Linux x86 (deb)";  break;
             case "deb/x86_64" : return "Linux x64 (deb)";  break;
             case "rpm/x86"    : return "Linux x86 (rpm)";  break;
             case "rpm/x86_64" : return "Linux x64 (rpm)";  break;
             case "mac/ppc"    : return "Mac OS X (PPC)";   break;
             case "mac/x86"    : return "Mac OS X (Intel)"; break;
-            case "mac/x86_64" : return "Mac OS X x86_64 ("._t('Download.Mac64reqs', '10.8 or newer required').")"; break;
+            case "mac/x86_64" : return "macOS x86_64 ("._t('Download.Mac64reqs', '10.10 or newer required').")"; break;
         }
 
 	}
+    public function NicePlatformShort() {
+        switch($this->Platform."/".$this->Arch) {
+            case "win/x86"    : return "Windows (32-bit)"; break;
+            case "win/x86_64" : return "Windows (64-bit)"; break;
+            case "deb/x86"    : return "Linux (32-bit) (deb)";  break;
+            case "deb/x86_64" : return "Linux (64-bit) (deb)";  break;
+            case "rpm/x86"    : return "Linux (32-bit) (rpm)";  break;
+            case "rpm/x86_64" : return "Linux (64-bit) (rpm)";  break;
+            case "mac/ppc"    : return "Mac OS X (PPC)";   break;
+            case "mac/x86"    : return "macOS (32-bit)"; break;
+            case "mac/x86_64" : return "macOS (64-bit)"; break;
+        }
+    }
 	public function NiceLang() {
 		return i18n::get_language_name($this->Lang, true);
 	}
@@ -100,10 +113,34 @@ class DownloadObject extends DataObject {
 			if ($lang === "pt-BR") {
 				$lang = 'pt';
 			}
-			// http://donate.libreoffice.org/home/dl/rpm-x86_64/4.1.4/de/LibreOffice_4.1.4_Linux_x86-64_rpm.tar.gz
-			return "http://donate.libreoffice.org/$lang/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+			// https://donate.libreoffice.org/home/dl/rpm-x86_64/4.1.4/de/LibreOffice_4.1.4_Linux_x86-64_rpm.tar.gz
+			if (Subsite::currentSubsiteID() == 0) {
+				return "https://www.libreoffice.org/donate/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+            # todo: don't hardcode this with "magic numbers" (aka subsiteIDs and page-URLs) manually
+            # should be in sync with useNewDonate in DonatePage.php
+            } elseif (Subsite::currentSubsiteID() == 5) {
+				return "https://pt-br.libreoffice.org/donate/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+            } elseif (Subsite::currentSubsiteID() == 17) {
+				return "https://fr.libreoffice.org/donate/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+            } elseif (Subsite::currentSubsiteID() == 20) {
+				return "https://de.libreoffice.org/donate/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+            } elseif (Subsite::currentSubsiteID() == 10) {
+				return "https://cs.libreoffice.org/donate/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+            } elseif (Subsite::currentSubsiteID() == 27) {
+				return "https://ja.libreoffice.org/donate/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+            } elseif (Subsite::currentSubsiteID() == 49) {
+				return "https://es.libreoffice.org/colabora/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+            } elseif (Subsite::currentSubsiteID() == 41) {
+				return "https://ro.libreoffice.org/donate/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+            } elseif (Subsite::currentSubsiteID() == 26) {
+				return "https://it.libreoffice.org/donazioni/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+			} else {
+                return "https://www.libreoffice.org/donate/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+
+				#return "https://donate.libreoffice.org/$lang/dl/$this->Platform-$this->Arch/$this->Version/$language/$this->Filename";
+			}
 		} else {
-			return "http://download.documentfoundation.org/$this->Fullpath";
+			return "//download.documentfoundation.org/$this->Fullpath";
 		}
 	}
 	public function Helppack($language = null) {
@@ -156,6 +193,8 @@ class MainDownload extends DownloadObject {
             return "RC".$additional;
         } elseif (strlen($split[1]) == 13) {
             return "Beta".substr($additional,6);
+        } elseif (strlen($split[1]) == 14) {
+            return "Alpha".substr($additional,7);
         }
         return "unknown release-state";
     }
@@ -175,12 +214,12 @@ class SDK_Dl extends DownloadObject {
 	private static $defaults = array('InstallType' => 'SDK');
 
 	public function Link($language = false) {
-		if($language) {
-			// http://donate.libreoffice.org/home/dl/rpm-x86_64/4.1.4/de/LibreOffice_4.1.4_Linux_x86-64_rpm.tar.gz
-			return "http://donate.libreoffice.org/home/dl/SDK/$this->Version/$this->ID/$this->Filename";
-		} else {
-			return "http://download.documentfoundation.org/$this->Fullpath";
-		}
+		//if($language) {
+			// https://donate.libreoffice.org/home/dl/rpm-x86_64/4.1.4/de/LibreOffice_4.1.4_Linux_x86-64_rpm.tar.gz
+		//	return "https://www.libreoffice.org/donate/dl/SDK/$this->Version/$this->ID/$this->Filename";
+		//} else {
+			return "//download.documentfoundation.org/$this->Fullpath";
+		//}
 	}
 }
 class Portable_Dl extends DownloadObject {
@@ -189,12 +228,12 @@ class Box_Dl extends DownloadObject {
 }
 class Src_Dl extends DownloadObject {
 	public function Link($language = false) {
-		if($language) {
-			// http://donate.libreoffice.org/home/dl/rpm-x86_64/4.1.4/de/LibreOffice_4.1.4_Linux_x86-64_rpm.tar.gz
-			return "http://donate.libreoffice.org/home/dl/src/$this->Version/all/$this->Filename";
-		} else {
-			return "http://download.documentfoundation.org/$this->Fullpath";
-		}
+		//if($language) {
+			// https://donate.libreoffice.org/home/dl/rpm-x86_64/4.1.4/de/LibreOffice_4.1.4_Linux_x86-64_rpm.tar.gz
+		//	return "https://www.libreoffice.org/donate/dl/src/$this->Version/all/$this->Filename";
+		//} else {
+			return "//download.documentfoundation.org/$this->Fullpath";
+		//}
 	}
 }
 class Appstore_Dl extends DownloadObject {

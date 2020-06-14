@@ -1,12 +1,12 @@
 ---
 ko:
   BitPay:
-    ButtonAltText: 비트페이는 비트코인으로 지불할 수 있는 쉬운방법입니다.
+    ButtonAltText: 비트페이, 비트코인(BTC)과 비트코인 캐쉬(BCH)로 지불하는 쉬운 방법
     CheckoutLocale: en_US
     Email: 전자우편 주소 (선택사항)
-    Header: 비트코인을 통해서 기부할 수 있습니다.
+    Header: 비트코인과 비트코인 캐시를 통해 기부할 수 있습니다.
     LabelEmail: '전자우편:'
-    RefundDisclaimer: 비트코인(Bitcoins)을 통한 기부는 그 자체 특성으로 인해, 일반적으로 익명으로 이루어집니다. 따라서 기부금의 환불이나 확인은 지불 대행 업체로부터 전달받은 내역과 기부자의 이메일 주소를 대조하여 이루어집니다. 이러한 내용에 동의하지 않으시는 경우, 이 페이지에 나열된 다른 기부 방법을 선택하시기를 권합니다.
+    RefundDisclaimer: 비트코인이나 비트코인 캐쉬를 이용한 기부는 그 특성상 익명성을 기반으로 합니다. 따라서 기부 내역 확인이나 환불은 기부 총액이나 기부할때 입력하신 이메일 주소로만 확인이 가능합니다.
   Concardis:
     CancelHeader: 진행을 취소하였습니다
     CancelMessage: 지불을 취소하셨습니다. <b>해당 금액은 청구되지 않을 것입니다.</b> 다시 한번 시도해 보시고, 문제나 질문이 있으면 언제든지 {infoemail} 로 연락주시기 바랍니다.
@@ -14,44 +14,111 @@ ko:
     ProblemMessage: 지불 절차가 실패하였습니다. 지불 서버에 문제가 발생하였거나, 신용 카드에 문제가 있을 수 있습니다. <b>해당 금액은 청구되지 않을 것입니다.</b> 다시 한번 시도해 보시고, 문제나 질문이 있으면 언제든지 {infoemail} 로 연락주시기 바랍니다.
     Processing: 귀하의 결제를 처리중입니다
     ThankYouHeader: 귀하의 기부에대해 진심으로 감사드립니다!
+    ThankYouMessage: 도큐먼트 재단으로 이름으로 여러분의 기부에 진심으로 감사의 말씀을 드립니다. 리브레오피스를 지원해 주셔서 고맙습니다.
     ThanksButHeader: 기부해 주셔서 매우 감사합니다!
+    ThanksButMessage1: 도큐먼트 재단으로 이름으로 여러분의 기부에 진심으로 감사의 말씀을 드립니다. 리브레오피스를 지원해 주셔서 고맙습니다.
+    ThanksButMessage2: 기부하신 내용이 처리되지 않았습니다. 기부가 정상적으로 이루어졌는지 확인해 주세요.
+  DonateDownload:
+    DownloadProblemContact: 리브레오피스 <strong>다운로드</strong>에 문제가 있나요? 다음 내용을 포함하여 <a href='mailto:download@libreoffice.org'>download@libreoffice.org</a>로 이메일을 보내주십시오. (1) 사용중인 운영체제 버전, (2) 웹브라우저 종류, (3) 에러 메세지<br /><br />이 웹사이트에서는 프로그램 설치나 사용에 관한 <strong>기술적 지원을 제공하지 않습니다.</strong> 도움이 필요하시면 <a href='https://ask.libreoffice.org/ko'>Ask LibreOffice</a>을 방문하십시오.
+    Helppack: 리브레오피스 내장 도움말
+    InfoLinkText: 정보
+    InfoLinkTitle: 파일의 md5sum과 내려받기 미러 목록을 확인하세요.
+    Invalid: 잘못된 다운로드 요청입니다. 웹사이트의 <a href='//ko.libreoffice.org/download'>다운로드 페이지</a>로 이동하여 현재 버전을 선택하십시오.<br/>다운로드에 문제가 있으면 <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>로 관련 내용을 보내주십시오. <strong>프로그램에 대한 기술 지원은 제공하지 않습니다.</strong>
+    Langpack: 한국어 언어팩
+    LinkStartText: "<a href='{link}'>{filename} ({size})</a> 다운로드가 곧 시작됩니다. 만약 다운로드가 시작되지 않으면 링크를 클릭하십시오."
+    ManualMirror: "<a href='{link}.mirrorlist'>직접 미러 선택</a>을 할 수도 있습니다."
+    NeedAnotherLang: 또는 <a href='https://www.libreoffice.org/download/download/?lang=pick'>다른 언어팩을 선택</a>할 수도 있습니다.
+    Outdated: 잘못된 다운로드 요청입니다. 웹사이트의 <a href='//ko.libreoffice.org/download'>다운로드 페이지</a>로 이동하여 현재 버전을 선택하십시오.<br/>다운로드에 문제가 있으면 <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>로 관련 내용을 보내주십시오. <strong>프로그램에 대한 기술 지원은 제공하지 않습니다.</strong>
+    TorrentLinkText: 토렌트
+    TorrentLinkTitle: 비트 토렌트를 이용하여 파일 내려받기
   DonatePage:
+    BC_EMAIL_DESC: 신용카드 지불 확인에 대한 전자우편 전송여부
+    BC_EMAIL_LABEL: 보조 전자우편
     BUTTON_CARD: 신용카드로 기부하기
     BUTTON_PAYPAL: 페이팔로 기부하기
+    Bank: 기부금을 은행 계좌로 송금할 수 있습니다.
+    BankDetails: "<strong>소유자</strong>: {owner}<br/><strong>목적</strong>: 기부<br/><strong>계정</strong>: {accountNumber}<br/><strong>은행 코드</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>수령자 주소</strong>: {tdfAddress}<br/><strong>은행 주소</strong>: {bankAddress}"
+    BankHeader: 은행 송금
+    BitcoinHeader: 비트코인 / 비트코인 캐쉬
     CHOICE_DEFAULT: 기본값들 중에 하나를 선택하세요.
     CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: 또는 금액을 직접 입력하세요.<br/>( * 표가 붙은 항목은 페이팔을 통해 기부할 수 있습니다.)
+    CardOnly: "(카드 전용)"
     ContinueLabel: 계속
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
-    LeadText: 리브레 오피스는 자유 소프트웨어이며, 무료로 사용할 수 있습니다. <br/>원하는 경우 기부를 통해 전세계 커뮤니티를 지원할 수 있습니다.<br/>프로그램이 마음에 드신다면, 기부를 해주세요.
+    DonateUSHeader: "(카드 전용)"
+    Flattr: "<a href='{flattrlink}'>플래터(Flattr)</a>를 사용할 수도 있습니다."
+    FlattrHeader: 플래터(Flattr)
+    FooterText: '다른 기부 방법: 비트코인, 플래터, 은행 송금 - 아래 상자를 클릭하십시오.<br/>기부에 대한 질문은 <a href="mailto:info@documentfoundation.org">이 주소로 이메일을 보내주십시오.</a>'
+    FreqMonthly: 매월 정기 기부
+    FreqOneshot: 일회성 기부
+    FreqQuarterly: 분기별 정기 기부
+    FreqYearly: 매년 정기 기부
+    LeadText: 리브레오피스는 자유 소프트웨어이며, 무료로 사용할 수 있습니다. <br/>원하는 경우 기부를 통해 전세계 커뮤니티를 지원할 수 있습니다.<br/>프로그램이 마음에 드신다면, 기부를 해주세요.
+    OPTIONAL_EMAIL: 보조 이메일
+    OPTIONAL_EMAIL_DES: 신용카드 지불 확인에 대한 이메일 전송여부
+    OtherAmount: 기타 금액
+    ProceedConcardis: "<strong>{amount} {currency}</strong> 의 기부를 진행하기 위해 ConCardis 웹사이트로 이동하여 지불 절차를 마무리합니다.<br/>자동으로 이동하지 않는 경우, [계속] 버튼을 눌러 주세요."
+    ProceedPayPal: "<strong>{amount} {currency}</strong> 의 기부를 진행하기 위해 ConCardis 웹사이트로 이동하여 지불 절차를 마무리합니다.<br/>자동으로 이동하지 않는 경우, [계속] 버튼을 눌러 주세요."
+    ReverseLayoutTitle: 리브레오피스 지원
+    SLIDERLABEL: '금액(슬라이더를 이용해 금액을 변경하십시오):'
+    Spi: 리브레오피스는 SPI-associated(Software in the Public Interest, 비영리) 프로젝트입니다.
+    SpiDetails: <a href='https://www.spi-inc.org/donations/'>미국에서 기부하는 경우 </a> 기부 대상으로 "LibreOffice"를 지정할 수 있습니다. SPI를 통한 기부는 기부액의 일부가 미국 세금으로 공제될 수 있습니다.
+    TaxHeader: 세금 공제
+    TaxHint: <strong>도큐먼트 재단에 기부한 금액은 일부 국가에서 세금 공제가 될 수 있습니다.<br/> 더 자세한 내용은 지역 세무서에 문의하십시오.</strong><br/><strong>독일 거주민의 경우:</strong><em>"{germanLegalText}"</em>
+    WhileYouDownload: 리브레오피스를 내려받는 동안, 기부를 하시겠습니까?
   Download:
+    Archive: 이전 버전의 리브레오피스는 <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>아카이브</a>에서 내려받을 수 있습니다.(일부 버전은 지원이 종료되었습니다)
     ChangeLanguageLinkText: 다른 언어를 원하세요?
     ChangeLanguageLinkTitle: 다른 언어를 선택하세요.
     Helppack: 리브레오피스 <strong>{language}</strong> 내장 도움말
     HelppackButtonLabel: 오프라인 도움말
-    HelppackFallback: 리브레오피스의 <strong>영문(대체)</strong> 내장 도움말
+    HelppackFallback: 리브레오피스 <strong>영문(대체)</strong> 내장 도움말
     HelppackLinkTitle: 오프라인 사용을 위한 도움말 내용 내려받기
     InfoLinkTitle: 체크섬 및 추가 정보
     InfoText: 정보
-    Langpack: <strong>{language}</strong>로 번역 리브레 오피스 인터페이스를 가져오기
-    LangpackButtonLabel: 번역된 사용자 인터페이스
+    Langpack: "<strong>{language}</strong> 언어팩 내려받기"
+    LangpackButtonLabel: 한국어 언어팩
     LangpackLinkTitle: 언어 꾸러미를 내려받기
-    Mac64reqs: 10.8 또는 이후 버전 필요
+    Mac64reqs: 10.10 또는 이후 버전 필요
     MainButtonLabel: 버전 {version} 을 내려받기
     MainInstaller: 기본 설치 프로그램
-    MainLinkTitle: '{os} 용 리브레 오피스 {version} 를 내려받기'
+    MainLinkTitle: "{os} 용 리브레오피스 {version} 를 내려받기"
     OS: 운영 체제
+    OSList: '리브레오피스 {version} 은(는) 다음 운영체제/시스템에서 사용하실 수 있습니다.:'
     PickLanguage: 귀하의 언어를 선택하십시오.
+    PlatformChange: '선택: {os} 용 리브레오피스 {version} - <a href=''{curr_page}#change''>변경하시겠습니까?</a>'
     SDKandSource: SDK와 소스코드
     SDKDownload: SDK 내려받기
     SourceDownload: 소스코드 내려받기
     TorrentLinkText: 토렌트
     TorrentLinkTitle: 비트 토렌트를 이용하여 내려받기
-    Versions: 이용가능한 버전들
+    VersionListReleased: '사용 가능한 리브레오피스 <strong>정식</strong> 버전 목록:'
+    VersionListTesting: '사용 가능한 리브레오피스 <strong>발표 후보</strong> 버전 목록:'
+    Versions: 사용 가능한 버전들
     Win64reqs: 비스타 또는 이후 버전 필요
+  DownloadRefresh:
+    BoxHeader: 리브레오피스 내려받기
+    ChangeLanguageLinkText: 다른 언어를 원하세요?
+    ChangeLanguageLinkTitle: 다른 언어를 선택하세요.
+    ChooseOS: 사용중인 운영 체제를 선택하세요.
+    DownloadLinkText: 내려받기
+    FreshText: 새로운 버전을 미리 경험하고 싶거나 개발자라면 이 버전을 내려받으세요!
+    HelppackButtonLabel: 오프라인 도움말
+    HelppackLinkTitle: 오프라인용 도움말 내려받기
+    InfoLinkTitle: 체크섬 및 추가 정보
+    InfoText: 정보
+    LangpackLinkText: 한국어 언어팩
+    LangpackLinkTitle: 언어 꾸러미를 내려받기
+    RelnotesLinkText: 리브레오피스 {version} 발표 내용
+    StillText: 기업 또는 기업 환경에 리브레오피스를 배포하거나 보수적인 사용자인 경우 이 버전을 선택하십시오. </span><span class="dl_description_text" style="font-size:18px;">비즈니스 배포의 경우 리브레오피스의 장기 지원 버전을 제공하는 <a href="//www.libreoffice.org/get-help/professional-support/">인증 파트너 지원</a>을 적극 권장합니다.
+    SupplementaryDownloads: '더 많은 내려받기:'
+    TorrentLinkText: 토렌트
+    TorrentLinkTitle: 비트 토렌트를 이용하여 내려받기
   Homepage:
     DownloadNow: 지금 내려받기
   RSS:
@@ -59,7 +126,7 @@ ko:
   Shortcode:
     NoPortable: 사용 가능한 포터블 버전 ({multilingualtype}) 이 없습니다.
     NoRC: 사용 가능한 릴리즈 후보(RC) 버전이 없습니다.
-    NoRC_Codeline: '{version} 코드라인 용으로 사용 가능한 릴리즈 후보(RC) 버전이 없습니다.'
+    NoRC_Codeline: "{version} 코드라인 용으로 사용 가능한 릴리즈 후보(RC) 버전이 없습니다."
     ReleaseNotesLinkText: 출시 정보
   Social:
     FollowUs: 팔로잉하기

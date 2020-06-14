@@ -9,9 +9,12 @@ en:
     AppCategoryImage: Image
     AppCategoryVideo: Video
     BackToFolder: 'Back to folder'
+    CMSMENU_OLD: 'Files (old)'
     CREATED: Date
     CurrentFolderOnly: 'Limit to current folder?'
     DetailsView: Details
+    ErrorItemPermissionDenied: 'It seems you don''t have the necessary permissions to add {ObjectTitle} to a campaign'
+    ErrorNotFound: 'That {Type} couldn''t be found'
     FILES: Files
     FILESYSTEMSYNC: 'Sync files'
     FILESYSTEMSYNCTITLE: 'Update the CMS database entries of files on the filesystem. Useful when new files have been uploaded outside of the CMS, e.g. through FTP.'
@@ -60,6 +63,9 @@ en:
     VirtualPageNonExistent: 'virtual page pointing to non-existent page'
   CMSAddPageController:
     Title: 'Add page'
+  CMSBatchAction_Archive:
+    RESULT: 'Deleted %d pages from draft and live, and sent them to the archive'
+    TITLE: 'Unpublish and archive'
   CMSBatchActions:
     ARCHIVE: Archive
     ARCHIVED_PAGES: 'Archived %d pages'
@@ -71,8 +77,8 @@ en:
     PUBLISH_PAGES: Publish
     RESTORE: Restore
     RESTORED_PAGES: 'Restored %d pages'
-    UNPUBLISHED_PAGES: 'Un-published %d pages'
-    UNPUBLISH_PAGES: Un-publish
+    UNPUBLISHED_PAGES: 'Unpublished %d pages'
+    UNPUBLISH_PAGES: Unpublish
   CMSFileAddController:
     MENUTITLE: Files
   CMSMain:
@@ -94,22 +100,23 @@ en:
     DUPLICATEDWITHCHILDREN: 'Duplicated ''{title}'' and children successfully'
     EMAIL: Email
     EditTree: 'Edit Tree'
-    ListFiltered: 'Filtered list.'
+    ListFiltered: 'Showing search results.'
     MENUTITLE: 'Edit Page'
     NEWPAGE: 'New {pagetype}'
     PAGENOTEXISTS: 'This page doesn''t exist'
-    PAGES: Pages
+    PAGES: 'Page status'
     PAGETYPEANYOPT: Any
-    PAGETYPEOPT: 'Page Type'
+    PAGETYPEOPT: 'Page type'
     PUBALLCONFIRM: 'Please publish every page in the site, copying content stage to live'
     PUBALLFUN: '"Publish All" functionality'
-    PUBALLFUN2: "Pressing this button will do the equivalent of going to every page and pressing \"publish\".  It's\n				intended to be used after there have been massive edits of the content, such as when the site was\n				first built."
+    PUBALLFUN2: 'Pressing this button will do the equivalent of going to every page and pressing "publish".  It''s intended to be used after there have been massive edits of the content, such as when the site was first built.'
+    PUBLISHED: 'Published ''{title}'' successfully.'
     PUBPAGES: 'Done: Published {count} pages'
     PageAdded: 'Successfully created page'
     REMOVED: 'Deleted ''{title}''{description} from live site'
     REMOVEDPAGE: 'Removed ''{title}'' from the published site'
     REMOVEDPAGEFROMDRAFT: 'Removed ''%s'' from the draft site'
-    RESTORE: Restore
+    RESTORE: 'Restore draft'
     RESTORED: 'Restored ''{title}'' successfully'
     RESTORE_DESC: 'Restore the archived version to draft'
     RESTORE_TO_ROOT: 'Restore draft at top level'
@@ -118,14 +125,16 @@ en:
     ROLLEDBACKPUBv2: 'Rolled back to published version.'
     ROLLEDBACKVERSIONv2: 'Rolled back to version #%d.'
     SAVE: Save
+    SAVED: 'Saved ''{title}'' successfully.'
     SAVEDRAFT: 'Save draft'
     TabContent: Content
     TabHistory: History
     TabSettings: Settings
-    TreeFiltered: 'Filtered tree.'
-    TreeFilteredClear: 'Clear filter'
+    TreeFiltered: 'Showing search results.'
+    TreeFilteredClear: Clear
+    UNPUBLISH_AND_ARCHIVE: 'Unpublish and archive'
   CMSMain_left_ss:
-    APPLY_FILTER: 'Apply Filter'
+    APPLY_FILTER: Search
     CLEAR_FILTER: Clear
     RESET: Reset
   CMSPageAddController:
@@ -148,6 +157,7 @@ en:
   CMSPageHistoryController_versions_ss:
     AUTHOR: Author
     NOTPUBLISHED: 'Not published'
+    PREVIEW: 'Website preview'
     PUBLISHER: Publisher
     UNKNOWN: Unknown
     WHEN: When
@@ -159,7 +169,7 @@ en:
     MENUTITLE: Pages
     TreeView: 'Tree View'
   CMSPagesController_ContentToolbar_ss:
-    MULTISELECT: Multi-selection
+    MULTISELECT: 'Batch actions'
   CMSPagesController_Tools_ss:
     FILTER: Filter
   CMSSIteTreeFilter_PublishedPages:
@@ -168,20 +178,20 @@ en:
     FILTERDATEFROM: From
     FILTERDATEHEADING: Date
     FILTERDATETO: To
-    FILTERLABELTEXT: Content
+    FILTERLABELTEXT: Search
     PAGEFILTERDATEHEADING: 'Last edited'
   CMSSettingsController:
     MENUTITLE: Settings
   CMSSiteTreeFilter_ChangedPages:
-    Title: 'Changed pages'
+    Title: 'Modified pages'
   CMSSiteTreeFilter_DeletedPages:
-    Title: 'All pages, including deleted'
+    Title: 'All pages, including archived'
   CMSSiteTreeFilter_Search:
     Title: 'All pages'
   CMSSiteTreeFilter_StatusDeletedPages:
-    Title: 'Deleted pages'
+    Title: 'Archived pages'
   CMSSiteTreeFilter_StatusDraftPages:
-    Title: 'Draft unpublished pages'
+    Title: 'Draft pages'
   CMSSiteTreeFilter_StatusRemovedFromDraftPages:
     Title: 'Live but removed from draft'
   ContentControl:
@@ -273,6 +283,16 @@ en:
     REDIRECTTOPAGE: 'A page on your website'
     SINGULARNAME: 'Redirector Page'
     YOURPAGE: 'Page on your website'
+  RemoveOrphanedPagesTask:
+    BUTTONRUN: Run
+    CHOOSEOPERATION: 'Choose operation:'
+    DELETEWARNING: 'Warning: These operations are not reversible. Please handle with care.'
+    HEADER: 'Remove all orphaned pages task'
+    NONEFOUND: 'No orphans found'
+    NONEREMOVED: 'None removed'
+    OPERATION_REMOVE: 'Remove selected from all stages (WARNING: Will destroy all selected pages from both stage and live)'
+    SELECTALL: 'select all'
+    UNSELECTALL: 'unselect all'
   ReportAdmin:
     MENUTITLE: Reports
     ReportTitle: Title
@@ -301,10 +321,36 @@ en:
   SilverStripeNavigator:
     ARCHIVED: Archived
   SilverStripeNavigatorLink:
-    ShareInstructions: 'To share a this to this page, copy and paste the link below.'
+    ShareInstructions: 'To share this page, copy and paste the link below.'
     ShareLink: 'Share link'
   SilverStripeNavigatorLinkl:
     CloseLink: Close
+  SilverStripe\CMS\Controllers\CMSPageAddController:
+    MENUTITLE: 'Add page'
+  SilverStripe\CMS\Controllers\CMSPageEditController:
+    MENUTITLE: 'Edit Page'
+  SilverStripe\CMS\Controllers\CMSPageHistoryController:
+    MENUTITLE: History
+  SilverStripe\CMS\Controllers\CMSPageSettingsController:
+    MENUTITLE: 'Edit Page'
+  SilverStripe\CMS\Controllers\CMSPagesController:
+    MENUTITLE: Pages
+  SilverStripe\CMS\Model\ErrorPage:
+    DESCRIPTION: 'Custom content for different error cases (e.g. "Page not found")'
+    PLURALNAME: 'Error Pages'
+    SINGULARNAME: 'Error Page'
+  SilverStripe\CMS\Model\RedirectorPage:
+    DESCRIPTION: 'Redirects to an internal page or an external URL'
+    PLURALNAME: 'Redirector Pages'
+    SINGULARNAME: 'Redirector Page'
+  SilverStripe\CMS\Model\SiteTree:
+    DESCRIPTION: 'Generic content page'
+    PLURALNAME: 'Site Trees'
+    SINGULARNAME: 'Site Tree'
+  SilverStripe\CMS\Model\VirtualPage:
+    DESCRIPTION: 'Displays the content of another page'
+    PLURALNAME: 'Virtual Pages'
+    SINGULARNAME: 'Virtual Page'
   SiteConfig:
     DEFAULTTHEME: '(Use default theme)'
     EDITHEADER: 'Who can edit pages on this site?'
@@ -335,6 +381,7 @@ en:
     BUTTONARCHIVEDESC: 'Unpublish and send to archive'
     BUTTONCANCELDRAFT: 'Cancel draft changes'
     BUTTONCANCELDRAFTDESC: 'Delete your draft and revert to the currently published page'
+    BUTTONDELETEDESC: 'Remove from draft/live and send to archive'
     BUTTONPUBLISHED: Published
     BUTTONSAVED: Saved
     BUTTONSAVEPUBLISH: 'Save & publish'
@@ -369,6 +416,8 @@ en:
     LASTSAVED: 'Last saved'
     LASTUPDATED: 'Last Updated'
     LINKCHANGENOTE: 'Changing this page''s link will also affect the links of all child pages.'
+    LINKSALREADYUNIQUE: ' {url} is already unique'
+    LINKSCHANGEDTO: ' changed {url1} -> {url2}'
     MENUTITLE: 'Navigation label'
     METADESC: 'Meta Description'
     METADESCHELP: 'Search engines use this content for displaying search results (although it will not influence their ranking).'
@@ -380,6 +429,8 @@ en:
     MoreOptions: 'More options'
     NOTPUBLISHED: 'Not published'
     OBSOLETECLASS: 'This page is of obsolete type {type}. Saving will reset its type and you may lose data'
+    ONLIVEONLYSHORT: 'On live only'
+    ONLIVEONLYSHORTHELP: 'Page is published, but has been deleted from draft'
     PAGELOCATION: 'Page location'
     PAGETITLE: 'Page name'
     PAGETYPE: 'Page type'
@@ -420,6 +471,9 @@ en:
   SiteTreeFileExtension:
     BACKLINK_LIST_DESCRIPTION: 'This list shows all pages where the file has been added through a WYSIWYG editor.'
     EDIT: Edit
+    TITLE_INDEX: '#'
+    TITLE_TYPE: Type
+    TITLE_USED_ON: 'Used on'
   SiteTreeURLSegmentField:
     EMPTY: 'Please enter a URL Segment or click cancel'
     HelpChars: ' Special characters are automatically converted or removed.'

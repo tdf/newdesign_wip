@@ -14,10 +14,16 @@ Email:
 # put site into dev mode (might reveal password if stored in php, as snippet with the line with the error is also included in the output)
 Director:
   environment_type: 'live'
+  rules:
+    'getit': 'DonatePage_Controller'
+
 File:
   allowed_extensions:
     - odt
     - oxt
+
+HtmlEditorField:
+  use_gzip: false
 
 Subsite:
   extensions:
@@ -29,3 +35,6 @@ Page:
 Image:
   extensions:
     - ImagePhotoShuffler
+SiteConfig:
+  extensions:
+    - SiteConfigTwitter

@@ -5,4 +5,27 @@ Upload:
   # Replace an existing file rather than renaming the new one.
   replaceFile: false
 MySQLDatabase:
+  # You are advised to backup your tables if changing settings on an existing database
+  # `connection_charset` and `charset` should be equal, similarly so should `connection_collation` and `collation`
   connection_charset: utf8
+  connection_collation: utf8_general_ci
+  charset: utf8
+  collation: utf8_general_ci
+HTTP:
+  cache_control:
+    no-cache: "true"
+    no-store: "true"
+    must-revalidate: "true"
+  vary: "X-Forwarded-Protocol"
+LeftAndMain:
+  dependencies:
+    versionProvider: %$SilverStripeVersionProvider
+SilverStripeVersionProvider:
+  modules:
+    silverstripe/framework: Framework
+---
+Only:
+  environment: dev
+---
+HTTP:
+  disable_http_cache: true

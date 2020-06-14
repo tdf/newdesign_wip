@@ -1,5 +1,9 @@
 ---
 fi:
+  DonateDownload:
+    InfoLinkText: Tietoja
+    Langpack: Käyttöliittymän käännökset
+    TorrentLinkText: Torrentti
   Download:
     ChangeLanguageLinkText: haluatko toisen kielen?
     ChangeLanguageLinkTitle: Valitse toinen kieli
@@ -12,7 +16,7 @@ fi:
     Langpack: Lataa LibreOfficen käyttöliittymä kielelle <strong>{language}</strong>
     LangpackButtonLabel: Käyttöliittymän käännökset
     LangpackLinkTitle: Lataa kielipaketti
-    Mac64reqs: 10.8 tai uudempi vaaditaan
+    Mac64reqs: 10.10 tai uudempi vaaditaan
     MainButtonLabel: Lataa versio {version}
     MainInstaller: Asennuspaketti
     MainLinkTitle: Lataa LibreOffice {version} käyttöjärjestelmälle {os}
@@ -28,7 +32,18 @@ fi:
     VersionListReleased: 'LibreOffice on saatavilla seuraavina <strong>julkaistuina</strong> versioina:'
     VersionListTesting: 'LibreOfficesta on saatavilla seuraavat <strong>testiversiot</strong>:'
     Versions: Saatavilla olevat versiot
-    Win64reqs: Vista tai uudempi vaaditaan
+    Win64reqs: 7 tai uudempi vaaditaan
+  DownloadRefresh:
+    ChangeLanguageLinkText: haluatko toisen kielen?
+    ChangeLanguageLinkTitle: Valitse toinen kieli
+    HelppackButtonLabel: Käyttöohjeet
+    HelppackLinkTitle: Lataa ohjeet käytettäväksi ilman verkkoyhteyttä
+    InfoLinkTitle: Tarkistussummat ja lisätiedot
+    InfoText: Tietoja
+    LangpackLinkText: Käyttöliittymän käännökset
+    LangpackLinkTitle: Lataa kielipaketti
+    TorrentLinkText: Torrentti
+    TorrentLinkTitle: Lataa BitTorrentilla
   Homepage:
     DownloadNow: Lataa nyt
   RSS:

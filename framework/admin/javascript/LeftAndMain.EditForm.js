@@ -46,6 +46,14 @@
 			ChangeTrackerOptions: {
 				ignoreFieldSelector: '.no-change-track, .ss-upload :input, .cms-navigator :input'
 			},
+
+			/**
+			 * Variable: ValidationErrorShown
+			 * Boolean for tracking whether a validation error has been already been shown. Used because tabs can
+			 * sometimes be inadvertently initialised multiple times, but we don't want duplicate messages
+			 * (Boolean)
+			 */
+			ValidationErrorShown: false,
 		
 			/**
 			 * Constructor: onmatch
@@ -77,26 +85,43 @@
 					}
 				}
 
+				// Reset error display
+				this.setValidationErrorShown(false);
+
 				// TODO
 				// // Rewrite # links
 				// html = html.replace(/(<a[^>]+href *= *")#/g, '$1' + window.location.href.replace(/#.*$/,'') + '#');
 				// 
 				// // Rewrite iframe links (for IE)
 				// html = html.replace(/(<iframe[^>]*src=")([^"]+)("[^>]*>)/g, '$1' + $('base').attr('href') + '$2$3');
-				
-				// Show validation errors if necessary
-				if(this.hasClass('validationerror')) {
-					// TODO validation shouldnt need a special case
-					statusMessage(ss.i18n._t('ModelAdmin.VALIDATIONERROR', 'Validation Error'), 'bad');
 
-					// Ensure the first validation error is visible
-					var firstTabWithErrors = this.find('.message.validation:first').closest('.tab');
-					$('.cms-container').clearCurrentTabState(); // clear state to avoid override later on
-					this.redraw();
-					firstTabWithErrors.closest('.ss-tabset').tabs('select', firstTabWithErrors.attr('id'));
-				}
-			
 				this._super();
+			},
+			'from .cms-tabset': {
+				onafterredrawtabs: function () {
+					// Show validation errors if necessary
+					if(this.hasClass('validationerror')) {
+						// Ensure the first validation error is visible
+						var tabError = this.find('.message.validation, .message.required').first().closest('.tab');
+						$('.cms-container').clearCurrentTabState(); // clear state to avoid override later on
+
+						// Attempt #1: Look for nearest .ss-tabset (usually nested deeper underneath a .cms-tabset).
+						var $tabSet = tabError.closest('.ss-tabset');
+
+						// Attempt #2: Next level in tab-ception, try to select the tab within this higher level .cms-tabset if possible
+						if (!$tabSet.length) {
+							$tabSet = tabError.closest('.cms-tabset');
+						}
+
+						if ($tabSet.length) {
+							$tabSet.tabs('option', 'active', tabError.index('.tab'));
+						} else if (!this.getValidationErrorShown()) {
+							// Ensure that this error message popup won't be added more than once
+							this.setValidationErrorShown(true);
+							errorMessage(ss.i18n._t('ModelAdmin.VALIDATIONERROR', 'Validation Error'));
+						}
+					}
+				}
 			},
 			onremove: function() {
 				this.changetracker('destroy');
@@ -104,15 +129,6 @@
 			},
 			onmatch: function() {
 				this._super();
-
-				// focus input on first form element. Exclude elements which
-				// specifically opt-out of this behaviour via "data-skip-autofocus".
-				// This opt-out is useful if the first visible field is shown far down a scrollable area,
-				// for example for the pagination input field after a long GridField listing.
-				// Skip if an element in the form is already focused.
-				if(!this.find(document.activeElement).length) {
-					this.find(':input:not(:submit)[data-skip-autofocus!="true"]').filter(':visible:first').focus();
-				}
 			},
 			onunmatch: function() {
 				this._super();
@@ -142,13 +158,23 @@
 			 * Doesn't cancel any unload or form removal events, you'll need to implement this based on the return
 			 * value of this message.
 			 * 
+			 * If changes are confirmed for discard, the 'changed' flag is reset.
+			 * 
 			 * Returns:
 			 *  (Boolean) FALSE if the user wants to abort with changes present, TRUE if no changes are detected 
 			 *  or the user wants to discard them.
 			 */
 			confirmUnsavedChanges: function() {
 				this.trigger('beforesubmitform');
-				return (this.is('.changed')) ? confirm(ss.i18n._t('LeftAndMain.CONFIRMUNSAVED')) : true;
+				if(!this.is('.changed')) {
+					return true;
+				}
+				var confirmed = confirm(ss.i18n._t('LeftAndMain.CONFIRMUNSAVED'));
+				if(confirmed) {
+					// confirm discard changes
+					this.removeClass('changed');
+				}
+				return confirmed;
 			},
 
 			/**
@@ -185,6 +211,168 @@
 				this.trigger('validate', {isValid: isValid});
 	
 				return isValid;
+			},
+			/*
+			 * Track focus on htmleditor fields
+			 */
+			'from .htmleditor': {
+				oneditorinit: function(e){
+					var self = this,
+						field = $(e.target).closest('.field.htmleditor'),
+						editor = field.find('textarea.htmleditor').getEditor().getInstance();
+
+					// TinyMCE 4 will add a focus event, but for now, use click
+					editor.onClick.add(function(e){
+						self.saveFieldFocus(field.attr('id'));
+					});
+				}
+			},
+			/*
+			 * Track focus on inputs
+			 */
+			'from .cms-edit-form :input:not(:submit)': {
+				onclick: function(e){
+					this.saveFieldFocus($(e.target).attr('id'));
+				},
+				onfocus: function(e){
+					this.saveFieldFocus($(e.target).attr('id'));
+				}
+			},
+			/*
+			 * Track focus on treedropdownfields. 
+			 */
+			'from .cms-edit-form .treedropdown *': {
+				onfocusin: function(e){
+					var field = $(e.target).closest('.field.treedropdown');
+					this.saveFieldFocus(field.attr('id'));
+				}
+			},
+			/*
+			 * Track focus on chosen selects
+			 */
+			'from .cms-edit-form .dropdown .chzn-container a': {
+				onfocusin: function(e){
+					var field = $(e.target).closest('.field.dropdown');
+					this.saveFieldFocus(field.attr('id'));
+				}
+			},
+			/*
+			 * Restore fields after tabs are restored
+			 */
+			'from .cms-container': {
+				ontabstaterestored: function(e){
+					this.restoreFieldFocus();
+				}
+			},
+			/*
+			 * Saves focus in Window session storage so it that can be restored on page load
+			 */
+			saveFieldFocus: function(selected){
+				if(typeof(window.sessionStorage)=="undefined" || window.sessionStorage === null) return;
+				
+				var id = $(this).attr('id'),
+					focusElements = [];
+
+				focusElements.push({
+					id:id, 
+					selected:selected
+				});
+
+				if(focusElements) {
+					try {
+						window.sessionStorage.setItem(id, JSON.stringify(focusElements));
+					} catch(err) {
+						if (err.code === DOMException.QUOTA_EXCEEDED_ERR && window.sessionStorage.length === 0) {
+							// If this fails we ignore the error as the only issue is that it 
+							// does not remember the focus state.
+							// This is a Safari bug which happens when private browsing is enabled.
+							return;
+						} else {
+							throw err;
+						}
+					}
+				}
+			},
+			/**
+			 * Set focus or window to previously saved fields.
+			 * Requires HTML5 sessionStorage support.
+			 *
+			 * Must follow tab restoration, as reliant on active tab
+			 */
+			restoreFieldFocus: function(){
+				if(typeof(window.sessionStorage)=="undefined" || window.sessionStorage === null) return;
+			
+				var self = this,
+					hasSessionStorage = (typeof(window.sessionStorage)!=="undefined" && window.sessionStorage),
+					sessionData = hasSessionStorage ? window.sessionStorage.getItem(this.attr('id')) : null,
+					sessionStates = sessionData ? JSON.parse(sessionData) : false,
+					elementID,
+					tabbed = (this.find('.ss-tabset').length !== 0),
+					activeTab,
+					elementTab,
+					toggleComposite,
+					scrollY;
+
+				if(hasSessionStorage && sessionStates.length > 0){
+					$.each(sessionStates, function(i, sessionState) {
+						if(self.is('#' + sessionState.id)){
+							elementID = $('#' + sessionState.selected);
+						}
+					});
+
+					// If the element IDs saved in session states don't match up to anything in this particular form
+					// that probably means we haven't encountered this form yet, so focus on the first input
+					if($(elementID).length < 1){
+						this.focusFirstInput();
+						return;
+					}
+
+					activeTab = $(elementID).closest('.ss-tabset').find('.ui-tabs-nav .ui-tabs-active .ui-tabs-anchor').attr('id');
+					elementTab  = 'tab-' + $(elementID).closest('.ss-tabset .ui-tabs-panel').attr('id');
+
+					// Last focussed element differs to last selected tab, do nothing
+					if(tabbed && elementTab !== activeTab){
+						return;
+					}
+
+					toggleComposite = $(elementID).closest('.togglecomposite');
+
+					//Reopen toggle fields
+					if(toggleComposite.length > 0){
+						toggleComposite.accordion('activate', toggleComposite.find('.ui-accordion-header'));
+					}
+
+					//Calculate position for scroll
+					scrollY = $(elementID).position().top;
+
+					//Fall back to nearest visible element if hidden (for select type fields)
+					if(!$(elementID).is(':visible')){
+						elementID = '#' + $(elementID).closest('.field:visible').attr('id');
+						scrollY = $(elementID).position().top;
+					}
+
+					//set focus to focus variable if element focusable
+					$(elementID).focus();
+
+					// Scroll fallback when element is not focusable
+					// Only scroll if element at least half way down window
+					if(scrollY > $(window).height() / 2){
+						self.find('.cms-content-fields').scrollTop(scrollY);
+					}
+				
+				} else {
+					// If session storage is not supported or there is nothing stored yet, focus on the first input 
+					this.focusFirstInput();
+				}
+			},
+			/**
+			 * Skip if an element in the form is already focused. Exclude elements which specifically
+			 * opt-out of this behaviour via "data-skip-autofocus". This opt-out is useful if the
+			 * first visible field is shown far down a scrollable area, for example for the pagination
+			 * input field after a long GridField listing.
+			 */
+			focusFirstInput: function() {
+				this.find(':input:not(:submit)[data-skip-autofocus!="true"]').filter(':visible:first').focus();
 			}
 		});
 

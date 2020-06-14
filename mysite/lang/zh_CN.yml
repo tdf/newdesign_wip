@@ -1,12 +1,12 @@
 ---
 zh_CN:
   BitPay:
-    ButtonAltText: BitPay, 使用比特币支付的简单方式。
-    CheckoutLocale: en_US
+    ButtonAltText: BitPay，使用比特币及比特币现金的简单支付方式。
+    CheckoutLocale: zh_CN
     Email: 电子邮件地址(可选)
-    Header: 您可以使用比特币捐赠
-    LabelEmail: 电子邮件：
-    RefundDisclaimer: 由于比特币的特殊性，使用该方式的捐赠通常是匿名的，所以任何形式的退款或者捐款确认只能以我们从付款提供商处收到的总额的基础上确定，并且仅在您提供您的电子邮件地址的情况下才可行。如果您不同意以上提到的条件，我们恳请您考虑使用本页面列出的其他捐赠方式。
+    Header: 您可以使用比特币或比特币现金进行捐赠
+    LabelEmail: '电子邮件:'
+    RefundDisclaimer: 由于比特币自身的特定，您通过比特币及比特币现金进行的捐赠将是匿名的。因此，如果您需要退款，或者需要捐赠确认文件，则只能在您捐赠时提供了e-mail地址，且在我们从我们的支付服务提供商处收到的总额内进行。
   Concardis:
     CancelHeader: 您已经取消了这项操作
     CancelMessage: 您已经取消了付款，<b>没有款项被收取</b>。请再试一次，如果有任何问题或疑问，请随时通过 {infoemail}联系我们。
@@ -18,59 +18,116 @@ zh_CN:
     ThanksButHeader: 非常感谢您的捐助！
     ThanksButMessage1: The Document Foundation 非常感谢您的友好而且慷慨的捐助。我们已经收到了您的付款！尽情享用LibreOffice，非常感谢您的支持！
     ThanksButMessage2: 请注意，该项捐助还没有被确认。请检查您的记录，确认该捐助交易是否有效。
+  DonateDownload:
+    DownloadProblemContact: 下载 LibreOffice 时遇到了问题？请注意我们<strong>不提供LibreOffice安装和使用相关的技术支持</strong>。如果您需要帮助，请访问<a href='https://ask.libreoffice.org/'>Ask LibreOffice</a>.<br /><br />单是如果您的问题与从我们的网站<strong>下载</strong> LibreOffice 有关，那么请发送邮件告知我们：(1) 您的操作系统；(2) 您的浏览器名称及版本；(3) 您所看到的错误信息。邮件发送到：<a href='mailto:download@libreoffice.org'>download@libreoffice.org</a>.
+    Helppack: LibreOffice 内置的帮助文档
+    InfoLinkText: 信息
+    InfoLinkTitle: 检查文件的校验码以及下载镜像列表
+    Invalid: 你的下载请求似乎无效。请前往<a href='//https://zh-cn.libreoffice.org/download/libreoffice-still/'>下载页面，并选择目前的版本。<br/>如果你遇到下载操作本身的技术问题，请写信到 <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>。请留意我们这个邮箱地址<strong>不会</strong>提供技术支持。
+    Langpack: 已翻译的用户界面
+    LinkStartText: 您的下载 <a href='{link}'>{filename} ({size})</a> 将会很快开始。如果没有，请点击该链接。
+    ManualMirror: 您也可以 <a href='{link}.mirrorlist'>手动选择下载镜像</a>
+    NeedAnotherLang: 或者<a href='https://www.libreoffice.org/download/download/?lang=pick'>选择其他语言</a>。
+    Outdated: 你的下载请求似乎过期了？。请前往<a href='//https://zh-cn.libreoffice.org/download/libreoffice-still/'>下载页面，并选择目前的版本。<br/>如果你遇到下载操作本身的技术问题，请写信到 <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>。请留意我们这个邮箱地址<strong>不会</strong>提供技术支持。
+    TorrentLinkText: BT种子
+    TorrentLinkTitle: 通过 BitTorrent 下载文件
   DonatePage:
+    BC_EMAIL_DESC: 如果您想接收信用卡支付确认邮件
+    BC_EMAIL_LABEL: 选填电子邮件地址
     BUTTON_CARD: 通过信用卡捐赠
-    BUTTON_PAYPAL: 通过贝宝PayPal捐赠
+    BUTTON_PAYPAL: 通过贝宝 PayPal 捐赠
+    Bank: 您可以通过银行账户捐赠
+    BankDetails: "<strong>Owner 户名</strong>: {owner}<br/><strong>Purpose 用途</strong>: Donation 捐赠<br/><strong>Account 账号</strong>: {accountNumber}<br/><strong>Bank Code 银行代码</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Address of recipient 收款人地址</strong>: {tdfAddress}<br/><strong>Address of bank 银行地址</strong>: {bankAddress}"
+    BankHeader: 银行转账
+    BitcoinHeader: 比特币/比特币现金
     CHOICE_DEFAULT: 选择默认金额中的一个
     CUSTOM_AMOUNT_VALUE: '25'
-    CUSTOM_CHOICE: 或者输入一个自定义金额和币种。<br/>(只有以 * 号标记的才能同时以贝宝PayPal支付)
+    CUSTOM_CHOICE: 或者输入一个自定义金额和币种。<br/>(只有以 * 号标记的才支持 PayPal 支付)
+    CardOnly: "（仅通过卡）"
     ContinueLabel: 继续
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
+    DonateUSHeader: 在美国进行捐赠
+    Flattr: 您可以 <a href='{flattrlink}'>Flattr</a> 我们
+    FlattrHeader: Flattr
+    FooterText: 其他捐助方式：比特币、Flattr、银行转账 - 请点击下方的方块<br/>你对你的捐助有疑问？<ahref="mailto:info@documentfoundation.org">请使用英文写电子邮件联系我们</a>
+    FreqMonthly: 每月自动捐赠
+    FreqOneshot: 一次性捐赠
+    FreqQuarterly: 季度自动捐赠
+    FreqYearly: 年度自动捐赠
     LeadText: LibreOffice是自由且免费的软件，可供免费下载使用。捐助是完全自愿的，但是您的捐助能够支持我们的全球社区。<br/>如果您喜欢该软件，请考虑提供捐助。
-    ProceedConcardis: 您将被转到ConCardis的网站以完成您 <strong>{amount} {currency}</strong> 的捐赠交易的付款操作。<br/>如果没有自动跳转，请点击下面的“继续”按钮。
-    ProceedPayPal: 您将被转到PayPal的网站以完成您 <strong>{amount} {currency}</strong> 的捐赠交易的付款操作。<br/>如果没有自动跳转，请点击下面的“继续”按钮。
+    OPTIONAL_EMAIL: 可选 Email
+    OPTIONAL_EMAIL_DES: 如果您想接收信用卡支付确认邮件
+    OtherAmount: 其他金额
+    ProceedConcardis: 您将被转到 ConCardis 的网站以完成您 <strong>{amount} {currency}</strong> 的捐赠交易的付款操作。<br/>如果没有自动跳转，请点击下面的“继续”按钮。
+    ProceedPayPal: 您将被转到 PayPal 的网站以完成您 <strong>{amount} {currency}</strong> 的捐赠交易的付款操作。<br/>如果没有自动跳转，请点击下面的“继续”按钮。
+    ReverseLayoutTitle: 支持 LibreOffice
+    SLIDERLABEL: '金额（拖动滑块可更改金额）: '
+    Spi: LibreOffice 是 SPI 关联项目
+    SpiDetails: 您可以 <a href='https://www.spi-inc.org/donations/'>在美国进行捐赠</a>，捐赠时请注明 "LibreOffice". 通过 SPI 进行的捐赠在美国可以进行税前扣除。
+    TaxHeader: 税款抵扣
+    TaxHint: <strong>向 The Document Foundation 的捐赠在很多国家是可以税前扣除的。<br/>具体细节请咨询您所在国的税务机关。</strong><br/><strong>对于德国居民：</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: 在下载 LibreOffice 的同时，请考虑捐赠支持它的开发
   Download:
+    Archive: 更早版本的 LibreOffice（可能不受支持！）可在 <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>存档下载中心</a> 找到
     ChangeLanguageLinkText: 需要其它语言？
     ChangeLanguageLinkTitle: 选择其它语言
     Helppack: LibreOffice <strong>{language}</strong> 内置帮助
     HelppackButtonLabel: 可离线使用的帮助
     HelppackFallback: LibreOffice 内置帮助 <strong>英文备用版</strong>
     HelppackLinkTitle: 下载可供离线使用的帮助内容
-    InfoLinkTitle: Checksum校验和以及额外的信息
+    InfoLinkTitle: 文件校验码以及其他信息
     InfoText: 信息
     Langpack: 获取 LibreOffice <strong>{language}</strong> 语言包
     LangpackButtonLabel: 已翻译的用户界面
     LangpackLinkTitle: 下载语言包
-    Mac64reqs: 需要10.8或更高版本
+    Mac64reqs: 需要 10.10 或更高版本
     MainButtonLabel: 下载版本 {version}
     MainInstaller: 主安装程序
     MainLinkTitle: 下载适用于 {os} 的 LibreOffice {version}
     OS: 操作系统
-    OSList: LibreOffice {version} 可用于以下操作系统和架构：
+    OSList: 'LibreOffice {version} 可用于以下操作系统和架构:'
     PickLanguage: 请选择您的语言
     PlatformChange: '已选择: LibreOffice {version} 用于 {os} - <a href=''{curr_page}#change''>更改？</a>'
-    SDKandSource: SDK和源代码
-    SDKDownload: 下载SDK
+    SDKandSource: SDK 与源代码
+    SDKDownload: 下载 SDK
     SourceDownload: 下载源代码
     TorrentLinkText: Torrent 种子
     TorrentLinkTitle: 使用 BitTorrent 下载
-    VersionListReleased: LibreOffice 有以下的<strong>已发布版本</strong>：
-    VersionListTesting: LibreOffice 有以下的<strong>预发布版本</strong>：
+    VersionListReleased: 'LibreOffice 有以下的<strong>已发布版本</strong>:'
+    VersionListTesting: 'LibreOffice 有以下的<strong>预发布版本</strong>:'
     Versions: 可用的版本
-    Win64reqs: 需要Vista或更新版本
+    Win64reqs: 需要 7 或更高版本
+  DownloadRefresh:
+    BoxHeader: 下载 LibreOffice
+    ChangeLanguageLinkText: 其它语言版本？
+    ChangeLanguageLinkTitle: 选择其它语言
+    ChooseOS: '选择您的操作系统:'
+    DownloadLinkText: 下载
+    FreshText: 如果您是技术热衷者、早期使用者、或者是有经验的用户，那么这个版本很适合您！
+    HelppackButtonLabel: 离线帮助文档
+    HelppackLinkTitle: 下载可供离线使用的帮助文档
+    InfoLinkTitle: 文档校验及额外信息
+    InfoText: 信息
+    LangpackLinkText: 已翻译的用户界面语言包
+    LangpackLinkTitle: 下载语言包
+    RelnotesLinkText: LibreOffice {version} 发行说明
+    StillText: 如果是在企业环境中部署 LibreOffice，或者您是保守型用户，请选择这个版本。</span><span class="dl_description_text" style="font-size:18px;">对于商业用户，我们强烈建议您寻求 <a href="//www.libreoffice.org/get-help/professional-support/">受认证的合作伙伴的支持</a>，他们可能同时提供 LibreOffice 长期支持版本。
+    SupplementaryDownloads: '其他下载方式:'
+    TorrentLinkText: Torrent 种子
+    TorrentLinkTitle: 使用 BitTorrent 下载
   Homepage:
     DownloadNow: 马上下载
   RSS:
     ReadMore: 了解更多 »
   Shortcode:
     NoPortable: 目前没有可用的便携版 ({multilingualtype})
-    NoRC: 目前没有可用的RC版本
-    NoRC_Codeline: 目前没有 {version} 代码线的RC版本
+    NoRC: 目前没有可用的 RC 版本
+    NoRC_Codeline: 目前没有 {version} 代码线的 RC 版本
     ReleaseNotesLinkText: 发行说明
   Social:
     FollowUs: 关注我们
-    LatestTweets: 最新的Tweets
+    LatestTweets: 最新推文

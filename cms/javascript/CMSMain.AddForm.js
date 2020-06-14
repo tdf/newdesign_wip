@@ -7,7 +7,7 @@
 		$(".cms-add-form .parent-mode :input").entwine({
 			onclick: function(e) {
 				if(this.val() == 'top') {
-					var parentField = this.closest('form').find('#ParentID .TreeDropdownField')
+					var parentField = this.closest('form').find('#Form_AddForm_ParentID_Holder .TreeDropdownField')
 					parentField.setValue('');
 					parentField.setTitle('');
 				}
@@ -19,7 +19,7 @@
 			ParentCache: {}, // Cache allowed children for each selected page
 			onadd: function() {
 				var self = this;
-				this.find('#ParentID .TreeDropdownField').bind('change', function() {
+				this.find('#Form_AddForm_ParentID_Holder .TreeDropdownField').bind('change', function() {
 					self.updateTypeList();
 				});
 				this.find(".SelectionGroup.parent-mode").bind('change',  function() {
@@ -44,15 +44,15 @@
 			 * Similar implementation to LeftAndMain.Tree.js.
 			 */
 			updateTypeList: function() {
-				var hints = this.data('hints'), 
-					parentTree = this.find('#ParentID .TreeDropdownField'),
+				var hints = this.data('hints'),
+					parentTree = this.find('#Form_AddForm_ParentID_Holder .TreeDropdownField'),
 					parentMode = this.find("input[name=ParentModeField]:checked").val(),
 					metadata = parentTree.data('metadata'),
 					id = (metadata && parentMode === 'child')
 						? (parentTree.getValue() || this.getParentID())
 						: null,
 					newClassName = metadata ? metadata.ClassName : null,
-					hintKey = (newClassName && parentMode === 'child')
+					hintKey = (newClassName && parentMode === 'child' && id)
 						? newClassName
 						: 'Root',
 					hint = (typeof hints[hintKey] !== 'undefined') ? hints[hintKey] : null,
@@ -101,15 +101,15 @@
 			},
 			/**
 			 * Update the selection filter with the given blacklist and default selection
-			 * 
+			 *
 			 * @param array disallowedChildren
 			 * @param string defaultChildClass
 			 */
 			updateSelectionFilter: function(disallowedChildren, defaultChildClass) {
 				// Limit selection
 				var allAllowed = null; // troolian
-				this.find('#PageType li').each(function() {
-					var className = $(this).find('input').val(), 
+				this.find('#Form_AddForm_PageType li').each(function() {
+					var className = $(this).find('input').val(),
 						isAllowed = ($.inArray(className, disallowedChildren) === -1);
 					
 					$(this).setEnabled(isAllowed);
@@ -120,22 +120,26 @@
 				
 				// Set default child selection, or fall back to first available option
 				if(defaultChildClass) {
-					var selectedEl = this.find('#PageType li input[value=' + defaultChildClass + ']').parents('li:first');
+					var selectedEl = this
+						.find('#Form_AddForm_PageType li input[value=' + defaultChildClass + ']')
+						.parents('li:first');
 				} else {
-					var selectedEl = this.find('#PageType li:not(.disabled):first');
+					var selectedEl = this.find('#Form_AddForm_PageType li:not(.disabled):first');
 				}
 				selectedEl.setSelected(true);
 				selectedEl.siblings().setSelected(false);
 
 				// Disable the "Create" button if none of the pagetypes are available
-				var buttonState = (this.find('#PageType li:not(.disabled)').length) ? 'enable' : 'disable';
+				var buttonState = this.find('#Form_AddForm_PageType li:not(.disabled)').length
+					? 'enable'
+					: 'disable';
 				this.find('button[name=action_doAdd]').button(buttonState);
 
 				this.find('.message-restricted')[allAllowed ? 'hide' : 'show']();
 			}
 		});
 		
-		$(".cms-add-form #PageType li").entwine({
+		$(".cms-add-form #Form_AddForm_PageType li").entwine({
 			onclick: function(e) {
 				this.setSelected(true);
 			},
@@ -157,7 +161,7 @@
 			}
 		});
 
-		$(".cms-page-add-button").entwine({
+		$(".cms-content-addpage-button").entwine({
 			onclick: function(e) {
 				var tree = $('.cms-tree'), list = $('.cms-list'), parentId = 0;
 
@@ -169,7 +173,7 @@
 					var state = list.find('input[name="Page[GridState]"]').val();
 					if(state) parentId = parseInt(JSON.parse(state).ParentID, 10);
 				}
-					
+
 				var data = {selector: this.data('targetPanel'),pjax: this.data('pjax')}, url;
 				if(parentId) {
 					extraParams = this.data('extraParams') ? this.data('extraParams') : '';

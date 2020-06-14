@@ -1,12 +1,12 @@
 ---
 sl:
   BitPay:
-    ButtonAltText: BitPay, enostaven način plačevanja z bitcoini.
+    ButtonAltText: BitPay, enostavni način plačevanja z Bitcoini in gotovino Bitcoin.
     CheckoutLocale: sl
     Email: E-poštni naslov (neobvezno)
-    Header: Donirate lahko prek bitcoinov
+    Header: Donirate lahko prek Bitcoin in Bitcoin Cash.
     LabelEmail: 'E-poštni naslov:'
-    RefundDisclaimer: Zaradi svoje narave so donacije Bitcoin običajno anonimne, tako da so povračila ali potrditve donacije možne le za vrednost, ki smo jo prejeli s strani našega ponudnika storitev plačil in le če ste omenili svoj e-poštni naslov. Če se s temi pogoji ne strinjate, vas vljudno prosimo, da razmislite o drugih možnostih doniranja, ki so opisane na tej strani.
+    RefundDisclaimer: Zaradi svoje narave so donacije Bitcoin ali Bitcoin Cash anonimne, zato je vsakršna oblika povračila sredstev ali potrditve donacije možna le za vsoto, ki smo jo prejeli od našega ponudnika storitev plačil, in le, če ste ob takšnem plačilu navedli tudi svoj e-poštni naslov.
   Concardis:
     CancelHeader: Postopek ste preklicali
     CancelMessage: Žal plačila niste preklicali.<b>Storitev ni bila zaračunana.</b> Poskusite znova in v primeru težav ali vprašanj kadarkoli prosto stopite v stik na naslovu {infoemail}.
@@ -18,22 +18,61 @@ sl:
     ThanksButHeader: Najlepša hvala za vašo donacijo!
     ThanksButMessage1: TDF (The Document Foundation) se vam zahvaljuje za prijazno in velikodušno donacijo. Prejeli smo vaše plačilo! Uživajte v LibreOffice in hvala za vašo podporo!
     ThanksButMessage2: Upoštevajte, da donacije še ni mogoče potrditi. Preverite v svojih podatkih, ali je donacija izpeljana.
+  DonateDownload:
+    DownloadProblemContact: 'Imate težave s <strong>prenašanjem</strong> LibreOffice? Upoštevajte, da <strong>ne nudimo tehnične podpore</strong> za nameščanje ali uporabo programja. Če potrebujete pomoč, obiščite spletišče <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Če se vaše vprašanje nanaša na <strong>prenašanje</strong> LibreOffice z našega spletišča, nam sporočite: (1) različico in vrsto svojega operacijskega sistema; (2) tip spletnega brskalnika; (3) sporočila o napaki, ki ste jih opazili. Vse skupaj pošljite na naslov <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> in poskušali vam bomo pomagati.'
+    Helppack: Vgrajena pomoč za LibreOffice
+    InfoLinkText: podrobnosti
+    InfoLinkTitle: Oglejte si kontrolne vsote in seznam zrcalnih strežnikov za prenos datoteke
+    Invalid: Prenos se zdi neveljaven. Obiščite <a href='//sl.libreoffice.org/prenosi'>našo stran za prenose</a> in izberite trenutno različico.<br/>V primeru tehničnih težav s samim prenosom pišite na naslov <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Upoštevajte, da na tem naslovu <strong>ne</strong> nudimo tehnične podpore.
+    Langpack: Preveden uporabniški vmesnik
+    LinkStartText: Vaš prenos <a href='{link}'>{filename} ({size})</a> se bo začel v kratkem. Če se ne prične, kliknite povezavo.
+    ManualMirror: Lahko pa tudi <a href='{link}.mirrorlist'>ročno izberete zrcalno mesto</a>.
+    NeedAnotherLang: Ali <a href='https://www.libreoffice.org/download/download/?lang=pick'>izberite drug jezik</a>.
+    Outdated: Se zdi prenos zastarel? Obiščite <a href='//sl.libreoffice.org/prenosi'>našo stran za prenose</a> in izberite trenutno različico.<br/>V primeru tehničnih težav s samim prenosom pišite na naslov <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Upoštevajte, da na tem naslovu <strong>ne</strong> nudimo tehnične podpore.
+    TorrentLinkText: torrent
+    TorrentLinkTitle: Prenesite datoteko z BitTorrentom
   DonatePage:
+    BC_EMAIL_DESC: če želite potrditveno e-sporočilo za plačila s kreditno kartico
+    BC_EMAIL_LABEL: E-poštni naslov (neobvezno)
     BUTTON_CARD: Doniraj s kreditno kartico
     BUTTON_PAYPAL: Doniraj prek PayPala
+    Bank: Donacijo lahko nakažete na naš bančni račun.
+    BankDetails: "<strong>Lastnik</strong>: {owner}<br/><strong>Namen</strong>: Donation<br/><strong>Račun</strong>: {accountNumber}<br/><strong>Koda banke</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Naslov prejemnika</strong>: {tdfAddress}<br/><strong>Naslov banke</strong>: {bankAddress}"
+    BankHeader: Bančno nakazilo
+    BitcoinHeader: Bitcoin oz. Bitcoin Cash
     CHOICE_DEFAULT: Izberite eno od privzetih vrednosti
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Ali vnesite znesek in valuto po meri<br/>(le z zvezdico označene so na voljo tudi prek PayPal)
+    CardOnly: "(samo kartica)"
     ContinueLabel: Nadaljuj
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: EUR
+    DonateUSHeader: Donacije iz ZDA
+    Flattr: 'Lahko nas pohvalite: <a href=''{flattrlink}''>Flattr</a> '
+    FlattrHeader: Flattr
+    FooterText: 'Drugi načini doniranja: Bitcoin, Flattr, bančno nakazilo – kliknite spodnja polja.<br/>Imate vprašanja o svoji donaciji? <a href="mailto:info@documentfoundation.org">Pošljite nam e-poštno sporočilo</a>'
+    FreqMonthly: Mesečna donacija
+    FreqOneshot: Enkratna donacija
+    FreqQuarterly: Četrtletna donacija
+    FreqYearly: Letna donacija
     LeadText: LibreOffice je prosto programje in je na voljo brezplačno.<br/>Vaša donacija, ki je povsem neobvezna, je podpora naši skupnosti po celem svetu.<br/>Če vam je programski paket všeč, vas vabimo, da razmislite o donaciji.
+    OPTIONAL_EMAIL: E-poštni naslov (neobvezno)
+    OPTIONAL_EMAIL_DES: če želite potrditveno e-sporočilo za plačila s kreditno kartico
+    OtherAmount: Drug znesek
     ProceedConcardis: Za obdelavo vaše donacije <strong>{amount} {currency}</strong> boste zdaj preusmerjeni na spletno mesto ConCardis, kjer lahko zaključite plačilo.<br/>Če se stran ne odpre samodejno, kliknite spodnji gumb Nadaljuj.
     ProceedPayPal: Za obdelavo vaše donacije <strong>{amount} {currency}</strong> boste zdaj preusmerjeni na spletno mesto PayPal, kjer lahko zaključite plačilo.<br/>Če se stran ne odpre samodejno, kliknite spodnji gumb Nadaljuj.
+    ReverseLayoutTitle: Podprite LibreOffice
+    SLIDERLABEL: 'Znesek (s spodnjim drsnikom ga spremenite):'
+    Spi: LibreOffice je s SPI povezan projekt
+    SpiDetails: <a href='https://www.spi-inc.org/donations/'>Donacija iz ZDA</a> je možna, če omenite "LibreOffice" ob svoji donaciji. Upoštevajte, da je možno donacije prek SPI v ZDA odbiti od obdavčitve.
+    TaxHeader: Davčne olajšave
+    TaxHint: <strong>Donacije za The Document Foundation so več državah davčna olajšava oz. izločene iz obdavčitve.<br/>Pozanimajte se pri svojem krajevnem davčnem uradu.</strong><br/><strong>Za rezidente Nemčije:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Med prenosom razmislite o podpori projektu LibreOffice z donacijo.
   Download:
+    Archive: Starejše izdaje LibreOffice (morda niso več podprte!) so na voljo <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>v arhivu</a>.
     ChangeLanguageLinkText: iščete v drugem jeziku?
     ChangeLanguageLinkTitle: Izberite drug jezik
     Helppack: Vgrajena pomoč LibreOffice – <strong>{language}</strong>
@@ -45,7 +84,7 @@ sl:
     Langpack: Prenesite v <strong>{language}</strong> jezik preveden vmesnik LibreOffice
     LangpackButtonLabel: Preveden uporabniški vmesnik
     LangpackLinkTitle: Prenesi jezikovni paket
-    Mac64reqs: obvezna izdaja 10.8 ali novejša
+    Mac64reqs: obvezna izdaja 10.10 ali novejša
     MainButtonLabel: Prenesi različico {version}
     MainInstaller: Glavni namestitveni program
     MainLinkTitle: Prenesi LibreOffice {version} za {os}
@@ -61,7 +100,25 @@ sl:
     VersionListReleased: 'LibreOffice je na voljo v naslednjih različicah <strong>izdaj</strong>:'
     VersionListTesting: 'LibreOffice je na voljo v naslednjih različicah <strong>predizdaj</strong>:'
     Versions: Različice na voljo
-    Win64reqs: obvezna Vista ali novejši
+    Win64reqs: obvezna 7 ali novejši
+  DownloadRefresh:
+    BoxHeader: Prenesi LibreOffice
+    ChangeLanguageLinkText: iščete v drugem jeziku?
+    ChangeLanguageLinkTitle: Izberite drug jezik
+    ChooseOS: 'Izberite svoj operacijski sistem:'
+    DownloadLinkText: PRENESI
+    FreshText: Če ste tehnološki navdušenec, zgodnji preizkuševalec ali zahtevnejši uporabnik, je ta različica prav za vas!
+    HelppackButtonLabel: Pomoč za uporabo v nepovezanem načinu
+    HelppackLinkTitle: Prenesite vsebino vgrajene pomoči
+    InfoLinkTitle: Kontrolne vsote in dodatne informacije
+    InfoText: podrobnosti
+    LangpackLinkText: Preveden uporabniški vmesnik
+    LangpackLinkTitle: Prenesi jezikovni paket
+    RelnotesLinkText: Opombe ob izdaji LibreOffice {version}
+    StillText: Če želite nameščati LibreOffice v podjetju ali organizacijah za opravila, na katerih temelji poslovanje, izberite raje to različico.</span><span class="dl_description_text" style="font-size:18px;">Za poslovno uporabo močno priporočamo <a href="//sl.libreoffice.org/po-pomoc/profesionalna-podpora/">podporo certificiranih partnerjev</a>, ki ponujajo tudi različice LibreOffice z dolgoročno podporo.
+    SupplementaryDownloads: 'Dopolnilni prenosi:'
+    TorrentLinkText: torrent
+    TorrentLinkTitle: Prenesite z uporabo BitTorrenta
   Homepage:
     DownloadNow: Prenesi zdaj
   RSS:

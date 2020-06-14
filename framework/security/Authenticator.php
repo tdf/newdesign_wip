@@ -9,7 +9,7 @@
  * @package framework
  * @subpackage security
  */
-abstract class Authenticator extends Object {
+abstract class Authenticator extends SS_Object {
 
 	/**
 	 * This variable holds all authenticators that should be used
@@ -17,11 +17,11 @@ abstract class Authenticator extends Object {
 	 * @var array
 	 */
 	private static $authenticators = array('MemberAuthenticator');
-	
+
 	/**
 	 * Used to influence the order of authenticators on the login-screen
 	 * (default shows first).
-	 * 
+	 *
 	 * @var string
 	 */
 	private static $default_authenticator = 'MemberAuthenticator';
@@ -102,9 +102,12 @@ abstract class Authenticator extends Object {
 		if(is_subclass_of($authenticator, 'Authenticator') == false)
 			return false;
 
-		if(in_array($authenticator, self::$authenticators) == false) {
+		$authenticators = Config::inst()->get(__CLASS__, 'authenticators');
+		if(in_array($authenticator, $authenticators) == false) {
 			if(call_user_func(array($authenticator, 'on_register')) === true) {
-				array_push(self::$authenticators, $authenticator);
+				Config::inst()->update(__CLASS__, 'authenticators', array(
+					$authenticator,
+				));
 			} else {
 				return false;
 			}
@@ -112,11 +115,11 @@ abstract class Authenticator extends Object {
 
 		return true;
 	}
-	
+
 	public static function unregister($authenticator) {
 		self::unregister_authenticator($authenticator);
 	}
-	
+
 	/**
 	 * Remove a previously registered authenticator
 	 *
@@ -125,8 +128,11 @@ abstract class Authenticator extends Object {
 	 */
 	public static function unregister_authenticator($authenticator) {
 		if(call_user_func(array($authenticator, 'on_unregister')) === true) {
-			if(in_array($authenticator, self::$authenticators)) {
-				unset(self::$authenticators[array_search($authenticator, self::$authenticators)]);
+			$authenticators = Config::inst()->get(__CLASS__, 'authenticators');
+			if(($key = array_search($authenticator, $authenticators)) !== false) {
+				unset($authenticators[$key]);
+				Config::inst()->remove(__CLASS__, 'authenticators');
+				Config::inst()->update(__CLASS__, 'authenticators', $authenticators);
 			}
 		}
 	}
@@ -140,7 +146,7 @@ abstract class Authenticator extends Object {
 	 *              otherwise.
 	 */
 	public static function is_registered($authenticator) {
-		return in_array($authenticator, self::$authenticators);
+		return in_array($authenticator, Config::inst()->get(__CLASS__, 'authenticators'));
 	}
 
 
@@ -151,15 +157,18 @@ abstract class Authenticator extends Object {
 	 *               authenticators.
 	 */
 	public static function get_authenticators() {
-		// put default authenticator first (mainly for tab-order on loginform)
-		if($key = array_search(self::$default_authenticator,self::$authenticators)) {
-			unset(self::$authenticators[$key]);
-			array_unshift(self::$authenticators, self::$default_authenticator);
+		$authenticators = Config::inst()->get(__CLASS__, 'authenticators');
+		$defaultAuthenticator = Config::inst()->get(__CLASS__, 'default_authenticator');
+
+		// put default authenticator first if it isn't already
+		if (reset($authenticators) !== $defaultAuthenticator && ($key = array_search($defaultAuthenticator, $authenticators)) !== false) {
+			unset($authenticators[$key]);
+			array_unshift($authenticators, $defaultAuthenticator);
 		}
 
-		return self::$authenticators;
+		return $authenticators;
 	}
-	
+
 	/**
 	 * Set a default authenticator (shows first in tabs)
 	 *
@@ -167,15 +176,17 @@ abstract class Authenticator extends Object {
 	 */
 	public static function set_default_authenticator($authenticator) {
 		self::$default_authenticator = $authenticator;
-		
-		
+
+
 	}
-	
+
 	/**
 	 * @return string
 	 */
 	public static function get_default_authenticator() {
-		return self::$default_authenticator;
+		$authenticators = static::get_authenticators();
+		// the first authenticator is the default one
+		return reset($authenticators);
 	}
 
 
@@ -193,7 +204,7 @@ abstract class Authenticator extends Object {
 	protected static function on_register() {
 		return true;
 	}
-	
+
 	/**
 	 * Callback function that is called when an authenticator is removed.
 	 *

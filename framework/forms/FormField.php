@@ -77,6 +77,13 @@ class FormField extends RequestHandler {
 	protected $extraClasses;
 
 	/**
+	 * @config
+	 * @var array $default_classes The default classes to apply to the FormField
+	 */
+	private static $default_classes = array();
+
+
+	/**
 	 * @var bool
 	 */
 	public $dontEscape;
@@ -158,6 +165,14 @@ class FormField extends RequestHandler {
 	protected $attributes = array();
 
 	/**
+	 * @config
+	 * @var array
+	 */
+	private static $casting = array(
+		'Value' => 'Text',
+	);
+
+	/**
 	 * Takes a field name and converts camelcase to spaced words. Also resolves combined field
 	 * names with dot syntax to spaced words.
 	 *
@@ -234,17 +249,34 @@ class FormField extends RequestHandler {
 		}
 
 		parent::__construct();
+
+		$this->setupDefaultClasses();
 	}
 
 	/**
-	 * Return a Link to this field.
+	 * Set up the default classes for the form. This is done on construct so that the default classes can be removed
+	 * after instantiation
+	 */
+	protected function setupDefaultClasses() {
+		$defaultClasses = self::config()->get('default_classes');
+		if ($defaultClasses) {
+			foreach ($defaultClasses as $class) {
+				$this->addExtraClass($class);
+			}
+		}
+	}
+
+	/**
+	 * Return a link to this field.
 	 *
-	 * @param null|string $action
+	 * @param string $action
 	 *
 	 * @return string
 	 */
 	public function Link($action = null) {
-		return Controller::join_links($this->form->FormAction(), 'field/' . $this->name, $action);
+		$link = Controller::join_links($this->form->FormAction(), 'field/' . $this->name, $action);
+		$this->extend('updateLink', $link, $action);
+        return $link;
 	}
 
 	/**
@@ -252,17 +284,37 @@ class FormField extends RequestHandler {
 	 *
 	 * The ID is generated as FormName_FieldName. All Field functions should ensure that this ID is
 	 * included in the field.
+	 *
+	 * @return string
 	 */
 	public function ID() {
-		$name = $this->name;
-		$name = preg_replace('/[^A-Za-z0-9_-]+/', '-', $name);
-		$name = preg_replace('/(^-)|(-$)/', '', $name);
+		return $this->getTemplateHelper()->generateFieldID($this);
+	}
 
+	/**
+	 * Returns the HTML ID for the form field holder element.
+	 *
+	 * @return string
+	 */
+	public function HolderID() {
+		return $this->getTemplateHelper()->generateFieldHolderID($this);
+	}
+
+	/**
+	 * Returns the current {@link FormTemplateHelper} on either the parent
+	 * Form or the global helper set through the {@link Injector} layout.
+	 *
+	 * To customize a single {@link FormField}, use {@link setTemplate} and
+	 * provide a custom template name.
+	 *
+	 * @return FormTemplateHelper
+	 */
+	public function getTemplateHelper() {
 		if($this->form) {
-			return $this->form->FormName() . '_' . $name;
+			return $this->form->getTemplateHelper();
 		}
 
-		return $name;
+		return Injector::inst()->get('FormTemplateHelper');
 	}
 
 	/**
@@ -308,9 +360,11 @@ class FormField extends RequestHandler {
 	}
 
 	/**
-	 * Method to save this form field into the given data object.
+	 * Method to save this form field into the given {@link DataObject}.
 	 *
-	 * @param DataObjectInterface $record
+	 * By default, makes use of $this->dataValue()
+	 *
+	 * @param DataObjectInterface $record DataObject to save data into
 	 */
 	public function saveInto(DataObjectInterface $record) {
 		if($this->name) {
@@ -328,7 +382,9 @@ class FormField extends RequestHandler {
 	}
 
 	/**
-	 * Returns the field label.
+	 * Returns the field label - used by templates.
+	 *
+	 * @return string
 	 */
 	public function Title() {
 		return $this->title;
@@ -346,7 +402,10 @@ class FormField extends RequestHandler {
 	}
 
 	/**
-	 * @return string
+	 * Gets the contextual label than can be used for additional field description.
+	 * Can be shown to the right or under the field in question.
+	 *
+	 * @return string Contextual label text.
 	 */
 	public function RightTitle() {
 		return $this->rightTitle;
@@ -414,6 +473,8 @@ class FormField extends RequestHandler {
 			$classes[] .= 'holder-' . $this->MessageType();
 		}
 
+		$this->extend('updateExtraClass', $classes);
+
 		return implode(' ', $classes);
 	}
 
@@ -429,7 +490,7 @@ class FormField extends RequestHandler {
 	public function addExtraClass($class) {
 		$classes = preg_split('/\s+/', $class);
 
-		foreach($classes as $class) {
+		foreach ($classes as $class) {
 			$this->extraClasses[$class] = $class;
 		}
 
@@ -446,7 +507,7 @@ class FormField extends RequestHandler {
 	public function removeExtraClass($class) {
 		$classes = preg_split('/\s+/', $class);
 
-		foreach($classes as $class) {
+		foreach ($classes as $class) {
 			unset($this->extraClasses[$class]);
 		}
 
@@ -454,7 +515,7 @@ class FormField extends RequestHandler {
 	}
 
 	/**
-	 * Set an HTML attribute on the field element, mostly an <input> tag.
+	 * Set an HTML attribute on the field element, mostly an input tag.
 	 *
 	 * Some attributes are best set through more specialized methods, to avoid interfering with
 	 * built-in behaviour:
@@ -496,6 +557,10 @@ class FormField extends RequestHandler {
 	}
 
 	/**
+	 * Allows customization through an 'updateAttributes' hook on the base class.
+	 * Existing attributes are passed in as the first argument and can be manipulated,
+	 * but any attributes added through a subclass implementation won't be included.
+	 *
 	 * @return array
 	 */
 	public function getAttributes() {
@@ -514,7 +579,11 @@ class FormField extends RequestHandler {
 			$attributes['aria-required'] = 'true';
 		}
 
-		return array_merge($attributes, $this->attributes);
+		$attributes = array_merge($attributes, $this->attributes);
+
+		$this->extend('updateAttributes', $attributes);
+
+		return $attributes;
 	}
 
 	/**
@@ -550,6 +619,7 @@ class FormField extends RequestHandler {
 			);
 		}
 
+		// Create markup
 		$parts = array();
 
 		foreach($attributes as $name => $value) {
@@ -585,7 +655,6 @@ class FormField extends RequestHandler {
 	 * Set the field value.
 	 *
 	 * @param mixed $value
-	 * @param null|array|DataObject $data {@see Form::loadDataFrom}
 	 *
 	 * @return $this
 	 */
@@ -781,7 +850,16 @@ class FormField extends RequestHandler {
 
 		$this->extend('onBeforeRender', $this);
 
-		return $context->renderWith($this->getTemplates());
+		$result = $context->renderWith($this->getTemplates());
+
+		// Trim whitespace from the result, so that trailing newlines are supressed. Works for strings and HTMLText values
+		if(is_string($result)) {
+			$result = trim($result);
+		} else if($result instanceof DBField) {
+			$result->setValue(trim($result->getValue()));
+		}
+
+		return $result;
 	}
 
 	/**
@@ -964,11 +1042,17 @@ class FormField extends RequestHandler {
 	 * @return FormField
 	 */
 	public function performReadonlyTransformation() {
-		$copy = $this->castedCopy('ReadonlyField');
+		$readonlyClassName = $this->class . '_Readonly';
 
-		$copy->setReadonly(true);
+		if(ClassInfo::exists($readonlyClassName)) {
+			$clone = $this->castedCopy($readonlyClassName);
+		} else {
+			$clone = $this->castedCopy('ReadonlyField');
+		}
 
-		return $copy;
+		$clone->setReadonly(true);
+
+		return $clone;
 	}
 
 	/**
@@ -986,8 +1070,9 @@ class FormField extends RequestHandler {
 			$clone = $this->castedCopy($disabledClassName);
 		} else {
 			$clone = clone $this;
-			$clone->setDisabled(true);
 		}
+
+		$clone->setDisabled(true);
 
 		return $clone;
 	}
@@ -1019,7 +1104,7 @@ class FormField extends RequestHandler {
 	 *
 	 * The field type is the class name with the word Field dropped off the end, all lowercase.
 	 *
-	 * It's handy for assigning HTML classes. Doesn't signify the <input type> attribute.
+	 * It's handy for assigning HTML classes. Doesn't signify the input type attribute.
 	 *
 	 * @see {link getAttributes()}.
 	 *
@@ -1030,7 +1115,7 @@ class FormField extends RequestHandler {
 	}
 
 	/**
-	 * @deprecated 3.2 Use FormField::create_tag()
+	 * @deprecated 4.0 Use FormField::create_tag()
 	 *
 	 * @param string $tag
 	 * @param array $attributes
@@ -1039,7 +1124,7 @@ class FormField extends RequestHandler {
 	 * @return string
 	 */
 	public function createTag($tag, $attributes, $content = null) {
-		Deprecation::notice('3.2', 'Use FormField::create_tag()');
+		Deprecation::notice('4.0', 'Use FormField::create_tag()');
 
 		return self::create_tag($tag, $attributes, $content);
 	}
@@ -1061,7 +1146,7 @@ class FormField extends RequestHandler {
 	/**
 	 * Describe this field, provide help text for it.
 	 *
-	 * By default, renders as a <span class="description"> underneath the form field.
+	 * By default, renders as a span class="description" underneath the form field.
 	 *
 	 * @param string $description
 	 *
@@ -1194,4 +1279,14 @@ class FormField extends RequestHandler {
 
 		return $field;
 	}
+
+	/**
+	 * Determine if the value of this formfield accepts front-end submitted values and is saveable.
+	 *
+	 * @return bool
+	 */
+	public function canSubmitValue() {
+		return $this->hasData() && !$this->isReadonly() && !$this->isDisabled();
+	}
+
 }

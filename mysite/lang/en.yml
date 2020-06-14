@@ -1,11 +1,13 @@
 en:
   BitPay:
-    ButtonAltText: 'BitPay, the easy way to pay with bitcoins.'
+    ButtonAltText: 'BitPay, the easy way to pay with Bitcoin and Bitcoin cash.'
     CheckoutLocale: en_US
     Email: 'Email address (optional)'
-    Header: 'You can donate Via Bitcoins'
+    Header: 'Donate via BitPay (Bitcoin and Bitcoin Cash)'
     LabelEmail: 'Email:'
-    RefundDisclaimer: 'Due to their nature, donations via Bitcoins are usually anonymous, so any kind of refunds or donation confirmation is only possible on the sum we received by our payment provider, and only given you mention your e-mail address. If you don''t consent to the aforementioned conditions, we kindly ask you to consider one of the other donation options outlined on this page.'
+    RefundDisclaimer: 'Due to their nature, donations via Bitcoin and Bitcoin Cash are anonymous, so any kind of refunds or donation confirmation is only possible on the sum we received by our payment provider, and only given you mention your e-mail address.'
+    CoinGate: 'Donate via CoinGate (Bitcoin, Litecoin, Ethereum, Dash and others)'
+    CoinGateDesc: "CoinGate is a payment gateway for blockchain payments, supporting over 40 digital currencies. Simply enter an amount, choose a currency, and your donation will be processed."
   Concardis:
     CancelHeader: 'You have cancelled the process'
     CancelMessage: 'Unfortunately, you did cancel the payment. <b>You have not been charged.</b> Please try again, and in case of problems or questions, feel free to contact us at {infoemail} any time.'
@@ -30,11 +32,21 @@ en:
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: 'USD'
     LeadText: 'LibreOffice is Free Software and is made available free of charge. <br/>Your donation, which is purely optional, supports our worldwide community.<br/>If you like the software, please consider a donation.'
+    PrivacyDisclaimer: During processing of your donation, your payment data will be transferred to a financial service provider. For further information, see our <a href="{privacypolicyurl}">privacy policy</a>.
     ProceedConcardis: 'To process your donation of <strong>{amount} {currency}</strong>, you are now forwarded to ConCardis'' website to complete the payment.<br/>If you are not forwarded automatically, please click the button named Continue below.'
     ProceedPayPal: 'To process your donation of <strong>{amount} {currency}</strong>, you are now forwarded to PayPal''s website to complete the payment.<br/>If you are not forwarded automatically, please click the button named Continue below.'
+    Bank: "You can transfer a donation to our bank account"
+    BankDetails: "<strong>Owner</strong>: {owner}<br/><strong>Purpose</strong>: Donation<br/><strong>Account</strong>: {accountNumber}<br/><strong>Bank Code</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Address of recipient</strong>: {tdfAddress}<br/><strong>Address of bank</strong>: {bankAddress}"
+    Flattr: "You can <a href='{flattrlink}'>Flattr</a> us"
+    Spi: "LibreOffice is an SPI-associated project"
+    SpiDetails: You can also <a href="https://www.spi-inc.org/donations/">donate from the US</a> by mentioning "LibreOffice" with your donation. Note that donations through SPI can be deducted from US taxes.
+    TaxHeader: Tax deductions
+    TaxHint: <strong>Donations to The Document Foundation are tax-deductible in several countries.<br/>Please refer to your local tax office for details.</strong><br/><strong>For residents of Germany:</strong> <em>"{germanLegalText}"</em>
   Download:
     ChangeLanguageLinkText: 'need another language?'
     ChangeLanguageLinkTitle: 'Pick another language'
+    ClassificationStable: 'stable'
+    ClassificationTesting: 'testing'
     Helppack: 'LibreOffice Built in help in <strong>{language}</strong>'
     HelppackButtonLabel: 'Help for offline use'
     HelppackFallback: 'LibreOffice Built in help <strong>English fallback</strong>'
@@ -44,7 +56,7 @@ en:
     Langpack: 'Get LibreOffice interface translated in <strong>{language}</strong>'
     LangpackButtonLabel: 'Translated User Interface'
     LangpackLinkTitle: 'Download the Languagepack'
-    Mac64reqs: '10.8 or newer required'
+    Mac64reqs: '10.10 or newer required'
     MainButtonLabel: 'Download Version {version}'
     MainInstaller: 'Main Installer'
     MainLinkTitle: 'Download LibreOffice {version} for {os}'
@@ -60,7 +72,7 @@ en:
     VersionListReleased: 'LibreOffice is available in the following <strong>released</strong> versions:'
     VersionListTesting: 'LibreOffice is available in the following <strong>prerelease</strong> versions:'
     Versions: 'Available Versions'
-    Win64reqs: 'Vista or newer required'
+    Win64reqs: 'Windows 7 or newer required'
   Homepage:
     DownloadNow: 'Download Now'
   RSS:

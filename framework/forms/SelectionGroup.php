@@ -1,8 +1,8 @@
 <?php
 /**
- * Represents a number of fields which are selectable by a radio 
- * button that appears at the beginning of each item.  Using CSS, you can 
- * configure the field to only display its contents if the corresponding radio 
+ * Represents a number of fields which are selectable by a radio
+ * button that appears at the beginning of each item.  Using CSS, you can
+ * configure the field to only display its contents if the corresponding radio
  * button is selected. Each item is defined through {@link SelectionGroup_Item}.
  *
  * @example <code>
@@ -25,17 +25,23 @@
  * @subpackage fields-structural
  */
 class SelectionGroup extends CompositeField {
-	
+
 	/**
 	 * Create a new selection group.
-	 * 
-	 * @param name The field name of the selection group.
-	 * @param items The list of {@link SelectionGroup_Item}
+	 *
+	 * @param string $name The field name of the selection group.
+	 * @param array $items The list of {@link SelectionGroup_Item}
+	 * @param mixed $value
 	 */
-	public function __construct($name, $items) {
+	public function __construct($name, $items, $value = null) {
 		$this->name = $name;
-		
+
+		if($value !== null) {
+			$this->setValue($value);
+		}
+
 		$selectionItems = array();
+
 		foreach($items as $key => $item) {
 			if($item instanceof SelectionGroup_Item) {
 				$selectionItems[] = $item;
@@ -45,25 +51,25 @@ class SelectionGroup extends CompositeField {
 					list($key,$title) = explode('//', $key,2);
 				} else {
 					$title = null;
-				}	
+				}
 				$selectionItems[] = new SelectionGroup_Item($key, $item, $title);
 			}
 		}
 
 		parent::__construct($selectionItems);
-		
+
 		Requirements::css(FRAMEWORK_DIR . '/css/SelectionGroup.css');
 	}
 
 	public function FieldSet() {
 		return $this->FieldList();
 	}
-	
+
 	public function FieldList() {
 		$items = parent::FieldList()->toArray();
 		$count = 0;
 		$newItems = array();
-		
+
 		foreach($items as $item) {
 			if($this->value == $item->getValue()) {
 				$firstSelected = " class=\"selected\"";
@@ -72,22 +78,22 @@ class SelectionGroup extends CompositeField {
 				$firstSelected = "";
 				$checked = false;
 			}
-			
+
 			$itemID = $this->ID() . '_' . (++$count);
 			$extra = array(
 				"RadioButton" => FormField::create_tag(
-					'input', 
+					'input',
 					array(
 						'class' => 'selector',
 						'type' => 'radio',
 						'id' => $itemID,
 						'name' => $this->name,
 						'value' => $item->getValue(),
-						'checked' => $checked 
+						'checked' => $checked
 					)
 				),
 				"RadioLabel" => FormField::create_tag(
-					'label', 
+					'label',
 					array('for' => $itemID),
 					$item->getTitle()
 				),
@@ -95,14 +101,14 @@ class SelectionGroup extends CompositeField {
 			);
 			$newItems[] = $item->customise($extra);
 		}
-		
+
 		return new ArrayList($newItems);
 	}
-	
+
 	public function hasData() {
 		return true;
 	}
-	
+
 	public function FieldHolder($properties = array()) {
 		Requirements::javascript(THIRDPARTY_DIR .'/jquery/jquery.js');
 		Requirements::javascript(FRAMEWORK_DIR   . '/javascript/SelectionGroup.js');
@@ -117,19 +123,19 @@ class SelectionGroup extends CompositeField {
 class SelectionGroup_Item extends CompositeField {
 
 	/**
-	 * @var String
+	 * @var string
 	 */
 	protected $value;
 
 	/**
-	 * @var String
+	 * @var string
 	 */
 	protected $title;
 
 	/**
-	 * @param String $value Form field identifier
-	 * @param FormField $field Contents of the option
-	 * @param String $title Title to show for the radio button option
+	 * @param string $value Form field identifier
+	 * @param FormField[] $fields Contents of the option
+	 * @param string $title Title to show for the radio button option
 	 */
 	function __construct($value, $fields = null, $title = null) {
 		$this->value = $value;
@@ -139,19 +145,33 @@ class SelectionGroup_Item extends CompositeField {
 		parent::__construct($fields);
 	}
 
+	/**
+	 * @return string
+	 */
 	function getTitle() {
 		return $this->title;
 	}
 
+	/**
+	 * @param string $title
+	 * @return $this
+	 */
 	function setTitle($title) {
 		$this->title = $title;
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
 	function getValue() {
 		return $this->value;
 	}
 
+	/**
+	 * @param mixed $Value
+	 * @return $this
+	 */
 	function setValue($Value) {
 		$this->value = $Value;
 		return $this;

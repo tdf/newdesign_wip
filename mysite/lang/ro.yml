@@ -1,15 +1,12 @@
 ---
 ro:
   BitPay:
-    ButtonAltText: BitPay, o simplă modalitate de a dona prin bitcoin.
     CheckoutLocale: en_US
     Email: Adresa de e-mail (opțional)
-    Header: Puteți dona prin bitcoin
     LabelEmail: 'E-mail:'
-    RefundDisclaimer: Din natura lor, donațiile bitcoin sunt în principiu anonime, urmând ca orice rambursare este posibil numai dacă specificați datele personala la donație. Dacă nu sunteți de acord cu condițiile de mai sus, vă recomandă o altă modalitate de donație pusă la dispoziție pe această pagină.
   Concardis:
     CancelHeader: Ați anulat procesul
-    CancelMessage: Din nefericire nu puteți anula procesul de plată. <b>Nu au fost retrași banii.</b> Vă rugăm, încercați încă o dată, și în cazul unei probleme sau întrebări, nu ezitați să ne contactați {infoemail}.
+    CancelMessage: Din nefericire nu puteți anula procesul de plată. <b>Nu au fost retrași banii.</b> Vă rugăm, încercați încă o dată, și în cazul unei probleme sau întrebări, nu ezitați să ne contactați pe {infoemail}.
     ProblemHeader: Este o problemă…
     ProblemMessage: Din nefericire plata nu sa finalizat. Probabil sunt probleme cu sistemul de plată sau cu cardul de credit. <b>Suma nu a fost retrasă.</b> Vă rugăm, încercați încă o dată, și în cazul unei probleme sau întrebări, nu ezitați să ne contactați {infoemail}.
     Processing: Procesăm plata
@@ -18,7 +15,13 @@ ro:
     ThanksButHeader: Mulțumim mult pentru donație!
     ThanksButMessage1: The Document Foundation vă mulțumește pentru orice donație. Am primit donația! Bucurați-vă de LibreOffice, și mulțumim mult pentru suport!
     ThanksButMessage2: Donația nu a fost confirmată. Verificați în înregistrările proprii dacă s-a efectuat donația.
+  DonateDownload:
+    InfoLinkText: Informații
+    Langpack: Interfața cu utilizatorul tradusă
+    TorrentLinkText: Torent
   DonatePage:
+    BC_EMAIL_DESC: dacă doriți e-mail de confirmare pentru plate cu cardul
+    BC_EMAIL_LABEL: E-mail opțional
     BUTTON_CARD: Donați prin card de credit
     BUTTON_PAYPAL: Donați prin PayPal
     CHOICE_DEFAULT: Selectați una din valorile implicite
@@ -31,6 +34,8 @@ ro:
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
     LeadText: LibreOffice este un program liber și este disponibil gratuit.<br/>Donația dumneavoastră, care este complet opțională, este pentru a sponsoriza comunitatea globală.<br/>Dacă vă place acest program, puteți face o donație.
+    OPTIONAL_EMAIL: E-mail opțional
+    OPTIONAL_EMAIL_DES: dacă doriți e-mail de confirmare pentru plate cu cardul
     ProceedConcardis: Pentru a procesa donația de <strong>{amount} {currency}</strong>, veți fi redirectați pe pagina ConCardis', pentru a completa detaliile plății.<br/>Dacă nu veți fi redirecționat automat, dați clic pe Continuare.
     ProceedPayPal: Pentru a procesa donația de <strong>{amount} {currency}</strong>, veți fi redirectați pe pagina ConCardis', pentru a completa detaliile plății.<br/>Dacă nu veți fi redirecționat automat, dați clic pe Continuare.
   Download:
@@ -43,11 +48,11 @@ ro:
     InfoLinkTitle: Checksum-uri și informații adiționale
     InfoText: Informații
     Langpack: Descărcați interfața LibreOffice în <strong>{language}</strong>
-    LangpackButtonLabel: Interfața cu utilizatorul tradus
+    LangpackButtonLabel: Interfața cu utilizatorul tradusă
     LangpackLinkTitle: Descărcați pachetul lingvistic
-    Mac64reqs: Este necesară versiunea 10.8 sau mai recentă
+    Mac64reqs: Este necesară versiunea 10.10 sau mai recentă
     MainButtonLabel: Descărcați versiunea {version}
-    MainInstaller: Installer principal
+    MainInstaller: Instalator principal
     MainLinkTitle: Descărcați LibreOffice {version} pentru {os}
     OS: Sistem de operare
     OSList: 'LibreOffice {version} este disponibil pentru următoarele arhitecturi/sisteme de operare:'
@@ -57,11 +62,22 @@ ro:
     SDKDownload: Descărcare SDK
     SourceDownload: Descărcare cod sursă
     TorrentLinkText: Torent
-    TorrentLinkTitle: Descărcare cu BitTorent
+    TorrentLinkTitle: Descărcare cu BitTorrent
     VersionListReleased: 'LibreOffice este disponibil în următoarele versiuni<strong>lansate</strong>:'
     VersionListTesting: 'LibreOffice este disponibil în următoarele versiuni <strong>prerelease</strong>:'
     Versions: Versiuni disponibile
-    Win64reqs: este necesar Vista sau un sistem de operare mai recent
+    Win64reqs: este necesar 7 sau un sistem de operare mai recent
+  DownloadRefresh:
+    ChangeLanguageLinkText: doriți o altă limbă?
+    ChangeLanguageLinkTitle: Selectați o altă limbă
+    HelppackButtonLabel: Ajutor pentru utilizare offline
+    HelppackLinkTitle: Descărcați ajutorul pentru utilizare offline
+    InfoLinkTitle: Checksum-uri și informații adiționale
+    InfoText: Informații
+    LangpackLinkText: Interfața cu utilizatorul tradusă
+    LangpackLinkTitle: Descărcați pachetul lingvistic
+    TorrentLinkText: Torent
+    TorrentLinkTitle: Descărcare cu BitTorrent
   Homepage:
     DownloadNow: Descărcați acum
   RSS:
@@ -73,4 +89,4 @@ ro:
     ReleaseNotesLinkText: Note de lansare
   Social:
     FollowUs: Urmăriți-ne
-    LatestTweets: Ultimele îmbunătățiri
+    LatestTweets: Ultimele tweet-uri

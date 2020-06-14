@@ -1,17 +1,17 @@
 ---
 ar:
   BitPay:
-    ButtonAltText: بِت‌باي BiyPay، الطريقة الأسهل للدفع بعملات البِت bitcoin.
     CheckoutLocale: ar
     Email: البريد الإلكتروني (اختياريّ)
-    Header: يمكنك التبرّع بعملات البِت Bitcoin
     LabelEmail: 'البريد الإلكتروني:'
-    RefundDisclaimer: نظرا لطبيعتها ، فأن التبرعات عبر Bitcoins عادة ما تكون مجهولة المصدر، لذلك أي نوع من المبالغ المعادة أو تأكيدات التبرع ممكنة فقط عن طريق المبلغ الذي تلقيناه من قبل مزوّد الدفع لدينا، و متاح لك فقط أن تذكر عنوان بريدك الإلكتروني. إذا كنت لا توافق على الشروط المذكورة أعلاه، فإننا نرجو منك أن تلقي نظرة على خيارات التبرع الأخرى الواردة في هذه الصفحة.
   Concardis:
     CancelHeader: ألغيتَ العملية
     ProblemHeader: حدثت مشكلة…
     ThankYouHeader: شكرًا جزيلًا لك لتبرّعك!
     ThanksButHeader: شكرًا جزيلًا لك لتبرّعك!
+  DonateDownload:
+    Langpack: واجهة المستخدِم المُترجمَة
+    TorrentLinkText: تورنت
   DonatePage:
     BUTTON_CARD: تبرّع عبر البطاقة الائتمانية
     BUTTON_PAYPAL: تبرّع عبر بي‌بال PayPal
@@ -20,6 +20,7 @@ ar:
     ChangeLanguageLinkText: أتحتاج لغة أخرى؟
     ChangeLanguageLinkTitle: انتقِ لغة أخرى
     Helppack: مساعدة ليبر أوفيس المضمّنة باللغة <strong>{language}</strong>
+    HelppackButtonLabel: المساعدة لاستخدامها بلا إنترنت
     Langpack: احصل على واجهة ليبر أُفِس مترجمة إلى <strong>{language}</strong>
     LangpackButtonLabel: واجهة المستخدِم المُترجمَة
     LangpackLinkTitle: نزّل حزمة اللغة
@@ -33,6 +34,14 @@ ar:
     TorrentLinkText: تورنت
     TorrentLinkTitle: نزّل باستخدام بِت‌تورنت
     Versions: الإصدارات المتوفّرة
+  DownloadRefresh:
+    ChangeLanguageLinkText: أتحتاج لغة أخرى؟
+    ChangeLanguageLinkTitle: انتقِ لغة أخرى
+    HelppackButtonLabel: المساعدة لاستخدامها بلا إنترنت
+    LangpackLinkText: واجهة المستخدِم المُترجمَة
+    LangpackLinkTitle: نزّل حزمة اللغة
+    TorrentLinkText: تورنت
+    TorrentLinkTitle: نزّل باستخدام بِت‌تورنت
   Homepage:
     DownloadNow: نزّل الآن
   RSS:

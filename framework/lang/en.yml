@@ -1,4 +1,10 @@
 en:
+  AddToCampaign:
+    ErrorCampaignPermissionDenied: 'It seems you don''t have the necessary permissions to add {ObjectTitle} to {CampaignTitle}'
+    ErrorGeneral: 'We apologise, but there was an error'
+    ErrorItemPermissionDenied: 'It seems you don''t have the necessary permissions to add {ObjectTitle} to a campaign'
+    ErrorNotFound: 'That {Type} couldn''t be found'
+    Success: 'Successfully added {ObjectTitle} to {CampaignTitle}'
   AssetAdmin:
     ALLOWEDEXTS: 'Allowed file upload extensions'
     HIDEALLOWEDEXTS: 'Hide allowed extensions'
@@ -12,6 +18,7 @@ en:
     HEIGHT: Height
     LASTEDIT: 'Last changed'
     OWNER: Owner
+    PATH: Path
     SIZE: 'File size'
     TITLE: Title
     TYPE: 'File type'
@@ -60,6 +67,7 @@ en:
     UNORDEREDEXAMPLE1: 'unordered item 1'
   BackLink_Button_ss:
     Back: Back
+    NavigateUp: 'Navigate up a folder'
   BasicAuth:
     ENTERINFO: 'Please enter a username and password.'
     ERRORNOTADMIN: 'That user is not an administrator.'
@@ -68,6 +76,8 @@ en:
     ANY: Any
     NOANSWER: 'No'
     YESANSWER: 'Yes'
+  CAMPAIGNS:
+    ADDTOCAMPAIGN: 'Add to Campaign'
   CMSLoadingScreen_ss:
     LOADING: Loading...
     REQUIREJS: 'The CMS requires that you have JavaScript enabled.'
@@ -94,12 +104,36 @@ en:
     SUCCESSCONTENT: '<p>Login success. If you are not automatically redirected <a target="_top" href="{link}">click here</a></p>'
     TimedOutTitleAnonymous: 'Your session has timed out.'
     TimedOutTitleMember: 'Hey {name}!<br />Your session has timed out.'
+  CampaignAdmin:
+    ACCESS_HELP: 'Allow viewing of the campaign publishing section.'
+    MENUTITLE: Campaigns
+  Campaigns:
+    AddToCampaign: 'Add To Campaign'
+    AddToCampaignFormFieldLabel: 'Select a Campaign'
   ChangePasswordEmail_ss:
+    CHANGEPASSWORDFOREMAIL: 'The password for account with email address {email} has been changed. If you didn\''t change your password please change your password using the link below'
     CHANGEPASSWORDTEXT1: 'You changed your password for'
     CHANGEPASSWORDTEXT2: 'You can now use the following credentials to log in:'
+    CHANGEPASSWORDTEXT3: 'Change password'
     EMAIL: Email
     HELLO: Hi
     PASSWORD: Password
+  ChangeSet:
+    DESCRIPTION_AND: '{first} and {second}'
+    DESCRIPTION_ITEM: item
+    DESCRIPTION_ITEMS: items
+    DESCRIPTION_LIST_FIRST: '{item}'
+    DESCRIPTION_LIST_LAST: '{list}, and {item}'
+    DESCRIPTION_LIST_MID: '{list}, {item}'
+    DESCRIPTION_OTHER_ITEM: 'other item'
+    DESCRIPTION_OTHER_ITEMS: 'other items'
+    NAME: Name
+    PLURALNAME: Campaigns
+    SINGULARNAME: Campaign
+    STATE: State
+  ChangeSetItem:
+    PLURALNAME: 'Change Set Items'
+    SINGULARNAME: 'Change Set Item'
   CheckboxField:
     NOANSWER: 'No'
     YESANSWER: 'Yes'
@@ -110,6 +144,9 @@ en:
   ConfirmedPasswordField:
     ATLEAST: 'Passwords must be at least {min} characters long.'
     BETWEEN: 'Passwords must be {min} to {max} characters long.'
+    CURRENT_PASSWORD_ERROR: 'The current password you have entered is not correct.'
+    CURRENT_PASSWORD_MISSING: 'You must enter your current password.'
+    LOGGED_IN_ERROR: 'You must be logged in to change your password.'
     MAXIMUM: 'Passwords must be at most {max} characters long.'
     SHOWONCLICKTITLE: 'Change Password'
   ContentController:
@@ -154,6 +191,7 @@ en:
   DropdownField:
     CHOOSE: (Choose)
     CHOOSESEARCH: '(Choose or Search)'
+    CHOOSE_MODEL: '(Choose {name})'
     SOURCE_VALIDATION: 'Please select a value within the list provided. {value} is not a valid option'
   EmailField:
     VALIDATION: 'Please enter an email address'
@@ -163,6 +201,7 @@ en:
     AviType: 'AVI video file'
     Content: Content
     CssType: 'CSS file'
+    DRAFT: Draft
     DmgType: 'Apple disk image'
     DocType: 'Word document'
     Filename: Filename
@@ -172,20 +211,22 @@ en:
     HtmlType: 'HTML file'
     INVALIDEXTENSION: 'Extension is not allowed (valid: {extensions})'
     INVALIDEXTENSIONSHORT: 'Extension is not allowed'
+    INVALIDEXTENSION_SHORT: 'Extension is not allowed'
     IcoType: 'Icon image'
     JpgType: 'JPEG image - good for photos'
     JsType: 'Javascript file'
+    MODIFIED: Modified
     Mp3Type: 'MP3 audio file'
     MpgType: 'MPEG video file'
-    NOFILESIZE: 'Filesize is zero bytes.'
+    NOFILESIZE: 'File size is zero bytes.'
     NOVALIDUPLOAD: 'File is not a valid upload'
     Name: Name
     PLURALNAME: Files
     PdfType: 'Adobe Acrobat PDF file'
     PngType: 'PNG image - good general-purpose format'
     SINGULARNAME: File
-    TOOLARGE: 'Filesize is too large, maximum {size} allowed'
-    TOOLARGESHORT: 'Filesize exceeds {size}'
+    TOOLARGE: 'File size is too large, maximum {size} allowed'
+    TOOLARGESHORT: 'File size exceeds {size}'
     TiffType: 'Tagged image format'
     Title: Title
     WavType: 'WAV audo file'
@@ -206,6 +247,7 @@ en:
     CSRF_FAILED_MESSAGE: 'There seems to have been a technical problem. Please click the back button, refresh your browser, and try again.'
     FIELDISREQUIRED: '{name} is required'
     SubmitBtnLabel: Go
+    VALIDATIONCREDIT: 'Please ensure you have entered the credit card number correctly'
     VALIDATIONCREDITNUMBER: 'Please ensure you have entered the {number} credit card number correctly'
     VALIDATIONNOTUNIQUE: 'The value entered is not unique'
     VALIDATIONPASSWORDSDONTMATCH: 'Passwords don''t match'
@@ -273,6 +315,54 @@ en:
     ResultCreated: 'Created {count} groups'
     ResultDeleted: 'Deleted %d groups'
     ResultUpdated: 'Updated %d groups'
+  HTMLEditorField:
+    ANCHORSCANNOTACCESSPAGE: 'You are not permitted to access the content of the target page.'
+    ANCHORSPAGENOTFOUND: 'Target page not found.'
+    ANCHORVALUE: Anchor
+    BUTTONADDURL: 'Add url'
+    CAPTIONTEXT: 'Caption text'
+    CSSCLASS: 'Alignment / style'
+    CSSCLASSCENTER: 'Centered, on its own.'
+    CSSCLASSLEFT: 'On the left, with text wrapping around.'
+    CSSCLASSLEFTALONE: 'On the left, on its own.'
+    CSSCLASSRIGHT: 'On the right, with text wrapping around.'
+    DETAILS: Details
+    EMAIL: 'Email address'
+    FILE: SilverStripe\Assets\File
+    FOLDER: Folder
+    IMAGEALT: 'Alternative text (alt)'
+    IMAGEALTTEXT: 'Alternative text (alt) - shown if image can''t be displayed'
+    IMAGEALTTEXTDESC: 'Shown to screen readers or if image can''t be displayed'
+    IMAGEDIMENSIONS: Dimensions
+    IMAGEHEIGHTPX: Height
+    IMAGETITLE: 'Title text (tooltip) - for additional information about the image'
+    IMAGETITLETEXT: 'Title text (tooltip)'
+    IMAGETITLETEXTDESC: 'For additional information about the image'
+    IMAGEWIDTHPX: Width
+    INSERTMEDIA: 'Insert media from'
+    LINK: 'Insert Link'
+    LINKANCHOR: 'Link to an anchor on this page'
+    LINKDESCR: 'Link description'
+    LINKDETAILS: 'Link details'
+    LINKEMAIL: 'Link to an email address'
+    LINKEXTERNAL: 'Link to another website'
+    LINKFILE: 'Link to download a file'
+    LINKINTERNAL: 'Link to a page on this site'
+    LINKOPENNEWWIN: 'Open link in a new window?'
+    LINKTO: 'Link type'
+    PAGE: Page
+    SUBJECT: 'Email subject'
+    URL: URL
+    URLDESCRIPTION: 'Insert videos and images from the web into your page simply by entering the URL of the file. Make sure you have the rights or permissions before sharing media directly from the web.<br /><br />Please note that files are not added to the file store of the CMS but embeds the file from its original location, if for some reason the file is no longer available in its original location it will no longer be viewable on this page.'
+    URLNOTANOEMBEDRESOURCE: 'The URL ''{url}'' could not be turned into a media resource.'
+    UpdateMEDIA: 'Update media'
+  HTMLEditorField_Toolbar:
+    ERROR_ABSOLUTE: 'Only absolute urls can be embedded'
+    ERROR_HOSTNAME: 'This file hostname is not included in the whitelist'
+    ERROR_ID: 'Need either "ID" or "FileURL" parameter to identify the file'
+    ERROR_NOTFOUND: 'Unable to find file to view'
+    ERROR_OEMBED_REMOTE: 'Embed is only compatible with remote files'
+    ERROR_SCHEME: 'This file scheme is not included in the whitelist'
   Hierarchy:
     InfiniteLoopNotAllowed: 'Infinite loop found within the "{type}" hierarchy. Please change the parent to resolve this'
   HtmlEditorField:
@@ -301,8 +391,8 @@ en:
     FROMWEB: 'From the web'
     FindInFolder: 'Find in Folder'
     IMAGEALT: 'Alternative text (alt)'
-    IMAGEALTTEXT: 'Alternative text (alt) - shown if image cannot be displayed'
-    IMAGEALTTEXTDESC: 'Shown to screen readers or if image can not be displayed'
+    IMAGEALTTEXT: 'Alternative text (alt) - shown if image can''t be displayed'
+    IMAGEALTTEXTDESC: 'Shown to screen readers or if image can''t be displayed'
     IMAGEDIMENSIONS: Dimensions
     IMAGEHEIGHTPX: Height
     IMAGETITLE: 'Title text (tooltip) - for additional information about the image'
@@ -334,22 +424,26 @@ en:
   Image_iframe_ss:
     TITLE: 'Image Uploading Iframe'
   LeftAndMain:
+    CANCEL: Cancel
     CANT_REORGANISE: 'You do not have permission to alter Top level pages. Your change was not saved.'
+    CollapsePanel: 'Collapse Panel'
     DELETED: Deleted.
-    DropdownBatchActionsDefault: Actions
+    DropdownBatchActionsDefault: 'Choose an action...'
+    ExpandPanel: 'Expand Panel'
     HELP: Help
-    PAGETYPE: 'Page type: '
+    MenuToggleAuto: Auto
+    MenuToggleStickyNav: 'Sticky nav'
+    PAGETYPE: 'Page type'
     PERMAGAIN: 'You have been logged out of the CMS.  If you would like to log in again, enter a username and password below.'
     PERMALREADY: 'I''m sorry, but you can''t access that part of the CMS.  If you want to log in as someone else, do so below.'
     PERMDEFAULT: 'You must be logged in to access the administration area; please enter your credentials below.'
-    PLEASESAVE: 'Please Save Page: This page could not be upated because it hasn''t been saved yet.'
+    PLEASESAVE: 'Please Save Page: This page could not be updated because it hasn''t been saved yet.'
     PreviewButton: Preview
     REORGANISATIONSUCCESSFUL: 'Reorganised the site tree successfully.'
     SAVEDUP: Saved.
     ShowAsList: 'show as list'
     TooManyPages: 'Too many pages'
     ValidationError: 'Validation error'
-    VersionUnknown: unknown
   LeftAndMain_Menu_ss:
     Hello: Hi
     LOGOUT: 'Log out'
@@ -370,9 +464,11 @@ en:
     CANTEDIT: 'You don''t have permission to do that'
     CONFIRMNEWPASSWORD: 'Confirm New Password'
     CONFIRMPASSWORD: 'Confirm Password'
+    CURRENT_PASSWORD: 'Current Password'
     DATEFORMAT: 'Date format'
     DefaultAdminFirstname: 'Default Admin'
     DefaultDateTime: default
+    EDIT_PASSWORD: 'New Password'
     EMAIL: Email
     EMPTYNEWPASSWORD: 'The new password can''t be empty, please try again'
     ENTEREMAIL: 'Please enter an email address to get a password reset link.'
@@ -383,6 +479,7 @@ en:
     FIRSTNAME: 'First Name'
     INTERFACELANG: 'Interface Language'
     INVALIDNEWPASSWORD: 'We couldn''t accept that password: {password}'
+    KEEPMESIGNEDIN: 'Keep me signed in'
     LOGGEDINAS: 'You''re logged in as {name}.'
     NEWPASSWORD: 'New Password'
     NoPassword: 'There is no password on this member.'
@@ -395,7 +492,7 @@ en:
     SUBJECTPASSWORDRESET: 'Your password reset link'
     SURNAME: Surname
     TIMEFORMAT: 'Time format'
-    VALIDATIONMEMBEREXISTS: 'A member already exists with the same %s'
+    VALIDATIONMEMBEREXISTS: 'A member already exists with the same {identifier}'
     ValidationIdentifierFailed: 'Can''t overwrite existing member #{id} with identical identifier ({name} = {value}))'
     WELCOMEBACK: 'Welcome Back, {firstname}'
     YOUROLDPASSWORD: 'Your old password'
@@ -417,6 +514,7 @@ en:
     FOURDIGITYEAR: 'Four-digit year'
     FULLNAMEMONTH: 'Full name of month (e.g. June)'
     HOURNOLEADING: 'Hour without leading zero'
+    HOURNOLEADING24: 'Hour without leading zero, 24 hour format'
     MINUTENOLEADING: 'Minute without leading zero'
     MONTHNOLEADING: 'Month digit without leading zero'
     Preview: Preview
@@ -465,6 +563,8 @@ en:
   MoneyField:
     FIELDLABELAMOUNT: Amount
     FIELDLABELCURRENCY: Currency
+  MultiSelectField:
+    SOURCE_VALIDATION: 'Please select values within the list provided. Invalid option(s) {value} given'
   NullableField:
     IsNullLabel: 'Is Null'
   NumericField:
@@ -502,6 +602,9 @@ en:
     UserPermissionsIntro: 'Assigning groups to this user will adjust the permissions they have. See the groups section for details of permissions on individual groups.'
   PhoneNumberField:
     VALIDATION: 'Please enter a valid phone number'
+  RememberLoginHash:
+    PLURALNAME: 'Remember Login Hashs'
+    SINGULARNAME: 'Remember Login Hash'
   Security:
     ALREADYLOGGEDIN: 'You don''t have access to this page.  If you have another account that can access that page, you can log in again below.'
     BUTTONSEND: 'Send me the password reset link'
@@ -553,10 +656,61 @@ en:
     Tablet: Tablet
     ViewDeviceWidth: 'Select a preview width'
     Width: width
+  SilverStripeVersionProvider:
+    VERSIONUNKNOWN: Unknown
+  SilverStripe\Admin\CMSProfileController:
+    MENUTITLE: 'My Profile'
+  SilverStripe\Admin\CampaignAdmin:
+    MENUTITLE: Campaigns
+  SilverStripe\Admin\SecurityAdmin:
+    MENUTITLE: Security
+  SilverStripe\Assets\File:
+    PLURALNAME: Files
+    SINGULARNAME: File
+  SilverStripe\Assets\Folder:
+    PLURALNAME: Folders
+    SINGULARNAME: Folder
+  SilverStripe\Assets\Image:
+    PLURALNAME: Images
+    SINGULARNAME: Image
+  SilverStripe\ORM\DataObject:
+    PLURALNAME: 'Data Objects'
+    SINGULARNAME: 'Data Object'
+  SilverStripe\ORM\Versioning\ChangeSet:
+    PLURALNAME: Campaigns
+    SINGULARNAME: Campaign
+  SilverStripe\ORM\Versioning\ChangeSetItem:
+    PLURALNAME: 'Change Set Items'
+    SINGULARNAME: 'Change Set Item'
+  SilverStripe\Security\Group:
+    PLURALNAME: Groups
+    SINGULARNAME: Group
+  SilverStripe\Security\LoginAttempt:
+    PLURALNAME: 'Login Attempts'
+    SINGULARNAME: 'Login Attempt'
+  SilverStripe\Security\Member:
+    PLURALNAME: Members
+    SINGULARNAME: Member
+  SilverStripe\Security\MemberPassword:
+    PLURALNAME: 'Member Passwords'
+    SINGULARNAME: 'Member Password'
+  SilverStripe\Security\Permission:
+    PLURALNAME: Permissions
+    SINGULARNAME: Permission
+  SilverStripe\Security\PermissionRole:
+    PLURALNAME: Roles
+    SINGULARNAME: Role
+  SilverStripe\Security\PermissionRoleCode:
+    PLURALNAME: 'Permission Role Codes'
+    SINGULARNAME: 'Permission Role Code'
+  SilverStripe\Security\RememberLoginHash:
+    PLURALNAME: 'Remember Login Hashs'
+    SINGULARNAME: 'Remember Login Hash'
   SiteTree:
     TABMAIN: Main
   TableListField:
     CSVEXPORT: 'Export to CSV'
+    CSVIMPORT: 'Import CSV'
     Print: Print
   TableListField_PageControls_ss:
     OF: of
@@ -595,5 +749,19 @@ en:
     STARTALL: 'Start all'
     Saved: Saved
     UPLOADSINTO: 'saves into /{path}'
+  ValidationException:
+    DEFAULT_ERROR: 'Validation error'
   Versioned:
+    INFERRED_TITLE: 'Generated by publish of ''{title}'' at {created}'
     has_many_Versions: Versions
+  VersionedGridFieldItemRequest:
+    ARCHIVE: Archive
+    Archived: 'Archived %s %s'
+    BUTTONARCHIVEDESC: 'Unpublish and send to archive'
+    BUTTONPUBLISH: Publish
+    BUTTONUNPUBLISH: Unpublish
+    BUTTONUNPUBLISHDESC: 'Remove this record from the published site'
+    Published: 'Published {name} {link}'
+    Unpublished: 'Unpublished %s %s'
+  i18n:
+    PLURAL: '{number} {form}'

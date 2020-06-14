@@ -47,7 +47,6 @@ class MemberLoginForm extends LoginForm {
 	 * @param bool $checkCurrentUser If set to TRUE, it will be checked if a
 	 *                               the user is currently logged in, and if
 	 *                               so, only a logout button will be rendered
-	 * @param string $authenticatorClassName Name of the authenticator class that this form uses.
 	 */
 	public function __construct($controller, $name, $fields = null, $actions = null,
 								$checkCurrentUser = true) {
@@ -67,21 +66,21 @@ class MemberLoginForm extends LoginForm {
 		}
 
 		if($checkCurrentUser && Member::currentUser() && Member::logged_in_session_exists()) {
-			$fields = new FieldList(
-				new HiddenField("AuthenticationMethod", null, $this->authenticator_class, $this)
+			$fields = FieldList::create(
+				HiddenField::create("AuthenticationMethod", null, $this->authenticator_class, $this)
 			);
-			$actions = new FieldList(
-				new FormAction("logout", _t('Member.BUTTONLOGINOTHER', "Log in as someone else"))
+			$actions = FieldList::create(
+				FormAction::create("logout", _t('Member.BUTTONLOGINOTHER', "Log in as someone else"))
 			);
 		} else {
 			if(!$fields) {
 				$label=singleton('Member')->fieldLabel(Member::config()->unique_identifier_field);
-				$fields = new FieldList(
-					new HiddenField("AuthenticationMethod", null, $this->authenticator_class, $this),
+				$fields = FieldList::create(
+					HiddenField::create("AuthenticationMethod", null, $this->authenticator_class, $this),
 					// Regardless of what the unique identifer field is (usually 'Email'), it will be held in the
 					// 'Email' value, below:
-					$emailField = new TextField("Email", $label, null, null, $this),
-					new PasswordField("Password", _t('Member.PASSWORD', 'Password'))
+					$emailField = TextField::create("Email", $label, null, null, $this),
+					PasswordField::create("Password", _t('Member.PASSWORD', 'Password'))
 				);
 				if(Security::config()->remember_username) {
 					$emailField->setValue(Session::get('SessionForms.MemberLoginForm.Email'));
@@ -91,18 +90,18 @@ class MemberLoginForm extends LoginForm {
 					$emailField->setAttribute('autocomplete', 'off');
 				}
 				if(Security::config()->autologin_enabled) {
-					$fields->push(new CheckboxField(
+					$fields->push(CheckboxField::create(
 						"Remember",
 						_t('Member.REMEMBERME', "Remember me next time?")
 					));
 				}
 			}
 			if(!$actions) {
-				$actions = new FieldList(
-					new FormAction('dologin', _t('Member.BUTTONLOGIN', "Log in")),
-					new LiteralField(
+				$actions = FieldList::create(
+					FormAction::create('dologin', _t('Member.BUTTONLOGIN', "Log in")),
+					LiteralField::create(
 						'forgotPassword',
-						'<p id="ForgotPassword"><a href="Security/lostpassword">'
+						'<p id="ForgotPassword"><a href="' . Security::lost_password_url() . '">'
 						. _t('Member.BUTTONLOSTPASSWORD', "I've lost my password") . '</a></p>'
 					)
 				);
@@ -110,7 +109,7 @@ class MemberLoginForm extends LoginForm {
 		}
 
 		if(isset($backURL)) {
-			$fields->push(new HiddenField('BackURL', 'BackURL', $backURL));
+			$fields->push(HiddenField::create('BackURL', 'BackURL', $backURL));
 		}
 
 		// Reduce attack surface by enforcing POST requests
@@ -118,7 +117,7 @@ class MemberLoginForm extends LoginForm {
 
 		parent::__construct($controller, $name, $fields, $actions);
 
-		$this->setValidator(new RequiredFields('Email', 'Password'));
+		$this->setValidator(RequiredFields::create('Email', 'Password'));
 
 		// Focus on the email input when the page is loaded
 		$js = <<<JS
@@ -134,18 +133,22 @@ JS;
 	 * Get message from session
 	 */
 	protected function getMessageFromSession() {
-		if(($member = Member::currentUser()) && !Session::get('MemberLoginForm.force_message')) {
+
+		$forceMessage = Session::get('MemberLoginForm.force_message');
+		if(($member = Member::currentUser()) && !$forceMessage) {
 			$this->message = _t(
 				'Member.LOGGEDINAS',
 				"You're logged in as {name}.",
 				array('name' => $member->{$this->loggedInAsField})
 			);
 		}
-		Session::set('MemberLoginForm.force_message', false);
 
-		parent::getMessageFromSession();
+		// Reset forced message
+		if($forceMessage) {
+			Session::set('MemberLoginForm.force_message', false);
+		}
 
-		return $this->message;
+		return parent::getMessageFromSession();
 	}
 
 
@@ -200,7 +203,7 @@ JS;
 			if(isset($_REQUEST['BackURL']) && $backURL = $_REQUEST['BackURL']) {
 				Session::set('BackURL', $backURL);
 			}
-			$cp = new ChangePasswordForm($this->controller, 'ChangePasswordForm');
+			$cp = ChangePasswordForm::create($this->controller, 'ChangePasswordForm');
 			$cp->sessionMessage(
 				_t('Member.PASSWORDEXPIRED', 'Your password has expired. Please choose a new one.'),
 				'good'
@@ -290,17 +293,29 @@ JS;
 	 * @param array $data Submitted data
 	 */
 	public function forgotPassword($data) {
-		$SQL_data = Convert::raw2sql($data);
-		$SQL_email = $SQL_data['Email'];
-		$member = DataObject::get_one('Member', "\"Email\" = '{$SQL_email}'");
+		// minimum execution time for authenticating a member
+		$minExecTime = self::config()->min_auth_time / 1000;
+		$startTime = microtime(true);
+
+		// Ensure password is given
+		if(empty($data['Email'])) {
+			$this->sessionMessage(
+				_t('Member.ENTEREMAIL', 'Please enter an email address to get a password reset link.'),
+				'bad'
+			);
+
+			$this->controller->redirect('Security/lostpassword');
+			return;
+		}
+
+		// Find existing member
+		$member = Member::get()->filter("Email", $data['Email'])->first();
 
 		// Allow vetoing forgot password requests
 		$results = $this->extend('forgotPassword', $member);
 		if($results && is_array($results) && in_array(false, $results, true)) {
-			return $this->controller->redirect('Security/lostpassword');
-		}
-
-		if($member) {
+			$this->controller->redirect('Security/lostpassword');
+		} elseif ($member) {
 			$token = $member->generateAutologinTokenAndStoreHash();
 
 			$e = Member_ForgotPasswordEmail::create();
@@ -315,7 +330,7 @@ JS;
 		} elseif($data['Email']) {
 			// Avoid information disclosure by displaying the same status,
 			// regardless wether the email address actually exists
-			$this->controller->redirect('Security/passwordsent/' . urlencode($data['Email']));
+			$this->controller->redirect('Security/passwordsent/' . rawurlencode($data['Email']));
 		} else {
 			$this->sessionMessage(
 				_t('Member.ENTEREMAIL', 'Please enter an email address to get a password reset link.'),
@@ -324,6 +339,11 @@ JS;
 
 			$this->controller->redirect('Security/lostpassword');
 		}
+		$waitFor = $minExecTime - (microtime(true) - $startTime);
+		if ($waitFor > 0) {
+			usleep($waitFor * 1000000);
+		}
 	}
 
 }
+

@@ -1,10 +1,10 @@
 <?php
 /**
- * GridFieldFilterHeader alters the {@link GridField} with some filtering 
+ * GridFieldFilterHeader alters the {@link GridField} with some filtering
  * fields in the header of each column.
- * 
+ *
  * @see GridField
- * 
+ *
  * @package forms
  * @subpackage fields-gridfield
  */
@@ -14,18 +14,18 @@ class GridFieldFilterHeader implements GridField_HTMLProvider, GridField_DataMan
 	 * See {@link setThrowExceptionOnBadDataType()}
 	 */
 	protected $throwExceptionOnBadDataType = true;
-	
+
 	/**
 	 * Determine what happens when this component is used with a list that isn't {@link SS_Filterable}.
-	 * 
+	 *
 	 *  - true: An exception is thrown
 	 *  - false: This component will be ignored - it won't make any changes to the GridField.
-	 * 
+	 *
 	 * By default, this is set to true so that it's clearer what's happening, but the predefined
 	 * {@link GridFieldConfig} subclasses set this to false for flexibility.
 	 */
 	public function setThrowExceptionOnBadDataType($throwExceptionOnBadDataType) {
-		$this->throwExceptionOnBadDataType = $throwExceptionOnBadDataType; 
+		$this->throwExceptionOnBadDataType = $throwExceptionOnBadDataType;
 	}
 
 	/**
@@ -34,7 +34,7 @@ class GridFieldFilterHeader implements GridField_HTMLProvider, GridField_DataMan
 	public function getThrowExceptionOnBadDataType() {
 		return $this->throwExceptionOnBadDataType;
 	}
-	
+
 	/**
 	 * Check that this dataList is of the right data type.
 	 * Returns false if it's a bad data type, and if appropriate, throws an exception.
@@ -82,17 +82,17 @@ class GridFieldFilterHeader implements GridField_HTMLProvider, GridField_DataMan
 	 *
 	 * @param GridField $gridField
 	 * @param SS_List $dataList
-	 * @return SS_List 
+	 * @return SS_List
 	 */
 	public function getManipulatedData(GridField $gridField, SS_List $dataList) {
 		if(!$this->checkDataType($dataList)) return $dataList;
-		
-		$state = $gridField->State->GridFieldFilterHeader;
-		if(!isset($state->Columns)) {
+
+		$columns = $gridField->State->GridFieldFilterHeader->Columns(null);
+		if(empty($columns)) {
 			return $dataList;
-		} 
-		
-		$filterArguments = $state->Columns->toArray();
+		}
+
+		$filterArguments = $columns->toArray();
 		$dataListClone = clone($dataList);
 		foreach($filterArguments as $columnName => $value ) {
 			if($dataList->canFilterBy($columnName) && $value) {
@@ -102,6 +102,29 @@ class GridFieldFilterHeader implements GridField_HTMLProvider, GridField_DataMan
 		return $dataListClone;
 	}
 
+	/**
+	 * @param string $class
+	 * @param string $column
+	 * @return string
+	 */
+	protected function columnToFilterField($class, $column)
+	{
+		if (strpos($column, '.') === false) {
+			return $column;
+		}
+		/** @var DataObject $model */
+		$model = singleton($class);
+		$columnParts = explode('.', $column);
+		if ($model->getRelationClass($columnParts[0])) {
+			return $column;
+		}
+		return $columnParts[0];
+	}
+
+	/**
+	 * @param GridField $gridField
+	 * @return array
+	 */
 	public function getHTMLFragments($gridField) {
 		if(!$this->checkDataType($gridField->getList())) return;
 
@@ -110,18 +133,21 @@ class GridFieldFilterHeader implements GridField_HTMLProvider, GridField_DataMan
 		$columns = $gridField->getColumns();
 		$filterArguments = $gridField->State->GridFieldFilterHeader->Columns->toArray();
 		$currentColumn = 0;
+
 		foreach($columns as $columnField) {
-			$currentColumn++;
+			++$currentColumn;
 			$metadata = $gridField->getColumnMetadata($columnField);
 			$title = $metadata['title'];
 			$fields = new FieldGroup();
-			
-			if($title && $gridField->getList()->canFilterBy($columnField)) {
+
+			$filterField = $this->columnToFilterField($gridField->getModelClass(), $columnField);
+
+			if($title && $gridField->getList()->canFilterBy($filterField)) {
 				$value = '';
-				if(isset($filterArguments[$columnField])) {
-					$value = $filterArguments[$columnField];
+				if(isset($filterArguments[$filterField])) {
+					$value = $filterArguments[$filterField];
 				}
-				$field = new TextField('filter[' . $gridField->getName() . '][' . $columnField . ']', '', $value);
+				$field = new TextField('filter[' . $gridField->getName() . '][' . $filterField . ']', '', $value);
 				$field->addExtraClass('ss-gridfield-sort');
 				$field->addExtraClass('no-change-track');
 
@@ -133,9 +159,9 @@ class GridFieldFilterHeader implements GridField_HTMLProvider, GridField_DataMan
 					GridField_FormAction::create($gridField, 'reset', false, 'reset', null)
 						->addExtraClass('ss-gridfield-button-reset')
 						->setAttribute('title', _t('GridField.ResetFilter', "Reset"))
-						->setAttribute('id', 'action_reset_' . $gridField->getModelClass() . '_' . $columnField)
+						->setAttribute('id', 'action_reset_' . $gridField->getModelClass() . '_' . $filterField)
 				);
-			} 
+			}
 
 			if($currentColumn == count($columns)){
 				$fields->push(

@@ -3,7 +3,7 @@
 /**
  * Used to edit the SiteTree->URLSegment property, and suggest input based on the serverside rules
  * defined through {@link SiteTree->generateURLSegment()} and {@link URLSegmentFilter}.
- * 
+ *
  * Note: The actual conversion for saving the value takes place in the model layer.
  *
  * @package cms
@@ -12,10 +12,10 @@
 
 class SiteTreeURLSegmentField extends TextField {
 	
-	/** 
-	 * @var string 
+	/**
+	 * @var string
 	 */
-	protected $helpText, $urlPrefix, $urlSuffix;
+	protected $helpText, $urlPrefix, $urlSuffix, $defaultUrl;
 	
 	private static $allowed_actions = array(
 		'suggest'
@@ -30,7 +30,8 @@ class SiteTreeURLSegmentField extends TextField {
 			parent::getAttributes(),
 			array(
 				'data-prefix' => $this->getURLPrefix(),
-				'data-suffix' => '?stage=Stage'
+				'data-suffix' => '?stage=Stage',
+				'data-default-url' => $this->getDefaultURL()
 			)
 		);
 	}
@@ -74,7 +75,8 @@ class SiteTreeURLSegmentField extends TextField {
 	 * @param string $string The secondary text to show
 	 */
 	public function setHelpText($string){
-		$this->helpText = $string; 
+		$this->helpText = $string;
+		return $this;
 	}
 	
 	/**
@@ -90,6 +92,7 @@ class SiteTreeURLSegmentField extends TextField {
 	 */
 	public function setURLPrefix($url){
 		$this->urlPrefix = $url;
+		return $this;
 	}
 	
 	/**
@@ -103,8 +106,23 @@ class SiteTreeURLSegmentField extends TextField {
 		return $this->urlSuffix;
 	}
 
+	/**
+	 * @return Indicator for UI to respond to changes accurately,
+	 * and auto-update the field value if changes to the default occur.
+	 * Does not set the field default value.
+	 */
+	public function getDefaultURL(){
+		return $this->defaultUrl;
+	}
+	
+	public function setDefaultURL($url) {
+		$this->defaultUrl = $url;
+		return $this;
+	}
+
 	public function setURLSuffix($suffix) {
 		$this->urlSuffix = $suffix;
+		return $this;
 	}
 
 	public function Type() {
@@ -115,4 +133,27 @@ class SiteTreeURLSegmentField extends TextField {
 		return Controller::join_links($this->getURLPrefix(), $this->Value(), $this->getURLSuffix());
 	}
 
+	public function performReadonlyTransformation() {
+		$newInst = parent::performReadonlyTransformation();
+		$newInst->helpText = $this->helpText;
+		$newInst->urlPrefix = $this->urlPrefix;
+		$newInst->urlSuffix = $this->urlSuffix;
+		$newInst->defaultUrl = $this->defaultUrl;
+		return $newInst;
+	}
+}
+
+
+/**
+ * Readonly version of a site tree URL segment field
+ *
+ * @package forms
+ * @subpackage fields-basic
+ */
+class SiteTreeURLSegmentField_Readonly extends SiteTreeURLSegmentField {
+	protected $readonly = true;
+
+	public function performReadonlyTransformation() {
+		return clone $this;
+	}
 }

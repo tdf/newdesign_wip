@@ -1,4 +1,8 @@
+<% cached 'navigation', $ID, $List('SiteTree').max('LastEdited'), $List('SiteTree').count() %>
 <div class="navbar navbar-inverse navbar-fixed-top">
+<% if $SubsiteID != 63 && $SubsiteID != 59 %>
+<% include LocalisationAvailableNotification %>
+<% end_if %>
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -6,7 +10,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand img-responsive" href="$Page(/).Link"><img src="$ThemeDir/img/logo.png" alt="logo"></a>
+          <a class="navbar-brand img-responsive" href="$Page(/).Link"><img style="width:230px; height:auto;" src="$ThemeDir/img/logo.png" alt="logo"></a>
         </div>
 <% if not $HideNavigation %><div class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-right">
@@ -23,3 +27,4 @@
         </div><% end_if %>
       </div>
       </div>
+<% end_cached %>

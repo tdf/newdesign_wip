@@ -1,6 +1,133 @@
 ---
 lt:
   BitPay:
+    ButtonAltText: "„BitPay“ – lengviausias būdas atsiskaityti bitkoinais (Bitcoin ir Bitcoin Cash)."
     CheckoutLocale: lt_LT
     Email: El. pašto adresas (nebūtinas)
+    Header: Paremti galima bitkoinais (Bitcoin ir Bitcoin Cash).
     LabelEmail: 'El. paštas:'
+    RefundDisclaimer: Parama bitkoinais yra anoniminė, todėl grąžinti paramą arba patvirtinti jos gavimą galėsime tik už tokią sumą, kurią gausime per savo mokėjimų paslaugos teikėją, ir tik tada, jei nurodysite savo el. pašto adresą.
+  Concardis:
+    CancelHeader: Procesas atšauktas
+    CancelMessage: Jūs nutraukėte mokėjimo procesą. <b>Paramos suma nebuvo nuskaityta.</b> Pabandykite dar kartą, o jei kils problemų ar klausimų, prašome susisiekti su mumis adresu {infoemail}.
+    ProblemHeader: Įvyko klaida…
+    ProblemMessage: Deja, mokėjimas nepavyko. Taip galėjo nutikti dėl problemų kreipiantis į mūsų mokėjimų serverį arba nuskaitant Jūsų mokėjimo kortelę. <b>Paramos suma nebuvo nuskaityta.</b> Pabandykite dar kartą, o jei kils problemų ar klausimų, prašome susisiekti su mumis adresu {infoemail}.
+    Processing: Mokėjimas apdorojamas
+    ThankYouHeader: Dėkojame už Jūsų paramą!
+    ThankYouMessage: Organizacija „The Document Foundation“ nuoširdžiai dėkoja už Jūsų paramą – ji mums labai svarbi. Jūsų parama jau pasiekė mus! Gero naudojimosi „LibreOffice“ paketu ir dar kartą ačiū už palaikymą!
+    ThanksButHeader: Dėkojame už Jūsų paramą!
+    ThanksButMessage1: Organizacija „The Document Foundation“ nuoširdžiai dėkoja už Jūsų paramą – ji mums labai svarbi. Jūsų parama jau pasiekė mus! Gero naudojimosi „LibreOffice“ paketu ir dar kartą ačiū už palaikymą!
+    ThanksButMessage2: Paramos gavimo patvirtinti kol kas negalime. Patikrinkite sąskaitos išraše, ar paramos suma nuskaityta.
+  DonateDownload:
+    DownloadProblemContact: Nesklandumai <strong>siunčiantis</strong> „LibreOffice“? Atkreipiame dėmesį, kad mes <strong>neteikiame pagalbos</strong> programos diegimo ar naudojimo klausimais. Jei reikia tokios pagalbos, peržvelkite esamus klausimus arba užduokite savąjį tinklalapyje <a href='https://ask.libreoffice.org/'>Ask LibreOffice</a> (anglų k.).<br /><br />Vis dėlto, jei problema susijusi su „LibreOffice“ paketo <strong>atsisiuntimu</strong> iš šio tinklalapio, užrašykite savo kompiuterio operacinės sistemos pavadinimą ir versiją, naršyklės pavadinimą ir versiją bei matomus klaidų pranešimus ir atsiųskite šią informaciją adresu <a href='mailto:download@libreoffice.org'>download@libreoffice.org</a> (anglų k.) – pasistengsime padėti.
+    Helppack: "„LibreOffice“ įtaisytasis žinynas"
+    InfoLinkText: Informacija
+    InfoLinkTitle: Failo kontrolinės sumos ir serverių, iš kurių jį galite parsisiųsti, sąrašas
+    Invalid: Atsisiuntimo užklausa neteisinga. Apsilankykite <a href='//lt.libreoffice.org/atsisiuntimas'>programos atsisiuntimo</a> tinklalapyje ir pasirinkite norimą versiją.<br/>Iškilus atsisiuntimo nesklandumams, rašykite (anglų k.) adresu <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Pažymime, kad programos diegimo ar naudojimo klausimai šiuo adresu nepriimami.
+    Langpack: Išversta naudotojo sąsaja
+    LinkStartText: Failo <a href='{link}'>{filename} ({size})</a> siuntimas tuoj turėtų prasidėti. Jei taip neįvyksta, spustelėkite saitą – failo vardą.
+    ManualMirror: Taip pat galima rankiniu būdu pasirinkti <a href='{link}.mirrorlist'>atsisiuntimo serverį</a>
+    NeedAnotherLang: Arba <a href='https://www.libreoffice.org/download/download/?lang=pick'>pasirinkti kitą kalbą</a>.
+    Outdated: Atsisiuntimo užklausa pasenusi. Apsilankykite <a href='//lt.libreoffice.org/atsisiuntimas'>programos atsisiuntimo</a> tinklalapyje ir pasirinkite norimą versiją.<br/>Iškilus atsisiuntimo nesklandumams, rašykite (anglų k.) adresu <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Pažymime, kad programos diegimo ar naudojimo klausimai šiuo adresu nepriimami.
+    TorrentLinkText: "„Torrent“ failas"
+    TorrentLinkTitle: Siųstis naudojant „BitTorrent“
+  DonatePage:
+    BC_EMAIL_DESC: tik jei norite gauti mokėjimo kortele patvirtinimo el. laišką
+    BC_EMAIL_LABEL: el. pašto adresas
+    BUTTON_CARD: Paremti mokėjimo kortele
+    BUTTON_PAYPAL: Paremti per „PayPal“
+    Bank: Paramą galima pervesti į mūsų banko sąskaitą
+    BankDetails: "<strong>Gavėjas</strong>: {owner}<br/><strong>Paskirtis</strong>: Donation<br/><strong>Sąskaita</strong>: {accountNumber}<br/><strong>Banko kodas</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Gavėjo adresas</strong>: {tdfAddress}<br/><strong>Banko adresas</strong>: {bankAddress}"
+    BankHeader: Banko pavedimas
+    BitcoinHeader: Bitcoin arba Bitcoin Cash
+    CHOICE_DEFAULT: Pasirinkite vieną iš numatytųjų sumų
+    CUSTOM_AMOUNT_VALUE: '25'
+    CUSTOM_CHOICE: Arba nurodykite kitą sumą ir valiutą<br/>(tik * pažymėtos valiutos galimos mokant per „PayPal“)
+    CardOnly: "(tik kortele)"
+    ContinueLabel: Tęsti
+    DEFAULT_AMOUNT_EUR05: '5'
+    DEFAULT_AMOUNT_EUR10: '10'
+    DEFAULT_AMOUNT_EUR20: '20'
+    DEFAULT_AMOUNT_EUR50: '50'
+    DEFAULT_CURRENCY: EUR
+    DonateUSHeader: Parama iš JAV
+    Flattr: Paremti per <a href='{flattrlink}'>Flattr</a> sistemą
+    FlattrHeader: Flattr
+    FooterText: 'Kiti paramos būdai: Bitcoin, Flattr, banko pavedimas – spustelėkite norimą variantą žemiau<br/>Turite klausimų dėl paramos? <a href="mailto:info@documentfoundation.org">Parašykite mums el. laišką</a>'
+    FreqMonthly: Mėnesinė parama
+    FreqOneshot: Vienkartinė parama
+    FreqQuarterly: Ketvirtinė parama
+    FreqYearly: Metinė parama
+    LeadText: "„LibreOffice“ – tai laisvasis ir visiškai nemokamas raštinės programų paketas. <br/>Galite laisvai rinktis, ar aukoti, tačiau jūsų parama padėtų išlaikyti „LibreOffice“ bendruomenę visame pasaulyje.<br/>Jei Jums patinka ši programa, būtume dėkingi už paramą."
+    OPTIONAL_EMAIL: el. pašto adresas
+    OPTIONAL_EMAIL_DES: tik jei norite gauti mokėjimo kortele patvirtinimo el. laišką
+    OtherAmount: Kita suma
+    ProceedConcardis: Netrukus nukreipsime Jus į „ConCardis“ tinklalapį, kur galėsite užbaigti <strong>{amount} {currency}</strong> paramos skyrimo procesą.<br/>Jei peradresavimas neįvyksta automatiškai, prašome spustelėti mygtuką „Tęsti“.
+    ProceedPayPal: Netrukus nukreipsime Jus į „PayPal“ tinklalapį, kur galėsite užbaigti <strong>{amount} {currency}</strong> paramos skyrimo procesą.<br/>Jei peradresavimas neįvyksta automatiškai, prašome spustelėti mygtuką „Tęsti“.
+    ReverseLayoutTitle: Paremti LibreOffice
+    SLIDERLABEL: 'Suma (tempkite šliaužiklį, jei norite pakeisti): '
+    Spi: LibreOffice projektas dalyvauja SPI programoje
+    SpiDetails: Paramą iš JAV galima atsiųsti <a href='https://www.spi-inc.org/donations/'>per SPI sistemą</a>, paramos informacijoje nurodžius „LibreOffice“. Paramai, atsiųstai per SPI, JAV netaikomi mokesčiai.
+    TaxHeader: Mokesčių grąžinimas
+    TaxHint: <strong>Kai kuriose šalyse už „The Document Foundation“ skirtą paramą galima susigrąžinti mokesčius.<br/>Daugiau informacijos teiraukitės konkrečios šalies mokesčių administratoriaus.</strong><br/><strong>Informacija Vokietijos gyventojams:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Kol vyksta siuntimas, kviečiame finansiškai paremti „LibreOffice“ projektą
+  Download:
+    Archive: Senesnes „LibreOffice“ versijas (gali būti nesuderinamos su turima OS) galima atsisiųsti iš <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>archyvo</a>
+    ChangeLanguageLinkText: Reikia kitos kalbos?
+    ChangeLanguageLinkTitle: Pasirinkti kitą kalbą
+    Helppack: Įtaisytasis „LibreOffice“ žinynas <strong>{language}</strong>
+    HelppackButtonLabel: Žinynas naudojimui neprisijungus
+    HelppackFallback: Įtaisytasis „LibreOffice“ žinynas <strong>anglų kalba</strong>
+    HelppackLinkTitle: Atsisiųsti žinyną naudojimui be interneto ryšio
+    InfoLinkTitle: Kontrolinės sumos ir papildoma informacija
+    InfoText: Informacija
+    Langpack: "„LibreOffice“ naudotojo sąsaja <strong>{language}</strong>"
+    LangpackButtonLabel: Išversta naudotojo sąsaja
+    LangpackLinkTitle: Atsisiųsti kalbos paketą
+    Mac64reqs: reikalinga 10.10 arba naujesnė versija
+    MainButtonLabel: Atsisiųsti {version} versiją
+    MainInstaller: Pagrindinis diegimo failas
+    MainLinkTitle: Atsisiųsti „LibreOffice“ {version} versiją „{os}“ sistemai
+    OS: Operacinės sistemos
+    OSList: "„LibreOffice“ {version} versiją galima atsisiųsti šioms operacinėms sistemoms"
+    PickLanguage: Pasirinkite norimą kalbą
+    PlatformChange: 'Pasirinkta: „LibreOffice“ {version} versija „{os}“ sistemai – <a href=''{curr_page}#change''>pakeisti?</a>'
+    SDKandSource: Programavimo komplektas (SDK) ir pirminis tekstas
+    SDKDownload: Atsisiųsti programavimo komplektą
+    SourceDownload: Atsisiųsti pirminį programos tekstą
+    TorrentLinkText: "„Torrent“ failas"
+    TorrentLinkTitle: Atsisiųsti naudojant „BitTorrent“ kliento programą
+    VersionListReleased: 'Galima atsiųsti šias <strong>stabilias</strong> „LibreOffice“ versijas:'
+    VersionListTesting: 'Galima atsisiųsti šias <strong>testuojamąsias</strong> „LibreOffice“ versijas:'
+    Versions: Galimos versijos
+    Win64reqs: reikalinga „7“ arba naujesnė versija
+  DownloadRefresh:
+    BoxHeader: LibreOffice atsisiuntimas
+    ChangeLanguageLinkText: Reikia kitos kalbos?
+    ChangeLanguageLinkTitle: Pasirinkti kitą kalbą
+    ChooseOS: 'Pasirinkite operacinę sistemą:'
+    DownloadLinkText: ATSISIŲSTI
+    FreshText: Ši versija jums tiks, jei esate technologijų entuziastas, bandytojas ar įgudęs naudotojas!
+    HelppackButtonLabel: Žinynas naudojimui neprisijungus
+    HelppackLinkTitle: Atsisiųsti žinyną naudojimui be interneto ryšio
+    InfoLinkTitle: Kontrolinės sumos ir papildoma informacija
+    InfoText: Informacija
+    LangpackLinkText: Išversta naudotojo sąsaja
+    LangpackLinkTitle: Atsisiųsti kalbos paketą
+    RelnotesLinkText: LibreOffice {version} laidos informacija
+    StillText: Ši versija labiau tiks naudojimui didelės įmonėse arba konservatyviems naudotojams.</span><span class="dl_description_text" style="font-size:18px;">Dėl „LibreOffice“ diegimo įmonėse rekomenduojame kreiptis į <a href="//www.libreoffice.org/get-help/professional-support/">sertifikuotus pagalbos specialistus</a>.
+    SupplementaryDownloads: 'Papildomi atsisiuntimai:'
+    TorrentLinkText: "„Torrent“ failas"
+    TorrentLinkTitle: Atsisiųsti naudojant „BitTorrent“ kliento programą
+  Homepage:
+    DownloadNow: Atsisiųsti
+  RSS:
+    ReadMore: skaityti daugiau »
+  Shortcode:
+    NoPortable: Perkeliamos versijos ({multilingualtype}) šiuo metu nėra
+    NoRC: Kandidatinės versijos šiuo metu nėra
+    NoRC_Codeline: Kandidatinės {version} versijos šiuo metu nėra
+    ReleaseNotesLinkText: Laidos informacija
+  Social:
+    FollowUs: Mes socialiniuose tinkluose
+    LatestTweets: Naujausi „Twitter“ įrašai

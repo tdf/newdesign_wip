@@ -1,12 +1,12 @@
 ---
 de:
   BitPay:
-    ButtonAltText: BitPay, der einfache Weg, mit Bitcoins zu bezahlen.
+    ButtonAltText: BitPay, der einfache Weg, mit Bitcoins und Bitcoin Cash zu bezahlen.
     CheckoutLocale: de_DE
     Email: E-Mail-Adresse (optional)
-    Header: Sie können mittels Bitcoins spenden
+    Header: Sie können via Bitcoin und Bitcoin Cash spenden
     LabelEmail: 'E-Mail:'
-    RefundDisclaimer: Naturgemäß sind Spenden mittels Bitcoins für gewöhnlich anonym, weswegen Rückerstattungen oder Spendenbescheinigungen ausschließlich für jene Beträge möglich sind, die wir von unserem Zahlungsanbieter gutgeschrieben bekommen, und nur dann, wenn Sie Ihre E-Mail-Adresse angeben. Falls Sie mit diesen Einschränkungen nicht einverstanden sind, bitten wir Sie darum, eine andere auf dieser Seite genannte Spendenmöglichkeiten zu nutzen.
+    RefundDisclaimer: Technisch bedingt sind Spenden in den Kryptowährungen Bitcoin und Bitcoin Cash immer anonym. Daher sind Rückzahlungen oder Spendenbescheinigungen nur über den Betrag möglich, den wir von unserem Bezahldienstanbieter erhalten haben. Eine weitere Voraussetzung ist, dass Sie Ihre Emailadresse angegeben haben.
   Concardis:
     CancelHeader: Sie haben den Vorgang abgebrochen
     CancelMessage: Leider haben Sie den Zahlvorgang abgebrochen. <b>Es wurde nichts berechnet.</b> Bitte versuchen Sie es erneut und bei Problemen oder Fragen zögern Sie nicht, uns jederzeit per {infoemail} zu kontaktieren.
@@ -18,22 +18,61 @@ de:
     ThanksButHeader: Vielen Dank für Ihre Spende!
     ThanksButMessage1: The Document Foundation bedankt sich für Ihre freundliche und großzügige Spende. Wir haben Ihre Zahlung erhalten! Genießen Sie LibreOffice und vielen Dank für Ihre Unterstützung!
     ThanksButMessage2: Bitte beachten Sie, dass der Eingang der Spende noch nicht bestätigt werden kann. Bitte überprüfen Sie Ihre Unterlagen, ob die Spende erfolgreich war.
+  DonateDownload:
+    DownloadProblemContact: 'Haben Sie Probleme beim <strong>Herunterladen</strong> von LibreOffice? Beachten Sie bitte, dass wir für die Installation und Benutzung der Software <strong>keine technische Unterstützung</strong> bieten. Wenn Sie Hilfe benötigen, besuchen Sie bitte die Seite </strong><a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Sollte Ihre Frage jedoch das <strong>Herunterladen</strong> von LibreOffice von unserer Webseite betreffen, benötigen wir folgende Informationen: (1) die Version Ihres Betriebssystems; (2) Ihren Webbrowser; (3) eventuelle Fehlermeldung(en). Senden Sie diese bitte (auf Englisch) an <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> und wir werden versuchen Ihnen zu helfen. Für hilfe auf Deutsch, sehen Sie <a href=''https://ask.libreoffice.org/de/questions/''>Ask LibreOffice</a>.'
+    Helppack: Offline LibreOffice-Hilfe
+    InfoLinkText: Info
+    InfoLinkTitle: Sehen Sie sich die Prüfsummen und die Liste der Download-Mirror für diese Datei an
+    Invalid: Der angeforderte Download ist anscheinend ungültig. Gehen Sie bitte zu <a href='//www.libreoffice.org/download'>unserer Download-Seite</a> und nehmen eine aktuelle Version.<br/>Für technische Probleme mit den Download selbst schreiben Sie bitte an <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Bitte nehmen Sie zur Kenntnis dass wir <strong>keine</strong> technische Unterstützung unter dieser Adresse leisten.
+    Langpack: Übersetzte Benutzeroberfläche herunterladen
+    LinkStartText: Ihr Download <a href='{link}'>{filename} ({size})</a> sollte in Kürze beginnen. Bitte klicken Sie auf den Link, falls er nicht startet.
+    ManualMirror: Sie können auch <a href='{link}.mirrorlist'>manuell einen Spiegelserver auswählen</a>
+    NeedAnotherLang: Oder <a href='https://www.libreoffice.org/download/download/?lang=pick'>eine andere Sprache wählen</a>.
+    Outdated: Der angeforderte Download scheint veraltet zu sein. Bitte gehen Sie zu <a href='//www.libreoffice.org/download'>unserer Download-Seite</a> und wählen Sie eine aktuelle Version.<br/>Bei technischen Problemen mit dem Download schreiben Sie bitte eine Email an <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Bitte beachten Sie, dass wir <strong>keine</strong> technische Unterstützung unter dieser Adresse bieten.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Datei mittels BitTorrent herunterladen
   DonatePage:
+    BC_EMAIL_DESC: Falls Sie eine Bestätigungs-E-Mail für Kreditkartenzahlungen erhalten möchten
+    BC_EMAIL_LABEL: Optionale E-Mail
     BUTTON_CARD: Mittels Kreditkarte spenden
     BUTTON_PAYPAL: Mittels PayPal spenden
+    Bank: Sie können eine Spende auf unser Bankkonto überweisen
+    BankDetails: "<strong>Inhaber</strong>: {owner}<br/><strong>Verwendungszweck</strong>: Spende<br/><strong>Kontonummer</strong>: {accountNumber}<br/><strong>Bankleitzahl</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, <strong>BIC</strong>: {BIC}<br/><strong>Anschrift des Begünstigten</strong>: {tdfAddress}<br/><strong>Anschrift der Bank</strong>: {bankAddress}"
+    BankHeader: Banküberweisung
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Wählen Sie einen der vorgeschlagenen Beträge
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Oder geben Sie einen Betrag samt Währung ein<br/>(nur die mit * markierten sind auch via PayPal verfügbar)
+    CardOnly: "(nur per Karte)"
     ContinueLabel: Fortfahren
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: EUR
+    DonateUSHeader: Spende aus der USA
+    Flattr: Sie können uns <a href='{flattrlink}'>Flattr</a>n.
+    FlattrHeader: Flattr
+    FooterText: 'Andere Möglichkeiten zu spenden: Bitcoin, Flattr, Banküberweisung - klicken Sie unten auf den Bereich<br/>Fragen zu Ihrer Spende? <a href="mailto:info@documentfoundation.org">Senden Sie uns eine Mail</a>'
+    FreqMonthly: Monatliche Spende
+    FreqOneshot: Einmalige Spende
+    FreqQuarterly: Vierteljährliche Spende
+    FreqYearly: Jährliche Spende
     LeadText: LibreOffice ist freie Software und wird kostenfrei zur Verfügung gestellt.<br/>Ihre Spende, die freiwillig ist, unterstützt unsere weltweite Community.<br/>Wenn Ihnen die Software gefällt, würden wir uns über eine Spende freuen.
+    OPTIONAL_EMAIL: Optionale E-Mail
+    OPTIONAL_EMAIL_DES: Falls Sie eine Bestätigungs-E-Mail für Kreditkartenzahlungen erhalten möchten
+    OtherAmount: Anderer Betrag
     ProceedConcardis: Um Ihre Spende von <strong>{amount} {currency}</strong> zu verarbeiten, werden Sie nun zur ConCardis Webseite weitergeleitet, um den Vorgang Ihrer Spende abzuschließen.<br/>Wenn Sie nicht automatisch weitergeleitet werden sollten, klicken Sie bitte auf die Schaltfläche »Fortfahren« weiter unten.
     ProceedPayPal: Um Ihre Spende von <strong>{amount} {currency}</strong> zu verarbeiten, werden Sie nun zur PayPal Webseite weitergeleitet, um den Vorgang Ihrer Spende abzuschließen.<br/>Wenn Sie nicht automatisch weitergeleitet werden sollten, klicken Sie bitte auf die Schaltfläche »Fortfahren« weiter unten.
+    ReverseLayoutTitle: LibreOffice unterstützen
+    SLIDERLABEL: 'Betrag (bewegen Sie den Schieberegler, um den Wert zu ändern): '
+    Spi: LibreOffice ist ein von SPI unterstütztes Projekt
+    SpiDetails: Sie können <a href='https://www.spi-inc.org/donations/'> aus den USA spenden</a>, indem Sie "LibreOffice" bei Ihrer Spende erwähnen. Beachten Sie, dass Sie Spenden durch SPI in den USA von der Steuer absetzen können.
+    TaxHeader: Steuerabzug
+    TaxHint: <strong>Spenden an The Document Foundation lassen sich in vielen Ländern von der Steuer absetzen.<br/>Bitte fragen Sie in Ihrem Finanzamt nach weiteren Details.</strong><br/><strong>In Deutschland gilt:</strong><em>"{germanLegalText}"</em>
+    WhileYouDownload: Bitte überlegen Sie, ob Sie LibreOffice mit einer Spende unterstützen wollen, während Sie das Programm herunterladen.
   Download:
+    Archive: Ältere Versionen von LibreOffice (eventuell ohne Unterstützung!) sind <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>im Archiv</a> verfügbar
     ChangeLanguageLinkText: Möchten Sie die Sprache wechseln?
     ChangeLanguageLinkTitle: Wählen Sie eine andere Sprache
     Helppack: Offline LibreOffice-Hilfe auf <strong>{language}</strong>
@@ -45,7 +84,7 @@ de:
     Langpack: Übersetzte Benutzeroberfläche auf <strong>{language}</strong>
     LangpackButtonLabel: Übersetzung herunterladen
     LangpackLinkTitle: Übersetzte Benutzeroberfläche herunterladen
-    Mac64reqs: 10.8 oder höher erforderlich
+    Mac64reqs: 10.10 oder höher erforderlich
     MainButtonLabel: Version {version} herunterladen
     MainInstaller: Hauptprogramm
     MainLinkTitle: LibreOffice {version} für {os} herunterladen
@@ -61,7 +100,25 @@ de:
     VersionListReleased: 'LibreOffice ist in folgenden <strong>veröffentlichten</strong> Versionen verfügbar:'
     VersionListTesting: 'LibreOffice ist in folgenden <strong>Vorabversionen</strong> verfügbar:'
     Versions: Verfügbare Versionen
-    Win64reqs: Vista oder neuer erforderlich
+    Win64reqs: 7 SP1 oder neuer erforderlich
+  DownloadRefresh:
+    BoxHeader: LibreOffice herunterladen
+    ChangeLanguageLinkText: Möchten Sie die Sprache wechseln?
+    ChangeLanguageLinkTitle: Wählen Sie eine andere Sprache
+    ChooseOS: 'Wählen Sie Ihr Betriebssystem:'
+    DownloadLinkText: DOWNLOAD
+    FreshText: Wenn Sie Technikenthusiast, Vorreiter oder Spezialist sind, ist diese Version etwas für Sie!
+    HelppackButtonLabel: Offline-Hilfe herunterladen
+    HelppackLinkTitle: Hilfe für die Benutzung ohne Internetverbindung herunterladen
+    InfoLinkTitle: Checksummen und zusätzliche Informationen
+    InfoText: Info
+    LangpackLinkText: Übersetzte Benutzeroberfläche
+    LangpackLinkTitle: Sprachpaket herunterladen
+    RelnotesLinkText: LibreOffice {version} Veröffentlichungshinweise
+    StillText: Falls Sie LibreOffice im Unternehmensumfeld verwenden oder ein eher konservativer Benutzer sind, wählen Sie bitte diese Version.</span><span class="dl_description_text" style="font-size:18px;">Für die geschäftliche Nutzung empfehlen wir die <a href="//www.libreoffice.org/get-help/professional-support/">Unterstützung von zertifizierten Partnern</a>, die auch langzeitunterstützte Versionen von LibreOffice anbieten.
+    SupplementaryDownloads: 'Zusätzliche Downloads:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Download über BitTorrent
   Homepage:
     DownloadNow: Jetzt herunterladen
   RSS:

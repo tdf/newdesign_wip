@@ -6,7 +6,7 @@
  * @subpackage control
  */
 class SS_HTTPResponse {
-	
+
 	/**
 	 * @var array
 	 */
@@ -52,7 +52,7 @@ class SS_HTTPResponse {
 		504 => 'Gateway Timeout',
 		505 => 'HTTP Version Not Supported',
 	);
-	
+
 	/**
 	 * @var array
 	 */
@@ -64,17 +64,17 @@ class SS_HTTPResponse {
 		305,
 		307
 	);
-	
+
 	/**
-	 * @var Int
+	 * @var int
 	 */
 	protected $statusCode = 200;
-	
+
 	/**
-	 * @var String
+	 * @var string
 	 */
 	protected $statusDescription = "OK";
-	
+
 	/**
 	 * HTTP Headers like "Content-Type: text/xml"
 	 *
@@ -84,56 +84,56 @@ class SS_HTTPResponse {
 	protected $headers = array(
 		"Content-Type" => "text/html; charset=utf-8",
 	);
-	
+
 	/**
 	 * @var string
 	 */
 	protected $body = null;
-	
+
 	/**
 	 * Create a new HTTP response
-	 * 
-	 * @param $body The body of the response
-	 * @param $statusCode The numeric status code - 200, 404, etc
-	 * @param $statusDescription The text to be given alongside the status code. 
+	 *
+	 * @param string $body The body of the response
+	 * @param int $statusCode The numeric status code - 200, 404, etc
+	 * @param string $statusDescription The text to be given alongside the status code.
 	 *  See {@link setStatusCode()} for more information.
 	 */
 	public function __construct($body = null, $statusCode = null, $statusDescription = null) {
 		$this->setBody($body);
 		if($statusCode) $this->setStatusCode($statusCode, $statusDescription);
 	}
-	
+
 	/**
-	 * @param String $code
-	 * @param String $description Optional. See {@link setStatusDescription()}.
+	 * @param int $code
+	 * @param string $description Optional. See {@link setStatusDescription()}.
 	 *  No newlines are allowed in the description.
 	 *  If omitted, will default to the standard HTTP description
 	 *  for the given $code value (see {@link $status_codes}).
-	 * @return SS_HTTPRequest $this
+	 * @return $this
 	 */
 	public function setStatusCode($code, $description = null) {
 		if(isset(self::$status_codes[$code])) $this->statusCode = $code;
 		else user_error("Unrecognised HTTP status code '$code'", E_USER_WARNING);
-		
+
 		if($description) $this->statusDescription = $description;
 		else $this->statusDescription = self::$status_codes[$code];
 		return $this;
 	}
-	
+
 	/**
 	 * The text to be given alongside the status code ("reason phrase").
 	 * Caution: Will be overwritten by {@link setStatusCode()}.
-	 * 
-	 * @param String $description 
-	 * @return SS_HTTPRequest $this
+	 *
+	 * @param string $description
+	 * @return $this
 	 */
 	public function setStatusDescription($description) {
 		$this->statusDescription = $description;
 		return $this;
 	}
-	
+
 	/**
-	 * @return Int
+	 * @return int
 	 */
 	public function getStatusCode() {
 		return $this->statusCode;
@@ -145,7 +145,7 @@ class SS_HTTPResponse {
 	public function getStatusDescription() {
 		return str_replace(array("\r","\n"), '', $this->statusDescription);
 	}
-	
+
 	/**
 	 * Returns true if this HTTP response is in error
 	 *
@@ -154,69 +154,75 @@ class SS_HTTPResponse {
 	public function isError() {
 		return $this->statusCode && ($this->statusCode < 200 || $this->statusCode > 399);
 	}
-	
+
 	/**
 	 * @param string $body
-	 * @return SS_HTTPRequest $this
+	 * @return $this
 	 */
 	public function setBody($body) {
-		$this->body = $body ? (string)$body : $body; // Don't type-cast false-ish values, eg null is null not ''
+		$this->body = $body ? (string) $body : $body; // Don't type-cast false-ish values, eg null is null not ''
 		return $this;
 	}
-	
+
 	/**
 	 * @return null|string
 	 */
 	public function getBody() {
 		return $this->body;
 	}
-	
+
 	/**
 	 * Add a HTTP header to the response, replacing any header of the same name.
-	 * 
+	 *
 	 * @param string $header Example: "Content-Type"
-	 * @param string $value Example: "text/xml" 
-	 * @return SS_HTTPRequest $this
+	 * @param string $value Example: "text/xml"
+	 * @return $this
 	 */
 	public function addHeader($header, $value) {
 		$this->headers[$header] = $value;
 		return $this;
 	}
-	
+
 	/**
 	 * Return the HTTP header of the given name.
-	 * 
+	 *
 	 * @param string $header
 	 * @returns null|string
 	 */
-	public function getHeader($header) {
-		if(isset($this->headers[$header]))
-			return $this->headers[$header];			
+	public function getHeader($header, $anyCase = false) {
+		if ($anyCase) {
+			$headers = array_change_key_case($this->headers, CASE_LOWER);
+			$header = strtolower($header);
+		} else {
+			$headers = $this->headers;
 		}
-	
+		if(isset($headers[$header]))
+			return $headers[$header];
+		}
+
 	/**
 	 * @return array
 	 */
 	public function getHeaders() {
 		return $this->headers;
 	}
-	
+
 	/**
 	 * Remove an existing HTTP header by its name,
 	 * e.g. "Content-Type".
 	 *
 	 * @param string $header
-	 * @return SS_HTTPRequest $this
+	 * @return $this
 	 */
 	public function removeHeader($header) {
 		if(isset($this->headers[$header])) unset($this->headers[$header]);
 		return $this;
 	}
-	
+
 	/**
 	 * @param string $dest
 	 * @param int $code
-	 * @return SS_HTTPRequest $this
+	 * @return $this
 	 */
 	public function redirect($dest, $code=302) {
 		if(!in_array($code, self::$redirect_codes)) $code = 302;
@@ -254,6 +260,10 @@ EOT
 			if(!headers_sent($file, $line)) {
 				header($_SERVER['SERVER_PROTOCOL'] . " $this->statusCode " . $this->getStatusDescription());
 				foreach($this->headers as $header => $value) {
+					//etags need to be quoted
+					if (strcasecmp('etag', $header) === 0 && 0 !== strpos($value, '"')) {
+						$value = sprintf('"%s"', $value);
+					}
 					header("$header: $value", true, $this->statusCode);
 				}
 			} else {
@@ -261,12 +271,12 @@ EOT
 				if($this->statusCode >= 300) {
 					user_error(
 						"Couldn't set response type to $this->statusCode because " .
-						"of output on line $line of $file", 
+						"of output on line $line of $file",
 						E_USER_WARNING
 					);
 				}
 			}
-			
+
 			// Only show error pages or generic "friendly" errors if the status code signifies
 			// an error, and the response doesn't have any body yet that might contain
 			// a more specific error description.
@@ -275,10 +285,10 @@ EOT
 			} else {
 				echo $this->body;
 			}
-			
+
 		}
 	}
-	
+
 	/**
 	 * Returns true if this response is "finished", that is, no more script execution should be done.
 	 * Specifically, returns true if a redirect has already been requested
@@ -288,7 +298,7 @@ EOT
 	public function isFinished() {
 		return in_array($this->statusCode, array(301, 302, 303, 304, 305, 307, 401, 403));
 	}
-	
+
 }
 
 /**
@@ -305,13 +315,18 @@ EOT
  * @subpackage control
  */
 class SS_HTTPResponse_Exception extends Exception {
-	
+
+	/**
+	 * @var SS_HTTPResponse
+	 */
 	protected $response;
-	
+
 	/**
 	 * @param  string|SS_HTTPResponse body Either the plaintext content of the error message, or an SS_HTTPResponse
 	 *                                     object representing it.  In either case, the $statusCode and
 	 *                                     $statusDescription will be the HTTP status of the resulting response.
+	 * @param int $statusCode
+	 * @param string $statusDescription
 	 * @see SS_HTTPResponse::__construct();
 	 */
 	public function __construct($body = null, $statusCode = null, $statusDescription = null) {
@@ -329,22 +344,22 @@ class SS_HTTPResponse_Exception extends Exception {
 
 			$this->setResponse($response);
 		}
-		
+
 		parent::__construct($this->getResponse()->getBody(), $this->getResponse()->getStatusCode());
 	}
-	
+
 	/**
 	 * @return SS_HTTPResponse
 	 */
 	public function getResponse() {
 		return $this->response;
 	}
-	
+
 	/**
 	 * @param SS_HTTPResponse $response
 	 */
 	public function setResponse(SS_HTTPResponse $response) {
 		$this->response = $response;
 	}
-	
+
 }

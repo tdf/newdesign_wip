@@ -1,18 +1,18 @@
 
 @charset "UTF-8";
-/* CSS Document 
+/* CSS Document
  * Libre Office 2014
  */
 
 /* ==========================================================================
    Donate Section
    ========================================================================== */
-   
-#donate ul {
+
+#content1 ul {
   list-style: none;
   padding: 0;
-   
-#donate li {
+
+#content1 li {
     position: relative;
     min-height: 2em;
     padding: .3em .3em .3em 1.5em;
@@ -22,7 +22,7 @@
       box-shadow .1s ease-in-out,
       height .25s ease-in-out;
 
-#donate button {
+#content1 button {
       position: absolute;
       left: 1.45em;
       bottom: .35em;
@@ -33,7 +33,7 @@
       cursor: pointer;
       transition: all .4s ease-in-out;
     }
-   
+
     &:before {
       position: absolute;
       top: .425em;
@@ -46,7 +46,7 @@
         opacity: 1;
         height: 2em;
       }
-     
+
       &:before {
         color: rgba(255, 255, 255, 1);
         right: 0;
@@ -61,10 +61,10 @@
 }
 
 
-#donate  {
+#content1  {
   li {
     border-bottom: .15em solid rgba(0, 0, 0, .3);
-   
+
     &:before {
       /* fontawesome-download-alt */
       content: "\f019";
@@ -73,14 +73,199 @@
     &:hover {
       background: rgba(0, 140, 0, .7);
       height: 4em;
-   
+
       &:after {
         right: .35em;
       }
-     
+
       &:before {
         color: rgba(255, 255, 255, .2);
       }
     }
   }
+}
+/* stuff for redesign */
+#Form_DonationProceed, #donatetime {
+/*    width: 400px; */
+    border: 2px solid #babdb7;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: "Lato",sans-serif;
+}
+
+div.donate_title {
+    width: 100%;
+    color: #575955;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid #babdb7;
+}
+
+div.donate_intro_text {
+    margin-top: 16px;
+    margin-bottom: 26px;
+    color: #575955;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+}
+
+.donate_frequency, .donate_currency{
+    display: inline-block;
+    vertical-align:  top;
+    border: 2px solid #ccc;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 14px;
+    height: 40px;
+    width: 300px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+    background: url(/themes/libreofficenew/img/down-arrow.png) no-repeat right;
+}
+
+.donate_input{
+    display: inline-block;
+    vertical-align:  top;
+    border: 2px solid #ccc;
+    margin-right: 5px;
+    font-size: 14px;
+    height: 40px;
+    width: 300px;
+}
+
+ul.donate_frequency_radio {
+    width: 63%;
+    margin: auto;
+    margin-bottom: 1em;
+}   
+ul.donate_frequency_radio li {
+    display: inline-block;
+    padding-right: 0.5em;
+}   
+ul.donate_frequency_radio li label {
+    font-size: 14px;
+    font-weight: 400;
+}   
+.donate_input_radio {
+    display: inline;
+}   
+
+ul.donate_input_radio li {
+    font-size: 20px;
+    line-height: 28px;
+    vertical-align: middle;
+    display: inline;
+    line-height: 40px;
+    padding-right: 0.5em;
+}   
+#Form_DonationProceed_customAmount {
+    width: 150px;
+}   
+
+.donate_frequency, .donate_currency, .donate_inputs::-ms-expand {
+/*    display: none; this hides the whole thing */ /* hide the default arrow in ie10 and ie11 */
+}
+
+select.donate_frequency {
+    width: 250px;
+}
+
+input.donate_input[type="text"] {
+    width: 90px;
+    font-size: 20px;
+    color: #575955;
+    text-align: center;
+}
+
+input.donate_input_slider {
+    border: 0;
+    font-weight: bold;
+    width: 3em !important;
+    text-align: center;
+    font-size: large;
+}
+label.fieldholder-small-label {
+    font-size: larger;
+}
+
+select.donate_currency {
+    width: 150px;
+}
+
+input.donate_submit[type="submit"] {
+    border: 3px solid #087508;
+    zoom: 1;
+    min-width: 228px;
+    background: #00a500;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+}
+
+div.donate_footer_text {
+    border-top: 2px solid #babdb7;
+    padding-top: 1em;
+    margin-top: 16px;
+    color: #575955;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+}
+
+/* handle the invisible recaptcha that is put into a not-so-invisible div :-) */
+div.Actions div:not([class]) {
+    display: inline;
+}
+
+.g-recaptcha {
+    display: inline-block;
+    margin-bottom: 1.5em;
+}
+
+/* styles for the donate-downlaod buttons */
+div.DownloadsLeft {
+    display: inline-table;
+    margin-bottom: 1.5em;
+}
+div.DownloadsLeft ul { text-align: center; }
+div.DownloadsLeft li {
+    background: url("/themes/libreofficenew/img/download-button.png") no-repeat scroll 0 -10px #18A303;
+    box-shadow: 0 3px 5px #AAAAAA;
+    color: #FFFFFF;
+    display: inline-table;
+    font-size: .9em;
+    font-weight: bold;
+    height: 60px;
+    padding: 10px 0 0 72px;
+    text-shadow: 0 2px #18A303;
+    width: 340px;
+    margin:10px 0;
+    line-height: 120%;
+}
+div.DownloadsLeft li:hover {
+    background-position: 0 -90px;
+    color: #ffffff;
+    text-decoration: none;
+}
+div.DownloadsLeft li h2 {
+    font-size: 1.2em !important;
+    line-height: 120%;
+    margin: 0 0 3px;
+}
+div.DownloadsLeft li a, div.DownloadsLeft li a:visited {
+    color: #ffffff;
+}
+div.DownloadsLeft  li a:hover {
+    color: #ffffff;
+}
+div.DownloadsLeft li h2 {
+    color:inherit;
+    border:0;
 }

@@ -1,3 +1,4 @@
+<% cached 'homepage', $SubsiteID, $ID, $LastEdited %>
 <% include Slider %>
  <section id="highlights" class="section">
 <% include Banner %>
@@ -80,8 +81,9 @@
         </div>
         
         <div class="row">
-         <% cached "PrimaryFeed", PrimaryFeed.ID %>$PrimaryFeed<% end_cached %>
-         <% cached "SecondaryFeed", SecondaryFeed.ID %>$SecondaryFeed<% end_cached %>
+         <% cached "PrimaryFeed", $PrimaryFeed.ID, $ContentLocale %>$PrimaryFeed<% end_cached %>
+         <% cached "SecondaryFeed", $SecondaryFeed.ID, $ContentLocale %>$SecondaryFeed<% end_cached %>
         </div>
         </div>
         </section>
+<% end_cached %>

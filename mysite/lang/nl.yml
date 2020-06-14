@@ -1,12 +1,12 @@
 ---
 nl:
   BitPay:
-    ButtonAltText: BitPay, de makkelijke manier om met bitcoins te betalen.
+    ButtonAltText: BitPay, de makkelijke manier om met Bitcoins en Bitcoin cash te betalen.
     CheckoutLocale: en_US
     Email: E-mailadres (optioneel)
-    Header: U kunt via Bitcoins doneren
+    Header: U kunt doneren met met Bitcoins en Bitcoin Cash.
     LabelEmail: 'E-mail:'
-    RefundDisclaimer: Door zijn aard zijn Bitcoin donaties meestal anoniem. Enige vorm van terugbetaling of bevestiging van donatie is enkel mogelijk wanneer u uw e-mail adres vermeld en op het bedrag die we ontvangen van onze betalingsprovider. Wanneer u niet instemt met bovengenoemde voorwaarden, vragen wij u vriendelijk om een van de andere donatie-opties op deze pagina te overwegen.
+    RefundDisclaimer: Vanwege hun aard zijn donaties via Bitcoin en Bitcoin Cash anoniem, dus elke vorm van terugbetaling of donatiebevestiging is alleen mogelijk op het bedrag dat we hebben ontvangen van onze betalingsprovider, en alleen als u uw e-mailadres vermeldt.
   Concardis:
     CancelHeader: U heeft het proces geannuleerd
     CancelMessage: Helaas heeft u de betaling geannuleerd. <b>U heeft niet betaald. </b>Probeert u het alstublieft opnieuw en bij problemen of vragen kunt u altijd contact met ons opnemen via {infoemail}.
@@ -18,22 +18,61 @@ nl:
     ThanksButHeader: Hartelijk bedankt voor uw donatie!
     ThanksButMessage1: The Document Foundation wil u bedanken voor uw vriendelijke en gulle donatie. We hebben uw betaling ontvangen! Geniet van LibreOffice en heel erg bedankt voor uw steun!
     ThanksButMessage2: Let op dat de donaties momenteel nog niet kunnen bevestigd worden. Gelieven uw rekeningoverzicht te raadplegen of de donatie geslaagd is.
+  DonateDownload:
+    DownloadProblemContact: 'Heeft u problemen met het <strong>downloaden</strong> van LibreOffice? Houd er rekening mee dat we <strong>geen technische ondersteuning bieden</strong> voor het installeren of gebruiken van de software. Als u hulp nodig hebt, gaat u naar <a href=''https://ask.libreoffice.org/''> Vraag het LibreOffice</a>.<br/><br/> Maar als uw vraag gaat over het <strong>downloaden</strong> van LibreOffice van onze website, laat ons dan weten: (1) de versie van uw besturingssysteem; (2) uw webbrowser; (3) Foutmelding(en) die u ziet. Stuur deze naar <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> en we zullen proberen te helpen.'
+    Helppack: Ingebouwde LibreOffice Help
+    InfoLinkText: Informatie
+    InfoLinkTitle: Zie de checksums en de lijst van mirrors voor het downloaden van het bestand
+    Invalid: Downloadaanvraag lijkt ongeldig. Ga naar <a href='//www.libreoffice.org/download'>onze downloadpagina</a> en kies een huidige versie. <br/>Schrijf voor technische problemen met de download zelf naar <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Houd er rekening mee dat we <strong>geen</strong> technische ondersteuning bieden op dit adres.
+    Langpack: Vertaalde Gebruikersinterface
+    LinkStartText: Uw download <a href='{link}'>{filename} ({size})</a> start binnen een paar seconden. Klik op de link als deze niet start.
+    ManualMirror: U kunt ook <a href='{link}.mirrorlist'>handmatig een mirror kiezen</a>
+    NeedAnotherLang: Of <a href='https://www.libreoffice.org/download/download/?lang=pick'>kies een andere taal</a>.
+    Outdated: De gevraagde download lijkt verouderd te zijn? Ga naar <a href='//www.libreoffice.org/download'>onze downloadpagina</a> en kies een huidige versie. <br/>Schrijf voor technische problemen met de download zelf naar <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Houd er rekening mee dat we <strong>geen</strong> technische ondersteuning bieden op dit adres.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Het bestand met BitTorrent downloaden
   DonatePage:
+    BC_EMAIL_DESC: als u een bevestigingsmail wilt voor betalingen met creditcard
+    BC_EMAIL_LABEL: optioneel e-mail
     BUTTON_CARD: Doneer met een Creditcard
     BUTTON_PAYPAL: Doneer via PayPal
+    Bank: U kunt een donatie overmaken naar onze bankrekening
+    BankDetails: "<strong>Eigenaar</strong>: {owner}<br/><strong>Doel</strong>:Donation<br/><strong>Account</strong>: {accountNumber}<br/><strong>Bankcode</strong>: {bankCode}<br/><strong>IBAN-nummer</strong>: {IBAN}, BIC: {BIC}<br/><strong>Addres van ontvanger</strong>: {tdfAddress}<br/><strong>Addres van de bank</strong>: {bankAddress}"
+    BankHeader: Overboeking
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Selecteer één van de standaardwaarden
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Of voer een aangepast bedrag en valuta in<br/> (Alleen de met * gemarkeerde zijn ook beschikbaar via PayPal)
+    CardOnly: "(alleen kaart)"
     ContinueLabel: Verder
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
-    LeadText: LibreOffice is Vrije software en wordt gratis ter beschikking gesteld. <br/>Uw donatie die geheel vrijblijvend is, ondersteund onze wereldwijde gemeenschap.<br/>Als u onze software apprecieert, vragen we u graag een donatie te overwegen.
+    DonateUSHeader: Doneren vanuit de VS
+    Flattr: U kunt ons steunen via <a href='{flattrlink}'>Flattr</a>.
+    FlattrHeader: Flattr
+    FooterText: 'Andere donatiemogelijkheden: Bitcoin, Flattr, bankoverschrijving - klik op de mogelijkheden onder <br/>Ik ben geen robot<br/>.'
+    FreqMonthly: Maandelijkse donatie
+    FreqOneshot: Eenmalige donatie
+    FreqQuarterly: Driemaandelijkse donatie
+    FreqYearly: Jaarlijkse donatie
+    LeadText: LibreOffice is vrije software en wordt gratis ter beschikking gesteld. <br/>Uw donatie die geheel vrijblijvend is, ondersteunt onze wereldwijde gemeenschap.<br/>Als u onze software apprecieert, vragen we u graag een donatie te overwegen.
+    OPTIONAL_EMAIL: Optionele e-mail
+    OPTIONAL_EMAIL_DES: als u een bevestigingsmail wilt voor betalingen met creditcard
+    OtherAmount: Ander bedrag
     ProceedConcardis: Ow uw donatie van <strong>{amount}{currency}</strong> te vervolledigen, wordt u nu doorgestuurd naar de ConCardis website.<br/>Als u niet automatisch doorgestuurd wordt, gelieve op de knop 'Verder Gaan' (onderaan) te drukken.
     ProceedPayPal: Ow uw donatie van <strong>{amount}{currency}</strong> te vervolledigen, wordt u nu doorgestuurd naar de PayPal website.<br/>Als u niet automatisch doorgestuurd wordt, gelieve op de knop 'Verder Gaan' (onderaan) te drukken.
+    ReverseLayoutTitle: Steun LibreOffice
+    SLIDERLABEL: 'Bedrag (sleep de schuifregelaar hieronder om te wijzigen): '
+    Spi: LibreOffice is een SPI-geassocieerd project
+    SpiDetails: U kunt <a href='https://www.spi-inc.org/donations/'>doneren vanuit de V </a> door \\'LibreOffice\\' te vermelden bij uw donatie. Houd er rekening mee dat donaties via SPI kunnen worden afgetrokken van Amerikaanse belastingen.
+    TaxHeader: Belastingaftrek
+    TaxHint: <strong>Donaties aan The Document Foundation zijn in verschillende landen fiscaal aftrekbaar.<br/> Raadpleeg uw lokale belastingkantoor voor meer informatie. </strong><br/><strong>Voor inwoners van Duitsland:</strong><em>"{germanLegalText}"</em>
+    WhileYouDownload: Terwijl u aan het downloaden bent, overweeg dan om LibreOffice te ondersteunen met een donatie
   Download:
+    Archive: Oudere versies van LibreOffice (mogelijk niet-ondersteund!) Zijn beschikbaar <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>in het archief</a>
     ChangeLanguageLinkText: wilt u een andere taal?
     ChangeLanguageLinkTitle: Kies een andere taal
     Helppack: LibreOffice ingebouwde Help in <strong>{language}</strong>
@@ -45,12 +84,12 @@ nl:
     Langpack: LibreOffice-interface vertaald in <strong>{language}</ strong>
     LangpackButtonLabel: Vertaalde Gebruikersinterface
     LangpackLinkTitle: Download het taalpakket
-    Mac64reqs: 10.8 of hoger vereist
+    Mac64reqs: 10.10 of hoger vereist
     MainButtonLabel: Download Versie {version}
     MainInstaller: Hoofdinstallatie
     MainLinkTitle: Download LibreOffice {version} voor {os}
     OS: Besturingssystemen
-    OSList: 'LibreOffice {version} is beschikbaar voor de volgende besturingssystemen/platvormen:'
+    OSList: 'LibreOffice {version} is beschikbaar voor de volgende besturingssystemen/platforms:'
     PickLanguage: Selecteer a.u.b. een taal
     PlatformChange: 'Geselecteerd: LibreOfice {version} voor {os} - <a href=''{curr_page}#change''>wijzigen?</a>'
     SDKandSource: SDK en broncode
@@ -61,7 +100,25 @@ nl:
     VersionListReleased: 'LibreOffice is beschikbaar in de volgende <strong>released</strong> versies:'
     VersionListTesting: 'LibreOffice is beschikbaar in de volgende <strong>prerelease</strong> versies:'
     Versions: 'Beschikbare versies:'
-    Win64reqs: Vista of nieuwer vereist
+    Win64reqs: 7 of nieuwer vereist
+  DownloadRefresh:
+    BoxHeader: Download LibreOffice
+    ChangeLanguageLinkText: wilt u een andere taal?
+    ChangeLanguageLinkTitle: Kies een andere taal
+    ChooseOS: 'Kies uw besturingssysteem:'
+    DownloadLinkText: DOWNLOAD
+    FreshText: Als u een technologie-liefhebber, early adopter of power user bent, is deze versie iets voor u!
+    HelppackButtonLabel: Help voor offline gebruik
+    HelppackLinkTitle: Offline-help downloaden
+    InfoLinkTitle: Checksums en aanvullende informatie
+    InfoText: Informatie
+    LangpackLinkText: Vertaalde Gebruikersinterface
+    LangpackLinkTitle: Download het taalpakket
+    RelnotesLinkText: LibreOffice (versie) uitgavenotities
+    StillText: Als u LibreOffice implementeert in een onderneming of een bedrijfsomgeving of een conservatieve gebruiker bent, kiest u deze versie. </span><span class="dl_description_text" style="font-size:18px;">Voor zakelijke implementaties, raden we <a href="//www.libreoffice.org/get-help/professional-support/">ondersteuning van gecertificeerde partners</a>, die ook langdurige ondersteuningsversies van LibreOffice bieden, ten zeerste aan.
+    SupplementaryDownloads: 'Aanvullende downloads:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Download met gebruik van BitTorrent
   Homepage:
     DownloadNow: Download nu
   RSS:

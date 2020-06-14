@@ -4,9 +4,9 @@ eo:
     ButtonAltText: BitPay, facila metodo pagi per bitmono.
     CheckoutLocale: eo
     Email: Retadreso (malnepra)
-    Header: Vi povas donaci per bitmono
+    Header: Vi povas donaci per Bitcoin kaj Bitcoin Cash
     LabelEmail: 'Retpoŝto:'
-    RefundDisclaimer: Pro ilia naturo, donacoj per bitmono kutime estas anonimaj, do konfirmo de repago aŭ donaco nur eblas ĉe la sumo kiun ni ricevis per nia pagprovizisto, kaj nur se vi menciis vian retadreson. Se vi ne konsentas al tiuj kondiĉoj, ni ĝentile petas al vi konsideri iun el la aliaj donacaj ebloj menciitaj en ĉi tiu paĝo.
+    RefundDisclaimer: Pro ilia karaktero, donacoj per Bitcoin kaj Bitcoin Cash estas anonimaj, do iaj repagoj aŭ konfirmo pri donaco eblas nur pri la monsumo kiun ni ricevis de nia pagoliveranto, kaj nur mencias vian retadreson.
   Concardis:
     CancelHeader: Vi nuligis la procezon
     CancelMessage: Bedaŭrinde, vi nuligis la pagon. <b>Ni ne pagigis vin.</b> Bonvolu reprovi kaj, en la kazo de problemo aŭ demando, vi estas libera iam kontakti nin ĉe {infoemail}.
@@ -18,22 +18,61 @@ eo:
     ThanksButHeader: Multajn dankojn pro via donaco!
     ThanksButMessage1: La fonduso 'Document Foundation' dankas vin pro via afabla kaj malavara donaco. Ni ricevis vian pagon! Ĝuu je LibreOffice, kaj multajn dankojn pro via subteno!
     ThanksButMessage2: Bonvolu noti ke ankoraŭ ne eblis konfirmi vian donacon. Bonvolu kontroli en viaj registraĵoj ĉu la donaco okazis.
+  DonateDownload:
+    DownloadProblemContact: 'Ĉu vi spertas problemojn <strong>elŝutante</strong> je LibreOffice? Notu ke ni <strong>ne provizas teknikan subtenon</strong> pri la instalado aŭ uzado de la programaro. Se vi bezonas helpon, bonvolu viziti al <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Sed se via demando temas pri <strong>elŝuti</strong> je LibreOffice el nia retejo, sciigu nin pri: (1) la versio de via mastruma sistemo; (2) via TTT-legilo; (3) prieraraj mesaĝoj viditaj de vi. Sendu tiujn al <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> kaj ni provos helpi.'
+    Helppack: Integrita helpo de LibreOffice
+    InfoLinkText: Informoj
+    InfoLinkTitle: Rigardu je la md5sum kaj listo de elŝutaj serviloj por ĉi tiu dosiero
+    Invalid: La elŝuta peto ŝajnas nevalida. Bonvolu iri al <a href='//www.libreoffice.org/download'>nia elŝuta paĝo</a> kaj elektu la aktualan version.<br/>Por teknikaj problemoj pri la elŝuto mem, bonvolu skribi al <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Notu ke ni <strong>ne</strong> provizas teknikan subtenon ĉe tiu adreso.
+    Langpack: Tradukita fasado
+    LinkStartText: Via elŝuto <a href='{link}'>{filename} ({size})</a> devus baldaŭ komenci. Bonvolu klaki al la ligilo se ĝi ne komencas.
+    ManualMirror: Vi ankaŭ povas <a href='{link}.mirrorlist'>mane elekti spegulon</a>
+    NeedAnotherLang: Aŭ <a href='https://www.libreoffice.org/download/download/?lang=pick'> elekti alian lingvon</a>.
+    Outdated: La elŝutaĵo petita ŝajnas eksvalida. Bonvolu iri al <a href='//www.libreoffice.org/download'>nia elŝuta paĝo</a> kaj elektu aktualan version.<br/>Por teknikaj problemoj pri la elŝuto mem, bonvolu skribi al <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Notu ke ni <strong>ne</strong> provizas teknikan subtenon ĉe tiu adreso.
+    TorrentLinkText: Torento
+    TorrentLinkTitle: Elŝuti la dosieron per BitTorrent
   DonatePage:
+    BC_EMAIL_DESC: se vi volas ricevi konfirmon por kreditkartaj pagoj
+    BC_EMAIL_LABEL: malnepra retadreso
     BUTTON_CARD: Donaci per kreditkarto
     BUTTON_PAYPAL: Donaci per Paypal
+    Bank: Vi povas transpagi donacon al nia banka konto
+    BankDetails: "<strong>Posedanto</strong>: {owner}<br/><strong>Celo</strong>: Donaco<br/><strong>Konto</strong>:{accountNumber}<br/><strong>Banka Kodo</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Adreso de ricevonto</strong>: {tdfAddress}<br/><strong>Adreso de banko</strong>:{bankAddress}"
+    BankHeader: Banka transpago
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Elektu iun el la aprioraj valoroj
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Aŭ enigu propran monsumon kaj valuton<br/> (nur tiuj markitaj per * ankaŭ eblas per Paypal)
+    CardOnly: "(nur karto)"
     ContinueLabel: Daŭrigi
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
+    DonateUSHeader: Donaci el Usono
+    Flattr: Vi povas donaci per <a href='{flattrlink}'>Flattr</a>
+    FlattrHeader: Flattr
+    FooterText: 'Aliaj metodoj donaci: Bitcoin, Flattr, banka transpago - alklaku la markobutonojn sube.<br/>Ĉu demandoj pri via donaco?<a href="mailto:info@documentfoundation.org">Sendu al vi retmesaĝon</a>'
+    FreqMonthly: Monata donaco
+    FreqOneshot: Unufoja donaco
+    FreqQuarterly: Trimonata donaco
+    FreqYearly: Jara donaco
     LeadText: LibreOffice estas libera programaro kaj disponeblas senpage. <br/>Via donaco, kiu estas tute volonta, subtenas nian tutmondan komunumon.<br/>Se la programaro plaĉas al vi, bonvolu konsideri donacon.
+    OPTIONAL_EMAIL: malnepra retadreso
+    OPTIONAL_EMAIL_DES: se vi volas ricevi konfirmon por kreditkartaj pagoj
+    OtherAmount: Alia monsumo
     ProceedConcardis: Por trakti vian donacon de <strong>{amount} {currency}</strong>, vi nun iras al la retejo de ConCardis por kompletigi la pagon.<br/>Se vi ne iras tien aŭtomate, bonvolu alklaki la suban butonon 'Daŭrigi'.
     ProceedPayPal: Por trakti vian donacon de <strong>{amount} {currency}</strong>, vi nun iras al la retejo de Paypal por kompletigi la pagon.<br/>Se vi ne iras tien aŭtomate, bonvolu alklaki la suban butonon 'Daŭrigi'.
+    ReverseLayoutTitle: Subteni al LibreOffice
+    SLIDERLABEL: 'Monsumo (ŝovu la ŝovilon sube por ŝanĝi): '
+    Spi: LibreOffice estas projekto asociita kun SPI
+    SpiDetails: Vi povas <a href='https://www.spi-inc.org/donations/'>donaci el Usono</a> menciante je "LibreOffice" kun via donaco. Notu ke donacoj per SPI povas esti deduktitaj de usonaj impostoj.
+    TaxHeader: Impostaj deduktoj
+    TaxHint: <strong>Donacoj al la fondaĵo The Document Foundation estas dedukteblaj en iuj landoj.<br/>Bonvolu referi al via loka imposta fako por detaloj. </strong><br/><strong>Por germanujanoj:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Dum vi elŝutas, bonvolu konsideri donace subteni je LibreOffice
   Download:
+    Archive: Pli malnovaj versioj de LibreOffice (eble ne plu subtenataj!) disponeblas <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>en la arkivo</a>
     ChangeLanguageLinkText: bezonas alian lingvon?
     ChangeLanguageLinkTitle: Elektu alian lingvon
     Helppack: Enkorpigita helpo de LibreOffice en <strong>{language}</strong>
@@ -45,7 +84,7 @@ eo:
     Langpack: Akiri je LibreOffice-fasadon tradukitan en  <strong>{language}</strong>
     LangpackButtonLabel: Tradukita fasado
     LangpackLinkTitle: Elŝuti la lingvopakon
-    Mac64reqs: 10.8 aŭ pli nova bezonata
+    Mac64reqs: 10.10 aŭ pli nova bezonata
     MainButtonLabel: Elŝuta versio {version}
     MainInstaller: Ĉefa instalilo
     MainLinkTitle: Elŝuti je LibreOffice {version} por {os}
@@ -61,7 +100,25 @@ eo:
     VersionListReleased: 'LibreOffice disponeblas en la jenaj <strong>eldonitaj</strong> versioj:'
     VersionListTesting: 'LibreOffice disponeblas en la jenaj <strong>antaŭeldonaj</strong> versioj:'
     Versions: Disponeblaj versioj
-    Win64reqs: bezonatas Vista aŭ pli nova
+    Win64reqs: bezonatas 7 aŭ pli nova
+  DownloadRefresh:
+    BoxHeader: Elŝuti je LibreOffice
+    ChangeLanguageLinkText: ĉu bezonas alian lingvon?
+    ChangeLanguageLinkTitle: Elekti alian lingvon
+    ChooseOS: 'Elekti vian mastruman sistemon:'
+    DownloadLinkText: ELŜUTI
+    FreshText: Se vi estas adepto pri teknologio, frua adoptemulo, aŭ avanca uzanto, tiu estas por vi!
+    HelppackButtonLabel: Helpo por eksterreta uzado
+    HelppackLinkTitle: Elŝuti helpenhavon por eksterreta uzado
+    InfoLinkTitle: Kontrolsumoj kaj plua informo
+    InfoText: Informoj
+    LangpackLinkText: Tradukita fasado
+    LangpackLinkTitle: Elŝuti la lingvopakon
+    RelnotesLinkText: Eldonaj notoj de LibreOffice {version}
+    StillText: Se vi instalas je LibreOffice en entrepreno aŭ kompanio aŭ estas konservativa uzanto, bonvolu elekti ĉi tiun version. </span><span class="dl_description_text" style="font-size:18px;">Por komerca uzado, ni emfaze rekomendas <a href="//www.libreoffice.org/get-help/professional-support/">subtenadon de kvalifikita partnero</a> kiu ankaŭ ofertas daŭrajn versiojn de LibreOffice.
+    SupplementaryDownloads: 'Suplementaj elŝutoj:'
+    TorrentLinkText: Torento
+    TorrentLinkTitle: Elŝuti per BitTorrent
   Homepage:
     DownloadNow: Elŝuti nun
   RSS:

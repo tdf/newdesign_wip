@@ -4,9 +4,9 @@ el:
     ButtonAltText: BitPay, ο εύκολος τρόπος να πληρώσετε με ψηφιακά χρήματα.
     CheckoutLocale: en_US
     Email: Ηλεκτρονική διεύθυνση (προαιρετική)
-    Header: Μπορείτε να δωρίσετε μέσω ψηφιακών χρημάτων (Bitcoins)
+    Header: Μπορείτε να δωρίσετε μέσω ψηφιακών χρημάτων.
     LabelEmail: 'Ηλεκτρονική διεύθυνση:'
-    RefundDisclaimer: Λόγω της φύσης τους, οι δωρεές μέσα από ψηφιακά χρήματα είναι συνήθως ανώνυμες, έτσι οποιοδήποτε είδος επιστροφών ή επιβεβαίωσης δωρεάς είναι δυνατό μόνο στο ποσό που δεχτήκαμε από τον πάροχο πληρωμών μας και μόνο με δεδομένο ότι αναφέρατε την ηλ. διεύθυνση αλληλογραφίας σας. Αν δεν συναινείτε με τις προαναφερθείσες συνθήκες, σας ζητάμε να σκεφτείτε μια από τις άλλες επιλογές δωρεάς που περιγράφονται σε αυτήν τη σελίδα.
+    RefundDisclaimer: Λόγω της φύσης τους, οι δωρεές μέσω ψηφιακών χρημάτων είναι ανώνυμες, έτσι κάθε είδος επιβεβαίωσης επιστροφής χρημάτων ή δωρεάς είναι δυνατή μόνο για το ποσό που δεχτήκαμε από τον πάροχο πληρωμών μας και δίνεται μόνο εάν αναφέρατε την ηλεκτρονική σας διεύθυνση.
   Concardis:
     CancelHeader: Ακυρώσατε τη διαδικασία
     CancelMessage: Δυστυχώς, ακυρώσατε την πληρωμή. <b>Δεν έχετε επιβαρυνθεί.</b> Παρακαλούμε ξαναπροσπαθήστε και σε περίπτωση προβλημάτων ή ερωτήσεων, μπορείτε να επικοινωνήσετε μαζί μας στο {infoemail} οποτεδήποτε.
@@ -18,22 +18,61 @@ el:
     ThanksButHeader: Σας ευχαριστούμε πολύ για τη δωρεά σας!
     ThanksButMessage1: Το Document Foundation θα ήθελε να σας ευχαριστήσει για την ευγενική και γενναιόδωρη δωρεά σας. Αποδεχτήκαμε την πληρωμή σας! Απολαύστε το LibreOffice και σας ευχαριστούμε πάρα πολύ για την υποστήριξή σας!
     ThanksButMessage2: Παρακαλούμε σημειώστε ότι η δωρεά δεν μπόρεσε ακόμα να επιβεβαιωθεί. Παρακαλούμε ελέγξτε τις εγγραφές σας αν η δωρεά έγινε.
+  DonateDownload:
+    DownloadProblemContact: 'Έχετε προβλήματα με το <strong>κατέβασμα</strong> του LibreOffice; Σημειώστε ότι δεν <strong>παρέχουμε τεχνική υποστήριξη</strong> για την εγκατάσταση ή τη χρήση του λογισμικού. Εάν χρειάζεστε βοήθεια, επισκεφτείτε το <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />Αλλά εάν η ερώτησή σας είναι για το <strong>κατέβασμα</strong> του LibreOffice από τον ιστότοπό μας, πείτε μας: (1) την έκδοση του λειτουργικού σας συστήματος, (2) τον πλοηγητή ιστού σας, (3) τα μηνύματα σφάλματος που βλέπετε. Στείλτε τα παραπάνω στο <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> και θα προσπαθήσουμε να σας βοηθήσουμε.'
+    Helppack: Ενσωματωμένη βοήθεια του LibreOffice
+    InfoLinkText: Πληροφορίες
+    InfoLinkTitle: Δείτε τα αθροίσματα ελέγχου και σημειώστε τους καθρέφτες λήψης για αυτό το αρχείο
+    Invalid: Η αιτηθείσα λήψη φαίνεται άκυρη. Παρακαλούμε, πηγαίνετε στη <a href='//www.libreoffice.org/download'>σελίδα μεταφόρτωσής μας</a> και επιλέξτε μια τρέχουσα έκδοση.<br/>Για τεχνικά προβλήματα με την ίδια τη λήψη, γράψτε στο <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Σας ενημερώνουμε ότι <strong>δεν</strong> παρέχουμε τεχνική υποστήριξη σε αυτή τη διεύθυνση.
+    Langpack: Μεταφρασμένη διεπαφή χρήστη
+    LinkStartText: Η λήψη του <a href='{link}'>{filename} ({size})</a> πρέπει να ξεκινήσει σύντομα. Παρακαλούμε, πατήστε τον σύνδεσμο, εάν δεν ξεκινήσει.
+    ManualMirror: Μπορείτε επίσης να <a href='{link}.mirrorlist'>επιλέξετε χειροκίνητα έναν καθρέφτη</a>
+    NeedAnotherLang: Ή να <a href='https://www.libreoffice.org/download/download/?lang=pick'>επιλέξετε μια άλλη γλώσσα</a>.
+    Outdated: Η αιτηθείσα λήψη φαίνεται άκυρη. Παρακαλούμε, πηγαίνετε στη <a href='//www.libreoffice.org/download'>σελίδα μεταφόρτωσής μας</a> και επιλέξτε μια τρέχουσα έκδοση.<br/>Για τεχνικά προβλήματα με την ίδια τη λήψη, γράψτε στο <a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Σας ενημερώνουμε ότι <strong>δεν</strong> παρέχουμε τεχνική υποστήριξη σε αυτήν τη διεύθυνση.
+    TorrentLinkText: Χείμαρρος (Torrent)
+    TorrentLinkTitle: Λήψη του αρχείου χρησιμοποιώντας BitTorrent
   DonatePage:
+    BC_EMAIL_DESC: αν θέλετε επιβεβαίωση αλληλογραφίας για πληρωμές πιστωτικής κάρτας
+    BC_EMAIL_LABEL: προαιρετικό ηλ. ταχυδρομείο
     BUTTON_CARD: Δωρεά μέσω πιστωτικής κάρτας
     BUTTON_PAYPAL: Δωρεά μέσω PayPal
+    Bank: Μπορείτε να μεταφέρετε μια δωρεά στον τραπεζικό μας λογαριασμό
+    BankDetails: "<strong>Κάτοχος</strong>: {owner}<br/><strong>Σκοπός</strong>: Δωρεά<br/><strong>Λογαριασμός</strong>: {accountNumber}<br/><strong>Τραπεζικό κωδικός</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Διεύθυνση παραλήπτη</strong>: {tdfAddress}<br/><strong>Διεύθυνση τράπεζας</strong>: {bankAddress}"
+    BankHeader: Τραπεζική μεταφορά
+    BitcoinHeader: Ψηφιακά χρήματα
     CHOICE_DEFAULT: Επιλέξτε μία από τις επιλεγμένες τιμές
     CUSTOM_AMOUNT_VALUE: '25'
     CUSTOM_CHOICE: Ή εισάγετε ένα προσαρμοσμένο ποσό και νόμισμα<br/>(μόνο αυτά που σημειώνονται με * είναι επίσης διαθέσιμα μέσω PayPal)
+    CardOnly: "(μόνο κάρτα)"
     ContinueLabel: Συνεχίστε
     DEFAULT_AMOUNT_EUR05: '5'
     DEFAULT_AMOUNT_EUR10: '10'
     DEFAULT_AMOUNT_EUR20: '20'
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: EUR
+    DonateUSHeader: Δωρεά από τις ΗΠΑ
+    Flattr: Μπορείτε να μας <a href='{flattrlink}'>Flattr</a>
+    FlattrHeader: Flattr
+    FooterText: 'Άλλοι τρόποι να δώσετε: Bitcoin, Flattr, τραπεζικές μεταφορές - πατήστε τα παρακάτω πλαίσια<br/>Ερωτήσεις για τη δωρεά σας;<a href="mailto:info@documentfoundation.org">Στείλτε μας ένα ηλ. μήνυμα</a>'
+    FreqMonthly: Μηνιαία δωρεά
+    FreqOneshot: Δωρεά μιας φοράς
+    FreqQuarterly: Τριμηνιαία δωρεά
+    FreqYearly: Ετήσια δωρεά
     LeadText: Το LibreOffice είναι ελεύθερο λογισμικό και είναι διαθέσιμο χωρίς χρέωση.<br/>Η δωρεά σας, που είναι καθαρά προαιρετική, υποστηρίζει την παγκόσμια κοινότητά μας.<br/>Αν σας αρέσει το λογισμικό, παρακαλούμε σκεφτείτε μια δωρεά.
+    OPTIONAL_EMAIL: προαιρετικό ηλ. ταχυδρομείο
+    OPTIONAL_EMAIL_DES: εάν θέλετε επιβεβαίωση αλληλογραφίας για πληρωμές πιστωτικής κάρτας
+    OtherAmount: Άλλο ποσό
     ProceedConcardis: Για να επεξεργαστείτε τη δωρεά σας των <strong>{ποσό} {νόμισμα}</strong>, σας προωθούμε τώρα στον ιστότοπο ConCardis για να ολοκληρώσετε την πληρωμή.<br/>Αν δεν γίνει αυτόματα η προώθηση, παρακαλούμε πατήστε το πλήκτρο με όνομα Συνέχεια παρακάτω.
     ProceedPayPal: Για να επεξεργαστείτε τη δωρεά σας των <strong>{ποσό} {νόμισμα}</strong>, σας προωθούμε τώρα στον ιστότοπο PayPal για να ολοκληρώσετε την πληρωμή.<br/>Αν δεν γίνει αυτόματα η προώθηση, παρακαλούμε πατήστε το πλήκτρο με όνομα Συνέχεια παρακάτω.
+    ReverseLayoutTitle: Υποστήριξη LibreOffice
+    SLIDERLABEL: 'Ποσό (σύρτε τον παρακάτω ολισθητή για να αλλάξετε):'
+    Spi: Το LibreOffice είναι ένα έργο συνδεμένο με SPI
+    SpiDetails: Μπορείτε <a href='https://www.spi-inc.org/donations/'>να δωρίσετε από τις ΗΠΑ</a> αναφέροντας "LibreOffice" με τη δωρεά σας. Σημειώστε ότι οι δωρεές μέσω SPI μπορούν να αφαιρεθούν από τους φόρους ΗΠΑ.
+    TaxHeader: Εκπτώσεις φόρου
+    TaxHint: <strong>Δωρεές στο Document Foundation εκπίπτουν από τον φόρο σε πολλές χώρες.<br/>Παρακαλούμε, δείτε την τοπική εφορία για λεπτομέρειες.</strong><br/><strong>Για κατοίκους της Γερμανίας:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Κατά τη λήψη, παρακαλούμε να εξετάσετε την υποστήριξη του LibreOffice με μια δωρεά
   Download:
+    Archive: Οι πιο παλιές εκδόσεις του LibreOffice (μπορεί να μην υποστηρίζονται!) είναι διαθέσιμες <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>στην αρχειοθήκη</a>
     ChangeLanguageLinkText: χρειάζεστε μια άλλη γλώσσα;
     ChangeLanguageLinkTitle: Επιλέξτε μια άλλη γλώσσα
     Helppack: Η ενσωματωμένη βοήθεια του LibreOffice στα <strong>{γλώσσα}</strong>
@@ -45,7 +84,7 @@ el:
     Langpack: Λήψη της διεπαφής LibreOffice μεταφρασμένης στο <strong>{γλώσσα}</strong>
     LangpackButtonLabel: Μεταφρασμένη διεπαφή χρήστη
     LangpackLinkTitle: Μεταφόρτωση του γλωσσικού πακέτου
-    Mac64reqs: απαιτείται έκδοση 10.8 ή νεότερη
+    Mac64reqs: απαιτείται έκδοση 10.10 ή νεότερη
     MainButtonLabel: Μεταφόρτωση της έκδοσης {έκδοση}
     MainInstaller: Κύριος εγκαταστάτης
     MainLinkTitle: Μεταφόρτωση LibreOffice {έκδοση} για το {λειτουργικό}
@@ -61,7 +100,25 @@ el:
     VersionListReleased: 'Το LibreOffice είναι διαθέσιμο στις παρακάτω εκδόσεις που <strong>κυκλοφόρησαν</strong>:'
     VersionListTesting: 'Το LibreOffice είναι διαθέσιμο στις παρακάτω εκδόσεις σε μορφή <strong>προκυκλοφορίας</strong>:'
     Versions: Διαθέσιμες εκδόσεις
-    Win64reqs: απαιτείται Vista ή νεότερη έκδοση
+    Win64reqs: απαιτείται 7 ή νεότερη έκδοση
+  DownloadRefresh:
+    BoxHeader: Λήψη LibreOffice
+    ChangeLanguageLinkText: χρειάζεστε μια άλλη γλώσσα;
+    ChangeLanguageLinkTitle: Επιλέξτε μια άλλη γλώσσα
+    ChooseOS: 'Επιλέξτε το λειτουργικό σας σύστημα:'
+    DownloadLinkText: ΛΗΨΗ
+    FreshText: Εάν είσαστε οπαδός της τεχνολογίας ,εάν υιοθετείτε νωρίς νέες τεχνολογίες, αυτή η έκδοση είναι για σας!
+    HelppackButtonLabel: Βοήθεια για χρήση χωρίς σύνδεση
+    HelppackLinkTitle: Κατεβάστε το περιεχόμενο βοήθειας για χρήση χωρίς σύνδεση
+    InfoLinkTitle: Ελεγκτικά αθροίσματα και πρόσθετες πληροφορίες
+    InfoText: Πληροφορίες
+    LangpackLinkText: Μεταφρασμένη διεπαφή χρήστη
+    LangpackLinkTitle: Λήψη του γλωσσικού πακέτου
+    RelnotesLinkText: Σημειώσεις έκδοσης LibreOffice {version}
+    StillText: Εάν χρησιμοποιείτε το LibreOffice σε μια επιχείριση ή εταιρικό περιβάλλον ή είσαστε συντηρητικός χρήστης, επιλέξτε αυτήν την έκδοση.</span><span class="dl_description_text" style="font-size:18px;">Για επαγγελματική ανάπτυξη, σας συνιστούμε <a href="//www.libreoffice.org/get-help/professional-support/">υποστήριξη από πιστοποιημένους συνεργάτες</a> που προσφέρει επίσης μακροχρόνια υποστήριξη των εκδόσεων του LibreOffice.
+    SupplementaryDownloads: 'Συμπληρωματικές λήψεις:'
+    TorrentLinkText: Χείμαρρος (Torrent)
+    TorrentLinkTitle: Λήψη χρησιμοποιώντας BitTorrent
   Homepage:
     DownloadNow: Λήψη τώρα
   RSS:

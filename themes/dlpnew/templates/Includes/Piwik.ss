@@ -2,6 +2,7 @@
 <script type="text/javascript">
   var _paq = _paq || [];
 
+  _paq.push(["disableCookies"]);
   _paq.push(["trackPageView"]);
   _paq.push(["enableLinkTracking"]);
 

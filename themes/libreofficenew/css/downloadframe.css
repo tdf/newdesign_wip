@@ -1,0 +1,79 @@
+div.dl_outer_green_box {
+    display: block;
+    width: 100%;
+    background-color: #00a500;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 2em;
+}
+
+div.dl_inner_white_box {
+    display: block;
+    background-color: white;
+    padding: 15px;
+    margin-top: 15px;
+}
+div.dl_inner_white_box img {
+        vertical-align: initial;
+    }
+
+div.dl_grey_floating_box {
+    float: right;
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+span.dl_outer_green_box_header_text {
+    font-family: sans-serif;
+    font-size: 40px;
+    color: white;
+}
+
+span.dl_choose_your_os_text {
+    font-family: sans-serif;
+    font-size: 16px;
+    padding-bottom: 10px;
+    display:block;
+}
+
+span.dl_yellow_download_button {
+    display: block;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #FFD74C;
+    padding: 8px;
+    padding-top: 11px;
+    margin-top: 16px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+span.dl_version_number {
+    font-family: sans-serif;
+    font-size: 44px;
+    color: #666666;
+    padding-left: 10px;
+}
+
+a.dl_download_link {
+    color: black;
+    text-decoration: none;
+}
+
+span.dl_description_text {
+    display: block;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+
+span.dl_release_notes_link_text {
+    font-family: sans-serif;
+    font-size: 12pt;
+}

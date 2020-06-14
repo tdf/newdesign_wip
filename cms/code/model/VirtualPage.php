@@ -2,7 +2,7 @@
 /**
 * Virtual Page creates an instance of a  page, with the same fields that the original page had, but readonly.
 * This allows you can have a page in mulitple places in the site structure, with different children without duplicating the content
-* Note: This Only duplicates $db fields and not the $has_one etc.. 
+* Note: This Only duplicates $db fields and not the $has_one etc..
 * @package cms
 */
 class VirtualPage extends Page {
@@ -12,7 +12,7 @@ class VirtualPage extends Page {
 	public static $virtualFields;
 	
 	/**
-	 * @var Array Define fields that are not virtual - the virtual page must define these fields themselves.
+	 * @var array Define fields that are not virtual - the virtual page must define these fields themselves.
 	 * Note that anything in {@link self::config()->initially_copied_fields} is implicitly included in this list.
 	 */
 	private static $non_virtual_fields = array(
@@ -30,7 +30,7 @@ class VirtualPage extends Page {
 	);
 	
 	/**
-	 * @var Array Define fields that are initially copied to virtual pages but left modifiable after that.
+	 * @var array Define fields that are initially copied to virtual pages but left modifiable after that.
 	 */
 	private static $initially_copied_fields = array(
 		'ShowInMenus',
@@ -46,7 +46,7 @@ class VirtualPage extends Page {
 		"VersionID" => "Int",
 	);
 	
-	/** 
+	/**
 	 * Generates the array of fields required for the page type.
 	 */
 	public function getVirtualFields() {
@@ -54,7 +54,7 @@ class VirtualPage extends Page {
 		$record = $this->CopyContentFrom();
 
 		$allFields = $record->db();
-		if($hasOne = $record->has_one()) foreach($hasOne as $link) $allFields[$link . 'ID'] = "Int";
+		if($hasOne = $record->hasOne()) foreach($hasOne as $link) $allFields[$link . 'ID'] = "Int";
 		$virtualFields = array();
 		foreach($allFields as $field => $type) {
 			if(!in_array($field, $nonVirtualFields)) $virtualFields[] = $field;
@@ -71,7 +71,7 @@ class VirtualPage extends Page {
 		if(!$copyContentFromID) return new SiteTree();
 		
 		if(!isset($this->components['CopyContentFrom'])) {
-			$this->components['CopyContentFrom'] = DataObject::get_by_id("SiteTree", 
+			$this->components['CopyContentFrom'] = DataObject::get_by_id("SiteTree",
 				$copyContentFromID);
 
 			// Don't let VirtualPages point to other VirtualPages
@@ -91,7 +91,7 @@ class VirtualPage extends Page {
 		if($val && DataObject::get_by_id('SiteTree', $val) instanceof VirtualPage) $val = 0;
 		return $this->setField("CopyContentFromID", $val);
 	}
- 
+
 	public function ContentSource() {
 		return $this->CopyContentFrom();
 	}
@@ -143,7 +143,7 @@ class VirtualPage extends Page {
 	/**
 	 * Returns true if is page is publishable by anyone at all
 	 * Return false if the source page isn't published yet.
-	 * 
+	 *
 	 * Note that isPublishable doesn't affect ete from live, only publish.
 	 */
 	public function isPublishable() {
@@ -169,8 +169,8 @@ class VirtualPage extends Page {
 		
 		// Setup the linking to the original page.
 		$copyContentFromField = new TreeDropdownField(
-			"CopyContentFromID", 
-			_t('VirtualPage.CHOOSE', "Linked Page"), 
+			"CopyContentFromID",
+			_t('VirtualPage.CHOOSE', "Linked Page"),
 			"SiteTree"
 		);
 		// filter doesn't let you select children of virtual pages as as source page
@@ -191,11 +191,11 @@ class VirtualPage extends Page {
 		
 		// Create links back to the original object in the CMS
 		if($this->CopyContentFrom()->exists()) {
-			$link = "<a class=\"cmsEditlink\" href=\"admin/pages/edit/show/$this->CopyContentFromID\">" 
+			$link = "<a class=\"cmsEditlink\" href=\"admin/pages/edit/show/$this->CopyContentFromID\">"
 				. _t('VirtualPage.EditLink', 'edit')
 				. "</a>";
 			$msgs[] = _t(
-				'VirtualPage.HEADERWITHLINK', 
+				'VirtualPage.HEADERWITHLINK',
 				"This is a virtual page copying content from \"{title}\" ({link})",
 				array(
 					'title' => $this->CopyContentFrom()->obj('Title'),
@@ -210,7 +210,7 @@ class VirtualPage extends Page {
 			);
 		}
 		if(
-			$this->CopyContentFromID 
+			$this->CopyContentFromID
 			&& !Versioned::get_versionnumber_by_stage('SiteTree', 'Live', $this->CopyContentFromID)
 		) {
 			$msgs[] = _t(
@@ -219,7 +219,7 @@ class VirtualPage extends Page {
 			);
 		}
 
-		$fields->addFieldToTab("Root.Main", 
+		$fields->addFieldToTab("Root.Main",
 			new LiteralField(
 				'VirtualPageMessage',
 				'<div class="message notice">' . implode('. ', $msgs) . '.</div>'
@@ -233,7 +233,7 @@ class VirtualPage extends Page {
 	public function getSettingsFields() {
 		$fields = parent::getSettingsFields();
 		if(!$this->CopyContentFrom()->exists()) {
-			$fields->addFieldToTab("Root.Settings", 
+			$fields->addFieldToTab("Root.Settings",
 				new LiteralField(
 					'VirtualPageWarning',
 					'<div class="message notice">'
@@ -250,7 +250,7 @@ class VirtualPage extends Page {
 		return $fields;
 	}
 	
-	/** 
+	/**
 	 * We have to change it to copy all the content from the original page first.
 	 */
 	public function onBeforeWrite() {
@@ -265,8 +265,14 @@ class VirtualPage extends Page {
 			// On publication to live, copy from published source.
 			$performCopyFrom = true;
 		
-			$stageSourceVersion = DB::query("SELECT \"Version\" FROM \"SiteTree\" WHERE \"ID\" = $this->CopyContentFromID")->value();
-			$liveSourceVersion = DB::query("SELECT \"Version\" FROM \"SiteTree_Live\" WHERE \"ID\" = $this->CopyContentFromID")->value();
+			$stageSourceVersion = DB::prepared_query(
+				'SELECT "Version" FROM "SiteTree" WHERE "ID" = ?',
+				array($this->CopyContentFromID)
+			)->value();
+			$liveSourceVersion = DB::prepared_query(
+				'SELECT "Version" FROM "SiteTree_Live" WHERE "ID" = ?',
+				array($this->CopyContentFromID)
+			)->value();
 		
 			// We're going to create a new VP record in SiteTree_versions because the published
 			// version might not exist, unless we're publishing the latest version
@@ -281,7 +287,8 @@ class VirtualPage extends Page {
  		if($performCopyFrom && $this instanceof VirtualPage) {
 			// This flush is needed because the get_one cache doesn't respect site version :-(
 			singleton('SiteTree')->flushCache();
-			$source = DataObject::get_one("SiteTree",sprintf('"SiteTree"."ID" = %d', $this->CopyContentFromID));
+			// @todo Update get_one to support parameterised queries
+			$source = DataObject::get_by_id("SiteTree", $this->CopyContentFromID);
 			// Leave the updating of image tracking until after write, in case its a new record
 			$this->copyFrom($source, false);
 		}
@@ -296,7 +303,7 @@ class VirtualPage extends Page {
 		if(!$this->extension_instances['Versioned']->migratingVersion) {
 	 		if(
 				$this->isChanged('CopyContentFromID')
-	 			&& $this->CopyContentFromID != 0 
+	 			&& $this->CopyContentFromID != 0
 				&& $this instanceof VirtualPage
 			) {
 				$this->updateImageTracking();
@@ -318,15 +325,16 @@ class VirtualPage extends Page {
 					// Note: *_versions records are left intact
 					foreach(array('', 'Live') as $stage) {
 						if($stage) $removedTable = "{$removedTable}_{$stage}";
-						DB::query(sprintf('DELETE FROM "%s" WHERE "ID" = %d', $removedTable, $this->ID));					
+						DB::prepared_query("DELETE FROM \"$removedTable\" WHERE \"ID\" = ?", array($this->ID));
 					}
-				}	
+				}
 
 				// Also publish the change immediately to avoid inconsistent behaviour between
 				// a non-virtual draft and a virtual live record (e.g. republishing the original record
 				// shouldn't republish the - now unrelated - changes on the ex-VirtualPage draft).
 				// Copies all stage fields to live as well.
-				$source = DataObject::get_one("SiteTree",sprintf('"SiteTree"."ID" = %d', $this->CopyContentFromID));
+				// @todo Update get_one to support parameterised queries
+				$source = DataObject::get_by_id("SiteTree", $this->CopyContentFromID);
 				$this->copyFrom($source);
 				$this->publish('Stage', 'Live');
 
@@ -336,7 +344,7 @@ class VirtualPage extends Page {
 		}
 	}
 
-	public function validate() {
+	protected function validate() {
 		$result = parent::validate();
 
 		// "Can be root" validation
@@ -344,8 +352,8 @@ class VirtualPage extends Page {
 		if(!$orig->stat('can_be_root') && !$this->ParentID) {
 			$result->error(
 				_t(
-					'VirtualPage.PageTypNotAllowedOnRoot', 
-					'Original page type "{type}" is not allowed on the root level for this virtual page', 
+					'VirtualPage.PageTypNotAllowedOnRoot',
+					'Original page type "{type}" is not allowed on the root level for this virtual page',
 					array('type' => $orig->i18n_singular_name())
 				),
 				'CAN_BE_ROOT_VIRTUAL'
@@ -399,23 +407,41 @@ class VirtualPage extends Page {
 	 * Allow attributes on the master page to pass
 	 * through to the virtual page
 	 *
-	 * @param string $field 
+	 * @param string $field
 	 * @return mixed
 	 */
 	public function __get($field) {
 		if(parent::hasMethod($funcName = "get$field")) {
 			return $this->$funcName();
-		} else if(parent::hasField($field)) {
+		} else if(parent::hasField($field) || ($field === 'ID' && !$this->exists())) {
 			return $this->getField($field);
 		} else {
-			return $this->copyContentFrom()->$field;
+			return $this->CopyContentFrom()->$field;
 		}
 	}
-	
+
+
+	/**
+	 * Allow attributes on the master page to pass
+	 * through to the virtual page
+	 *
+	 * @param string $field
+	 * @return mixed
+	 */
+	public function __isset($field) {
+		if(parent::hasMethod($funcName = "get$field")) {
+			return true;
+		} else if(parent::hasField($field) || ($field === 'ID' && !$this->exists())) {
+			return true;
+		} else {
+			return $this->CopyContentFrom()->__isset($field);
+		}
+	}
+
 	/**
 	 * Pass unrecognized method calls on to the original data object
 	 *
-	 * @param string $method 
+	 * @param string $method
 	 * @param string $args
 	 * @return mixed
 	 */
@@ -423,7 +449,7 @@ class VirtualPage extends Page {
 		if(parent::hasMethod($method)) {
 			return parent::__call($method, $args);
 		} else {
-			return call_user_func_array(array($this->copyContentFrom(), $method), $args);
+			return call_user_func_array(array($this->CopyContentFrom(), $method), $args);
 		}
 	}
 
@@ -433,22 +459,22 @@ class VirtualPage extends Page {
 	 */
 	public function hasField($field) {
 		return (
-			array_key_exists($field, $this->record) 
-			|| $this->hasDatabaseField($field) 
-			|| array_key_exists($field, $this->db()) // Needed for composite fields
-			|| parent::hasMethod("get{$field}")
+			parent::hasField($field)
 			|| $this->CopyContentFrom()->hasField($field)
 		);
-	}	
+	}
+
 	/**
 	 * Overwrite to also check for method on the original data object
 	 *
-	 * @param string $method 
-	 * @return bool 
+	 * @param string $method
+	 * @return bool
 	 */
 	public function hasMethod($method) {
-		if(parent::hasMethod($method)) return true;
-		return $this->copyContentFrom()->hasMethod($method);
+		return (
+			parent::hasMethod($method)
+			|| $this->CopyContentFrom()->hasMethod($method)
+		);
 	}
 
 	/**
@@ -459,8 +485,8 @@ class VirtualPage extends Page {
 	 * @return string
 	 */
 	public function castingHelper($field) {
-		if($this->copyContentFrom()) {
-			return $this->copyContentFrom()->castingHelper($field);
+		if($this->CopyContentFrom()) {
+			return $this->CopyContentFrom()->castingHelper($field);
 		} else {
 			return parent::castingHelper($field);
 		}
@@ -488,10 +514,8 @@ class VirtualPage_Controller extends Page_Controller {
 	}
 	
 	public function getViewer($action) {
-		$originalClass = get_class($this->CopyContentFrom());
-		if ($originalClass == 'SiteTree') $name = 'Page_Controller';
-		else $name = $originalClass."_Controller";
-		$controller = new $name();
+		$object = $this->CopyContentFrom();
+		$controller = ModelAsController::controller_for($object, $action);
 		return $controller->getViewer($action);
 	}
 	
@@ -502,13 +526,14 @@ class VirtualPage_Controller extends Page_Controller {
 	 * We can't load the content without an ID or record to copy it from.
 	 */
 	public function init(){
-		if(isset($this->record) && $this->record->ID){
-			if($this->record->VersionID != $this->failover->CopyContentFrom()->Version){
+		if(isset($this->record) && $this->record['ID']){
+			if($this->record['VersionID'] != $this->failover->CopyContentFrom()->Version){
 				$this->reloadContent();
 				$this->VersionID = $this->failover->CopyContentFrom()->VersionID;
 			}
 		}
 		parent::init();
+		$this->__call('init', array());
 	}
 
 	public function loadcontentall() {
@@ -524,16 +549,13 @@ class VirtualPage_Controller extends Page_Controller {
 	/**
 	 * Also check the original object's original controller for the method
 	 *
-	 * @param string $method 
-	 * @return bool 
+	 * @param string $method
+	 * @return bool
 	 */
 	public function hasMethod($method) {
 		$haveIt = parent::hasMethod($method);
-		if (!$haveIt) {	
-			$originalClass = get_class($this->CopyContentFrom());
-			if ($originalClass == 'SiteTree') $name = 'ContentController';
-			else $name = $originalClass."_Controller";
-			$controller = new $name($this->dataRecord->copyContentFrom());
+		if (!$haveIt) {
+			$controller = ModelAsController::controller_for($this->CopyContentFrom());
 			$haveIt = $controller->hasMethod($method);
 		}
 		return $haveIt;
@@ -542,7 +564,7 @@ class VirtualPage_Controller extends Page_Controller {
 	/**
 	 * Pass unrecognized method calls on to the original controller
 	 *
-	 * @param string $method 
+	 * @param string $method
 	 * @param string $args
 	 * @return mixed
 	 *
@@ -554,12 +576,17 @@ class VirtualPage_Controller extends Page_Controller {
 		} catch (Exception $e) {
 			// Hack... detect exception type. We really should use exception subclasses.
 			// if the exception isn't a 'no method' error, rethrow it
-			if ($e->getCode() !== 2175) throw $e;
-			$original = $this->copyContentFrom();
-			$originalClass = get_class($original);
-			if ($originalClass == 'SiteTree') $name = 'ContentController';
-			else $name = $originalClass."_Controller";
-			$controller = new $name($this->dataRecord->copyContentFrom());
+			if ($e->getCode() !== 2175) {
+				throw $e;
+			}
+
+			$original = $this->CopyContentFrom();
+			$controller = ModelAsController::controller_for($original);
+
+			// Ensure request/response data is available on virtual controller
+			$controller->setRequest($this->getRequest());
+			$controller->response = $this->response; // @todo - replace with getter/setter in 3.3
+
 			return call_user_func_array(array($controller, $method), $args);
 		}
 	}

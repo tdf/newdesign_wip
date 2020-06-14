@@ -3,10 +3,10 @@ da:
   BitPay:
     ButtonAltText: BitPay, den nemme måde at betale med bitcoins.
     CheckoutLocale: en_US
-    Email: Email-adresse (valgfri)
-    Header: Du kan donere vha. Bitcoins
-    LabelEmail: 'Email:'
-    RefundDisclaimer: Donationer med Bitcoins er af natur anonyme, så enhver form for refundering eller kvittering er kun mulig f.s.v.a. den sum TDF modtager fra vores betalingsudbyder, og kun i det tilfælde at du identificerer dig med din email-adresse. Hvis du ikke er enig i disse betingelser, beder vi dig overveje en af de andre betalingsmetoder på denne side.
+    Email: E-mailadresse (valgfri)
+    Header: Du kan bidrage med Bitcoin og Bitcoin Cash
+    LabelEmail: 'E-mail:'
+    RefundDisclaimer: Ifølge deres natur er bidrag med Bitcoin og Bitcoin Cash anonyme, så enhver form for tilbagebetaling eller bekræftelse af dit bidrag er kun mulig for den sum, vi modtog fra din betalingsagent og kun hvis vi har modtaget din e-mailadresse.
   Concardis:
     CancelHeader: Du har afbrudt processen
     CancelMessage: Desværre har du afbrudt betalingen. <b>Du er ikke blevet opkrævet.</b> Prøv venligst igen, og hvis du har problemer eller spørgsmål, er du altid velkommen til at kontakte os på {infoemail}.
@@ -18,22 +18,61 @@ da:
     ThanksButHeader: Mange tak for din donation!
     ThanksButMessage1: The Document Foundation vil gerne takke for din venlige og gavmilde donation. Vi har modtaget din betaling! Nyd LibreOffice, og mange tak for din støtte!
     ThanksButMessage2: Vær opmærksom på, at din donation ikke kunne bekræftes. Kontroller venligst selv din kontoudskrift for at få donationen bekræftet.
+  DonateDownload:
+    DownloadProblemContact: 'Har du problemer med at <strong>downloade</strong>LibreOffice? Bemærk, at vi <strong>ikke giver teknisk support</strong> til installation eller brug af softwaren. Hvis du har brug for hjælp, beder vi dig besøge <a href=''https://ask.libreoffice.org/''>Ask LibreOffice</a>.<br /><br />men hvis dit spørgsmål handler om at <strong>downloade</strong> LibreOffice fra vores websted, send besked til os om: (1) Versionen på dit opreativsystem; (2) din webbrowser; (3) de(n) fejlmelding(er), du ser. Det disse oplysninger til <a href=''mailto:download@libreoffice.org''>download@libreoffice.org</a> og vi vil forsøge at hjælpe dig.'
+    Helppack: Indbygget hjælp til LibreOffice
+    InfoLinkText: Info
+    InfoLinkTitle: Se checksummer og en liste over spejlservere for denne fil.
+    Invalid: Download af det ønskede synes ugyldig. Gå venligst til <a href='//www.libreoffice.org/download'>vores downloadside</a> og vælg en aktuel version.<br/>Ved tekniske problemer med selve downloadningen, skriv venligst til <a href='mailto:download@libreoffice.org?subject=Problem with download - malformed'>download@libreoffice.org</a>. Du skal vide, at vi <strong>ikke</strong> yder teknisk support på denne adresse.
+    Langpack: Oversat brugergrænseflade
+    LinkStartText: Din download <a href='{link}'>{filename} ({size})</a> begynder om lidt. Klik venligst på hyperlinket, hvis den ikke starter.
+    ManualMirror: Du kan også <a href='{link}.mirrorlist'>vælge en spejling manuelt</a>
+    NeedAnotherLang: Eller <a href='https://www.libreoffice.org/download/download/?lang=pick'>vælge et andet sprog</a>.
+    Outdated: Ser den ønskede download ud til at være forældet? Gå venligst til <a href='//www.libreoffice.org/download'> vores downloadside</a> og vælg en aktuel version.<br/>Har du tekniske problemer med selve downloaden, skriv venligst til<a href='mailto:download@libreoffice.org?subject=Problem with download - outdated'>download@libreoffice.org</a>. Du skal vide, at vi <strong>ikke</strong> yder teknisk support på denne adresse.
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Download filen med BitTorrent
   DonatePage:
-    BUTTON_CARD: Giv et bidrag via kreditkort
-    BUTTON_PAYPAL: Giv et bidrag med PayPal
+    BC_EMAIL_DESC: hvis du ønsker bekræftelse af kreditkortbetalinger
+    BC_EMAIL_LABEL: valgfri E-mail
+    BUTTON_CARD: Donér med kreditkort
+    BUTTON_PAYPAL: Donér med PayPal
+    Bank: Du kan overføre et bidrag til vores bankkonto
+    BankDetails: "<strong>Ejer</strong>: {owner}<br/><strong>Formål</strong>: Donation<br/><strong>Konto</strong>: {accountNumber}<br/><strong>Bank Code</strong>: {bankCode}<br/><strong>IBAN</strong>: {IBAN}, BIC: {BIC}<br/><strong>Modtagers adresse</strong> {tdfAddressa}<br/><strong>Bankens adresse</strong>: {BankAddress}"
+    BankHeader: Bankoverførsel
+    BitcoinHeader: Bitcoin / Bitcoin Cash
     CHOICE_DEFAULT: Vælg en af standardværdierne
     CUSTOM_AMOUNT_VALUE: '100'
     CUSTOM_CHOICE: Eller indtast et valgfrit beløb og valuta <br/>(Kun de valutaer som er markeret med * kan også benyttes med PayPal)
+    CardOnly: "(kun kort)"
     ContinueLabel: Fortsæt
     DEFAULT_AMOUNT_EUR05: '20'
     DEFAULT_AMOUNT_EUR10: '40'
     DEFAULT_AMOUNT_EUR20: '80'
     DEFAULT_AMOUNT_EUR50: '200'
     DEFAULT_CURRENCY: DKK
+    DonateUSHeader: Bidrag fra USA
+    Flattr: Du kan <a href='{flattrlink}'>Flattr</a> os
+    FlattrHeader: Flattr
+    FooterText: 'Andre måder at bidrage på: Bitcoin, Flattr, bankoverførsel - klik på felterne nedenfor<br/>Spørgsmål vedr. dit bidrag?<a href="mailto:info@documentfoundation.org">Send os en e-mail</a>'
+    FreqMonthly: Månedligt bidrag
+    FreqOneshot: En gangs-bidrag
+    FreqQuarterly: Kvartalsbidrag
+    FreqYearly: Årligt bidrag
     LeadText: LibreOffice er fri software og kan bruges af dig uden omkostninger. <br/>Dit bidrag, som er fuldstændig frivillig, støtter vores verdensomspændende fællesskab.<br/>Hvis du kan lide programmet, beder vi dig overveje at give et bidrag.
+    OPTIONAL_EMAIL: valgfri e-mail
+    OPTIONAL_EMAIL_DES: hvis du ønsker bekræftelse af kreditkortbetalinger
+    OtherAmount: Andet beløb
     ProceedConcardis: For at færdiggøre din donation af <strong>{amount} {currency}</strong>, videresender vi dig nu til ConCardis' hjemmeside, hvor du skal afslutte betalingen.<br/>Hvis du ikke automatisk bliver videresendt, beder vi dig klikke på knappen 'Fortsæt' herunder.
     ProceedPayPal: For at færdiggøre din donation af <strong>{amount} {currency}</strong>, videresender vi dig nu til PayPals hjemmeside, hvor du skal afslutte betalingen.<br/>Hvis du ikke automatisk bliver videresendt, beder vi dig klikke på knappen 'Fortsæt' herunder.
+    ReverseLayoutTitle: Andet beløb
+    SLIDERLABEL: Beløb (træk skydekanppen nedenfor for ændring)
+    Spi: LibreOffice er et projekt tilknyttet SPI
+    SpiDetails: Du kan <a href='https://www.spi-inc.org/donations/'>bidrage fra USA</a> ved at angive "LibreOffice" i forbindelse med dit bidrag. Bemærk, at bidrag gennem SPI kan fratrækkes skat i USA.
+    TaxHeader: Skattefradrag
+    TaxHint: <strong>Bidrag til The Document Foundation er fradragsberettigede i mange lande.<br/>Henvend dig til dit lokale skattekontor for detaljer.</strong><br/><strong>Hvis du er bosiddende i Tyskland:</strong> <em>"{germanLegalText}"</em>
+    WhileYouDownload: Mens du downloader, overvej venligst at støtte LibreOffice med et bidrag
   Download:
+    Archive: Ældre versioner af LibreOffice (understøttes måske ikke) findes <a href='https://downloadarchive.documentfoundation.org/libreoffice/old/'>i arkivet</a>
     ChangeLanguageLinkText: behov for et andet sprog?
     ChangeLanguageLinkTitle: Vælg et andet sprog
     Helppack: LibreOffice indbygget hjælp på <strong>{language}</strong>
@@ -45,7 +84,7 @@ da:
     Langpack: Hent LibreOffice brugergrænsefladen oversat til <strong>{language}</strong>
     LangpackButtonLabel: Oversat brugergrænseflade
     LangpackLinkTitle: Hent sprogpakken
-    Mac64reqs: 10.8 eller højere er nødvendig
+    Mac64reqs: 10.10 eller højere er nødvendig
     MainButtonLabel: Hent version {version}
     MainInstaller: Hovedinstallation
     MainLinkTitle: Hent LibreOffice {version} til {os}
@@ -61,7 +100,25 @@ da:
     VersionListReleased: 'LibreOffice er tilgængelig i følgende <strong>frigivne</strong> versioner:'
     VersionListTesting: 'LibreOffice er tilgængelig i følgende <strong>testversioner</strong>:'
     Versions: Tilgængelige versioner
-    Win64reqs: Vista eller nyere er nødvendig
+    Win64reqs: 7 eller nyere er nødvendig
+  DownloadRefresh:
+    BoxHeader: Download LibreOffice
+    ChangeLanguageLinkText: behov for et andet sprog?
+    ChangeLanguageLinkTitle: Vælg et andet sprog
+    ChooseOS: Vælg dit operativsystem
+    DownloadLinkText: DOWNLOAD
+    FreshText: Hvis du er en teknologi-entusiast, tidlig ibrugtager eller superbruger, er denne version til dig!
+    HelppackButtonLabel: Hjælp til offline brug
+    HelppackLinkTitle: Hent hjælpen for offline brug
+    InfoLinkTitle: Checksummer og flere informationer
+    InfoText: Info
+    LangpackLinkText: Oversat brugergrænseflade
+    LangpackLinkTitle: Hent sprogpakken
+    RelnotesLinkText: LibreOffice {version} udgivelsesnoter
+    StillText: Hvis du udruller LibreOffice i et virksomheds- eller koncernmiljø eller er en forsigtig bruger, vælg venligst denne version. </span><span class="dl_description_text" style="font-size:18px;">Til forretningsudrulninger anbefaler vi stærkt <a href="//www.libreoffice.org/get-help/professional-support/">støtte fra certificerede partnere</a>, som også tilbyder versioner af LibreOffice med langsigtet support.
+    SupplementaryDownloads: 'Supplerende downloads:'
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Hent ved hjælp af BitTorrent
   Homepage:
     DownloadNow: Hent nu
   RSS:

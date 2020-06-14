@@ -1,12 +1,9 @@
 ---
 ru:
   BitPay:
-    ButtonAltText: BitPay, простой способ оплаты биткоинами.
     CheckoutLocale: en_US
     Email: Адрес электронной почты (не обязательно)
-    Header: Вы можете пожертвовать с помощью биткоинов
     LabelEmail: 'Электронная почта:'
-    RefundDisclaimer: В силу своих особенностей, пожертвования с помощью биткоинов анонимны, поэтому любые возвраты или подтверждения пожертвований возможны только с сумм, которые были получены через наш процессинговый центр, и только в случае указания электронной почты. Если вы не согласны с вышеуказанными условиями, мы просим вас воспользоваться другими способами пожертвований, указанными на этой странице.
   Concardis:
     CancelHeader: Вы отменили процесс
     CancelMessage: К сожалению, вы отменили платеж. <b>Оплата не произведена.</b> Пожалуйста, попробуйте снова. В случае наличия проблем или вопросов вы можете связаться с нами по адресу {infoemail} в любое время.
@@ -18,7 +15,13 @@ ru:
     ThanksButHeader: Большое спасибо за ваше пожертвование!
     ThanksButMessage1: The Document Foundation благодарит вас за щедрое пожертвование. Мы получили ваш платеж! Наслаждайтесь LibreOffice и большое спасибо за вашу поддержку!
     ThanksButMessage2: Пожалуйста, обратите внимание, пожертвование еще не подтверждено. Пожалуйста, проверьте выписку на предмет прохождения платежа.
+  DonateDownload:
+    InfoLinkText: Информация
+    Langpack: Загрузить языковые пакеты
+    TorrentLinkText: Torrent
   DonatePage:
+    BC_EMAIL_DESC: если хотите подтвердить адрес эл. почты для платежей банковской картой
+    BC_EMAIL_LABEL: необязательный адрес эл. почты
     BUTTON_CARD: Пожертвовать с помощью кредитной карты
     BUTTON_PAYPAL: Пожертвовать с помощью PayPal
     CHOICE_DEFAULT: Выберите предустановленную сумму платежа
@@ -31,8 +34,10 @@ ru:
     DEFAULT_AMOUNT_EUR50: '50'
     DEFAULT_CURRENCY: USD
     LeadText: LibreOffice - это свободное программное обеспечение, распространяемое бесплатно. <br/>Ваше пожертвование, которое является не обязательным, поможет нашему сообществу.<br/>Если вам нравится программное обеспечение, пожалуйста, подумайте о пожертвовании.
-    ProceedConcardis: Для завершения обработки вашего пожертвования <strong>{amount} {currency}</strong>, вы будете перенаправлены на сайт ConCardis.<br/>Если вы не были перенаправлены автоматически, пожалуйста, нажмите кнопку \"Продолжить\" ниже.
-    ProceedPayPal: Для завершения обработки вашего пожертвования <strong>{amount} {currency}</strong>, вы будете перенаправлены на сайт PayPal.<br/>Если вы не были перенаправлены автоматически, пожалуйста, нажмите кнопку \"Продолжить\" ниже.
+    OPTIONAL_EMAIL: необязательный адрес эл. почты
+    OPTIONAL_EMAIL_DES: если хотите подтвердить адрес эл. почты для платежей банковской картой
+    ProceedConcardis: Для завершения обработки вашего пожертвования <strong>{amount} {currency}</strong>, вы будете перенаправлены на сайт ConCardis.<br/>Если вы не были перенаправлены автоматически, пожалуйста, нажмите кнопку "Продолжить" ниже.
+    ProceedPayPal: Для завершения обработки вашего пожертвования <strong>{amount} {currency}</strong>, вы будете перенаправлены на сайт PayPal.<br/>Если вы не были перенаправлены автоматически, пожалуйста, нажмите кнопку "Продолжить" ниже.
   Download:
     ChangeLanguageLinkText: нужен другой язык?
     ChangeLanguageLinkTitle: Выбрать другой язык
@@ -45,6 +50,7 @@ ru:
     Langpack: Языковые пакеты LibreOffice, <strong>{language}</strong> язык
     LangpackButtonLabel: Загрузить языковые пакеты
     LangpackLinkTitle: Загрузить языковой пакет
+    Mac64reqs: Необходима 10.10 или более новая
     MainButtonLabel: Загрузить версию {version}
     MainInstaller: Установщик
     MainLinkTitle: Загрузить LibreOffice {version} для {os}
@@ -52,11 +58,26 @@ ru:
     OSList: 'LibreOffice {version} доступен для следующих операционных систем/архитектур:'
     PickLanguage: Пожалуйста, выберите язык
     PlatformChange: 'Выбрано: LibreOffice {version} для {os} - <a href=''{curr_page}#change''>изменить?</a>'
+    SDKandSource: SDK и исходный код
+    SDKDownload: Загрузить SDK
+    SourceDownload: Загрузить исходный код
     TorrentLinkText: Torrent
     TorrentLinkTitle: Скачать с помощью BitTorrent
     VersionListReleased: 'LibreOffice доступен в следующих <strong>стабильных</strong> версиях:'
     VersionListTesting: 'LibreOffice доступен в следующих <strong>предварительных</strong> версиях:'
     Versions: Доступные версии
+    Win64reqs: Необходима 7 или более новая
+  DownloadRefresh:
+    ChangeLanguageLinkText: нужен другой язык?
+    ChangeLanguageLinkTitle: Выбрать другой язык
+    HelppackButtonLabel: Офлайн справка
+    HelppackLinkTitle: Загрузить справку для использования без подключения к сети
+    InfoLinkTitle: Контрольные суммы и дополнительная информация
+    InfoText: Информация
+    LangpackLinkText: Загрузить языковые пакеты
+    LangpackLinkTitle: Загрузить языковой пакет
+    TorrentLinkText: Torrent
+    TorrentLinkTitle: Скачать с помощью BitTorrent
   Homepage:
     DownloadNow: Загрузить
   RSS:

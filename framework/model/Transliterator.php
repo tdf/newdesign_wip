@@ -2,25 +2,25 @@
 
 /**
  * Support class for converting unicode strings into a suitable 7-bit ASCII equivalent.
- * 
+ *
  * Usage:
- * 
+ *
  * <code>
  * $tr = new SS_Transliterator();
  * $ascii = $tr->toASCII($unicode);
  * </code>
- * 
+ *
  * @package framework
  * @subpackage model
  */
-class SS_Transliterator extends Object {
+class SS_Transliterator extends SS_Object {
 	/**
 	 * @config
 	 * @var boolean Allow the use of iconv() to perform transliteration.  Set to false to disable.
 	 * Even if this variable is true, iconv() won't be used if it's not installed.
 	 */
 	private static $use_iconv = false;
-		
+
 	/**
 	 * Convert the given utf8 string to a safe ASCII source
 	 */
@@ -47,11 +47,27 @@ class SS_Transliterator extends Object {
 			'Ę'=>'E', 'Ė'=>'E', 'Į'=>'I','Ų'=>'U','Ū'=>'U',
 			"ľ"=>"l", "Ľ"=>"L", "ť"=>"t", "Ť"=>"T", "ů"=>"u", "Ů"=>"U",
 			'ł'=>'l', 'Ł'=>'L', 'ń'=>'n', 'Ń'=>'N', 'ś'=>'s', 'Ś'=>'S', 'ź'=>'z', 'Ź'=>'Z', 'ż'=>'z', 'Ż'=>'Z',
+			'а'=>"a",'б'=>"b",'в'=>"v",'г'=>"g",'д'=>"d",'е'=>"e",'ё'=>"yo",'ж'=>"zh",'з'=>"z",'и'=>"i",
+			'й'=>"y",'к'=>"k",'л'=>"l",'м'=>"m",'н'=>"n",'о'=>"o",'п'=>"p",'р'=>"r",'с'=>"s",'т'=>"t",
+			'у'=>"u",'ф'=>"f",'х'=>"kh",'ц'=>"ts",'ч'=>"ch",'ш'=>"sh",'щ'=>"shch",'ы'=>"y",'э'=>"e",'ю'=>"yu",
+			'я'=>"ya",
+			'А'=>"A",'Б'=>"B",'В'=>"V",'Г'=>"G",'Д'=>"D",'Е'=>"E",'Ё'=>"YO",'Ж'=>"ZH",'З'=>"Z",'И'=>"I",
+			'Й'=>"Y",'К'=>"K",'Л'=>"L",'М'=>"M",'Н'=>"N",'О'=>"O",'П'=>"P",'Р'=>"R",'С'=>"S",'Т'=>"T",
+			'У'=>"U",'Ф'=>"F",'Х'=>"KH",'Ц'=>"TS",'Ч'=>"CH",'Ш'=>"SH",'Щ'=>"SHCH",'Ы'=>"Y",'Э'=>"E",'Ю'=>"YU",
+			'Я'=>"YA",
+			'α'=>'a', 'Α'=>'A', 'ά'=>'a', 'Ά'=>'A', 'β'=>'v', 'Β'=>'V', 'γ'=>'g', 'Γ'=>'G', 'δ'=>'d', 'Δ'=>'D',
+			'ε'=>'e', 'ϵ'=>'e', 'Ε'=>'E', 'έ'=>'e', 'Έ'=>'E', 'ζ'=>'z', 'Ζ'=>'Z', 'η'=>'i', 'Η'=>'I',
+			'θ'=>'th', 'ϑ' => 'th', 'Θ'=>'TH', 'ι'=>'i', 'Ι'=>'I', 'ί'=>'i', 'Ί'=>'I', 'κ'=>'k', 'ϰ'=>'k', 'Κ'=>'K',
+			'λ'=>'l', 'Λ'=>'L', 'μ'=>'m', 'Μ'=>'M', 'ν'=>'n', 'Ν'=>'N', 'ή'=>'n', 'Ή'=>'N', 'ἠ'=>'n', 'Ἠ'=>'N',
+			'ο'=>'o', 'Ο'=>'O', 'ό'=>'o', 'Ό'=>'O', 'π'=>'p', 'Π'=>'P', 'ρ'=>'r', 'ϱ'=>'r', 'Ρ'=>'R', 'ῤ'=>'rh',
+			'σ'=>'s', 'ς'=>'s', 'Σ'=>'S', 'τ'=>'t', 'Τ'=>'T', 'υ'=>'y', 'Υ'=>'Y', 'ύ'=>'y', 'Ύ'=>'Y', 'ὐ'=>'y',
+			'φ'=>'f', 'ϕ'=>'f', 'Φ'=>'F', 'χ'=>'ch', 'Χ'=>'CH', 'ψ'=>'ps', 'Ψ'=>'PS', 'ξ'=>'x', 'Ξ'=>'X',
+			'ω'=>'w', 'Ω'=>'W', 'ώ'=>'o', 'Ώ'=>'O', 'ὠ'=>'o', 'Ὠ'=>'O',
 		);
 
 		return strtr($source, $table);
 	}
-	
+
 	/**
 	 * Transliteration using iconv()
 	 */

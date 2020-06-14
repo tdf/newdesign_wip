@@ -98,6 +98,8 @@ class Download_Controller extends Page_Controller {
                 } elseif (strpos($ua, "linux") !== FALSE) {
                     $platform = strpos($fua, "buntu") !== FALSE || strpos($fua, "debian") !== FALSE || strpos($fua, "mint") !== FALSE || strpos($fua, "iceweasel") !== FALSE ? "deb" : "rpm";
                     $arch = strpos($ua, "x86_64") || strpos($ua, "amd64") ? "x86_64" : "x86";
+                } else {
+                    $arch = strpos($ua, "wow64")  || strpos($ua, "win64") ? "x86_64" : "x86";
                 }
                 $type = "$platform-$arch";
 
@@ -122,9 +124,9 @@ class Download_Controller extends Page_Controller {
                 //    $this->Type = "mac-x86";
                 //}
                 // Check langauge candidates
+						//'Version:StartsWith' => $this->Version))->column("Lang");
                 $this->AvailableLangs = DownloadObject::get()->filter(array(
-						'ClassName'          => array('LangPack', 'HelpPack'),
-						'Version:StartsWith' => $this->Version))->column("Lang");
+						'ClassName'          => array('LangPack', 'HelpPack')))->column("Lang");
                 foreach ($langCandidates as $value) {
 			$parts = explode("-", str_replace("_", "-", trim($value)));
 			if (count($parts) > 1) {
@@ -145,32 +147,64 @@ class Download_Controller extends Page_Controller {
                 $this->DebugInfo = htmlentities("User-Agent:$fua\nAccept-language:$al\ntype:$type\nLangCand:".implode("|",$langCandidates)."\nlang:$lang\ntype $this->Type - lang $this->Lang - version $this->Version");
 
 		$splittype = explode('-', $this->Type);
-		$this->Download = MainDownload::get()->filter(array(
-					'Version:StartsWith' => $this->Version,
-					'Type' => array('stable','testing'),
-					'Platform' => $splittype[0],
-					'Arch' => $splittype[1]))->sort(array('Type' => 'ASC','Version' => 'DESC'))->First();
+		$this->Download = $this->getMainDownloads($this->Version, $this->Type)->First();
+		if(is_null($this->Download)) {
+			$this->Download = $this->getMainDownloads($this->VersionFresh()->Version, $this->Type)->First();
+			$this->Version = $this->VersionFresh()->Version;
+		}
 		$this->DisplayVersion = $this->Download->Version;
 		if ("LibreOfficeDev" === substr($this->Download->Filename, 0, 14)) {
 			$this->DisplayVersion = "{$this->Download->Version} {$this->Download->parseRCVersion()}";
 		}
-	}
 
-	public function PlatformsList() {
+		// both FreshText as well as StillText inside <span class="dl_description_text">...</span>
+		// $this->FreshText = 'The latest "fresh" version of LibreOffice, recommended for technology enthusiasts.';
+		// $this->StillText = 'The mature "still" version of LibreOffice, recommended for enterprises.';
+		$this->FreshText = _t("DownloadRefresh.FreshText", "If you're a technology enthusiast, early adopter or power user, this version is for you!");
+		$this->StillText = _t("DownloadRefresh.StillText", 'This version is slightly older and does not have the latest features, but it has been tested for longer. For business deployments, we <a href="https://www.libreoffice.org/download/libreoffice-in-business/">strongly recommend support from certified partners</a> which also offer long-term support versions of LibreOffice.');
+	}
+	public function getMainDownloads($version, $platform) {
+		$splittype = explode('-', $platform);
+		return MainDownload::get()->filter(array(
+				'Version:StartsWith' => $version,
+				'Type' => array('stable','testing'),
+				'Platform' => $splittype[0],
+				'Arch' => $splittype[1]))->sort(array('Type' => 'ASC','Version' => 'DESC'));
+	}
+	public function PlatformsList($version = null) {
+		if (is_null($version)) {
+			$version = $this->Version;
+		}
 		$types = new ArrayList();
-		foreach (MainDownload::get()->filter('Version:StartsWith',$this->Version) as $installer) {
+		foreach (MainDownload::get()->filter('Version:StartsWith',$version) as $installer) {
 			$types->push(new ArrayData(array("Type" => $installer->Platform."-".$installer->Arch,
-							 "NicePlatform"=> $installer->NicePlatform())));
+				"NicePlatform"=> $installer->NicePlatform(),
+				"NicePlatformShort"=> $installer->NicePlatformShort()
+			)));
 		}
 		$types->removeDuplicates('NicePlatform');
 		return $types->sort("NicePlatform");
 	}
 	public function VersionsList($type='stable') {
 		$versions = new ArrayList();
-		foreach (MainDownload::get()->filter('Type',$type)->column('Version') as $version) {
-			$versions->push(new ArrayData(array("Version" => $version)));
+		foreach (MainDownload::get()->filter('Type',$type)->sort('Version', 'DESC')->column('Version') as $version) {
+            if ($type != 'stable' || $version != "5.2.1hideme") {
+                $versions->push(new ArrayData(array("Version" => $version)));
+            }
 		}
 		return $versions;
+	}
+	public function VersionFresh() {
+		return $this->VersionsList()->first();
+	}
+	public function VersionStill() {
+		# ArrayList only has simple excludes/cannot use "startswith" modifier, so assemble maj.min. and add 0-9
+		# via the preg_filter and filter those out...
+		if ($this->VersionFresh()) {
+			return $this->VersionsList()->exclude('Version',preg_filter('/^/', substr($this->VersionFresh()->getField('Version'), 0, 4), array(0,1,2,3,4,5,6,7,8,9)))->first();
+		} else {
+			return null;
+		}
 	}
 	public function LanguagePicklist($chunks = 3) {
 		$arraylist = new ArrayList();
@@ -191,5 +225,10 @@ class Download_Controller extends Page_Controller {
 	}
     public function fullLink() {
             return $this->Link()."?version=".$this->Version."&lang=".$this->Lang;
+    }
+    /* site-IDs that should use the newstyle downloadpage */
+    public function useNewStyle() {
+        // 5089 → en/mainsite 5298 → fr 5299 → de, 5300 → pt-BR, 5301 → ro, 5302 → es, 5095 → it
+        return in_array($this->ID, array(5089, 5298, 5299, 5300, 5301, 5302, 5095)) || $this->Codeline == "999";
     }
 }

@@ -17,7 +17,7 @@
 
 		/**
 		 * Class: .cms-edit-form input[name=Title]
-		 * 
+		 *
 		 * Input validation on the Title field
 		 */
 		$('.cms-edit-form input[name=Title]').entwine({
@@ -39,7 +39,10 @@
 						self.data('OrigVal', title);
 
 						// Criteria for defining a "new" page
-						if ((urlSegmentInput.val().indexOf('new') == 0) && liveLinkInput.val() == '') {
+						if (
+							urlSegmentInput.val().indexOf(urlSegmentInput.data('defaultUrl')) === 0
+							&& liveLinkInput.val() == ''
+						) {
 							self.updateURLSegment(title);
 						} else {
 							$('.update', self.parent()).show();
@@ -58,7 +61,7 @@
 			
 			/**
 			 * Function: updateRelatedFields
-			 * 
+			 *
 			 * Update the related fields if appropriate
 			 * (String) title The new title
 			 * (Stirng) origTitle The original title
@@ -77,7 +80,7 @@
 			
 			/**
 			 * Function: updateURLSegment
-			 * 
+			 *
 			 * Update the URLSegment
 			 * (String) title
 			 */
@@ -93,7 +96,7 @@
 			
 			/**
 			 * Function: updateBreadcrumbLabel
-			 * 
+			 *
 			 * Update the breadcrumb
 			 * (String) title
 			 */
@@ -107,9 +110,9 @@
 			
 			/**
 			 * Function: _addActions
-			 *  
+			 *
 			 * Utility to add update from title action
-			 * 
+			 *
 			 */
 			_addActions: function() {
 				var self = this;
@@ -119,6 +122,7 @@
 				updateURLFromTitle = $('<button />', {
 					'class': 'update ss-ui-button-small',
 					'text': ss.i18n._t('URLSEGMENT.UpdateURL'),
+					'type': 'button',
 					'click': function(e) {
 						e.preventDefault();
 						self.updateURLSegment(self.val());
@@ -133,7 +137,7 @@
 	
 		/**
 		 * Class: .cms-edit-form .parentTypeSelector
-		 * 
+		 *
 		 * ParentID field combination - mostly toggling between
 		 * the two radiobuttons and setting the hidden "ParentID" field
 		 */
@@ -155,7 +159,7 @@
 	
 			/**
 			 * Function: _toggleSelection
-			 * 
+			 *
 			 * Parameters:
 			 *  (Event) e
 			 */
@@ -166,12 +170,12 @@
 				// otherwise use the old value
 				else this.find(':input[name=ParentID]').val(this.find('#Form_EditForm_ParentType_subpage').data('parentIdValue'));
 				// toggle tree dropdown based on selection
-				this.find('#ParentID').toggle(selected != 'root');
+				this.find('#Form_EditForm_ParentID_Holder').toggle(selected != 'root');
 			},
 			
 			/**
 			 * Function: _changeParentId
-			 * 
+			 *
 			 * Parameters:
 			 *  (Event) e
 			 */
@@ -184,7 +188,7 @@
 
 		/**
 		 * Class: .cms-edit-form #CanViewType, .cms-edit-form #CanEditType
-		 * 
+		 *
 		 * Toggle display of group dropdown in "access" tab,
 		 * based on selection of radiobuttons.
 		 */
@@ -193,9 +197,9 @@
 			onmatch: function() {
 				// TODO Decouple
 				var dropdown;
-				if(this.attr('id') == 'CanViewType') dropdown = $('#ViewerGroups');
-				else if(this.attr('id') == 'CanEditType') dropdown = $('#EditorGroups');
-				else if(this.attr('id') == 'CanCreateTopLevelType') dropdown = $('#CreateTopLevelGroups');
+				if(this.attr('id') == 'CanViewType') dropdown = $('#Form_EditForm_ViewerGroups_Holder');
+				else if(this.attr('id') == 'CanEditType') dropdown = $('#Form_EditForm_EditorGroups_Holder');
+				else if(this.attr('id') == 'CanCreateTopLevelType') dropdown = $('#Form_EditForm_CreateTopLevelGroups_Holder');
 		
 				this.find('.optionset :input').bind('change', function(e) {
 					var wrapper = $(this).closest('.middleColumn').parent('div');
@@ -222,20 +226,20 @@
 
 		/**
 		 * Class: .cms-edit-form .Actions #Form_EditForm_action_print
-		 * 
+		 *
 		 * Open a printable representation of the form in a new window.
 		 * Used for readonly older versions of a specific page.
 		 */
 		$('.cms-edit-form .Actions #Form_EditForm_action_print').entwine({
 			/**
 			 * Function: onclick
-			 * 
+			 *
 			 * Parameters:
 			 *  (Event) e
 			 */
 			onclick: function(e) {
-				var printURL = $(this[0].form).attr('action').replace(/\?.*$/,'') 
-					+ '/printable/' 
+				var printURL = $(this[0].form).attr('action').replace(/\?.*$/,'')
+					+ '/printable/'
 					+ $(':input[name=ID]',this[0].form).val();
 				if(printURL.substr(0,7) != 'http://') printURL = $('base').attr('href') + printURL;
 
@@ -247,14 +251,13 @@
 
 		/**
 		 * Class: .cms-edit-form .Actions #Form_EditForm_action_rollback
-		 * 
+		 *
 		 * A "rollback" to a specific version needs user confirmation.
 		 */
-		$('.cms-edit-form .Actions #Form_EditForm_action_rollback').entwine({
-			
+		$('.cms-edit-form .Actions #Form_EditForm_action_doRollback').entwine({
 			/**
 			 * Function: onclick
-			 * 
+			 *
 			 * Parameters:
 			 *  (Event) e
 			 */
@@ -262,12 +265,122 @@
 				var form = this.parents('form:first'), version = form.find(':input[name=Version]').val(), message = '';
 				if(version) {
 					message = ss.i18n.sprintf(
-						ss.i18n._t('CMSMain.RollbackToVersion'), 
+						ss.i18n._t('CMSMain.RollbackToVersion'),
 						version
 					);
 				} else {
 					message = ss.i18n._t('CMSMain.ConfirmRestoreFromLive');
 				}
+				if(confirm(message)) {
+					return this._super(e);
+				} else {
+					return false;
+				}
+			}
+		});
+
+		/**
+		 * Class: .cms-edit-form .Actions #Form_EditForm_action_archive
+		 *
+		 * Informing the user about the archive action while requiring confirmation
+		 */
+		$('.cms-edit-form .Actions #Form_EditForm_action_archive').entwine({
+			
+			/**
+			 * Function: onclick
+			 *
+			 * Parameters:
+			 *  (Event) e
+			 */
+			onclick: function(e) {
+				var form = this.parents('form:first'), version = form.find(':input[name=Version]').val(), message = '';
+				message = ss.i18n.sprintf(
+					ss.i18n._t('CMSMain.Archive'),
+					version
+				);
+				if(confirm(message)) {
+					return this._super(e);
+				} else {
+					return false;
+				}
+			}
+		});
+
+		/**
+		 * Class: .cms-edit-form .Actions #Form_EditForm_action_restore
+		 *
+		 * Informing the user about the archive action while requiring confirmation
+		 */
+		$('.cms-edit-form .Actions #Form_EditForm_action_restore').entwine({
+			
+			/**
+			 * Function: onclick
+			 *
+			 * Parameters:
+			 *  (Event) e
+			 */
+			onclick: function(e) {
+				var form = this.parents('form:first'),
+					version = form.find(':input[name=Version]').val(),
+					message = '',
+					toRoot = this.data('toRoot');
+				message = ss.i18n.sprintf(
+					ss.i18n._t(toRoot ? 'CMSMain.RestoreToRoot' : 'CMSMain.Restore'),
+					version
+				);
+				if(confirm(message)) {
+					return this._super(e);
+				} else {
+					return false;
+				}
+			}
+		});
+
+		/**
+		 * Class: .cms-edit-form .Actions #Form_EditForm_action_delete
+		 *
+		 * Informing the user about the delete from draft action while requiring confirmation
+		 */
+		$('.cms-edit-form .Actions #Form_EditForm_action_delete').entwine({
+			
+			/**
+			 * Function: onclick
+			 *
+			 * Parameters:
+			 *  (Event) e
+			 */
+			onclick: function(e) {
+				var form = this.parents('form:first'), version = form.find(':input[name=Version]').val(), message = '';
+				message = ss.i18n.sprintf(
+					ss.i18n._t('CMSMain.DeleteFromDraft'),
+					version
+				);
+				if(confirm(message)) {
+					return this._super(e);
+				} else {
+					return false;
+				}
+			}
+		});
+
+		/**
+		 * Class: .cms-edit-form .Actions #Form_EditForm_action_unpublish
+		 * Informing the user about the unpublish action while requiring confirmation
+		 */
+		$('.cms-edit-form .Actions #Form_EditForm_action_unpublish').entwine({
+			
+			/**
+			 * Function: onclick
+			 *
+			 * Parameters:
+			 *  (Event) e
+			 */
+			onclick: function(e) {
+				var form = this.parents('form:first'), version = form.find(':input[name=Version]').val(), message = '';
+				message = ss.i18n.sprintf(
+					ss.i18n._t('CMSMain.Unpublish'),
+					version
+				);
 				if(confirm(message)) {
 					return this._super(e);
 				} else {
@@ -338,7 +451,7 @@
 				this._super();
 			},
 			redraw: function() {
-				var treeField = $('.cms-edit-form.CMSPageSettingsController #ParentID');
+				var treeField = $('.cms-edit-form.CMSPageSettingsController #Form_EditForm_ParentID_Holder');
 				if ($(this).attr('id') == 'Form_EditForm_ParentType_root') treeField.slideUp();
 				else treeField.slideDown();
 			},
@@ -349,7 +462,7 @@
 
 		//trigger an initial change event to do the initial hiding of the element, if necessary
 		if ($('.cms-edit-form.CMSPageSettingsController input[name="ParentType"]:checked').attr('id') == 'Form_EditForm_ParentType_root') {
-			$('.cms-edit-form.CMSPageSettingsController #ParentID').hide(); //quick hide on first run
+			$('.cms-edit-form.CMSPageSettingsController #Form_EditForm_ParentID_Holder').hide(); //quick hide on first run
 		}
 	});
 }(jQuery));
